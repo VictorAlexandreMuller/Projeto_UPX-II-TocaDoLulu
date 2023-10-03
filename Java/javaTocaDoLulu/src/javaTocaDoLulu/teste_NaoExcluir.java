@@ -1,9 +1,9 @@
-package upx_ii_pet.shop;
+package javaTocaDoLulu;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class Cachorro {
+public class teste_NaoExcluir {
     private String nome;
 
     public String getNome() {
@@ -14,8 +14,10 @@ public class Cachorro {
         this.nome = nome;
     }
     
-    public List<Cachorro> pesquisaNome (String nome){
-        List<Cachorro> listafiltro = new ArrayList<Cachorro>();
+    
+    // APRENDENDO A USAR "STREAM" NO NetBeans versão 20.
+    public List<teste_NaoExcluir> pesquisaNome (String nome){
+        List<teste_NaoExcluir> listafiltro = new ArrayList<teste_NaoExcluir>();
         return listafiltro.stream().filter(cachorro -> getNome().equals(nome)).toList();
     }
 }

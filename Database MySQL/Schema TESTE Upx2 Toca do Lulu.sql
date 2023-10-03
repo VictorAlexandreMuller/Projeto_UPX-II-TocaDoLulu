@@ -11,14 +11,16 @@ CREATE TABLE Pet (
     );
 
 CREATE TABLE Tutor (
-	cpf INT PRIMARY KEY NOT NULL,
+	documento_identificador VARCHAR(50) PRIMARY KEY NOT NULL,
+    tipo_documento VARCHAR(50),
     nome VARCHAR(150) NOT NULL,
 	nascimento DATE,
 	celular INT
     );
 
 CREATE TABLE Veterinario (
-	cpf INT PRIMARY KEY NOT NULL,
+	documento_identificador VARCHAR(50) PRIMARY KEY NOT NULL,
+    tipo_documento VARCHAR(50),
 	nome VARCHAR(150) NOT NULL,
 	nascimento DATE,
 	celular INT
