@@ -1,6 +1,6 @@
 # UPX2-Toca-do-Lulu
 
-# TRAVALHO DE UPX II - TOCA DO LULU (Em desenvolvimento...)
+# TRABALHO DE UPX II - TOCA DO LULU (Em desenvolvimento...)
 
 _Classe: Pet_  
 | ---------------------------------- |
