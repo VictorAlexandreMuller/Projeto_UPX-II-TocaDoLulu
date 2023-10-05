@@ -16,28 +16,28 @@ public class Swing_Tela_Inicial extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        CadastroPet = new javax.swing.JButton();
-        MostrarPet = new javax.swing.JButton();
+        BOTAO_CADASTRO_PET___ = new javax.swing.JButton();
+        BOTAO_MOSTRAR_PET___ = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
-        CadastroTutor = new javax.swing.JButton();
-        MostrarTutor = new javax.swing.JButton();
+        BOTAO_CADASTRO_TUTOR___ = new javax.swing.JButton();
+        BOTAO_MOSTRAR_TUTOR___ = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
-        CadastroVeterinario = new javax.swing.JButton();
-        MostrarVeterinario = new javax.swing.JButton();
-        Botao_Sair = new javax.swing.JButton();
+        BOTAO_CADASTRO_VETERINARIO___ = new javax.swing.JButton();
+        BOTAO_MOSTRAR_VETERINARIO___ = new javax.swing.JButton();
+        BOTAO_SAIR___ = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(41, 43, 45)), "Pets", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.TOP));
+        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)), "Pets", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Dialog", 1, 12))); // NOI18N
 
-        CadastroPet.setText("Cadastro");
-        CadastroPet.addActionListener(new java.awt.event.ActionListener() {
+        BOTAO_CADASTRO_PET___.setText("Cadastro");
+        BOTAO_CADASTRO_PET___.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                CadastroPetActionPerformed(evt);
+                BOTAO_CADASTRO_PET___ActionPerformed(evt);
             }
         });
 
-        MostrarPet.setText("Mostrar");
+        BOTAO_MOSTRAR_PET___.setText("Mostrar");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -46,31 +46,31 @@ public class Swing_Tela_Inicial extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(68, 68, 68)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(MostrarPet, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(CadastroPet, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(BOTAO_MOSTRAR_PET___, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(BOTAO_CADASTRO_PET___, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(72, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addGap(32, 32, 32)
-                .addComponent(CadastroPet)
+                .addComponent(BOTAO_CADASTRO_PET___)
                 .addGap(42, 42, 42)
-                .addComponent(MostrarPet)
+                .addComponent(BOTAO_MOSTRAR_PET___)
                 .addContainerGap(55, Short.MAX_VALUE))
         );
 
-        jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(41, 43, 45)), "Tutores", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.TOP));
+        jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)), "Tutores", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Dialog", 1, 12))); // NOI18N
 
-        CadastroTutor.setText("Cadastro");
-        CadastroTutor.setToolTipText("");
-        CadastroTutor.addActionListener(new java.awt.event.ActionListener() {
+        BOTAO_CADASTRO_TUTOR___.setText("Cadastro");
+        BOTAO_CADASTRO_TUTOR___.setToolTipText("");
+        BOTAO_CADASTRO_TUTOR___.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                CadastroTutorActionPerformed(evt);
+                BOTAO_CADASTRO_TUTOR___ActionPerformed(evt);
             }
         });
 
-        MostrarTutor.setText("Mostrar");
+        BOTAO_MOSTRAR_TUTOR___.setText("Mostrar");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -79,30 +79,30 @@ public class Swing_Tela_Inicial extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(MostrarTutor, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(CadastroTutor, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(BOTAO_MOSTRAR_TUTOR___, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(BOTAO_CADASTRO_TUTOR___, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(68, 68, 68))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addGap(32, 32, 32)
-                .addComponent(CadastroTutor)
+                .addComponent(BOTAO_CADASTRO_TUTOR___)
                 .addGap(45, 45, 45)
-                .addComponent(MostrarTutor)
+                .addComponent(BOTAO_MOSTRAR_TUTOR___)
                 .addContainerGap(52, Short.MAX_VALUE))
         );
 
         jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(41, 43, 45)), "Veterinários", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.TOP));
 
-        CadastroVeterinario.setText("Cadastro");
-        CadastroVeterinario.addActionListener(new java.awt.event.ActionListener() {
+        BOTAO_CADASTRO_VETERINARIO___.setText("Cadastro");
+        BOTAO_CADASTRO_VETERINARIO___.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                CadastroVeterinarioActionPerformed(evt);
+                BOTAO_CADASTRO_VETERINARIO___ActionPerformed(evt);
             }
         });
 
-        MostrarVeterinario.setText("Mostrar");
+        BOTAO_MOSTRAR_VETERINARIO___.setText("Mostrar");
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -111,24 +111,24 @@ public class Swing_Tela_Inicial extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
                 .addContainerGap(71, Short.MAX_VALUE)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(MostrarVeterinario, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(CadastroVeterinario, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(BOTAO_MOSTRAR_VETERINARIO___, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(BOTAO_CADASTRO_VETERINARIO___, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(69, 69, 69))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
                 .addGap(32, 32, 32)
-                .addComponent(CadastroVeterinario)
+                .addComponent(BOTAO_CADASTRO_VETERINARIO___)
                 .addGap(38, 38, 38)
-                .addComponent(MostrarVeterinario)
+                .addComponent(BOTAO_MOSTRAR_VETERINARIO___)
                 .addContainerGap(59, Short.MAX_VALUE))
         );
 
-        Botao_Sair.setText("Sair");
-        Botao_Sair.addActionListener(new java.awt.event.ActionListener() {
+        BOTAO_SAIR___.setText("Sair");
+        BOTAO_SAIR___.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Botao_SairActionPerformed(evt);
+                BOTAO_SAIR___ActionPerformed(evt);
             }
         });
 
@@ -147,7 +147,7 @@ public class Swing_Tela_Inicial extends javax.swing.JFrame {
                         .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(96, 96, 96)
-                        .addComponent(Botao_Sair, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(BOTAO_SAIR___, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -163,31 +163,34 @@ public class Swing_Tela_Inicial extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(Botao_Sair)
+                        .addComponent(BOTAO_SAIR___)
                         .addGap(103, 103, 103))))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void CadastroPetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CadastroPetActionPerformed
+    private void BOTAO_CADASTRO_PET___ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BOTAO_CADASTRO_PET___ActionPerformed
         CadastroPet obj = new CadastroPet();
+        this.dispose();
         obj.setVisible(true);
-    }//GEN-LAST:event_CadastroPetActionPerformed
+    }//GEN-LAST:event_BOTAO_CADASTRO_PET___ActionPerformed
 
-    private void CadastroVeterinarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CadastroVeterinarioActionPerformed
+    private void BOTAO_CADASTRO_VETERINARIO___ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BOTAO_CADASTRO_VETERINARIO___ActionPerformed
         CadastroVeterinario obj = new CadastroVeterinario();
+        this.dispose();
         obj.setVisible(true);
-    }//GEN-LAST:event_CadastroVeterinarioActionPerformed
+    }//GEN-LAST:event_BOTAO_CADASTRO_VETERINARIO___ActionPerformed
 
-    private void CadastroTutorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CadastroTutorActionPerformed
+    private void BOTAO_CADASTRO_TUTOR___ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BOTAO_CADASTRO_TUTOR___ActionPerformed
         CadastroTutor obj = new CadastroTutor();
+        this.dispose();
         obj.setVisible(true);
-    }//GEN-LAST:event_CadastroTutorActionPerformed
+    }//GEN-LAST:event_BOTAO_CADASTRO_TUTOR___ActionPerformed
 
-    private void Botao_SairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Botao_SairActionPerformed
+    private void BOTAO_SAIR___ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BOTAO_SAIR___ActionPerformed
         System.exit(0);
-    }//GEN-LAST:event_Botao_SairActionPerformed
+    }//GEN-LAST:event_BOTAO_SAIR___ActionPerformed
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
@@ -222,13 +225,13 @@ public class Swing_Tela_Inicial extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton Botao_Sair;
-    private javax.swing.JButton CadastroPet;
-    private javax.swing.JButton CadastroTutor;
-    private javax.swing.JButton CadastroVeterinario;
-    private javax.swing.JButton MostrarPet;
-    private javax.swing.JButton MostrarTutor;
-    private javax.swing.JButton MostrarVeterinario;
+    private javax.swing.JButton BOTAO_CADASTRO_PET___;
+    private javax.swing.JButton BOTAO_CADASTRO_TUTOR___;
+    private javax.swing.JButton BOTAO_CADASTRO_VETERINARIO___;
+    private javax.swing.JButton BOTAO_MOSTRAR_PET___;
+    private javax.swing.JButton BOTAO_MOSTRAR_TUTOR___;
+    private javax.swing.JButton BOTAO_MOSTRAR_VETERINARIO___;
+    private javax.swing.JButton BOTAO_SAIR___;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;

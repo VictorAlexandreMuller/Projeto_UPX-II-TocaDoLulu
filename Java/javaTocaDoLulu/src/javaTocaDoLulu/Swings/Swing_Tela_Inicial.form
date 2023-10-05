@@ -36,7 +36,7 @@
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="96" max="-2" attributes="0"/>
-                      <Component id="Botao_Sair" min="-2" pref="100" max="-2" attributes="0"/>
+                      <Component id="BOTAO_SAIR___" min="-2" pref="100" max="-2" attributes="0"/>
                   </Group>
               </Group>
               <EmptySpace min="-2" max="-2" attributes="0"/>
@@ -57,7 +57,7 @@
                   <Group type="102" alignment="0" attributes="0">
                       <Component id="jPanel3" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="32767" attributes="0"/>
-                      <Component id="Botao_Sair" min="-2" max="-2" attributes="0"/>
+                      <Component id="BOTAO_SAIR___" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="103" max="-2" attributes="0"/>
                   </Group>
               </Group>
@@ -70,7 +70,12 @@
       <Properties>
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
           <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
-            <TitledBorder justification="2" position="2" title="Pets"/>
+            <TitledBorder justification="2" position="2" title="Pets">
+              <Border PropertyName="innerBorder" info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
+                <LineBorder/>
+              </Border>
+              <Font PropertyName="font" name="Dialog" size="12" style="1"/>
+            </TitledBorder>
           </Border>
         </Property>
       </Properties>
@@ -81,8 +86,8 @@
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" pref="68" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="MostrarPet" min="-2" pref="100" max="-2" attributes="0"/>
-                      <Component id="CadastroPet" min="-2" pref="100" max="-2" attributes="0"/>
+                      <Component id="BOTAO_MOSTRAR_PET___" min="-2" pref="100" max="-2" attributes="0"/>
+                      <Component id="BOTAO_CADASTRO_PET___" min="-2" pref="100" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace pref="72" max="32767" attributes="0"/>
               </Group>
@@ -92,24 +97,24 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="1" attributes="0">
                   <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
-                  <Component id="CadastroPet" min="-2" max="-2" attributes="0"/>
+                  <Component id="BOTAO_CADASTRO_PET___" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
-                  <Component id="MostrarPet" min="-2" max="-2" attributes="0"/>
+                  <Component id="BOTAO_MOSTRAR_PET___" min="-2" max="-2" attributes="0"/>
                   <EmptySpace pref="55" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
       </Layout>
       <SubComponents>
-        <Component class="javax.swing.JButton" name="CadastroPet">
+        <Component class="javax.swing.JButton" name="BOTAO_CADASTRO_PET___">
           <Properties>
             <Property name="text" type="java.lang.String" value="Cadastro"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="CadastroPetActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BOTAO_CADASTRO_PET___ActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="MostrarPet">
+        <Component class="javax.swing.JButton" name="BOTAO_MOSTRAR_PET___">
           <Properties>
             <Property name="text" type="java.lang.String" value="Mostrar"/>
           </Properties>
@@ -120,7 +125,12 @@
       <Properties>
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
           <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
-            <TitledBorder justification="2" position="2" title="Tutores"/>
+            <TitledBorder justification="2" position="2" title="Tutores">
+              <Border PropertyName="innerBorder" info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
+                <LineBorder/>
+              </Border>
+              <Font PropertyName="font" name="Dialog" size="12" style="1"/>
+            </TitledBorder>
           </Border>
         </Property>
       </Properties>
@@ -131,8 +141,8 @@
               <Group type="102" alignment="1" attributes="0">
                   <EmptySpace max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="MostrarTutor" min="-2" pref="100" max="-2" attributes="0"/>
-                      <Component id="CadastroTutor" min="-2" pref="100" max="-2" attributes="0"/>
+                      <Component id="BOTAO_MOSTRAR_TUTOR___" min="-2" pref="100" max="-2" attributes="0"/>
+                      <Component id="BOTAO_CADASTRO_TUTOR___" min="-2" pref="100" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="68" max="-2" attributes="0"/>
               </Group>
@@ -142,25 +152,25 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="1" attributes="0">
                   <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
-                  <Component id="CadastroTutor" min="-2" max="-2" attributes="0"/>
+                  <Component id="BOTAO_CADASTRO_TUTOR___" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="45" max="-2" attributes="0"/>
-                  <Component id="MostrarTutor" min="-2" max="-2" attributes="0"/>
+                  <Component id="BOTAO_MOSTRAR_TUTOR___" min="-2" max="-2" attributes="0"/>
                   <EmptySpace pref="52" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
       </Layout>
       <SubComponents>
-        <Component class="javax.swing.JButton" name="CadastroTutor">
+        <Component class="javax.swing.JButton" name="BOTAO_CADASTRO_TUTOR___">
           <Properties>
             <Property name="text" type="java.lang.String" value="Cadastro"/>
             <Property name="toolTipText" type="java.lang.String" value=""/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="CadastroTutorActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BOTAO_CADASTRO_TUTOR___ActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="MostrarTutor">
+        <Component class="javax.swing.JButton" name="BOTAO_MOSTRAR_TUTOR___">
           <Properties>
             <Property name="text" type="java.lang.String" value="Mostrar"/>
           </Properties>
@@ -182,8 +192,8 @@
               <Group type="102" alignment="1" attributes="0">
                   <EmptySpace pref="71" max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="MostrarVeterinario" min="-2" pref="100" max="-2" attributes="0"/>
-                      <Component id="CadastroVeterinario" min="-2" pref="100" max="-2" attributes="0"/>
+                      <Component id="BOTAO_MOSTRAR_VETERINARIO___" min="-2" pref="100" max="-2" attributes="0"/>
+                      <Component id="BOTAO_CADASTRO_VETERINARIO___" min="-2" pref="100" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="69" max="-2" attributes="0"/>
               </Group>
@@ -193,36 +203,36 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="1" attributes="0">
                   <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
-                  <Component id="CadastroVeterinario" min="-2" max="-2" attributes="0"/>
+                  <Component id="BOTAO_CADASTRO_VETERINARIO___" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
-                  <Component id="MostrarVeterinario" min="-2" max="-2" attributes="0"/>
+                  <Component id="BOTAO_MOSTRAR_VETERINARIO___" min="-2" max="-2" attributes="0"/>
                   <EmptySpace pref="59" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
       </Layout>
       <SubComponents>
-        <Component class="javax.swing.JButton" name="CadastroVeterinario">
+        <Component class="javax.swing.JButton" name="BOTAO_CADASTRO_VETERINARIO___">
           <Properties>
             <Property name="text" type="java.lang.String" value="Cadastro"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="CadastroVeterinarioActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BOTAO_CADASTRO_VETERINARIO___ActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="MostrarVeterinario">
+        <Component class="javax.swing.JButton" name="BOTAO_MOSTRAR_VETERINARIO___">
           <Properties>
             <Property name="text" type="java.lang.String" value="Mostrar"/>
           </Properties>
         </Component>
       </SubComponents>
     </Container>
-    <Component class="javax.swing.JButton" name="Botao_Sair">
+    <Component class="javax.swing.JButton" name="BOTAO_SAIR___">
       <Properties>
         <Property name="text" type="java.lang.String" value="Sair"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Botao_SairActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BOTAO_SAIR___ActionPerformed"/>
       </Events>
     </Component>
   </SubComponents>
