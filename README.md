@@ -18,7 +18,6 @@ _Classe: Pet_
 (+) gets...
 (+) sets...
 (+) toString():String
-(+) calcularValorImovel():double
 
 _Classe: Tutor_  
 | ---------------------------------- |
