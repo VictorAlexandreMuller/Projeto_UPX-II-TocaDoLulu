@@ -22,25 +22,25 @@ public class Cadastro_Pets_JIFF extends javax.swing.JInternalFrame {
         jLabel4 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
-        txtNOME = new javax.swing.JTextField();
-        txtNASCIMENTO = new javax.swing.JFormattedTextField();
-        txtRACA = new javax.swing.JTextField();
-        txtCOR = new javax.swing.JTextField();
-        txtREDESOCIAL = new javax.swing.JTextField();
-        txtTIPODEREDESOCIAL = new javax.swing.JTextField();
+        txtPET_NOME = new javax.swing.JTextField();
+        txtPET_NASCIMENTO = new javax.swing.JFormattedTextField();
+        txtPET_RACA = new javax.swing.JTextField();
+        txtPET_COR = new javax.swing.JTextField();
+        txtPET_REDESOCIAL = new javax.swing.JTextField();
+        txtPET_TIPOREDESOCIAL = new javax.swing.JTextField();
         BOTAO_SALVAR___ = new javax.swing.JButton();
         BOTAO_VOLTAR___ = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
         jScrollPane3 = new javax.swing.JScrollPane();
-        txtALERGIAS = new javax.swing.JTextArea();
+        txtPET_ALERGIAS = new javax.swing.JTextArea();
         jLabel6 = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
-        txtREMEDIOS = new javax.swing.JTextArea();
+        txtPET_REMEDIOS = new javax.swing.JTextArea();
         jLabel7 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        txtVACINACAO = new javax.swing.JTextArea();
+        txtPET_VACINACAO = new javax.swing.JTextArea();
         jScrollPane4 = new javax.swing.JScrollPane();
-        txtREMEDIOS1 = new javax.swing.JTextArea();
+        txtPET_OBSERVACOES = new javax.swing.JTextArea();
         jLabel10 = new javax.swing.JLabel();
 
         setClosable(true);
@@ -76,11 +76,11 @@ public class Cadastro_Pets_JIFF extends javax.swing.JInternalFrame {
         jLabel9.setText("Tipo de Rede Social");
 
         try {
-            txtNASCIMENTO.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##/##/####")));
+            txtPET_NASCIMENTO.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##/##/####")));
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
-        txtNASCIMENTO.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtPET_NASCIMENTO.setHorizontalAlignment(javax.swing.JTextField.CENTER);
 
         BOTAO_SALVAR___.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
         BOTAO_SALVAR___.setText("Salvar");
@@ -102,29 +102,29 @@ public class Cadastro_Pets_JIFF extends javax.swing.JInternalFrame {
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("Alergias");
 
-        txtALERGIAS.setColumns(20);
-        txtALERGIAS.setRows(5);
-        jScrollPane3.setViewportView(txtALERGIAS);
+        txtPET_ALERGIAS.setColumns(20);
+        txtPET_ALERGIAS.setRows(5);
+        jScrollPane3.setViewportView(txtPET_ALERGIAS);
 
         jLabel6.setFont(new java.awt.Font("Leelawadee", 1, 14)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("Remedios");
 
-        txtREMEDIOS.setColumns(20);
-        txtREMEDIOS.setRows(5);
-        jScrollPane2.setViewportView(txtREMEDIOS);
+        txtPET_REMEDIOS.setColumns(20);
+        txtPET_REMEDIOS.setRows(5);
+        jScrollPane2.setViewportView(txtPET_REMEDIOS);
 
         jLabel7.setFont(new java.awt.Font("Leelawadee", 1, 14)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jLabel7.setText("Vacinação");
 
-        txtVACINACAO.setColumns(20);
-        txtVACINACAO.setRows(5);
-        jScrollPane1.setViewportView(txtVACINACAO);
+        txtPET_VACINACAO.setColumns(20);
+        txtPET_VACINACAO.setRows(5);
+        jScrollPane1.setViewportView(txtPET_VACINACAO);
 
-        txtREMEDIOS1.setColumns(20);
-        txtREMEDIOS1.setRows(5);
-        jScrollPane4.setViewportView(txtREMEDIOS1);
+        txtPET_OBSERVACOES.setColumns(20);
+        txtPET_OBSERVACOES.setRows(5);
+        jScrollPane4.setViewportView(txtPET_OBSERVACOES);
 
         jLabel10.setFont(new java.awt.Font("Leelawadee", 1, 14)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(255, 255, 255));
@@ -148,10 +148,10 @@ public class Cadastro_Pets_JIFF extends javax.swing.JInternalFrame {
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(jPanel1Layout.createSequentialGroup()
                                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                            .addComponent(txtRACA, javax.swing.GroupLayout.PREFERRED_SIZE, 222, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(txtTIPODEREDESOCIAL, javax.swing.GroupLayout.PREFERRED_SIZE, 222, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                            .addComponent(txtPET_RACA, javax.swing.GroupLayout.PREFERRED_SIZE, 222, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(txtPET_TIPOREDESOCIAL, javax.swing.GroupLayout.PREFERRED_SIZE, 222, javax.swing.GroupLayout.PREFERRED_SIZE))
                                         .addGap(0, 1, Short.MAX_VALUE))
-                                    .addComponent(txtNOME)))
+                                    .addComponent(txtPET_NOME)))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                                 .addComponent(jLabel7)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -177,9 +177,9 @@ public class Cadastro_Pets_JIFF extends javax.swing.JInternalFrame {
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jScrollPane2)
                             .addComponent(jScrollPane4)
-                            .addComponent(txtCOR)
-                            .addComponent(txtREDESOCIAL)
-                            .addComponent(txtNASCIMENTO, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(txtPET_COR)
+                            .addComponent(txtPET_REDESOCIAL)
+                            .addComponent(txtPET_NASCIMENTO, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addGap(30, 30, 30))
         );
         jPanel1Layout.setVerticalGroup(
@@ -190,15 +190,15 @@ public class Cadastro_Pets_JIFF extends javax.swing.JInternalFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel1)
-                            .addComponent(txtNOME, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(txtPET_NOME, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(txtRACA, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtPET_RACA, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel3))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel9)
-                            .addComponent(txtTIPODEREDESOCIAL, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(txtPET_TIPOREDESOCIAL, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGap(50, 50, 50)
@@ -221,11 +221,11 @@ public class Cadastro_Pets_JIFF extends javax.swing.JInternalFrame {
                         .addGap(89, 89, 89)
                         .addComponent(jLabel10))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(txtNASCIMENTO, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(txtPET_NASCIMENTO, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(txtCOR, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(txtPET_COR, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(txtREDESOCIAL, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(txtPET_REDESOCIAL, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
@@ -284,15 +284,15 @@ public class Cadastro_Pets_JIFF extends javax.swing.JInternalFrame {
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
-    private javax.swing.JTextArea txtALERGIAS;
-    private javax.swing.JTextField txtCOR;
-    private javax.swing.JFormattedTextField txtNASCIMENTO;
-    private javax.swing.JTextField txtNOME;
-    private javax.swing.JTextField txtRACA;
-    private javax.swing.JTextField txtREDESOCIAL;
-    private javax.swing.JTextArea txtREMEDIOS;
-    private javax.swing.JTextArea txtREMEDIOS1;
-    private javax.swing.JTextField txtTIPODEREDESOCIAL;
-    private javax.swing.JTextArea txtVACINACAO;
+    private javax.swing.JTextArea txtPET_ALERGIAS;
+    private javax.swing.JTextField txtPET_COR;
+    private javax.swing.JFormattedTextField txtPET_NASCIMENTO;
+    private javax.swing.JTextField txtPET_NOME;
+    private javax.swing.JTextArea txtPET_OBSERVACOES;
+    private javax.swing.JTextField txtPET_RACA;
+    private javax.swing.JTextField txtPET_REDESOCIAL;
+    private javax.swing.JTextArea txtPET_REMEDIOS;
+    private javax.swing.JTextField txtPET_TIPOREDESOCIAL;
+    private javax.swing.JTextArea txtPET_VACINACAO;
     // End of variables declaration//GEN-END:variables
 }

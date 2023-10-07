@@ -80,15 +80,15 @@
                   </Group>
                   <EmptySpace min="-2" pref="100" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="jTextField8" alignment="0" min="-2" pref="250" max="-2" attributes="0"/>
-                      <Component id="jTextField7" alignment="0" min="-2" pref="250" max="-2" attributes="0"/>
-                      <Component id="jTextField6" alignment="0" min="-2" pref="250" max="-2" attributes="0"/>
-                      <Component id="jTextField5" alignment="0" min="-2" pref="250" max="-2" attributes="0"/>
-                      <Component id="jTextField4" alignment="0" min="-2" pref="250" max="-2" attributes="0"/>
-                      <Component id="jTextField3" alignment="0" min="-2" pref="250" max="-2" attributes="0"/>
-                      <Component id="jTextField2" alignment="0" min="-2" pref="250" max="-2" attributes="0"/>
-                      <Component id="jTextField1" alignment="0" min="-2" pref="250" max="-2" attributes="0"/>
-                      <Component id="jFormattedTextField1" alignment="0" min="-2" pref="110" max="-2" attributes="0"/>
+                      <Component id="txtTUTOR_TIPOREDESOCIAL" alignment="0" min="-2" pref="250" max="-2" attributes="0"/>
+                      <Component id="txtTUTOR_REDESOCIAL" alignment="0" min="-2" pref="250" max="-2" attributes="0"/>
+                      <Component id="txtTUTOR_ENDERECO" alignment="0" min="-2" pref="250" max="-2" attributes="0"/>
+                      <Component id="txtTUTOR_EMAIL" alignment="0" min="-2" pref="250" max="-2" attributes="0"/>
+                      <Component id="txtTUTOR_CELULAR" alignment="0" min="-2" pref="250" max="-2" attributes="0"/>
+                      <Component id="txtTUTOR_NOME" alignment="0" min="-2" pref="250" max="-2" attributes="0"/>
+                      <Component id="txtTUTOR_TIPODOCUMENTO" alignment="0" min="-2" pref="250" max="-2" attributes="0"/>
+                      <Component id="txtTUTOR_DOCUMENTO" alignment="0" min="-2" pref="250" max="-2" attributes="0"/>
+                      <Component id="txtTUTOR_NASCIMENTO" alignment="0" min="-2" pref="110" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace pref="42" max="32767" attributes="0"/>
               </Group>
@@ -108,47 +108,47 @@
                   <Group type="103" groupAlignment="1" attributes="0">
                       <Group type="102" alignment="1" attributes="0">
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="jTextField1" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="txtTUTOR_DOCUMENTO" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="jLabel3" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="jTextField2" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="txtTUTOR_TIPODOCUMENTO" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="jLabel4" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="jTextField3" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="txtTUTOR_NOME" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="jLabel1" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="1" attributes="0">
-                              <Component id="jFormattedTextField1" alignment="1" min="-2" pref="24" max="-2" attributes="0"/>
+                              <Component id="txtTUTOR_NASCIMENTO" alignment="1" min="-2" pref="24" max="-2" attributes="0"/>
                               <Component id="jLabel2" alignment="1" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="jTextField4" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="txtTUTOR_CELULAR" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="jLabel6" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="1" attributes="0">
-                              <Component id="jTextField5" alignment="1" min="-2" max="-2" attributes="0"/>
+                              <Component id="txtTUTOR_EMAIL" alignment="1" min="-2" max="-2" attributes="0"/>
                               <Component id="jLabel5" alignment="1" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="1" attributes="0">
-                              <Component id="jTextField6" alignment="1" min="-2" max="-2" attributes="0"/>
+                              <Component id="txtTUTOR_ENDERECO" alignment="1" min="-2" max="-2" attributes="0"/>
                               <Component id="jLabel7" alignment="1" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Component id="jTextField7" min="-2" max="-2" attributes="0"/>
+                          <Component id="txtTUTOR_REDESOCIAL" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <Component id="jLabel8" alignment="1" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="jTextField8" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="txtTUTOR_TIPOREDESOCIAL" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="jLabel9" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace pref="42" max="32767" attributes="0"/>
@@ -280,13 +280,13 @@
             <Property name="text" type="java.lang.String" value="Salvar"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="jTextField1">
+        <Component class="javax.swing.JTextField" name="txtTUTOR_DOCUMENTO">
         </Component>
-        <Component class="javax.swing.JTextField" name="jTextField2">
+        <Component class="javax.swing.JTextField" name="txtTUTOR_TIPODOCUMENTO">
         </Component>
-        <Component class="javax.swing.JTextField" name="jTextField3">
+        <Component class="javax.swing.JTextField" name="txtTUTOR_NOME">
         </Component>
-        <Component class="javax.swing.JFormattedTextField" name="jFormattedTextField1">
+        <Component class="javax.swing.JFormattedTextField" name="txtTUTOR_NASCIMENTO">
           <Properties>
             <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor" preCode="try {" postCode="} catch (java.text.ParseException ex) {&#xa;ex.printStackTrace();&#xa;}">
               <Format format="##/##/####" subtype="-1" type="5"/>
@@ -294,15 +294,15 @@
             <Property name="horizontalAlignment" type="int" value="0"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="jTextField4">
+        <Component class="javax.swing.JTextField" name="txtTUTOR_CELULAR">
         </Component>
-        <Component class="javax.swing.JTextField" name="jTextField5">
+        <Component class="javax.swing.JTextField" name="txtTUTOR_EMAIL">
         </Component>
-        <Component class="javax.swing.JTextField" name="jTextField6">
+        <Component class="javax.swing.JTextField" name="txtTUTOR_ENDERECO">
         </Component>
-        <Component class="javax.swing.JTextField" name="jTextField7">
+        <Component class="javax.swing.JTextField" name="txtTUTOR_REDESOCIAL">
         </Component>
-        <Component class="javax.swing.JTextField" name="jTextField8">
+        <Component class="javax.swing.JTextField" name="txtTUTOR_TIPOREDESOCIAL">
         </Component>
       </SubComponents>
     </Container>
