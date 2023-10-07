@@ -14,7 +14,8 @@ CREATE TABLE Pet (
     remedios VARCHAR(500),
     vacinacao VARCHAR(500),
     rede_social VARCHAR(100),
-    tipo_rede VARCHAR(50)
+    tipo_rede VARCHAR(50),
+    observacoes VARCHAR(500)
     );
 
 CREATE TABLE Tutor (
@@ -33,6 +34,7 @@ CREATE TABLE Veterinario (
 	documento_identificador VARCHAR(50) PRIMARY KEY NOT NULL,
 	tipo_documento VARCHAR(50),
 	nome VARCHAR(150) NOT NULL,
+    CRMV VARCHAR(20),
 	nascimento DATE,
 	celular INT,
 	email VARCHAR(100),
