@@ -1,10 +1,24 @@
 package java1.Classes;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity // Informa que esta classe é uma entidade no banco de dados
+@Table(name = "Pet") // Informa que esta classe estará vinculada à Table Pet no banco de dados
 public class Pet {
+    
+    @Id // Informa que o ID é a chave primaria
+    @GeneratedValue(strategy = GenerationType.SEQUENCE) // Informa que o ID será gerado em sequencia
     private int id;
     private String nome;
     private char nascimento;
     private String raca;
+    
+    @Column(name="cor")
     private String cor;
     private String alergias;
     private String remedios;

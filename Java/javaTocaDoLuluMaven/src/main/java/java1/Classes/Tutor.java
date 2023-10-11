@@ -1,6 +1,14 @@
 package java1.Classes;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "Tutor")
 public class Tutor {
+    
+    @Id
     private String documento_identificador;
     private String tipo_documento;
     private String nome;
