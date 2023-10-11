@@ -112,7 +112,7 @@
               <Component id="BOTAO_CADASTRO_TUTOR___" min="-2" max="-2" attributes="0"/>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Component id="BOTAO_CADASTRO_VETERINARIO___" min="-2" max="-2" attributes="0"/>
-              <EmptySpace max="32767" attributes="0"/>
+              <EmptySpace pref="236" max="32767" attributes="0"/>
               <Component id="BOTAO_SAIR___" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
           </Group>

@@ -157,7 +157,7 @@ public class Swing_Tela_Inicial extends javax.swing.JFrame {
                 .addComponent(BOTAO_CADASTRO_TUTOR___)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(BOTAO_CADASTRO_VETERINARIO___)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 236, Short.MAX_VALUE)
                 .addComponent(BOTAO_SAIR___)
                 .addGap(26, 26, 26))
         );
@@ -203,7 +203,7 @@ public class Swing_Tela_Inicial extends javax.swing.JFrame {
     }//GEN-LAST:event_BOTAO_CADASTRO_TUTOR___ActionPerformed
 
     private void BOTAO_CADASTRO_PET___ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BOTAO_CADASTRO_PET___ActionPerformed
-        Painel_Pets_JIFF obj = new Painel_Pets_JIFF();
+        Painel_Pets_JIFF obj = new Painel_Pets_JIFF(this);
         DesktopPaneControl.add(obj).setVisible(true);
     }//GEN-LAST:event_BOTAO_CADASTRO_PET___ActionPerformed
 

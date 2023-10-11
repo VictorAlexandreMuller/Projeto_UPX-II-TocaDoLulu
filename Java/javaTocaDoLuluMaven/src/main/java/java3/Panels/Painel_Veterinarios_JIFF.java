@@ -1,6 +1,7 @@
 package java3.Panels;
 
 import java4.Cadastros.Cadastro_Pets_JIFF;
+import java4.Cadastros.Cadastro_Veterinarios_JIFF;
 
 public class Painel_Veterinarios_JIFF extends javax.swing.JInternalFrame {
 
@@ -133,7 +134,7 @@ public class Painel_Veterinarios_JIFF extends javax.swing.JInternalFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void BOTAO_NOVO_VETERINARIOS___ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BOTAO_NOVO_VETERINARIOS___ActionPerformed
-        Cadastro_Pets_JIFF obj = new Cadastro_Pets_JIFF();
+        Cadastro_Veterinarios_JIFF obj = new Cadastro_Veterinarios_JIFF();
         DesktopPaneControl_Pets.add(obj).setVisible(true);
     }//GEN-LAST:event_BOTAO_NOVO_VETERINARIOS___ActionPerformed
 

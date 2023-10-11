@@ -1,9 +1,21 @@
 package java3.Panels;
 
 import java4.Cadastros.Cadastro_Pets_JIFF;
+import java4.Cadastros.NewJDialog;
+import javax.swing.JFrame;
 
 public class Painel_Pets_JIFF extends javax.swing.JInternalFrame {
 
+    
+    // PROFESSOR POO ----------------------
+    JFrame pai;
+    
+    public Painel_Pets_JIFF(JFrame framePai) {
+        initComponents();
+        pai = framePai;
+    }
+    // PROFESSOR POO ----------------------
+    
     public Painel_Pets_JIFF() {
         initComponents();
     }
@@ -135,6 +147,11 @@ public class Painel_Pets_JIFF extends javax.swing.JInternalFrame {
     private void BOTAO_NOVO_PET___ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BOTAO_NOVO_PET___ActionPerformed
         Cadastro_Pets_JIFF obj = new Cadastro_Pets_JIFF();
         DesktopPaneControl_Pets.add(obj).setVisible(true);
+        
+        // PROFESSOR POO ----------------------
+        // NewJDialog x = new  NewJDialog(pai, true);
+        // x.setVisible(true);
+        // PROFESSOR POO ----------------------
     }//GEN-LAST:event_BOTAO_NOVO_PET___ActionPerformed
 
     private void BOTAO_ALTERAR_PET___ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BOTAO_ALTERAR_PET___ActionPerformed
