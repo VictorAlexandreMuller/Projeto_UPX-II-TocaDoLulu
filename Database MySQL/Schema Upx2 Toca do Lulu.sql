@@ -1,6 +1,6 @@
-drop database if exists toca_teste;  -- Remove o banco de dados, caso exista
-create database toca_teste;          -- Cria o banco de dados
-use toca_teste;                      -- Seleciona o banco para os próximos comandos
+drop database if exists toca_do_lulu_upx;  -- Remove o banco de dados, caso exista
+create database toca_do_lulu_upx;          -- Cria o banco de dados
+use toca_do_lulu_upx;                      -- Seleciona o banco para os próximos comandos
 
 /* As linhas acima não devem ser executas em serviços online como o sqlite oline*/
 
