@@ -11,13 +11,8 @@
         <maven.compiler.target>21</maven.compiler.target>
         <exec.mainClass>com.mycompany.javatocadolulumaven.JavaTocaDoLuluMaven</exec.mainClass>
     </properties>
-    
-    
-    
-    
-    
+
     <dependencies>
-        
         
         <!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-entitymanager -->
         <dependency>
@@ -40,10 +35,6 @@
             <version>8.0.30</version>
         </dependency>
 
-
-
-
-
         <!-- https://mvnrepository.com/artifact/javax.persistence/javax.persistence-api -->
         <dependency>
             <groupId>javax.persistence</groupId>
@@ -51,7 +42,6 @@
             <version>2.2</version>
         </dependency>
 
-        
     </dependencies>
     
     

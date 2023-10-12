@@ -15,7 +15,7 @@ public class Pet {
     @GeneratedValue(strategy = GenerationType.SEQUENCE) // Informa que o ID será gerado em sequencia
     private int id;
     private String nome;
-    private char nascimento;
+    private String nascimento;
     private String raca;
     
     @Column(name="cor")
@@ -29,7 +29,7 @@ public class Pet {
     public Pet() {
     }
 
-    public Pet(int id, String nome, char nascimento, String raca, String cor, String alergias, String remedios, String vacinacao, String rede_social, String tipo_rede) {
+    public Pet(int id, String nome, String nascimento, String raca, String cor, String alergias, String remedios, String vacinacao, String rede_social, String tipo_rede) {
         this.id = id;
         this.nome = nome;
         this.nascimento = nascimento;
@@ -58,11 +58,11 @@ public class Pet {
         this.nome = nome;
     }
 
-    public char getNascimento() {
+    public String getNascimento() {
         return nascimento;
     }
 
-    public void setNascimento(char nascimento) {
+    public void setNascimento(String nascimento) {
         this.nascimento = nascimento;
     }
 

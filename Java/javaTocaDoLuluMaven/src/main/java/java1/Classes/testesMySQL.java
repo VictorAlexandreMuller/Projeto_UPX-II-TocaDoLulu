@@ -9,6 +9,7 @@ public class testesMySQL {
     public static void main(String[] args) {
         Pet pet = new Pet();
         pet.setNome("Aurora");
+        pet.setNascimento("1900-10-21");
         pet.setRaca("Bullterrier");
         pet.setCor("Branca");
         
