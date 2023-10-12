@@ -9,37 +9,40 @@ import javax.persistence.Table;
 
 @Entity // Informa que esta classe é uma entidade no banco de dados
 @Table(name = "Pet") // Informa que esta classe estará vinculada à Table Pet no banco de dados
-public class Pet {
-    
+public class Pets {
+
     @Id // Informa que o ID é a chave primaria
     @GeneratedValue(strategy = GenerationType.SEQUENCE) // Informa que o ID será gerado em sequencia
     private int id;
     private String nome;
-    private String nascimento;
     private String raca;
-    
-    @Column(name="cor")
+    @Column(name = "cor")
     private String cor;
-    private String alergias;
-    private String remedios;
-    private String vacinacao;
+
+    private String nascimento;
     private String rede_social;
     private String tipo_rede;
 
-    public Pet() {
+    private String alergias;
+    private String remedios;
+    private String vacinacao;
+    private String observacoes;
+
+    public Pets() {
     }
 
-    public Pet(int id, String nome, String nascimento, String raca, String cor, String alergias, String remedios, String vacinacao, String rede_social, String tipo_rede) {
+    public Pets(int id, String nome, String raca, String cor, String nascimento, String rede_social, String tipo_rede, String alergias, String remedios, String vacinacao, String observacoes) {
         this.id = id;
         this.nome = nome;
-        this.nascimento = nascimento;
         this.raca = raca;
         this.cor = cor;
+        this.nascimento = nascimento;
+        this.rede_social = rede_social;
+        this.tipo_rede = tipo_rede;
         this.alergias = alergias;
         this.remedios = remedios;
         this.vacinacao = vacinacao;
-        this.rede_social = rede_social;
-        this.tipo_rede = tipo_rede;
+        this.observacoes = observacoes;
     }
 
     public int getId() {
@@ -121,23 +124,28 @@ public class Pet {
     public void setTipo_rede(String tipo_rede) {
         this.tipo_rede = tipo_rede;
     }
-    
+
+    public String getObservacoes() {
+        return observacoes;
+    }
+
+    public void setObservacoes(String observacoes) {
+        this.observacoes = observacoes;
+    }
+
     @Override
     public String toString() {
-        return "ID: " + id +
-                "\nNome: " + nome +
-                "\nNascimento: " + nascimento +
-                "\nRaça: " + raca +
-                "\nCor: " + cor +
-                "\nAlergias: " + alergias +
-                "\nRemédios: " + remedios +
-                "\nVacinação: " + vacinacao +
-                "\nRede Social: " + tipo_rede + " - " + rede_social;
-        }
-    
-    
-    
-    
-    
-    
+        return "Pet ID: " + id + "\n"
+                + "\nNome: " + nome
+                + "\nRaça: " + raca
+                + "\nCor: " + cor
+                + "\nNascimento: " + nascimento
+                + "\nRede Social: " + tipo_rede + " - " + rede_social
+                + "\nAlergias: " + alergias
+                + "\nRemédios: " + remedios
+                + "\nVacinação: " + vacinacao
+                + "\nObservações: " + observacoes;
+
+    }
+
 }

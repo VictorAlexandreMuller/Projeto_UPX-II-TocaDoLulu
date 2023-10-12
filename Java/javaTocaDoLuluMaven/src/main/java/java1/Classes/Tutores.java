@@ -1,35 +1,41 @@
 package java1.Classes;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
 @Table(name = "Tutor")
-public class Tutor {
-    
-    @Id
+public class Tutores {
+
+    @Id // Informa que o ID é a chave primaria
+    @GeneratedValue(strategy = GenerationType.SEQUENCE) // Informa que o ID será gerado em sequencia
+    private int id;
     private String documento_identificador;
     private String tipo_documento;
     private String nome;
-    private char nascimento;
+    private String nascimento;
+    private String endereco;
+
     private int celular;
     private String email;
-    private String endereco;
     private String rede_social;
     private String tipo_rede;
 
-    public Tutor() {
+    public Tutores() {
     }
 
-    public Tutor(String documento_identificador, String tipo_documento, String nome, char nascimento, int celular, String email, String endereco, String rede_social, String tipo_rede) {
+    public Tutores(int id, String documento_identificador, String tipo_documento, String nome, String nascimento, String endereco, int celular, String email, String rede_social, String tipo_rede) {
+        this.id = id;
         this.documento_identificador = documento_identificador;
         this.tipo_documento = tipo_documento;
         this.nome = nome;
         this.nascimento = nascimento;
+        this.endereco = endereco;
         this.celular = celular;
         this.email = email;
-        this.endereco = endereco;
         this.rede_social = rede_social;
         this.tipo_rede = tipo_rede;
     }
@@ -58,11 +64,11 @@ public class Tutor {
         this.nome = nome;
     }
 
-    public char getNascimento() {
+    public String getNascimento() {
         return nascimento;
     }
 
-    public void setNascimento(char nascimento) {
+    public void setNascimento(String nascimento) {
         this.nascimento = nascimento;
     }
 
@@ -105,21 +111,25 @@ public class Tutor {
     public void setTipo_rede(String tipo_rede) {
         this.tipo_rede = tipo_rede;
     }
-    
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
     @Override
     public String toString() {
-        return "Documento: " + tipo_documento + " - " + documento_identificador +
-                "\nNome: " + nome +
-                "\nNascimento: " + nascimento +
-                "\nCelular: " + celular +
-                "\nE-mail: " + email +
-                "\nEndereço: " + endereco +
-                "\nRede Social: " + tipo_rede + " - " + rede_social;
+        return "Tutor ID: " + id + "\n"
+                + "\nNome: " + nome
+                + "\nDocumento: " + tipo_documento + " - " + documento_identificador
+                + "\nNascimento: " + nascimento
+                + "\nEndereço: " + endereco + "\n"
+                + "\nCelular: " + celular
+                + "\nE-mail: " + email
+                + "\nRede Social: " + tipo_rede + " - " + rede_social;
     }
-    
-    
-    
-    
-    
-    
+
 }

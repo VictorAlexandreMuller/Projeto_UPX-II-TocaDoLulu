@@ -7,7 +7,7 @@ import javax.persistence.Persistence;
 public class testesMySQL {
     
     public static void main(String[] args) {
-        Pet pet = new Pet();
+        Pets pet = new Pets();
         pet.setNome("Aurora");
         pet.setNascimento("1900-10-21");
         pet.setRaca("Bullterrier");

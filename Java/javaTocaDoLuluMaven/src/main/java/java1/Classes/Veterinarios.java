@@ -1,33 +1,41 @@
 package java1.Classes;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
 @Table(name = "Veterinario")
-public class Veterinario {
-    
-    @Id
+public class Veterinarios {
+
+    @Id // Informa que o ID é a chave primaria
+    @GeneratedValue(strategy = GenerationType.SEQUENCE) // Informa que o ID será gerado em sequencia
+    private int id;
+    private String nome;
     private String documento_identificador;
     private String tipo_documento;
-    private String nome;
-    private char nascimento;
-    private int celular;
-    private String email;
+    private String crmv;
+    private String nascimento;
     private String endereco;
 
-    public Veterinario() {
+    private int celular;
+    private String email;
+
+    public Veterinarios() {
     }
 
-    public Veterinario(String documento_identificador, String tipo_documento, String nome, char nascimento, int celular, String email, String endereco) {
+    public Veterinarios(int id, String documento_identificador, String tipo_documento, String nome, String crmv, String nascimento, String endereco, int celular, String email) {
+        this.id = id;
         this.documento_identificador = documento_identificador;
         this.tipo_documento = tipo_documento;
         this.nome = nome;
+        this.crmv = crmv;
         this.nascimento = nascimento;
+        this.endereco = endereco;
         this.celular = celular;
         this.email = email;
-        this.endereco = endereco;
     }
 
     public String getDocumento_identificador() {
@@ -54,11 +62,11 @@ public class Veterinario {
         this.nome = nome;
     }
 
-    public char getNascimento() {
+    public String getNascimento() {
         return nascimento;
     }
 
-    public void setNascimento(char nascimento) {
+    public void setNascimento(String nascimento) {
         this.nascimento = nascimento;
     }
 
@@ -85,20 +93,34 @@ public class Veterinario {
     public void setEndereco(String endereco) {
         this.endereco = endereco;
     }
-    
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getCrmv() {
+        return crmv;
+    }
+
+    public void setCrmv(String crmv) {
+        this.crmv = crmv;
+    }
+
     @Override
     public String toString() {
-        return "Documento: " + tipo_documento + " - " + documento_identificador +
-                "\nNome: " + nome +
-                "\nNascimento: " + nascimento +
-                "\nCelular: " + celular +
-                "\nE-mail: " + email +
-                "\nEndereço: " + endereco;
+        return "Veterinário ID: " + id + "\n"
+                + "\nNome: " + nome
+                + "\nDocumento: " + tipo_documento + " - " + documento_identificador
+                + "\nCRMV: " + crmv
+                + "\nNascimento: " + nascimento
+                + "\nEndereço: " + endereco
+                + "\nCelular: " + celular
+                + "\nE-mail: " + email;
+
     }
-    
-    
-    
-    
-    
-    
+
 }

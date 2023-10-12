@@ -2,54 +2,73 @@
 
 # TRABALHO DE USINA DE PROJETOS EXPERIMENTAIS II (UPX II) - TOCA DO LULU (Em desenvolvimento...)
 
-_Classe: Pet_  
+_Classe: Pets_  
 | ---------------------------------- |  
 (-) id : int
 (-) nome : String
-(-) nascimento : String
 (-) raca : String
 (-) cor : String
+(-) nascimento : String
+(-) rede_social : String
+(-) tipo_rede : String
 (-) alergias : String
 (-) remedios : String
 (-) vacinacao : String
-(-) rede_social : String
-(-) tipo_rede : String
 (-) observacoes : String
-(+) Pet(todos)
-(+) Pet()
+(+) Pets(todos)
+(+) Pets()
 (+) Gets...
 (+) Sets...
 (+) toString():String
 
-_Classe: Tutor_  
+_Classe: Tutores_  
 | ---------------------------------- |  
+(-) id : int
 (-) documento_identificador : String
 (-) tipo_documento : String
 (-) nome : String
-(-) nascimento : char
-(-) celular : Int
-(-) email : String
+(-) nascimento : String
 (-) endereco : String
+(-) celular : int
+(-) email : String
 (-) rede_social : String
 (-) tipo_rede : String
-(+) Tutor(todos)
-(+) Tutor()
+(+) Tutores(todos)
+(+) Tutores()
 (+) Gets...
 (+) Sets...
 (+) toString():String
 
-_Classe: Veterinario_  
+_Classe: Veterinarios_  
 | ---------------------------------- |  
+(-) id : int
+(-) nome : String
 (-) documento_identificador : String
 (-) tipo_documento : String
-(-) nome : String
-(-) CRMV : String
-(-) nascimento : char
-(-) celular : Int
-(-) email : String
+(-) crmv : String
+(-) nascimento : String
 (-) endereco : String
-(+) Veterinario(todos)
-(+) Veterinario()
+(-) celular : int
+(-) email : String
+(+) Veterinarios(todos)
+(+) Veterinarios()
+(+) Gets...
+(+) Sets...
+(+) toString():String
+
+_Classe: Servicos_  
+| ---------------------------------- |  
+(-) id : int
+(-) tipo_servico : String
+(-) nome : String
+(-) documento_identificador : String
+(-) tipo_documento : String
+(-) nascimento : String
+(-) endereco : String
+(-) celular : int
+(-) email : String
+(+) Servicos(todos)
+(+) Servicos()
 (+) Gets...
 (+) Sets...
 (+) toString():String
@@ -62,12 +81,13 @@ _Classe: Veterinario_
 # Menus
 
     1- Menu Principal (Botões)
-      - Pet
-      - Tutor
-      - Veterinario
+      - Pets
+      - Tutores
+      - Veterinários
+      - Serviços
       - Sair
 
-      1.1- Menus Pets, Tutores, Veterinários (Botões)
+      1.1- Menus Pets, Tutores, Veterinários e Serviços (Botões)
         - Novo
         - Alterar
         - Deletar
@@ -75,9 +95,9 @@ _Classe: Veterinario_
 
         1.1.1- Menu Novo Pet (Campos e Botões)
           - Nome
-          - Nascimento
           - Raça
           - Cor
+          - Nascimento
           - Tipo de Rede Social
           - Rede Social
           - Alergias
@@ -88,27 +108,39 @@ _Classe: Veterinario_
           - Botão Salvar
 
         1.1.2- Menu Novo Tutor (Campos e Botões)
-          - Documento
-          - Tipo de Documento
           - Nome
+          - Tipo de Documento
+          - Documento
           - Nascimento
+          - Endereço
           - Celular
           - E-mail
-          - Endereço
-          - Rede Social
           - Tipo de Rede Social
+          - Rede Social
           - Botão Voltar
           - Botão Salvar
 
         1.1.3- Menu Novo Veterinário (Campos e Botões)
-          - Documento
-          - Tipo de Documento
           - Nome
+          - Tipo de Documento
+          - Documento
           - CRMV
           - Nascimento
+          - Endereço
           - Celular
           - E-mail
+          - Botão Voltar
+          - Botão Salvar
+
+        1.1.4- Menu Novo Serviço (Campos e Botões)
+          - Tipo de Serviço
+          - Nome
+          - Tipo de Documento
+          - Documento
+          - Nascimento
           - Endereço
+          - Celular
+          - E-mail
           - Botão Voltar
           - Botão Salvar
 
@@ -132,7 +164,7 @@ _Classe: Veterinario_
 
 (NetBeans IDE - Toca do Lulu - Matéria: UPX II - Segundo Semestre ADS - Professor Fabio Colombini)
 
-Última atualização: 04h47 - 03/10/2023.
+Última atualização: 20h02 - 12/10/2023.
 
 ---
 
