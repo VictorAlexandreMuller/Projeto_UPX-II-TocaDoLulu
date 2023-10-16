@@ -1,7 +1,6 @@
 package java2.InicialPanel;
 
 import java.awt.Color;
-import static java.awt.Color.red;
 import java.awt.Image;
 import java.awt.Graphics;
 import java.awt.MenuItem;
@@ -12,7 +11,7 @@ import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JDesktopPane;
-import javax.swing.JMenuItem;
+import javax.swing.JMenu;
 import javax.swing.JPanel;
 
 
@@ -76,13 +75,12 @@ public class Swing_Tela_Inicial extends javax.swing.JFrame {
         jMenuItem1 = new javax.swing.JMenuItem();
         jSeparator1 = new javax.swing.JPopupMenu.Separator();
         MENU_ITEM_SAIR = new javax.swing.JMenuItem();
-        MENU_HEADDER_PRECOS = new javax.swing.JMenu();
+        MENU_HEADDER_OPCOES = new javax.swing.JMenu();
         MENU_ITEM_PRECOS = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMaximumSize(new java.awt.Dimension(1281, 721));
         setMinimumSize(new java.awt.Dimension(1280, 720));
-        setPreferredSize(new java.awt.Dimension(1280, 720));
         setSize(new java.awt.Dimension(1280, 720));
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
@@ -371,9 +369,22 @@ public class Swing_Tela_Inicial extends javax.swing.JFrame {
         jMenuBar1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
         MENU_HEADDER_BUTTON.setBackground(new java.awt.Color(64, 43, 100));
+        MENU_HEADDER_BUTTON.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
         MENU_HEADDER_BUTTON.setForeground(new java.awt.Color(255, 255, 255));
         MENU_HEADDER_BUTTON.setText("Menu");
         MENU_HEADDER_BUTTON.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        MENU_HEADDER_BUTTON.setIconTextGap(13);
+        MENU_HEADDER_BUTTON.setPreferredSize(new java.awt.Dimension(60, 21));
+        MENU_HEADDER_BUTTON.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseMoved(java.awt.event.MouseEvent evt) {
+                MENU_HEADDER_BUTTONMouseMoved(evt);
+            }
+        });
+        MENU_HEADDER_BUTTON.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                MENU_HEADDER_BUTTONMouseExited(evt);
+            }
+        });
 
         MENU_ITEM_PETS.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_P, java.awt.event.InputEvent.CTRL_DOWN_MASK));
         MENU_ITEM_PETS.setBackground(new java.awt.Color(64, 43, 100));
@@ -435,18 +446,39 @@ public class Swing_Tela_Inicial extends javax.swing.JFrame {
 
         jMenuBar1.add(MENU_HEADDER_BUTTON);
 
-        MENU_HEADDER_PRECOS.setBackground(new java.awt.Color(64, 43, 100));
-        MENU_HEADDER_PRECOS.setForeground(new java.awt.Color(255, 255, 255));
-        MENU_HEADDER_PRECOS.setText("Opções");
-        MENU_HEADDER_PRECOS.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        MENU_HEADDER_OPCOES.setBackground(new java.awt.Color(64, 43, 100));
+        MENU_HEADDER_OPCOES.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
+        MENU_HEADDER_OPCOES.setForeground(new java.awt.Color(255, 255, 255));
+        MENU_HEADDER_OPCOES.setText("Opções");
+        MENU_HEADDER_OPCOES.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        MENU_HEADDER_OPCOES.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        MENU_HEADDER_OPCOES.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        MENU_HEADDER_OPCOES.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        MENU_HEADDER_OPCOES.setIconTextGap(8);
+        MENU_HEADDER_OPCOES.setInheritsPopupMenu(true);
+        MENU_HEADDER_OPCOES.setMinimumSize(new java.awt.Dimension(60, 21));
+        MENU_HEADDER_OPCOES.setPreferredSize(new java.awt.Dimension(60, 21));
+        MENU_HEADDER_OPCOES.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        MENU_HEADDER_OPCOES.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
+        MENU_HEADDER_OPCOES.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseMoved(java.awt.event.MouseEvent evt) {
+                MENU_HEADDER_OPCOESMouseMoved(evt);
+            }
+        });
+        MENU_HEADDER_OPCOES.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                MENU_HEADDER_OPCOESMouseExited(evt);
+            }
+        });
 
+        MENU_ITEM_PRECOS.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_4, java.awt.event.InputEvent.CTRL_DOWN_MASK));
         MENU_ITEM_PRECOS.setBackground(new java.awt.Color(64, 43, 100));
         MENU_ITEM_PRECOS.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         MENU_ITEM_PRECOS.setForeground(new java.awt.Color(255, 255, 255));
         MENU_ITEM_PRECOS.setText("Preços");
-        MENU_HEADDER_PRECOS.add(MENU_ITEM_PRECOS);
+        MENU_HEADDER_OPCOES.add(MENU_ITEM_PRECOS);
 
-        jMenuBar1.add(MENU_HEADDER_PRECOS);
+        jMenuBar1.add(MENU_HEADDER_OPCOES);
 
         setJMenuBar(jMenuBar1);
 
@@ -495,7 +527,7 @@ public class Swing_Tela_Inicial extends javax.swing.JFrame {
     
     
     
-    // 
+    // NavBar
     private void MENU_ITEM_SAIRActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MENU_ITEM_SAIRActionPerformed
         System.exit(0);
     }//GEN-LAST:event_MENU_ITEM_SAIRActionPerformed
@@ -536,6 +568,14 @@ public class Swing_Tela_Inicial extends javax.swing.JFrame {
         panel.setBackground(new Color(175,175,226));
     }
     
+    void MovedMENUColor(JMenu menu){
+        menu.setBackground(new Color(204,204,255));
+    }
+    
+    void ExitedMENUColor(JMenu menu){
+        menu.setBackground(new Color(64,43,100));
+    }
+          
     // Moved, Pressed and Exiters -------------------------------------------------------------------
     
     private void panel_button_sairMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panel_button_sairMousePressed
@@ -646,7 +686,32 @@ public class Swing_Tela_Inicial extends javax.swing.JFrame {
         MovedColor(panel_button_sair);
     }//GEN-LAST:event_panel_button_sairMouseReleased
 
+    private void MENU_HEADDER_BUTTONMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MENU_HEADDER_BUTTONMouseMoved
+        MENU_HEADDER_BUTTON.setOpaque(true);
+        MovedMENUColor(MENU_HEADDER_BUTTON);
+    }//GEN-LAST:event_MENU_HEADDER_BUTTONMouseMoved
+
+    private void MENU_HEADDER_OPCOESMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MENU_HEADDER_OPCOESMouseMoved
+        MENU_HEADDER_OPCOES.setOpaque(true);
+        MovedMENUColor(MENU_HEADDER_OPCOES);
+    }//GEN-LAST:event_MENU_HEADDER_OPCOESMouseMoved
+
+    private void MENU_HEADDER_BUTTONMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MENU_HEADDER_BUTTONMouseExited
+        MENU_HEADDER_BUTTON.setOpaque(true);
+        ExitedMENUColor(MENU_HEADDER_BUTTON);
+    }//GEN-LAST:event_MENU_HEADDER_BUTTONMouseExited
+
+    private void MENU_HEADDER_OPCOESMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MENU_HEADDER_OPCOESMouseExited
+        MENU_HEADDER_OPCOES.setOpaque(true);
+        ExitedMENUColor(MENU_HEADDER_OPCOES);
+    }//GEN-LAST:event_MENU_HEADDER_OPCOESMouseExited
     
+    // -> Borda True e false para MouseMoved e MouseExited
+    // MENU_HEADDER_BUTTON.setBorderPainted(true);
+    // Border whiteline = BorderFactory.createLineBorder(Color.white);
+    // MENU_HEADDER_BUTTON.setBorder(whiteline);
+        
+    // MENU_HEADDER_BUTTON.setBorderPainted(false);
     
     
     
@@ -684,7 +749,7 @@ public class Swing_Tela_Inicial extends javax.swing.JFrame {
          */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Windows Classic".equals(info.getName())) {
+                if ("Metal".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
                 }
@@ -707,11 +772,11 @@ public class Swing_Tela_Inicial extends javax.swing.JFrame {
             }
         });
     }
-
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JDesktopPane DesktopPaneControl;
     private javax.swing.JMenu MENU_HEADDER_BUTTON;
-    private javax.swing.JMenu MENU_HEADDER_PRECOS;
+    private javax.swing.JMenu MENU_HEADDER_OPCOES;
     private javax.swing.JMenuItem MENU_ITEM_PETS;
     private javax.swing.JMenuItem MENU_ITEM_PRECOS;
     private javax.swing.JMenuItem MENU_ITEM_SAIR;
