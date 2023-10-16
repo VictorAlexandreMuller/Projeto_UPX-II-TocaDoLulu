@@ -13,6 +13,7 @@ import javax.swing.JLabel;
 import javax.swing.JDesktopPane;
 import javax.swing.JMenu;
 import javax.swing.JPanel;
+import java1.Login.Login;
 
 
 public class Swing_Tela_Inicial extends javax.swing.JFrame {
@@ -36,9 +37,7 @@ public class Swing_Tela_Inicial extends javax.swing.JFrame {
         SetImageLabel(label_icon_dog_init, "src/main/java/Imagens/icon_dog_init.png");
         ------------------------------------------------------------ */
     }
-        
-        
-    /** WARNING: Do NOT modify this code. */
+    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -74,9 +73,11 @@ public class Swing_Tela_Inicial extends javax.swing.JFrame {
         MENU_ITEM_VETERINARIOS = new javax.swing.JMenuItem();
         jMenuItem1 = new javax.swing.JMenuItem();
         jSeparator1 = new javax.swing.JPopupMenu.Separator();
+        jMenuItem2 = new javax.swing.JMenuItem();
         MENU_ITEM_SAIR = new javax.swing.JMenuItem();
         MENU_HEADDER_OPCOES = new javax.swing.JMenu();
         MENU_ITEM_PRECOS = new javax.swing.JMenuItem();
+        jMenuItem3 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMaximumSize(new java.awt.Dimension(1281, 721));
@@ -112,7 +113,7 @@ public class Swing_Tela_Inicial extends javax.swing.JFrame {
                 panel_button_petsMouseClicked(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                panel_button_petsMouseExited(evt);
+                panel_button_veterinariosMouseExited(evt);
             }
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 panel_button_petsMousePressed(evt);
@@ -156,7 +157,7 @@ public class Swing_Tela_Inicial extends javax.swing.JFrame {
                 panel_button_tutoresMouseClicked(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                panel_button_tutoresMouseExited(evt);
+                panel_button_veterinariosMouseExited(evt);
             }
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 panel_button_tutoresMousePressed(evt);
@@ -244,7 +245,7 @@ public class Swing_Tela_Inicial extends javax.swing.JFrame {
                 panel_button_servicosMouseClicked(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                panel_button_servicosMouseExited(evt);
+                panel_button_veterinariosMouseExited(evt);
             }
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 panel_button_servicosMousePressed(evt);
@@ -288,7 +289,7 @@ public class Swing_Tela_Inicial extends javax.swing.JFrame {
                 panel_button_sairMouseClicked(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                panel_button_sairMouseExited(evt);
+                panel_button_veterinariosMouseExited(evt);
             }
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 panel_button_sairMousePressed(evt);
@@ -302,7 +303,7 @@ public class Swing_Tela_Inicial extends javax.swing.JFrame {
 
         jLabel9.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel9.setText("SAIR");
+        jLabel9.setText("LOGOUT");
 
         javax.swing.GroupLayout panel_button_sairLayout = new javax.swing.GroupLayout(panel_button_sair);
         panel_button_sair.setLayout(panel_button_sairLayout);
@@ -432,7 +433,19 @@ public class Swing_Tela_Inicial extends javax.swing.JFrame {
         jSeparator1.setPreferredSize(new java.awt.Dimension(0, 2));
         MENU_HEADDER_BUTTON.add(jSeparator1);
 
-        MENU_ITEM_SAIR.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_L, java.awt.event.InputEvent.CTRL_DOWN_MASK));
+        jMenuItem2.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_L, java.awt.event.InputEvent.CTRL_DOWN_MASK));
+        jMenuItem2.setBackground(new java.awt.Color(64, 43, 100));
+        jMenuItem2.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jMenuItem2.setForeground(new java.awt.Color(255, 255, 255));
+        jMenuItem2.setText("Logout");
+        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem2ActionPerformed(evt);
+            }
+        });
+        MENU_HEADDER_BUTTON.add(jMenuItem2);
+
+        MENU_ITEM_SAIR.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_Q, java.awt.event.InputEvent.CTRL_DOWN_MASK));
         MENU_ITEM_SAIR.setBackground(new java.awt.Color(64, 43, 100));
         MENU_ITEM_SAIR.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         MENU_ITEM_SAIR.setForeground(new java.awt.Color(255, 255, 255));
@@ -467,7 +480,7 @@ public class Swing_Tela_Inicial extends javax.swing.JFrame {
         });
         MENU_HEADDER_OPCOES.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                MENU_HEADDER_OPCOESMouseExited(evt);
+                MENU_HEADDER_BUTTONMouseExited(evt);
             }
         });
 
@@ -477,6 +490,12 @@ public class Swing_Tela_Inicial extends javax.swing.JFrame {
         MENU_ITEM_PRECOS.setForeground(new java.awt.Color(255, 255, 255));
         MENU_ITEM_PRECOS.setText("Preços");
         MENU_HEADDER_OPCOES.add(MENU_ITEM_PRECOS);
+
+        jMenuItem3.setBackground(new java.awt.Color(64, 43, 100));
+        jMenuItem3.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jMenuItem3.setForeground(new java.awt.Color(255, 255, 255));
+        jMenuItem3.setText("About");
+        MENU_HEADDER_OPCOES.add(jMenuItem3);
 
         jMenuBar1.add(MENU_HEADDER_OPCOES);
 
@@ -496,7 +515,6 @@ public class Swing_Tela_Inicial extends javax.swing.JFrame {
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
-    /** WARNING: Do NOT modify this code. */
     
     /** --------------------------------------------------------
     // Método "SetImageLabel", recebendo dois argumentos, JLabel e uma String 'root' que representa o caminho para uma imagem.
@@ -556,7 +574,7 @@ public class Swing_Tela_Inicial extends javax.swing.JFrame {
     
     // Colors Settings - for - Moved, Pressed, Exiters and Releaseds below --------------------------
     
-    void MovedColor(JPanel panel){
+    void MovedReleasedColor(JPanel panel){
         panel.setBackground(new Color(204,204,255));
     }
     
@@ -568,6 +586,8 @@ public class Swing_Tela_Inicial extends javax.swing.JFrame {
         panel.setBackground(new Color(175,175,226));
     }
     
+    // -------------------------------------------------------------
+    
     void MovedMENUColor(JMenu menu){
         menu.setBackground(new Color(204,204,255));
     }
@@ -576,7 +596,7 @@ public class Swing_Tela_Inicial extends javax.swing.JFrame {
         menu.setBackground(new Color(64,43,100));
     }
           
-    // Moved, Pressed and Exiters -------------------------------------------------------------------
+    // Moved, Pressed  ------------------------------------------------------------------------------
     
     private void panel_button_sairMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panel_button_sairMousePressed
         PressedColor(panel_button_sair);
@@ -595,47 +615,27 @@ public class Swing_Tela_Inicial extends javax.swing.JFrame {
     }//GEN-LAST:event_panel_button_veterinariosMousePressed
    
     private void panel_button_petsMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panel_button_petsMouseMoved
-        MovedColor(panel_button_pets);
+        MovedReleasedColor(panel_button_pets);
     }//GEN-LAST:event_panel_button_petsMouseMoved
     
     private void panel_button_sairMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panel_button_sairMouseMoved
-        MovedColor(panel_button_sair);
+        MovedReleasedColor(panel_button_sair);
     }//GEN-LAST:event_panel_button_sairMouseMoved
-
-    private void panel_button_sairMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panel_button_sairMouseExited
-        ExitedColor(panel_button_sair);
-    }//GEN-LAST:event_panel_button_sairMouseExited
-
-    private void panel_button_petsMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panel_button_petsMouseExited
-        ExitedColor(panel_button_pets);
-    }//GEN-LAST:event_panel_button_petsMouseExited
-
-    private void panel_button_tutoresMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panel_button_tutoresMouseExited
-        ExitedColor(panel_button_tutores);
-    }//GEN-LAST:event_panel_button_tutoresMouseExited
-
-    private void panel_button_veterinariosMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panel_button_veterinariosMouseExited
-        ExitedColor(panel_button_veterinarios);
-    }//GEN-LAST:event_panel_button_veterinariosMouseExited
-
-    private void panel_button_servicosMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panel_button_servicosMouseExited
-        ExitedColor(panel_button_servicos);
-    }//GEN-LAST:event_panel_button_servicosMouseExited
 
     private void panel_button_servicosMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panel_button_servicosMousePressed
         PressedColor(panel_button_servicos);
     }//GEN-LAST:event_panel_button_servicosMousePressed
 
     private void panel_button_tutoresMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panel_button_tutoresMouseMoved
-        MovedColor(panel_button_tutores);
+        MovedReleasedColor(panel_button_tutores);
     }//GEN-LAST:event_panel_button_tutoresMouseMoved
 
     private void panel_button_veterinariosMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panel_button_veterinariosMouseMoved
-        MovedColor(panel_button_veterinarios);
+        MovedReleasedColor(panel_button_veterinarios);
     }//GEN-LAST:event_panel_button_veterinariosMouseMoved
 
     private void panel_button_servicosMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panel_button_servicosMouseMoved
-        MovedColor(panel_button_servicos);
+        MovedReleasedColor(panel_button_servicos);
     }//GEN-LAST:event_panel_button_servicosMouseMoved
 
     // Clickeds Systems -----------------------------------------------------------------------------
@@ -661,29 +661,33 @@ public class Swing_Tela_Inicial extends javax.swing.JFrame {
     }//GEN-LAST:event_panel_button_servicosMouseClicked
 
     private void panel_button_sairMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panel_button_sairMouseClicked
-        System.exit(0);
+        // System.exit(0);
+        
+        Login obj = new Login();
+        obj.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_panel_button_sairMouseClicked
 
-    // Releaseds ------------------------------------------------------------------------------------
+    // Releaseds and Exits Color Buttons ------------------------------------------------------------
     
     private void panel_button_servicosMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panel_button_servicosMouseReleased
-        MovedColor(panel_button_servicos);
+        MovedReleasedColor(panel_button_servicos);
     }//GEN-LAST:event_panel_button_servicosMouseReleased
 
     private void panel_button_veterinariosMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panel_button_veterinariosMouseReleased
-        MovedColor(panel_button_veterinarios);
+        MovedReleasedColor(panel_button_veterinarios);
     }//GEN-LAST:event_panel_button_veterinariosMouseReleased
 
     private void panel_button_tutoresMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panel_button_tutoresMouseReleased
-        MovedColor(panel_button_tutores);
+        MovedReleasedColor(panel_button_tutores);
     }//GEN-LAST:event_panel_button_tutoresMouseReleased
 
     private void panel_button_petsMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panel_button_petsMouseReleased
-        MovedColor(panel_button_pets);
+        MovedReleasedColor(panel_button_pets);
     }//GEN-LAST:event_panel_button_petsMouseReleased
 
     private void panel_button_sairMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panel_button_sairMouseReleased
-        MovedColor(panel_button_sair);
+        MovedReleasedColor(panel_button_sair);
     }//GEN-LAST:event_panel_button_sairMouseReleased
 
     private void MENU_HEADDER_BUTTONMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MENU_HEADDER_BUTTONMouseMoved
@@ -699,12 +703,22 @@ public class Swing_Tela_Inicial extends javax.swing.JFrame {
     private void MENU_HEADDER_BUTTONMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MENU_HEADDER_BUTTONMouseExited
         MENU_HEADDER_BUTTON.setOpaque(true);
         ExitedMENUColor(MENU_HEADDER_BUTTON);
+        ExitedMENUColor(MENU_HEADDER_OPCOES);
     }//GEN-LAST:event_MENU_HEADDER_BUTTONMouseExited
 
-    private void MENU_HEADDER_OPCOESMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MENU_HEADDER_OPCOESMouseExited
-        MENU_HEADDER_OPCOES.setOpaque(true);
-        ExitedMENUColor(MENU_HEADDER_OPCOES);
-    }//GEN-LAST:event_MENU_HEADDER_OPCOESMouseExited
+    private void panel_button_veterinariosMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panel_button_veterinariosMouseExited
+        ExitedColor(panel_button_servicos);
+        ExitedColor(panel_button_veterinarios);
+        ExitedColor(panel_button_tutores);
+        ExitedColor(panel_button_sair);
+        ExitedColor(panel_button_pets);
+    }//GEN-LAST:event_panel_button_veterinariosMouseExited
+
+    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
+        Login obj = new Login();
+        obj.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jMenuItem2ActionPerformed
     
     // -> Borda True e false para MouseMoved e MouseExited
     // MENU_HEADDER_BUTTON.setBorderPainted(true);
@@ -794,6 +808,8 @@ public class Swing_Tela_Inicial extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
+    private javax.swing.JMenuItem jMenuItem2;
+    private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPopupMenu.Separator jSeparator1;

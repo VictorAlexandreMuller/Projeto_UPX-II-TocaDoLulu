@@ -9,6 +9,8 @@ import java.util.List;
 import javax.swing.table.AbstractTableModel;
 import javax.swing.table.TableModel;
 
+// Código referente ao campo de Search nos cadastros.
+
 public class TableModelCreator {
     public static <T> TableModel createTableModel(Class<T> beanClass, List<T> list, List<String> columnsVisible) {
         try {
