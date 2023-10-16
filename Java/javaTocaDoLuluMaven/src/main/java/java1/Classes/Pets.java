@@ -11,6 +11,8 @@ import javax.persistence.Table;
 @Table(name = "Pet") // Informa que esta classe estará vinculada à Table Pet no banco de dados
 public class Pets {
 
+    // Caso haja algum atributo ENUM, é necessário colocar em cima o "@Enumerated(EnumType.STRING) para ele não puxar enumerado por ordem ao banco de dados.
+    
     @Id // Informa que o ID é a chave primaria
     @GeneratedValue(strategy = GenerationType.SEQUENCE) // Informa que o ID será gerado em sequencia
     private int id;

@@ -1,10 +1,12 @@
 package java1.Classes;
 
+import dao.DAO;
+import dao.JPAUtil;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
-public class testesMySQL {
+public class CadastroDePets {
     
     public static void main(String[] args) {
         Pets pet = new Pets();
@@ -13,14 +15,11 @@ public class testesMySQL {
         pet.setRaca("Bullterrier");
         pet.setCor("Branca");
         
-        EntityManagerFactory factory = Persistence.createEntityManagerFactory("toca_do_lulu_upx");
-        EntityManager em = factory.createEntityManager();
+        EntityManager em = JPAUtil.getEntityManager();
+        DAO dao = new DAO(em);
         
         em.getTransaction().begin(); // Inicia a transação no banco de dados
-        
-        // Adiciona as transações que deseja adicionar o banco de dados
-        em.persist(pet);
-        
+        em.persist(pet); // Adiciona as transações que deseja adicionar o banco de dados
         em.getTransaction().commit(); // Envia as transações para o banco de dados
         em.close(); // Fecha a transação para não ficar aberta atoa
     }
