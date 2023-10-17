@@ -51,27 +51,27 @@ public class Cadastro_Pets_JIFF extends javax.swing.JInternalFrame {
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)), " CADASTRO DE PET ", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Gill Sans Ultra Bold", 1, 24), new java.awt.Color(255, 255, 255))); // NOI18N
         jPanel1.setForeground(new java.awt.Color(0, 0, 0));
 
-        jLabel1.setFont(new java.awt.Font("Leelawadee", 1, 14)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Nome");
 
-        jLabel2.setFont(new java.awt.Font("Leelawadee", 1, 14)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Nascimento");
 
-        jLabel3.setFont(new java.awt.Font("Leelawadee", 1, 14)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Raça");
 
-        jLabel4.setFont(new java.awt.Font("Leelawadee", 1, 14)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Cor");
 
-        jLabel8.setFont(new java.awt.Font("Leelawadee", 1, 14)); // NOI18N
+        jLabel8.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(255, 255, 255));
         jLabel8.setText("Rede Social");
 
-        jLabel9.setFont(new java.awt.Font("Leelawadee", 1, 14)); // NOI18N
+        jLabel9.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(255, 255, 255));
         jLabel9.setText("Tipo de Rede Social");
 
@@ -98,7 +98,7 @@ public class Cadastro_Pets_JIFF extends javax.swing.JInternalFrame {
             }
         });
 
-        jLabel5.setFont(new java.awt.Font("Leelawadee", 1, 14)); // NOI18N
+        jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("Alergias");
 
@@ -106,7 +106,7 @@ public class Cadastro_Pets_JIFF extends javax.swing.JInternalFrame {
         txtPET_ALERGIAS.setRows(5);
         jScrollPane3.setViewportView(txtPET_ALERGIAS);
 
-        jLabel6.setFont(new java.awt.Font("Leelawadee", 1, 14)); // NOI18N
+        jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("Remedios");
 
@@ -114,7 +114,7 @@ public class Cadastro_Pets_JIFF extends javax.swing.JInternalFrame {
         txtPET_REMEDIOS.setRows(5);
         jScrollPane2.setViewportView(txtPET_REMEDIOS);
 
-        jLabel7.setFont(new java.awt.Font("Leelawadee", 1, 14)); // NOI18N
+        jLabel7.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jLabel7.setText("Vacinação");
 
@@ -126,7 +126,7 @@ public class Cadastro_Pets_JIFF extends javax.swing.JInternalFrame {
         txtPET_OBSERVACOES.setRows(5);
         jScrollPane4.setViewportView(txtPET_OBSERVACOES);
 
-        jLabel10.setFont(new java.awt.Font("Leelawadee", 1, 14)); // NOI18N
+        jLabel10.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(255, 255, 255));
         jLabel10.setText("Observações");
 

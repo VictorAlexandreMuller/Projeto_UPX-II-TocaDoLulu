@@ -1,4 +1,5 @@
 java3\Panels\Painel_Pets_JIFF$8.class
+java1\Classes\CadastroDePets.class
 java2\InicialPanel\Swing_Tela_Inicial$6.class
 java3\Panels\Painel_Pets_JIFF$12.class
 java2\InicialPanel\Swing_Tela_Inicial$13.class
@@ -10,15 +11,16 @@ java1\Login\Login$4.class
 java3\Panels\Painel_Tutores_JIFF$1.class
 java3\Panels\Painel_Pets_JIFF$5.class
 java2\InicialPanel\Swing_Tela_Inicial$16.class
-java1\Classes\testesMySQL.class
 java3\Panels\Painel_Pets_JIFF$7.class
 java2\InicialPanel\Swing_Tela_Inicial$12.class
+dao\DAO.class
 java1\Login\Login$1.class
 java2\InicialPanel\Swing_Tela_Inicial$19.class
 java2\InicialPanel\Swing_Tela_Inicial$20.class
 java4\Cadastros\NewJDialog$1.class
 java3\Panels\Painel_Tutores_JIFF$4.class
 java2\InicialPanel\Swing_Tela_Inicial$5.class
+dao\JPAUtil.class
 java3\Panels\TableModelCreator.class
 java2\InicialPanel\Swing_Tela_Inicial$15.class
 java1\Login\Register$2.class

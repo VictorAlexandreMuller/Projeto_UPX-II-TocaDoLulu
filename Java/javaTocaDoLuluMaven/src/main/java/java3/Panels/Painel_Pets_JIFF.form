@@ -215,7 +215,7 @@
             <Component class="javax.swing.JLabel" name="return_button">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="C:\Users\PC\Documents\Dev\UPX2-Toca-do-Lulu\Java\javaTocaDoLuluMaven\src\main\java\icons_crud\return_iconN.png"/>
+                  <Image iconType="2" name="C:\Users\victo\Documents\Dev\UPX2-Toca-do-Lulu\Java\javaTocaDoLuluMaven\src\main\java\icons_crud\return_iconN.png"/>
                 </Property>
                 <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
                   <Dimension value="[40, 40]"/>
@@ -279,7 +279,7 @@
             <Component class="javax.swing.JLabel" name="new_button">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="C:\Users\PC\Documents\Dev\UPX2-Toca-do-Lulu\Java\javaTocaDoLuluMaven\src\main\java\icons_crud\new_icon40.png"/>
+                  <Image iconType="2" name="C:\Users\victo\Documents\Dev\UPX2-Toca-do-Lulu\Java\javaTocaDoLuluMaven\src\main\java\icons_crud\new_icon40.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="jLabel1"/>
               </Properties>
@@ -309,6 +309,9 @@
                 </LineBorder>
               </Border>
             </Property>
+            <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+              <Dimension value="[144, 54]"/>
+            </Property>
           </Properties>
           <Events>
             <EventHandler event="mouseMoved" listener="java.awt.event.MouseMotionListener" parameters="java.awt.event.MouseEvent" handler="Panel_Button_EditarMouseMoved"/>
@@ -323,7 +326,7 @@
                       <Component id="edit_button" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="34" max="32767" attributes="0"/>
+                      <EmptySpace pref="36" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -338,7 +341,7 @@
             <Component class="javax.swing.JLabel" name="edit_button">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="C:\Users\PC\Documents\Dev\UPX2-Toca-do-Lulu\Java\javaTocaDoLuluMaven\src\main\java\icons_crud\edit_icon40.png"/>
+                  <Image iconType="2" name="C:\Users\victo\Documents\Dev\UPX2-Toca-do-Lulu\Java\javaTocaDoLuluMaven\src\main\java\icons_crud\edit_icon40.png"/>
                 </Property>
               </Properties>
             </Component>
@@ -366,6 +369,9 @@
                   <Color PropertyName="color" blue="ff" green="ff" red="ff" type="rgb"/>
                 </LineBorder>
               </Border>
+            </Property>
+            <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+              <Dimension value="[144, 54]"/>
             </Property>
           </Properties>
           <Events>
@@ -396,7 +402,7 @@
             <Component class="javax.swing.JLabel" name="delete_button">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="C:\Users\PC\Documents\Dev\UPX2-Toca-do-Lulu\Java\javaTocaDoLuluMaven\src\main\java\icons_crud\delete_icon40.png"/>
+                  <Image iconType="2" name="C:\Users\victo\Documents\Dev\UPX2-Toca-do-Lulu\Java\javaTocaDoLuluMaven\src\main\java\icons_crud\delete_icon40.png"/>
                 </Property>
               </Properties>
             </Component>

@@ -127,7 +127,7 @@ public class Swing_Tela_Inicial extends javax.swing.JFrame {
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("PETS");
 
-        jLabel11.setIcon(new javax.swing.ImageIcon("C:\\Users\\PC\\Documents\\Dev\\UPX2-Toca-do-Lulu\\Java\\javaTocaDoLuluMaven\\src\\main\\java\\icons_init\\dogN_icon.png")); // NOI18N
+        jLabel11.setIcon(new javax.swing.ImageIcon("C:\\Users\\victo\\Documents\\Dev\\UPX2-Toca-do-Lulu\\Java\\javaTocaDoLuluMaven\\src\\main\\java\\icons_init\\dogN_icon.png")); // NOI18N
 
         javax.swing.GroupLayout panel_button_petsLayout = new javax.swing.GroupLayout(panel_button_pets);
         panel_button_pets.setLayout(panel_button_petsLayout);
@@ -171,7 +171,7 @@ public class Swing_Tela_Inicial extends javax.swing.JFrame {
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("TUTORES");
 
-        jLabel4.setIcon(new javax.swing.ImageIcon("C:\\Users\\PC\\Documents\\Dev\\UPX2-Toca-do-Lulu\\Java\\javaTocaDoLuluMaven\\src\\main\\java\\icons_init\\peopleN_icon.png")); // NOI18N
+        jLabel4.setIcon(new javax.swing.ImageIcon("C:\\Users\\victo\\Documents\\Dev\\UPX2-Toca-do-Lulu\\Java\\javaTocaDoLuluMaven\\src\\main\\java\\icons_init\\peopleN_icon.png")); // NOI18N
 
         javax.swing.GroupLayout panel_button_tutoresLayout = new javax.swing.GroupLayout(panel_button_tutores);
         panel_button_tutores.setLayout(panel_button_tutoresLayout);
@@ -215,7 +215,7 @@ public class Swing_Tela_Inicial extends javax.swing.JFrame {
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("VETERINÁRIOS");
 
-        jLabel6.setIcon(new javax.swing.ImageIcon("C:\\Users\\PC\\Documents\\Dev\\UPX2-Toca-do-Lulu\\Java\\javaTocaDoLuluMaven\\src\\main\\java\\icons_init\\syringN_icon.png")); // NOI18N
+        jLabel6.setIcon(new javax.swing.ImageIcon("C:\\Users\\victo\\Documents\\Dev\\UPX2-Toca-do-Lulu\\Java\\javaTocaDoLuluMaven\\src\\main\\java\\icons_init\\syringN_icon.png")); // NOI18N
 
         javax.swing.GroupLayout panel_button_veterinariosLayout = new javax.swing.GroupLayout(panel_button_veterinarios);
         panel_button_veterinarios.setLayout(panel_button_veterinariosLayout);
@@ -259,7 +259,7 @@ public class Swing_Tela_Inicial extends javax.swing.JFrame {
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jLabel7.setText("SERVIÇOS");
 
-        jLabel8.setIcon(new javax.swing.ImageIcon("C:\\Users\\PC\\Documents\\Dev\\UPX2-Toca-do-Lulu\\Java\\javaTocaDoLuluMaven\\src\\main\\java\\icons_init\\servicesN_icon.png")); // NOI18N
+        jLabel8.setIcon(new javax.swing.ImageIcon("C:\\Users\\victo\\Documents\\Dev\\UPX2-Toca-do-Lulu\\Java\\javaTocaDoLuluMaven\\src\\main\\java\\icons_init\\servicesN_icon.png")); // NOI18N
 
         javax.swing.GroupLayout panel_button_servicosLayout = new javax.swing.GroupLayout(panel_button_servicos);
         panel_button_servicos.setLayout(panel_button_servicosLayout);
@@ -299,7 +299,7 @@ public class Swing_Tela_Inicial extends javax.swing.JFrame {
             }
         });
 
-        jLabel10.setIcon(new javax.swing.ImageIcon("C:\\Users\\PC\\Documents\\Dev\\UPX2-Toca-do-Lulu\\Java\\javaTocaDoLuluMaven\\src\\main\\java\\icons_init\\logoutN_icon.png")); // NOI18N
+        jLabel10.setIcon(new javax.swing.ImageIcon("C:\\Users\\victo\\Documents\\Dev\\UPX2-Toca-do-Lulu\\Java\\javaTocaDoLuluMaven\\src\\main\\java\\icons_init\\logoutN_icon.png")); // NOI18N
 
         jLabel9.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(255, 255, 255));
@@ -642,8 +642,19 @@ public class Swing_Tela_Inicial extends javax.swing.JFrame {
     
     private void panel_button_petsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panel_button_petsMouseClicked
         // DesktopPaneControl.removeAll();
-        Painel_Pets_JIFF obj = new Painel_Pets_JIFF(this);
-        DesktopPaneControl.add(obj).setVisible(true);
+        // Painel_Pets_JIFF obj = new Painel_Pets_JIFF(this);
+        // DesktopPaneControl.add(obj).setVisible(true);
+        
+        Painel_Pets_JIFF t = Painel_Pets_JIFF.getInstance();
+
+        t.pack();
+
+        if(!t.isVisible ()){
+            DesktopPaneControl.add(t);
+            t.setVisible(true);
+        } else{
+            t.moveToFront();
+        }    
     }//GEN-LAST:event_panel_button_petsMouseClicked
 
     private void panel_button_tutoresMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panel_button_tutoresMouseClicked

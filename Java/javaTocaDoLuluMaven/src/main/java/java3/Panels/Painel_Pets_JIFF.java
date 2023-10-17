@@ -37,6 +37,14 @@ public class Painel_Pets_JIFF extends javax.swing.JInternalFrame {
         initComponents();
     }
 
+    private static Painel_Pets_JIFF myInstance;
+
+    public static Painel_Pets_JIFF getInstance() {
+        if (myInstance == null) {
+            myInstance = new Painel_Pets_JIFF();
+        } return myInstance;
+    }
+    
     /** WARNING: Do NOT modify this code. */
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -117,7 +125,7 @@ public class Painel_Pets_JIFF extends javax.swing.JInternalFrame {
             }
         });
 
-        return_button.setIcon(new javax.swing.ImageIcon("C:\\Users\\PC\\Documents\\Dev\\UPX2-Toca-do-Lulu\\Java\\javaTocaDoLuluMaven\\src\\main\\java\\icons_crud\\return_iconN.png")); // NOI18N
+        return_button.setIcon(new javax.swing.ImageIcon("C:\\Users\\victo\\Documents\\Dev\\UPX2-Toca-do-Lulu\\Java\\javaTocaDoLuluMaven\\src\\main\\java\\icons_crud\\return_iconN.png")); // NOI18N
         return_button.setPreferredSize(new java.awt.Dimension(40, 40));
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
@@ -157,7 +165,7 @@ public class Painel_Pets_JIFF extends javax.swing.JInternalFrame {
             }
         });
 
-        new_button.setIcon(new javax.swing.ImageIcon("C:\\Users\\PC\\Documents\\Dev\\UPX2-Toca-do-Lulu\\Java\\javaTocaDoLuluMaven\\src\\main\\java\\icons_crud\\new_icon40.png")); // NOI18N
+        new_button.setIcon(new javax.swing.ImageIcon("C:\\Users\\victo\\Documents\\Dev\\UPX2-Toca-do-Lulu\\Java\\javaTocaDoLuluMaven\\src\\main\\java\\icons_crud\\new_icon40.png")); // NOI18N
         new_button.setText("jLabel1");
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
@@ -184,6 +192,7 @@ public class Painel_Pets_JIFF extends javax.swing.JInternalFrame {
 
         Panel_Button_Editar.setBackground(new java.awt.Color(85, 65, 118));
         Panel_Button_Editar.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
+        Panel_Button_Editar.setPreferredSize(new java.awt.Dimension(144, 54));
         Panel_Button_Editar.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseMoved(java.awt.event.MouseEvent evt) {
                 Panel_Button_EditarMouseMoved(evt);
@@ -195,7 +204,7 @@ public class Painel_Pets_JIFF extends javax.swing.JInternalFrame {
             }
         });
 
-        edit_button.setIcon(new javax.swing.ImageIcon("C:\\Users\\PC\\Documents\\Dev\\UPX2-Toca-do-Lulu\\Java\\javaTocaDoLuluMaven\\src\\main\\java\\icons_crud\\edit_icon40.png")); // NOI18N
+        edit_button.setIcon(new javax.swing.ImageIcon("C:\\Users\\victo\\Documents\\Dev\\UPX2-Toca-do-Lulu\\Java\\javaTocaDoLuluMaven\\src\\main\\java\\icons_crud\\edit_icon40.png")); // NOI18N
 
         jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
@@ -210,7 +219,7 @@ public class Painel_Pets_JIFF extends javax.swing.JInternalFrame {
                 .addComponent(edit_button)
                 .addGap(18, 18, 18)
                 .addComponent(jLabel3)
-                .addContainerGap(34, Short.MAX_VALUE))
+                .addContainerGap(36, Short.MAX_VALUE))
         );
         Panel_Button_EditarLayout.setVerticalGroup(
             Panel_Button_EditarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -220,6 +229,7 @@ public class Painel_Pets_JIFF extends javax.swing.JInternalFrame {
 
         Panel_Button_Deletar.setBackground(new java.awt.Color(85, 65, 118));
         Panel_Button_Deletar.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
+        Panel_Button_Deletar.setPreferredSize(new java.awt.Dimension(144, 54));
         Panel_Button_Deletar.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseMoved(java.awt.event.MouseEvent evt) {
                 Panel_Button_DeletarMouseMoved(evt);
@@ -231,7 +241,7 @@ public class Painel_Pets_JIFF extends javax.swing.JInternalFrame {
             }
         });
 
-        delete_button.setIcon(new javax.swing.ImageIcon("C:\\Users\\PC\\Documents\\Dev\\UPX2-Toca-do-Lulu\\Java\\javaTocaDoLuluMaven\\src\\main\\java\\icons_crud\\delete_icon40.png")); // NOI18N
+        delete_button.setIcon(new javax.swing.ImageIcon("C:\\Users\\victo\\Documents\\Dev\\UPX2-Toca-do-Lulu\\Java\\javaTocaDoLuluMaven\\src\\main\\java\\icons_crud\\delete_icon40.png")); // NOI18N
 
         jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
