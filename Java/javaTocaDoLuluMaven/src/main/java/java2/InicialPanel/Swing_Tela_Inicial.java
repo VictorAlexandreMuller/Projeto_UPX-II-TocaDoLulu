@@ -52,20 +52,20 @@ public class Swing_Tela_Inicial extends javax.swing.JFrame {
         ;
         jPanel2 = new javax.swing.JPanel();
         panel_button_pets = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel11 = new javax.swing.JLabel();
+        PETS = new javax.swing.JLabel();
+        icon_PETS = new javax.swing.JLabel();
         panel_button_tutores = new javax.swing.JPanel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
+        TUTORES = new javax.swing.JLabel();
+        icon_TUTORES = new javax.swing.JLabel();
         panel_button_veterinarios = new javax.swing.JPanel();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
+        VETERINARIOS = new javax.swing.JLabel();
+        icon_VETERINARIOS = new javax.swing.JLabel();
         panel_button_servicos = new javax.swing.JPanel();
-        jLabel7 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
+        SERVICOS = new javax.swing.JLabel();
+        icon_SERVICOS = new javax.swing.JLabel();
         panel_button_sair = new javax.swing.JPanel();
-        jLabel10 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
+        icon_LOGOUT = new javax.swing.JLabel();
+        LOGOUT = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         MENU_HEADDER_BUTTON = new javax.swing.JMenu();
         MENU_ITEM_PETS = new javax.swing.JMenuItem();
@@ -123,11 +123,11 @@ public class Swing_Tela_Inicial extends javax.swing.JFrame {
             }
         });
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("PETS");
+        PETS.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        PETS.setForeground(new java.awt.Color(255, 255, 255));
+        PETS.setText("PETS");
 
-        jLabel11.setIcon(new javax.swing.ImageIcon("C:\\Users\\victo\\Documents\\Dev\\UPX2-Toca-do-Lulu\\Java\\javaTocaDoLuluMaven\\src\\main\\java\\icons_init\\dogN_icon.png")); // NOI18N
+        icon_PETS.setIcon(new javax.swing.ImageIcon("C:\\Users\\PC\\Documents\\Dev\\UPX2-Toca-do-Lulu\\Java\\javaTocaDoLuluMaven\\src\\main\\java\\icons_init\\pets_icon40.png")); // NOI18N
 
         javax.swing.GroupLayout panel_button_petsLayout = new javax.swing.GroupLayout(panel_button_pets);
         panel_button_pets.setLayout(panel_button_petsLayout);
@@ -135,15 +135,15 @@ public class Swing_Tela_Inicial extends javax.swing.JFrame {
             panel_button_petsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panel_button_petsLayout.createSequentialGroup()
                 .addGap(42, 42, 42)
-                .addComponent(jLabel11)
+                .addComponent(icon_PETS)
                 .addGap(18, 18, 18)
-                .addComponent(jLabel1)
+                .addComponent(PETS)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         panel_button_petsLayout.setVerticalGroup(
             panel_button_petsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(jLabel11, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
+            .addComponent(PETS, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(icon_PETS, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
         );
 
         panel_button_tutores.setBackground(new java.awt.Color(85, 65, 118));
@@ -167,11 +167,11 @@ public class Swing_Tela_Inicial extends javax.swing.JFrame {
             }
         });
 
-        jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel3.setText("TUTORES");
+        TUTORES.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        TUTORES.setForeground(new java.awt.Color(255, 255, 255));
+        TUTORES.setText("TUTORES");
 
-        jLabel4.setIcon(new javax.swing.ImageIcon("C:\\Users\\victo\\Documents\\Dev\\UPX2-Toca-do-Lulu\\Java\\javaTocaDoLuluMaven\\src\\main\\java\\icons_init\\peopleN_icon.png")); // NOI18N
+        icon_TUTORES.setIcon(new javax.swing.ImageIcon("C:\\Users\\PC\\Documents\\Dev\\UPX2-Toca-do-Lulu\\Java\\javaTocaDoLuluMaven\\src\\main\\java\\icons_init\\tutores_icon40.png")); // NOI18N
 
         javax.swing.GroupLayout panel_button_tutoresLayout = new javax.swing.GroupLayout(panel_button_tutores);
         panel_button_tutores.setLayout(panel_button_tutoresLayout);
@@ -179,15 +179,15 @@ public class Swing_Tela_Inicial extends javax.swing.JFrame {
             panel_button_tutoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panel_button_tutoresLayout.createSequentialGroup()
                 .addGap(42, 42, 42)
-                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(icon_TUTORES, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel3)
+                .addComponent(TUTORES)
                 .addContainerGap(48, Short.MAX_VALUE))
         );
         panel_button_tutoresLayout.setVerticalGroup(
             panel_button_tutoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
+            .addComponent(TUTORES, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(icon_TUTORES, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
         );
 
         panel_button_veterinarios.setBackground(new java.awt.Color(85, 65, 118));
@@ -211,11 +211,11 @@ public class Swing_Tela_Inicial extends javax.swing.JFrame {
             }
         });
 
-        jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel5.setText("VETERINÁRIOS");
+        VETERINARIOS.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        VETERINARIOS.setForeground(new java.awt.Color(255, 255, 255));
+        VETERINARIOS.setText("VETERINÁRIOS");
 
-        jLabel6.setIcon(new javax.swing.ImageIcon("C:\\Users\\victo\\Documents\\Dev\\UPX2-Toca-do-Lulu\\Java\\javaTocaDoLuluMaven\\src\\main\\java\\icons_init\\syringN_icon.png")); // NOI18N
+        icon_VETERINARIOS.setIcon(new javax.swing.ImageIcon("C:\\Users\\PC\\Documents\\Dev\\UPX2-Toca-do-Lulu\\Java\\javaTocaDoLuluMaven\\src\\main\\java\\icons_init\\veterinarios_icon40.png")); // NOI18N
 
         javax.swing.GroupLayout panel_button_veterinariosLayout = new javax.swing.GroupLayout(panel_button_veterinarios);
         panel_button_veterinarios.setLayout(panel_button_veterinariosLayout);
@@ -223,15 +223,15 @@ public class Swing_Tela_Inicial extends javax.swing.JFrame {
             panel_button_veterinariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panel_button_veterinariosLayout.createSequentialGroup()
                 .addGap(36, 36, 36)
-                .addComponent(jLabel6)
+                .addComponent(icon_VETERINARIOS)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel5)
+                .addComponent(VETERINARIOS)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         panel_button_veterinariosLayout.setVerticalGroup(
             panel_button_veterinariosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel6, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
-            .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(icon_VETERINARIOS, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
+            .addComponent(VETERINARIOS, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         panel_button_servicos.setBackground(new java.awt.Color(85, 65, 118));
@@ -255,11 +255,11 @@ public class Swing_Tela_Inicial extends javax.swing.JFrame {
             }
         });
 
-        jLabel7.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel7.setText("SERVIÇOS");
+        SERVICOS.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        SERVICOS.setForeground(new java.awt.Color(255, 255, 255));
+        SERVICOS.setText("SERVIÇOS");
 
-        jLabel8.setIcon(new javax.swing.ImageIcon("C:\\Users\\victo\\Documents\\Dev\\UPX2-Toca-do-Lulu\\Java\\javaTocaDoLuluMaven\\src\\main\\java\\icons_init\\servicesN_icon.png")); // NOI18N
+        icon_SERVICOS.setIcon(new javax.swing.ImageIcon("C:\\Users\\PC\\Documents\\Dev\\UPX2-Toca-do-Lulu\\Java\\javaTocaDoLuluMaven\\src\\main\\java\\icons_init\\servicos_icon40.png")); // NOI18N
 
         javax.swing.GroupLayout panel_button_servicosLayout = new javax.swing.GroupLayout(panel_button_servicos);
         panel_button_servicos.setLayout(panel_button_servicosLayout);
@@ -267,15 +267,15 @@ public class Swing_Tela_Inicial extends javax.swing.JFrame {
             panel_button_servicosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panel_button_servicosLayout.createSequentialGroup()
                 .addGap(42, 42, 42)
-                .addComponent(jLabel8)
+                .addComponent(icon_SERVICOS)
                 .addGap(18, 18, 18)
-                .addComponent(jLabel7)
+                .addComponent(SERVICOS)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         panel_button_servicosLayout.setVerticalGroup(
             panel_button_servicosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
-            .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(icon_SERVICOS, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
+            .addComponent(SERVICOS, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         panel_button_sair.setBackground(new java.awt.Color(85, 65, 118));
@@ -299,11 +299,11 @@ public class Swing_Tela_Inicial extends javax.swing.JFrame {
             }
         });
 
-        jLabel10.setIcon(new javax.swing.ImageIcon("C:\\Users\\victo\\Documents\\Dev\\UPX2-Toca-do-Lulu\\Java\\javaTocaDoLuluMaven\\src\\main\\java\\icons_init\\logoutN_icon.png")); // NOI18N
+        icon_LOGOUT.setIcon(new javax.swing.ImageIcon("C:\\Users\\PC\\Documents\\Dev\\UPX2-Toca-do-Lulu\\Java\\javaTocaDoLuluMaven\\src\\main\\java\\icons_init\\logout_icon40.png")); // NOI18N
 
-        jLabel9.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel9.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel9.setText("LOGOUT");
+        LOGOUT.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        LOGOUT.setForeground(new java.awt.Color(255, 255, 255));
+        LOGOUT.setText("LOGOUT");
 
         javax.swing.GroupLayout panel_button_sairLayout = new javax.swing.GroupLayout(panel_button_sair);
         panel_button_sair.setLayout(panel_button_sairLayout);
@@ -311,15 +311,15 @@ public class Swing_Tela_Inicial extends javax.swing.JFrame {
             panel_button_sairLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panel_button_sairLayout.createSequentialGroup()
                 .addGap(46, 46, 46)
-                .addComponent(jLabel10)
+                .addComponent(icon_LOGOUT)
                 .addGap(18, 18, 18)
-                .addComponent(jLabel9)
+                .addComponent(LOGOUT)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         panel_button_sairLayout.setVerticalGroup(
             panel_button_sairLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, 49, Short.MAX_VALUE)
-            .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(icon_LOGOUT, javax.swing.GroupLayout.DEFAULT_SIZE, 49, Short.MAX_VALUE)
+            .addComponent(LOGOUT, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
@@ -800,6 +800,7 @@ public class Swing_Tela_Inicial extends javax.swing.JFrame {
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JDesktopPane DesktopPaneControl;
+    private javax.swing.JLabel LOGOUT;
     private javax.swing.JMenu MENU_HEADDER_BUTTON;
     private javax.swing.JMenu MENU_HEADDER_OPCOES;
     private javax.swing.JMenuItem MENU_ITEM_PETS;
@@ -807,16 +808,15 @@ public class Swing_Tela_Inicial extends javax.swing.JFrame {
     private javax.swing.JMenuItem MENU_ITEM_SAIR;
     private javax.swing.JMenuItem MENU_ITEM_TUTORES;
     private javax.swing.JMenuItem MENU_ITEM_VETERINARIOS;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
+    private javax.swing.JLabel PETS;
+    private javax.swing.JLabel SERVICOS;
+    private javax.swing.JLabel TUTORES;
+    private javax.swing.JLabel VETERINARIOS;
+    private javax.swing.JLabel icon_LOGOUT;
+    private javax.swing.JLabel icon_PETS;
+    private javax.swing.JLabel icon_SERVICOS;
+    private javax.swing.JLabel icon_TUTORES;
+    private javax.swing.JLabel icon_VETERINARIOS;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem2;

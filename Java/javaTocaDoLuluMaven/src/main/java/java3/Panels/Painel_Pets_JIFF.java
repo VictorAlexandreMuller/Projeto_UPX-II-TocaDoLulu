@@ -54,17 +54,17 @@ public class Painel_Pets_JIFF extends javax.swing.JInternalFrame {
         jScrollPane4 = new javax.swing.JScrollPane();
         TABLE_PETS___ = new javax.swing.JTable();
         Panel_Button_Voltar = new javax.swing.JPanel();
-        return_button = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
+        icon_VOLTAR = new javax.swing.JLabel();
+        VOLTAR = new javax.swing.JLabel();
         Panel_Button_Novo = new javax.swing.JPanel();
-        new_button = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
+        icon_NOVO = new javax.swing.JLabel();
+        NOVO = new javax.swing.JLabel();
         Panel_Button_Editar = new javax.swing.JPanel();
-        edit_button = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
+        icon_EDITAR = new javax.swing.JLabel();
+        EDITAR = new javax.swing.JLabel();
         Panel_Button_Deletar = new javax.swing.JPanel();
-        delete_button = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
+        icon_DELETAR = new javax.swing.JLabel();
+        DELETAR = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
         txtSEARCH = new javax.swing.JTextField();
         jSeparator2 = new javax.swing.JSeparator();
@@ -125,12 +125,12 @@ public class Painel_Pets_JIFF extends javax.swing.JInternalFrame {
             }
         });
 
-        return_button.setIcon(new javax.swing.ImageIcon("C:\\Users\\victo\\Documents\\Dev\\UPX2-Toca-do-Lulu\\Java\\javaTocaDoLuluMaven\\src\\main\\java\\icons_crud\\return_iconN.png")); // NOI18N
-        return_button.setPreferredSize(new java.awt.Dimension(40, 40));
+        icon_VOLTAR.setIcon(new javax.swing.ImageIcon("C:\\Users\\PC\\Documents\\Dev\\UPX2-Toca-do-Lulu\\Java\\javaTocaDoLuluMaven\\src\\main\\java\\icons_crud\\voltar_icon40.png")); // NOI18N
+        icon_VOLTAR.setPreferredSize(new java.awt.Dimension(40, 40));
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("Voltar");
+        VOLTAR.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        VOLTAR.setForeground(new java.awt.Color(255, 255, 255));
+        VOLTAR.setText("Voltar");
 
         javax.swing.GroupLayout Panel_Button_VoltarLayout = new javax.swing.GroupLayout(Panel_Button_Voltar);
         Panel_Button_Voltar.setLayout(Panel_Button_VoltarLayout);
@@ -138,19 +138,20 @@ public class Painel_Pets_JIFF extends javax.swing.JInternalFrame {
             Panel_Button_VoltarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(Panel_Button_VoltarLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(return_button, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(icon_VOLTAR, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jLabel1)
+                .addComponent(VOLTAR)
                 .addContainerGap(39, Short.MAX_VALUE))
         );
         Panel_Button_VoltarLayout.setVerticalGroup(
             Panel_Button_VoltarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(return_button, javax.swing.GroupLayout.DEFAULT_SIZE, 52, Short.MAX_VALUE)
+            .addComponent(VOLTAR, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(icon_VOLTAR, javax.swing.GroupLayout.DEFAULT_SIZE, 52, Short.MAX_VALUE)
         );
 
         Panel_Button_Novo.setBackground(new java.awt.Color(85, 65, 118));
         Panel_Button_Novo.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
+        Panel_Button_Novo.setPreferredSize(new java.awt.Dimension(145, 54));
         Panel_Button_Novo.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseMoved(java.awt.event.MouseEvent evt) {
                 Panel_Button_NovoMouseMoved(evt);
@@ -165,12 +166,11 @@ public class Painel_Pets_JIFF extends javax.swing.JInternalFrame {
             }
         });
 
-        new_button.setIcon(new javax.swing.ImageIcon("C:\\Users\\victo\\Documents\\Dev\\UPX2-Toca-do-Lulu\\Java\\javaTocaDoLuluMaven\\src\\main\\java\\icons_crud\\new_icon40.png")); // NOI18N
-        new_button.setText("jLabel1");
+        icon_NOVO.setIcon(new javax.swing.ImageIcon("C:\\Users\\PC\\Documents\\Dev\\UPX2-Toca-do-Lulu\\Java\\javaTocaDoLuluMaven\\src\\main\\java\\icons_crud\\novo_icon40.png")); // NOI18N
 
-        jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setText("Novo");
+        NOVO.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        NOVO.setForeground(new java.awt.Color(255, 255, 255));
+        NOVO.setText("Novo");
 
         javax.swing.GroupLayout Panel_Button_NovoLayout = new javax.swing.GroupLayout(Panel_Button_Novo);
         Panel_Button_Novo.setLayout(Panel_Button_NovoLayout);
@@ -178,21 +178,23 @@ public class Painel_Pets_JIFF extends javax.swing.JInternalFrame {
             Panel_Button_NovoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(Panel_Button_NovoLayout.createSequentialGroup()
                 .addGap(16, 16, 16)
-                .addComponent(new_button, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(icon_NOVO, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jLabel2)
-                .addContainerGap(38, Short.MAX_VALUE))
+                .addComponent(NOVO)
+                .addContainerGap(39, Short.MAX_VALUE))
         );
         Panel_Button_NovoLayout.setVerticalGroup(
             Panel_Button_NovoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(Panel_Button_NovoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                .addComponent(new_button, javax.swing.GroupLayout.DEFAULT_SIZE, 52, Short.MAX_VALUE)
-                .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(Panel_Button_NovoLayout.createSequentialGroup()
+                .addGroup(Panel_Button_NovoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(NOVO, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(icon_NOVO, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 52, Short.MAX_VALUE))
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         Panel_Button_Editar.setBackground(new java.awt.Color(85, 65, 118));
         Panel_Button_Editar.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
-        Panel_Button_Editar.setPreferredSize(new java.awt.Dimension(144, 54));
+        Panel_Button_Editar.setPreferredSize(new java.awt.Dimension(145, 54));
         Panel_Button_Editar.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseMoved(java.awt.event.MouseEvent evt) {
                 Panel_Button_EditarMouseMoved(evt);
@@ -204,11 +206,11 @@ public class Painel_Pets_JIFF extends javax.swing.JInternalFrame {
             }
         });
 
-        edit_button.setIcon(new javax.swing.ImageIcon("C:\\Users\\victo\\Documents\\Dev\\UPX2-Toca-do-Lulu\\Java\\javaTocaDoLuluMaven\\src\\main\\java\\icons_crud\\edit_icon40.png")); // NOI18N
+        icon_EDITAR.setIcon(new javax.swing.ImageIcon("C:\\Users\\PC\\Documents\\Dev\\UPX2-Toca-do-Lulu\\Java\\javaTocaDoLuluMaven\\src\\main\\java\\icons_crud\\alterar_icon40.png")); // NOI18N
 
-        jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel3.setText("Editar");
+        EDITAR.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        EDITAR.setForeground(new java.awt.Color(255, 255, 255));
+        EDITAR.setText("Alterar");
 
         javax.swing.GroupLayout Panel_Button_EditarLayout = new javax.swing.GroupLayout(Panel_Button_Editar);
         Panel_Button_Editar.setLayout(Panel_Button_EditarLayout);
@@ -216,20 +218,20 @@ public class Painel_Pets_JIFF extends javax.swing.JInternalFrame {
             Panel_Button_EditarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(Panel_Button_EditarLayout.createSequentialGroup()
                 .addGap(16, 16, 16)
-                .addComponent(edit_button)
+                .addComponent(icon_EDITAR, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jLabel3)
-                .addContainerGap(36, Short.MAX_VALUE))
+                .addComponent(EDITAR)
+                .addContainerGap(30, Short.MAX_VALUE))
         );
         Panel_Button_EditarLayout.setVerticalGroup(
             Panel_Button_EditarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(edit_button, javax.swing.GroupLayout.DEFAULT_SIZE, 52, Short.MAX_VALUE)
-            .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(icon_EDITAR, javax.swing.GroupLayout.DEFAULT_SIZE, 52, Short.MAX_VALUE)
+            .addComponent(EDITAR, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         Panel_Button_Deletar.setBackground(new java.awt.Color(85, 65, 118));
         Panel_Button_Deletar.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
-        Panel_Button_Deletar.setPreferredSize(new java.awt.Dimension(144, 54));
+        Panel_Button_Deletar.setPreferredSize(new java.awt.Dimension(145, 54));
         Panel_Button_Deletar.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseMoved(java.awt.event.MouseEvent evt) {
                 Panel_Button_DeletarMouseMoved(evt);
@@ -241,11 +243,11 @@ public class Painel_Pets_JIFF extends javax.swing.JInternalFrame {
             }
         });
 
-        delete_button.setIcon(new javax.swing.ImageIcon("C:\\Users\\victo\\Documents\\Dev\\UPX2-Toca-do-Lulu\\Java\\javaTocaDoLuluMaven\\src\\main\\java\\icons_crud\\delete_icon40.png")); // NOI18N
+        icon_DELETAR.setIcon(new javax.swing.ImageIcon("C:\\Users\\PC\\Documents\\Dev\\UPX2-Toca-do-Lulu\\Java\\javaTocaDoLuluMaven\\src\\main\\java\\icons_crud\\deletar_icon40.png")); // NOI18N
 
-        jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel4.setText("Deletar");
+        DELETAR.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        DELETAR.setForeground(new java.awt.Color(255, 255, 255));
+        DELETAR.setText("Deletar");
 
         javax.swing.GroupLayout Panel_Button_DeletarLayout = new javax.swing.GroupLayout(Panel_Button_Deletar);
         Panel_Button_Deletar.setLayout(Panel_Button_DeletarLayout);
@@ -253,15 +255,15 @@ public class Painel_Pets_JIFF extends javax.swing.JInternalFrame {
             Panel_Button_DeletarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(Panel_Button_DeletarLayout.createSequentialGroup()
                 .addGap(16, 16, 16)
-                .addComponent(delete_button)
+                .addComponent(icon_DELETAR, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jLabel4)
-                .addContainerGap(26, Short.MAX_VALUE))
+                .addComponent(DELETAR)
+                .addContainerGap(27, Short.MAX_VALUE))
         );
         Panel_Button_DeletarLayout.setVerticalGroup(
             Panel_Button_DeletarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(delete_button, javax.swing.GroupLayout.DEFAULT_SIZE, 52, Short.MAX_VALUE)
-            .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(icon_DELETAR, javax.swing.GroupLayout.DEFAULT_SIZE, 52, Short.MAX_VALUE)
+            .addComponent(DELETAR, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         jSeparator1.setBackground(new java.awt.Color(51, 51, 51));
@@ -288,12 +290,13 @@ public class Painel_Pets_JIFF extends javax.swing.JInternalFrame {
         });
 
         jPanel6.setBackground(new java.awt.Color(175, 175, 226));
+        jPanel6.setPreferredSize(new java.awt.Dimension(10, 14));
 
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
         jPanel6Layout.setHorizontalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 13, Short.MAX_VALUE)
+            .addGap(0, 10, Short.MAX_VALUE)
         );
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -320,7 +323,7 @@ public class Painel_Pets_JIFF extends javax.swing.JInternalFrame {
                     .addComponent(jSeparator1)
                     .addGroup(DesktopPaneControl_PetsLayout.createSequentialGroup()
                         .addComponent(Panel_Button_Voltar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
+                        .addGap(12, 12, 12)
                         .addComponent(Panel_Button_Novo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(Panel_Button_Editar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -328,7 +331,7 @@ public class Painel_Pets_JIFF extends javax.swing.JInternalFrame {
                         .addComponent(Panel_Button_Deletar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(9, 9, 9)
                 .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(17, 17, 17)
                 .addGroup(DesktopPaneControl_PetsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(txtSEARCH, javax.swing.GroupLayout.PREFERRED_SIZE, 216, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 216, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -472,24 +475,24 @@ public class Painel_Pets_JIFF extends javax.swing.JInternalFrame {
     
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel DELETAR;
     private javax.swing.JDesktopPane DesktopPaneControl_Pets;
+    private javax.swing.JLabel EDITAR;
+    private javax.swing.JLabel NOVO;
     private javax.swing.JPanel Panel_Button_Deletar;
     private javax.swing.JPanel Panel_Button_Editar;
     private javax.swing.JPanel Panel_Button_Novo;
     private javax.swing.JPanel Panel_Button_Voltar;
     private javax.swing.JTable TABLE_PETS___;
-    private javax.swing.JLabel delete_button;
-    private javax.swing.JLabel edit_button;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel VOLTAR;
+    private javax.swing.JLabel icon_DELETAR;
+    private javax.swing.JLabel icon_EDITAR;
+    private javax.swing.JLabel icon_NOVO;
+    private javax.swing.JLabel icon_VOLTAR;
     private javax.swing.JPanel jPanel6;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
-    private javax.swing.JLabel new_button;
-    private javax.swing.JLabel return_button;
     private javax.swing.JTextField txtSEARCH;
     // End of variables declaration//GEN-END:variables
 }
