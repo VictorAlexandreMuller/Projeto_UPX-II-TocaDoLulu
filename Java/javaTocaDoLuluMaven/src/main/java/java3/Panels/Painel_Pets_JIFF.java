@@ -6,6 +6,7 @@ import java.util.stream.Collectors;
 import java1.Classes.Pets;
 import java2.InicialPanel.Swing_Tela_Inicial;
 import java4.Cadastros.Cadastro_Pets_JIFF;
+import java.awt.Font;
 import javax.swing.Action;
 import javax.swing.BorderFactory;
 import javax.swing.Icon;
@@ -35,6 +36,21 @@ public class Painel_Pets_JIFF extends javax.swing.JInternalFrame {
     
     public Painel_Pets_JIFF() {
         initComponents();
+        addPlaceholderStyle(txtSEARCH);
+    }
+    
+    public void addPlaceholderStyle(JTextField textField){
+        Font font = textField.getFont();
+        font = font.deriveFont(Font.ITALIC);
+        textField.setFont(font);
+        textField.setForeground(Color.gray);
+    }
+    
+    public void removePlaceholderStyle(JTextField textField){
+        Font font = textField.getFont();
+        font = font.deriveFont(Font.PLAIN|Font.BOLD);
+        textField.setFont(font);
+        textField.setForeground(Color.black);
     }
 
     private static Painel_Pets_JIFF myInstance;
@@ -45,7 +61,6 @@ public class Painel_Pets_JIFF extends javax.swing.JInternalFrame {
         } return myInstance;
     }
     
-    /** WARNING: Do NOT modify this code. */
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -125,7 +140,7 @@ public class Painel_Pets_JIFF extends javax.swing.JInternalFrame {
             }
         });
 
-        icon_VOLTAR.setIcon(new javax.swing.ImageIcon("C:\\Users\\victo\\Documents\\Dev\\UPX2-Toca-do-Lulu\\Java\\javaTocaDoLuluMaven\\src\\main\\java\\icons_crud\\voltar_icon40.png")); // NOI18N
+        icon_VOLTAR.setIcon(new javax.swing.ImageIcon("C:\\Users\\PC\\Documents\\Dev\\UPX2-Toca-do-Lulu\\Java\\javaTocaDoLuluMaven\\src\\main\\java\\icons_crud\\voltar_icon40.png")); // NOI18N
         icon_VOLTAR.setPreferredSize(new java.awt.Dimension(40, 40));
 
         VOLTAR.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
@@ -166,7 +181,7 @@ public class Painel_Pets_JIFF extends javax.swing.JInternalFrame {
             }
         });
 
-        icon_NOVO.setIcon(new javax.swing.ImageIcon("C:\\Users\\victo\\Documents\\Dev\\UPX2-Toca-do-Lulu\\Java\\javaTocaDoLuluMaven\\src\\main\\java\\icons_crud\\novo_icon40.png")); // NOI18N
+        icon_NOVO.setIcon(new javax.swing.ImageIcon("C:\\Users\\PC\\Documents\\Dev\\UPX2-Toca-do-Lulu\\Java\\javaTocaDoLuluMaven\\src\\main\\java\\icons_crud\\novo_icon40.png")); // NOI18N
 
         NOVO.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         NOVO.setForeground(new java.awt.Color(255, 255, 255));
@@ -206,7 +221,7 @@ public class Painel_Pets_JIFF extends javax.swing.JInternalFrame {
             }
         });
 
-        icon_EDITAR.setIcon(new javax.swing.ImageIcon("C:\\Users\\victo\\Documents\\Dev\\UPX2-Toca-do-Lulu\\Java\\javaTocaDoLuluMaven\\src\\main\\java\\icons_crud\\alterar_icon40.png")); // NOI18N
+        icon_EDITAR.setIcon(new javax.swing.ImageIcon("C:\\Users\\PC\\Documents\\Dev\\UPX2-Toca-do-Lulu\\Java\\javaTocaDoLuluMaven\\src\\main\\java\\icons_crud\\alterar_icon40.png")); // NOI18N
 
         EDITAR.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         EDITAR.setForeground(new java.awt.Color(255, 255, 255));
@@ -243,7 +258,7 @@ public class Painel_Pets_JIFF extends javax.swing.JInternalFrame {
             }
         });
 
-        icon_DELETAR.setIcon(new javax.swing.ImageIcon("C:\\Users\\victo\\Documents\\Dev\\UPX2-Toca-do-Lulu\\Java\\javaTocaDoLuluMaven\\src\\main\\java\\icons_crud\\deletar_icon40.png")); // NOI18N
+        icon_DELETAR.setIcon(new javax.swing.ImageIcon("C:\\Users\\PC\\Documents\\Dev\\UPX2-Toca-do-Lulu\\Java\\javaTocaDoLuluMaven\\src\\main\\java\\icons_crud\\deletar_icon40.png")); // NOI18N
 
         DELETAR.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         DELETAR.setForeground(new java.awt.Color(255, 255, 255));
@@ -271,11 +286,20 @@ public class Painel_Pets_JIFF extends javax.swing.JInternalFrame {
 
         txtSEARCH.setBackground(new java.awt.Color(85, 65, 118));
         txtSEARCH.setForeground(new java.awt.Color(255, 255, 255));
+        txtSEARCH.setText("  Procurar");
         txtSEARCH.setToolTipText("");
         txtSEARCH.setDisabledTextColor(new java.awt.Color(255, 255, 255));
         txtSEARCH.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseMoved(java.awt.event.MouseEvent evt) {
                 txtSEARCHMouseMoved(evt);
+            }
+        });
+        txtSEARCH.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                txtSEARCHFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                txtSEARCHFocusLost(evt);
             }
         });
         txtSEARCH.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -394,11 +418,6 @@ public class Painel_Pets_JIFF extends javax.swing.JInternalFrame {
         // PROFESSOR POO ----------------------
     }//GEN-LAST:event_Panel_Button_NovoMouseClicked
     
-    
-    
-    
-    
-    
 
     
     ArrayList <Pets> listaPets = new ArrayList<>();
@@ -466,8 +485,21 @@ public class Painel_Pets_JIFF extends javax.swing.JInternalFrame {
         ExitedButtonColor(Panel_Button_Novo);
         ExitedButtonColor(Panel_Button_Editar);
     }//GEN-LAST:event_Panel_Button_DeletarMouseExited
-    
-    
+
+    private void txtSEARCHFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtSEARCHFocusGained
+        if(txtSEARCH.getText().equals("  Procurar")){
+            txtSEARCH.setText(null);
+            txtSEARCH.requestFocus();
+            removePlaceholderStyle(txtSEARCH);
+        }
+    }//GEN-LAST:event_txtSEARCHFocusGained
+
+    private void txtSEARCHFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtSEARCHFocusLost
+        if(txtSEARCH.getText().length()==0){
+            addPlaceholderStyle(txtSEARCH);
+            txtSEARCH.setText("  Procurar");
+        }
+    }//GEN-LAST:event_txtSEARCHFocusLost
     
     
     
