@@ -26,18 +26,17 @@ public class Veterinarios {
     public Veterinarios() {
     }
 
-    public Veterinarios(int id, String documento_identificador, String tipo_documento, String nome, String crmv, String nascimento, String endereco, int celular, String email) {
-        this.id = id;
+    public Veterinarios(String nome, String documento_identificador, String tipo_documento, String crmv, String nascimento, String endereco, int celular, String email) {
+        this.nome = nome;
         this.documento_identificador = documento_identificador;
         this.tipo_documento = tipo_documento;
-        this.nome = nome;
         this.crmv = crmv;
         this.nascimento = nascimento;
         this.endereco = endereco;
         this.celular = celular;
         this.email = email;
     }
-
+    
     public String getDocumento_identificador() {
         return documento_identificador;
     }

@@ -27,8 +27,7 @@ public class Tutores {
     public Tutores() {
     }
 
-    public Tutores(int id, String documento_identificador, String tipo_documento, String nome, String nascimento, String endereco, int celular, String email, String rede_social, String tipo_rede) {
-        this.id = id;
+    public Tutores(String documento_identificador, String tipo_documento, String nome, String nascimento, String endereco, int celular, String email, String rede_social, String tipo_rede) {
         this.documento_identificador = documento_identificador;
         this.tipo_documento = tipo_documento;
         this.nome = nome;
@@ -39,7 +38,7 @@ public class Tutores {
         this.rede_social = rede_social;
         this.tipo_rede = tipo_rede;
     }
-
+    
     public String getDocumento_identificador() {
         return documento_identificador;
     }

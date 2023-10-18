@@ -26,18 +26,17 @@ public class Servicos {
     public Servicos() {
     }
 
-    public Servicos(int id, String nome, String documento_identificador, String tipo_documento, String tipo_servico, String nascimento, String endereco, int celular, String email) {
-        this.id = id;
+    public Servicos(String tipo_servico, String nome, String documento_identificador, String tipo_documento, String nascimento, String endereco, int celular, String email) {
+        this.tipo_servico = tipo_servico;
         this.nome = nome;
         this.documento_identificador = documento_identificador;
         this.tipo_documento = tipo_documento;
-        this.tipo_servico = tipo_servico;
         this.nascimento = nascimento;
         this.endereco = endereco;
         this.celular = celular;
         this.email = email;
     }
-
+    
     public int getId() {
         return id;
     }

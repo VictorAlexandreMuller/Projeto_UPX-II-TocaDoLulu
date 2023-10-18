@@ -34,9 +34,9 @@ public class Pets {
     public Pets() {
     }
 
-    public Pets(int id, String nome, String raca, String cor, String nascimento, String rede_social, String tipo_rede, String alergias, String remedios, String vacinacao, String observacoes) {
-        this.id = id;
+    public Pets(String nome, char sexo, String raca, String cor, String nascimento, String rede_social, String tipo_rede, String alergias, String remedios, String vacinacao, String observacoes) {
         this.nome = nome;
+        this.sexo = sexo;
         this.raca = raca;
         this.cor = cor;
         this.nascimento = nascimento;
@@ -64,6 +64,14 @@ public class Pets {
         this.nome = nome;
     }
 
+    public char getSexo() {
+        return sexo;
+    }
+
+    public void setSexo(char sexo) {
+        this.sexo = sexo;
+    }
+    
     public String getNascimento() {
         return nascimento;
     }
@@ -140,6 +148,7 @@ public class Pets {
     public String toString() {
         return "Pet ID: " + id + "\n"
                 + "\nNome: " + nome
+                + "\nSexo: " + sexo
                 + "\nRaça: " + raca
                 + "\nCor: " + cor
                 + "\nNascimento: " + nascimento
