@@ -17,6 +17,7 @@ public class Pets {
     @GeneratedValue(strategy = GenerationType.SEQUENCE) // Informa que o ID será gerado em sequencia
     private int id;
     private String nome;
+    private char sexo;
     private String raca;
     @Column(name = "cor")
     private String cor;

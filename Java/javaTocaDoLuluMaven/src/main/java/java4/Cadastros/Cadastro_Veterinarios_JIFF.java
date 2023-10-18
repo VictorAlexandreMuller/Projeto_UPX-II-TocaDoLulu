@@ -27,13 +27,13 @@ public class Cadastro_Veterinarios_JIFF extends javax.swing.JInternalFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
+        DOCUMENTO = new javax.swing.JLabel();
+        TIPODOCUMENTO = new javax.swing.JLabel();
+        NOME = new javax.swing.JLabel();
+        NASCIMENTO = new javax.swing.JLabel();
+        CELULAR = new javax.swing.JLabel();
+        EMAIL = new javax.swing.JLabel();
+        ENDERECO = new javax.swing.JLabel();
         BOTAO_VOLTAR___ = new javax.swing.JButton();
         BOTAO_SALVAR___ = new javax.swing.JButton();
         txtVETERINARIO_DOCUMENTO = new javax.swing.JTextField();
@@ -43,46 +43,48 @@ public class Cadastro_Veterinarios_JIFF extends javax.swing.JInternalFrame {
         txtVETERINARIO_ENDERECO = new javax.swing.JTextField();
         txtVETERINARIO_EMAIL = new javax.swing.JTextField();
         txtVETERINARIO_CELULAR = new javax.swing.JTextField();
-        jLabel8 = new javax.swing.JLabel();
+        CRMV = new javax.swing.JLabel();
         txtVETERINARIO_CRMV = new javax.swing.JTextField();
 
+        setBackground(new java.awt.Color(45, 18, 72));
         setClosable(true);
         setIconifiable(true);
         setTitle(" Cadastro de Veterinários");
 
-        jPanel1.setBackground(new java.awt.Color(87, 149, 151));
-        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)), "Cadastro de Veterinário", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Gill Sans Ultra Bold", 1, 24), new java.awt.Color(255, 255, 255))); // NOI18N
+        jPanel1.setBackground(new java.awt.Color(45, 18, 72));
+        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)), " Cadastro de Veterinário ", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Gill Sans Ultra Bold", 1, 24), new java.awt.Color(255, 255, 255))); // NOI18N
         jPanel1.setForeground(new java.awt.Color(255, 255, 255));
 
-        jLabel3.setFont(new java.awt.Font("Leelawadee", 1, 14)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel3.setText("Documento");
+        DOCUMENTO.setFont(new java.awt.Font("Leelawadee", 1, 14)); // NOI18N
+        DOCUMENTO.setForeground(new java.awt.Color(255, 255, 255));
+        DOCUMENTO.setText("Documento");
 
-        jLabel4.setFont(new java.awt.Font("Leelawadee", 1, 14)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel4.setText("Tipo de Documento");
+        TIPODOCUMENTO.setFont(new java.awt.Font("Leelawadee", 1, 14)); // NOI18N
+        TIPODOCUMENTO.setForeground(new java.awt.Color(255, 255, 255));
+        TIPODOCUMENTO.setText("Tipo de Documento");
 
-        jLabel1.setFont(new java.awt.Font("Leelawadee", 1, 14)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("Nome");
+        NOME.setFont(new java.awt.Font("Leelawadee", 1, 14)); // NOI18N
+        NOME.setForeground(new java.awt.Color(255, 255, 255));
+        NOME.setText("Nome");
 
-        jLabel2.setFont(new java.awt.Font("Leelawadee", 1, 14)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setText("Nascimento");
+        NASCIMENTO.setFont(new java.awt.Font("Leelawadee", 1, 14)); // NOI18N
+        NASCIMENTO.setForeground(new java.awt.Color(255, 255, 255));
+        NASCIMENTO.setText("Nascimento");
 
-        jLabel6.setFont(new java.awt.Font("Leelawadee", 1, 14)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel6.setText("Celular");
+        CELULAR.setFont(new java.awt.Font("Leelawadee", 1, 14)); // NOI18N
+        CELULAR.setForeground(new java.awt.Color(255, 255, 255));
+        CELULAR.setText("Celular");
 
-        jLabel5.setFont(new java.awt.Font("Leelawadee", 1, 14)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel5.setText("E-mail");
+        EMAIL.setFont(new java.awt.Font("Leelawadee", 1, 14)); // NOI18N
+        EMAIL.setForeground(new java.awt.Color(255, 255, 255));
+        EMAIL.setText("E-mail");
 
-        jLabel7.setFont(new java.awt.Font("Leelawadee", 1, 14)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel7.setText("Endereço");
+        ENDERECO.setFont(new java.awt.Font("Leelawadee", 1, 14)); // NOI18N
+        ENDERECO.setForeground(new java.awt.Color(255, 255, 255));
+        ENDERECO.setText("Endereço");
 
-        BOTAO_VOLTAR___.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
+        BOTAO_VOLTAR___.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
+        BOTAO_VOLTAR___.setForeground(new java.awt.Color(0, 0, 0));
         BOTAO_VOLTAR___.setText("Voltar");
         BOTAO_VOLTAR___.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -90,9 +92,24 @@ public class Cadastro_Veterinarios_JIFF extends javax.swing.JInternalFrame {
             }
         });
 
-        BOTAO_SALVAR___.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
+        BOTAO_SALVAR___.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
+        BOTAO_SALVAR___.setForeground(new java.awt.Color(0, 0, 0));
         BOTAO_SALVAR___.setText("Salvar");
 
+        txtVETERINARIO_DOCUMENTO.setBackground(new java.awt.Color(86, 76, 106));
+        txtVETERINARIO_DOCUMENTO.setForeground(new java.awt.Color(255, 255, 255));
+        txtVETERINARIO_DOCUMENTO.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
+
+        txtVETERINARIO_TIPODOCUMENTO.setBackground(new java.awt.Color(86, 76, 106));
+        txtVETERINARIO_TIPODOCUMENTO.setForeground(new java.awt.Color(255, 255, 255));
+        txtVETERINARIO_TIPODOCUMENTO.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
+
+        txtVETERINARIO_NOME.setBackground(new java.awt.Color(86, 76, 106));
+        txtVETERINARIO_NOME.setForeground(new java.awt.Color(255, 255, 255));
+        txtVETERINARIO_NOME.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
+
+        txtVETERINARIO_NASCIMENTO.setBackground(new java.awt.Color(86, 76, 106));
+        txtVETERINARIO_NASCIMENTO.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
         try {
             txtVETERINARIO_NASCIMENTO.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##/##/####")));
         } catch (java.text.ParseException ex) {
@@ -100,43 +117,58 @@ public class Cadastro_Veterinarios_JIFF extends javax.swing.JInternalFrame {
         }
         txtVETERINARIO_NASCIMENTO.setHorizontalAlignment(javax.swing.JTextField.CENTER);
 
-        jLabel8.setFont(new java.awt.Font("Leelawadee", 1, 14)); // NOI18N
-        jLabel8.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel8.setText("CRMV");
+        txtVETERINARIO_ENDERECO.setBackground(new java.awt.Color(86, 76, 106));
+        txtVETERINARIO_ENDERECO.setForeground(new java.awt.Color(255, 255, 255));
+        txtVETERINARIO_ENDERECO.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
+
+        txtVETERINARIO_EMAIL.setBackground(new java.awt.Color(86, 76, 106));
+        txtVETERINARIO_EMAIL.setForeground(new java.awt.Color(255, 255, 255));
+        txtVETERINARIO_EMAIL.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
+
+        txtVETERINARIO_CELULAR.setBackground(new java.awt.Color(86, 76, 106));
+        txtVETERINARIO_CELULAR.setForeground(new java.awt.Color(255, 255, 255));
+        txtVETERINARIO_CELULAR.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
+
+        CRMV.setFont(new java.awt.Font("Leelawadee", 1, 14)); // NOI18N
+        CRMV.setForeground(new java.awt.Color(255, 255, 255));
+        CRMV.setText("CRMV");
+
+        txtVETERINARIO_CRMV.setBackground(new java.awt.Color(86, 76, 106));
+        txtVETERINARIO_CRMV.setForeground(new java.awt.Color(255, 255, 255));
+        txtVETERINARIO_CRMV.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(34, 34, 34)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(42, 42, 42)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel3)
-                            .addComponent(jLabel4)
-                            .addComponent(jLabel6)
-                            .addComponent(jLabel7)
-                            .addComponent(jLabel5)
-                            .addComponent(jLabel2)
-                            .addComponent(jLabel1)
-                            .addComponent(jLabel8))
-                        .addGap(88, 88, 88)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(txtVETERINARIO_EMAIL, javax.swing.GroupLayout.DEFAULT_SIZE, 250, Short.MAX_VALUE)
-                            .addComponent(txtVETERINARIO_ENDERECO)
-                            .addComponent(txtVETERINARIO_DOCUMENTO)
-                            .addComponent(txtVETERINARIO_CELULAR)
-                            .addComponent(txtVETERINARIO_TIPODOCUMENTO)
-                            .addComponent(txtVETERINARIO_NOME)
-                            .addComponent(txtVETERINARIO_NASCIMENTO, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtVETERINARIO_CRMV)))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(126, 126, 126)
-                        .addComponent(BOTAO_VOLTAR___, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(100, 100, 100)
-                        .addComponent(BOTAO_SALVAR___, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(42, Short.MAX_VALUE))
+                    .addComponent(DOCUMENTO, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(CELULAR, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(ENDERECO, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(EMAIL, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(NASCIMENTO, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(NOME, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(CRMV, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(TIPODOCUMENTO, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(txtVETERINARIO_EMAIL)
+                    .addComponent(txtVETERINARIO_ENDERECO)
+                    .addComponent(txtVETERINARIO_DOCUMENTO)
+                    .addComponent(txtVETERINARIO_CELULAR)
+                    .addComponent(txtVETERINARIO_TIPODOCUMENTO)
+                    .addComponent(txtVETERINARIO_NOME)
+                    .addComponent(txtVETERINARIO_NASCIMENTO, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtVETERINARIO_CRMV))
+                .addContainerGap(34, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(BOTAO_VOLTAR___, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(54, 54, 54)
+                .addComponent(BOTAO_SALVAR___, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(90, 90, 90))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -144,41 +176,42 @@ public class Cadastro_Veterinarios_JIFF extends javax.swing.JInternalFrame {
                 .addGap(23, 23, 23)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(txtVETERINARIO_DOCUMENTO, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel3))
+                        .addComponent(txtVETERINARIO_DOCUMENTO, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(txtVETERINARIO_TIPODOCUMENTO, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel4))
+                        .addComponent(txtVETERINARIO_TIPODOCUMENTO, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(txtVETERINARIO_NOME, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel1))
+                        .addComponent(txtVETERINARIO_NOME, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(19, 19, 19)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel8)
-                            .addComponent(txtVETERINARIO_CRMV, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(txtVETERINARIO_CRMV, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(txtVETERINARIO_NASCIMENTO, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel2))
+                        .addComponent(txtVETERINARIO_NASCIMENTO, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(txtVETERINARIO_CELULAR, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel6))
+                        .addComponent(txtVETERINARIO_CELULAR, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(txtVETERINARIO_EMAIL, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel5))
+                        .addComponent(txtVETERINARIO_EMAIL, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(txtVETERINARIO_ENDERECO, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jLabel7))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 54, Short.MAX_VALUE)
+                        .addComponent(txtVETERINARIO_ENDERECO, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(DOCUMENTO, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(TIPODOCUMENTO, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(NOME, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(19, 19, 19)
+                        .addComponent(CRMV, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(NASCIMENTO, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(CELULAR, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(EMAIL, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(46, 46, 46))
+                    .addComponent(ENDERECO, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 34, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(BOTAO_SALVAR___)
                     .addComponent(BOTAO_VOLTAR___))
-                .addGap(39, 39, 39))
+                .addGap(34, 34, 34))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -186,16 +219,16 @@ public class Cadastro_Veterinarios_JIFF extends javax.swing.JInternalFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(20, 20, 20)
                 .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+                .addGap(20, 20, 20))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+                .addGap(20, 20, 20))
         );
 
         pack();
@@ -209,14 +242,14 @@ public class Cadastro_Veterinarios_JIFF extends javax.swing.JInternalFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BOTAO_SALVAR___;
     private javax.swing.JButton BOTAO_VOLTAR___;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel CELULAR;
+    private javax.swing.JLabel CRMV;
+    private javax.swing.JLabel DOCUMENTO;
+    private javax.swing.JLabel EMAIL;
+    private javax.swing.JLabel ENDERECO;
+    private javax.swing.JLabel NASCIMENTO;
+    private javax.swing.JLabel NOME;
+    private javax.swing.JLabel TIPODOCUMENTO;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JTextField txtVETERINARIO_CELULAR;
     private javax.swing.JTextField txtVETERINARIO_CRMV;

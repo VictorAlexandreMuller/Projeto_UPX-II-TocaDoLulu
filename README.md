@@ -6,6 +6,7 @@ _Classe: Pets_
 | ---------------------------------- |  
 (-) id : int
 (-) nome : String
+(-) sexo : char
 (-) raca : String
 (-) cor : String
 (-) nascimento : String
@@ -95,6 +96,7 @@ _Classe: Servicos_
 
         1.1.1- Menu Novo Pet (Campos e Botões)
           - Nome
+          - Sexo
           - Raça
           - Cor
           - Nascimento
