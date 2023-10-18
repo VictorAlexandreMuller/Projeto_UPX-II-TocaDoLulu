@@ -10,6 +10,7 @@ public class jDialog_Login extends javax.swing.JDialog {
 
     private boolean autenticado = false;
     private String usuario = "";
+    private String senha = "";
 
     public boolean getAutenticado() {
         return autenticado;
@@ -17,6 +18,10 @@ public class jDialog_Login extends javax.swing.JDialog {
 
     public String getUsuario() {
         return usuario;
+    }
+    
+    public String getSenha(){
+        return senha;
     }
     
     public jDialog_Login(java.awt.Frame parent, boolean modal) {
@@ -199,14 +204,15 @@ public class jDialog_Login extends javax.swing.JDialog {
 
     private void LOGINActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LOGINActionPerformed
         // LOGIN
-        if (txtUSERNAME.getText().equals("rafael")) {
+        if (txtUSERNAME.getText().equals("admin") && txtPASSWORD.getText().equals("123")) {
             autenticado = true;
             dispose();
         } else {
-            JOptionPane.showMessageDialog(this, "Usuário errado");
+            JOptionPane.showMessageDialog(this, "Usuário ou senha inválido.");
             autenticado = false;
         }
         // LOGIN
+        
         //Swing_Tela_Inicial obj = new Swing_Tela_Inicial();
         //obj.setVisible(true);
         //this.dispose();
