@@ -7,12 +7,14 @@ import java1.Classes.Pets;
 import java2.InicialPanel.Swing_Tela_Inicial;
 import java4.Cadastros.Cadastro_Pets_JIFF;
 import java.awt.Font;
+import java4.Cadastros.NewJDialog;
 import javax.swing.Action;
 import javax.swing.BorderFactory;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JInternalFrame;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.UIManager;
@@ -409,13 +411,31 @@ public class Painel_Pets_JIFF extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_Panel_Button_VoltarMouseClicked
 
     private void Panel_Button_NovoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Panel_Button_NovoMouseClicked
+        
+        Cadastro_Pets_JIFF t = Cadastro_Pets_JIFF.getInstance();
+
+        t.pack();
+
+        if(!t.isVisible ()){
+            DesktopPaneControl_Pets.add(t);
+            t.setVisible(true);
+        } else{
+            t.moveToFront();
+        }  
+        
+        
+        
+        
+        
+        
+        
         Cadastro_Pets_JIFF obj = new Cadastro_Pets_JIFF();
         DesktopPaneControl_Pets.add(obj).setVisible(true);
 
         // PROFESSOR POO ----------------------
-        // NewJDialog x = new  NewJDialog(pai, true);
+        // NewJDialog x = new NewJDialog(pai, true);
         // x.setVisible(true);
-        // PROFESSOR POO ----------------------
+        // PROFESSOR POO ----------------------        
     }//GEN-LAST:event_Panel_Button_NovoMouseClicked
     
 
