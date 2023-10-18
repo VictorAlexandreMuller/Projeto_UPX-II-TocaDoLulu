@@ -1,12 +1,36 @@
 package java1.Login;
 
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 import java1.Login.Register;
 import java2.InicialPanel.Swing_Tela_Inicial;
+import javax.swing.JOptionPane;
 
-public class Login extends javax.swing.JFrame {
+public class jDialog_Login extends javax.swing.JDialog {
 
-    public Login() {
+    private boolean autenticado = false;
+    private String usuario = "";
+
+    public boolean getAutenticado() {
+        return autenticado;
+    }
+
+    public String getUsuario() {
+        return usuario;
+    }
+    
+    public jDialog_Login(java.awt.Frame parent, boolean modal) {
+        super(parent, modal);
         initComponents();
+        
+        this.addWindowListener(new WindowAdapter() {
+            @Override
+            public void windowClosed(WindowEvent e) {
+                if (!autenticado) {
+                    System.exit(0);
+                }
+            }
+        });
     }
 
     @SuppressWarnings("unchecked")
@@ -24,9 +48,9 @@ public class Login extends javax.swing.JFrame {
         txtUSERNAME = new javax.swing.JTextField();
         LOGIN = new javax.swing.JButton();
         SIGN_UP = new javax.swing.JButton();
-        SIGN_UP1 = new javax.swing.JButton();
+        EXIT = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setResizable(false);
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
@@ -87,13 +111,13 @@ public class Login extends javax.swing.JFrame {
             }
         });
 
-        SIGN_UP1.setBackground(new java.awt.Color(54, 33, 89));
-        SIGN_UP1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        SIGN_UP1.setForeground(new java.awt.Color(255, 255, 255));
-        SIGN_UP1.setText("Exit");
-        SIGN_UP1.addActionListener(new java.awt.event.ActionListener() {
+        EXIT.setBackground(new java.awt.Color(54, 33, 89));
+        EXIT.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        EXIT.setForeground(new java.awt.Color(255, 255, 255));
+        EXIT.setText("Exit");
+        EXIT.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                SIGN_UP1ActionPerformed(evt);
+                EXITActionPerformed(evt);
             }
         });
 
@@ -116,7 +140,7 @@ public class Login extends javax.swing.JFrame {
                     .addComponent(SIGN_UP, javax.swing.GroupLayout.DEFAULT_SIZE, 85, Short.MAX_VALUE)
                     .addComponent(LOGIN, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(181, 181, 181)
-                .addComponent(SIGN_UP1, javax.swing.GroupLayout.DEFAULT_SIZE, 85, Short.MAX_VALUE)
+                .addComponent(EXIT, javax.swing.GroupLayout.DEFAULT_SIZE, 85, Short.MAX_VALUE)
                 .addGap(42, 42, 42))
         );
         jPanel3Layout.setVerticalGroup(
@@ -137,7 +161,7 @@ public class Login extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(SIGN_UP, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(SIGN_UP1, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(EXIT, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(26, Short.MAX_VALUE))
         );
 
@@ -160,7 +184,9 @@ public class Login extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -171,26 +197,34 @@ public class Login extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
+    private void LOGINActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LOGINActionPerformed
+        // LOGIN
+        if (txtUSERNAME.getText().equals("rafael")) {
+            autenticado = true;
+            dispose();
+        } else {
+            JOptionPane.showMessageDialog(this, "Usuário errado");
+            autenticado = false;
+        }
+        // LOGIN
+        //Swing_Tela_Inicial obj = new Swing_Tela_Inicial();
+        //obj.setVisible(true);
+        //this.dispose();
+    }//GEN-LAST:event_LOGINActionPerformed
+
     private void SIGN_UPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SIGN_UPActionPerformed
         Register obj = new Register();
         obj.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_SIGN_UPActionPerformed
 
-    private void LOGINActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LOGINActionPerformed
-        // LOGIN
-        
-        // LOGIN
-        
-        Swing_Tela_Inicial obj = new Swing_Tela_Inicial();
-        obj.setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_LOGINActionPerformed
-
-    private void SIGN_UP1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SIGN_UP1ActionPerformed
+    private void EXITActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EXITActionPerformed
         System.exit(0);
-    }//GEN-LAST:event_SIGN_UP1ActionPerformed
+    }//GEN-LAST:event_EXITActionPerformed
 
+    /**
+     * @param args the command line arguments
+     */
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -199,35 +233,41 @@ public class Login extends javax.swing.JFrame {
          */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Metal".equals(info.getName())) {
+                if ("Nimbus".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(jDialog_Login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(jDialog_Login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(jDialog_Login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(jDialog_Login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
-        //</editor-fold>
 
-        /* Create and display the form */
+        /* Create and display the dialog */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Login().setVisible(true);
+                jDialog_Login dialog = new jDialog_Login(new javax.swing.JFrame(), true);
+                dialog.addWindowListener(new java.awt.event.WindowAdapter() {
+                    @Override
+                    public void windowClosing(java.awt.event.WindowEvent e) {
+                        System.exit(0);
+                    }
+                });
+                dialog.setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton EXIT;
     private javax.swing.JButton LOGIN;
     private javax.swing.JButton SIGN_UP;
-    private javax.swing.JButton SIGN_UP1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

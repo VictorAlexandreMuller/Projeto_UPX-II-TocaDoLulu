@@ -13,7 +13,7 @@ import javax.swing.JLabel;
 import javax.swing.JDesktopPane;
 import javax.swing.JMenu;
 import javax.swing.JPanel;
-import java1.Login.Login;
+import java1.Login.jDialog_Login;
 
 
 public class Swing_Tela_Inicial extends javax.swing.JFrame {
@@ -22,20 +22,13 @@ public class Swing_Tela_Inicial extends javax.swing.JFrame {
     // Construtor da classe Swing_Tela_Inicial.
     public Swing_Tela_Inicial() {
         
-        // Alterar cor plano de fundo jFrame
-        Color color1 = new Color(177,177,139);
-        getContentPane().setBackground(color1);
+        // Acesso de Login
+        jDialog_Login login = new jDialog_Login(null,true);
+        login.setVisible(true);
+        if(login.getAutenticado()){
+            initComponents();
+        }
         
-        // Inicializa os componentes da interface gráfica.
-        initComponents();
-        
-        //Define a posição da janela em relação a outra janela, neste caso, em relação a ela mesma.
-        this.setLocationRelativeTo(this);
-        
-        /** --------------------------------------------------------
-        //Define o diretório da imagem.
-        SetImageLabel(label_icon_dog_init, "src/main/java/Imagens/icon_dog_init.png");
-        ------------------------------------------------------------ */
     }
     
     @SuppressWarnings("unchecked")
@@ -516,62 +509,6 @@ public class Swing_Tela_Inicial extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
     
-    /** --------------------------------------------------------
-    // Método "SetImageLabel", recebendo dois argumentos, JLabel e uma String 'root' que representa o caminho para uma imagem.
-    private void SetImageLabel(JLabel labelName, String root){
-        
-        // Cria um objeto ImageIcon a partir do caminho da imagem especificado em root.
-        ImageIcon image = new ImageIcon(root);
-        
-        // Cria um objeto Icon redimensionando a imagem para o tamanho do JLabel passado como labelName.
-        Icon icon = new ImageIcon(image.getImage().getScaledInstance(labelName.getWidth(), labelName.getHeight(), Image.SCALE_DEFAULT));
-        
-        // Define o ícone do JLabel para a imagem redimensionada.
-        labelName.setIcon(icon);
-        
-        // Solicita a repintura da janela para que a imagem seja exibida corretamente.
-        this.repaint();
-    }
-    ------------------------------------------------------------ */
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    // NavBar
-    private void MENU_ITEM_SAIRActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MENU_ITEM_SAIRActionPerformed
-        System.exit(0);
-    }//GEN-LAST:event_MENU_ITEM_SAIRActionPerformed
-
-    private void MENU_ITEM_PETSActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MENU_ITEM_PETSActionPerformed
-        Painel_Pets_JIFF obj = new Painel_Pets_JIFF();
-        DesktopPaneControl.add(obj).setVisible(true);
-    }//GEN-LAST:event_MENU_ITEM_PETSActionPerformed
-
-    private void MENU_ITEM_TUTORESActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MENU_ITEM_TUTORESActionPerformed
-        Painel_Tutores_JIFF obj = new Painel_Tutores_JIFF();
-        DesktopPaneControl.add(obj).setVisible(true);
-    }//GEN-LAST:event_MENU_ITEM_TUTORESActionPerformed
-
-    private void MENU_ITEM_VETERINARIOSActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MENU_ITEM_VETERINARIOSActionPerformed
-        Painel_Veterinarios_JIFF obj = new Painel_Veterinarios_JIFF();
-        DesktopPaneControl.add(obj).setVisible(true);
-    }//GEN-LAST:event_MENU_ITEM_VETERINARIOSActionPerformed
-    
-    
-    
-    
-    
-    
-    
-    
     // Colors Settings - for - Moved, Pressed, Exiters and Releaseds below --------------------------
     
     void MovedReleasedColor(JPanel panel){
@@ -595,8 +532,31 @@ public class Swing_Tela_Inicial extends javax.swing.JFrame {
     void ExitedMENUColor(JMenu menu){
         menu.setBackground(new Color(64,43,100));
     }
-          
-    // Moved, Pressed  ------------------------------------------------------------------------------
+    
+    // -------------------------------------------------------------
+    
+    // NavBar
+    
+    private void MENU_ITEM_SAIRActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MENU_ITEM_SAIRActionPerformed
+        System.exit(0);
+    }//GEN-LAST:event_MENU_ITEM_SAIRActionPerformed
+
+    private void MENU_ITEM_PETSActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MENU_ITEM_PETSActionPerformed
+        Painel_Pets_JIFF obj = new Painel_Pets_JIFF();
+        DesktopPaneControl.add(obj).setVisible(true);
+    }//GEN-LAST:event_MENU_ITEM_PETSActionPerformed
+
+    private void MENU_ITEM_TUTORESActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MENU_ITEM_TUTORESActionPerformed
+        Painel_Tutores_JIFF obj = new Painel_Tutores_JIFF();
+        DesktopPaneControl.add(obj).setVisible(true);
+    }//GEN-LAST:event_MENU_ITEM_TUTORESActionPerformed
+
+    private void MENU_ITEM_VETERINARIOSActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MENU_ITEM_VETERINARIOSActionPerformed
+        Painel_Veterinarios_JIFF obj = new Painel_Veterinarios_JIFF();
+        DesktopPaneControl.add(obj).setVisible(true);
+    }//GEN-LAST:event_MENU_ITEM_VETERINARIOSActionPerformed
+        
+    // Moved, Pressed
     
     private void panel_button_sairMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panel_button_sairMousePressed
         PressedColor(panel_button_sair);
@@ -638,13 +598,9 @@ public class Swing_Tela_Inicial extends javax.swing.JFrame {
         MovedReleasedColor(panel_button_servicos);
     }//GEN-LAST:event_panel_button_servicosMouseMoved
 
-    // Clickeds Systems -----------------------------------------------------------------------------
+    // Clickeds Systems
     
     private void panel_button_petsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panel_button_petsMouseClicked
-        // DesktopPaneControl.removeAll();
-        // Painel_Pets_JIFF obj = new Painel_Pets_JIFF(this);
-        // DesktopPaneControl.add(obj).setVisible(true);
-        
         Painel_Pets_JIFF t = Painel_Pets_JIFF.getInstance();
 
         t.pack();
@@ -668,18 +624,16 @@ public class Swing_Tela_Inicial extends javax.swing.JFrame {
     }//GEN-LAST:event_panel_button_veterinariosMouseClicked
 
     private void panel_button_servicosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panel_button_servicosMouseClicked
-        // TODO add your handling code here:
+        
     }//GEN-LAST:event_panel_button_servicosMouseClicked
 
     private void panel_button_sairMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panel_button_sairMouseClicked
-        // System.exit(0);
-        
-        Login obj = new Login();
-        obj.setVisible(true);
         this.dispose();
+        jDialog_Login obj = new jDialog_Login(this, rootPaneCheckingEnabled);
+        obj.setVisible(true);
     }//GEN-LAST:event_panel_button_sairMouseClicked
 
-    // Releaseds and Exits Color Buttons ------------------------------------------------------------
+    // Releaseds and Exits Color Buttons
     
     private void panel_button_servicosMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panel_button_servicosMouseReleased
         MovedReleasedColor(panel_button_servicos);
@@ -726,9 +680,9 @@ public class Swing_Tela_Inicial extends javax.swing.JFrame {
     }//GEN-LAST:event_panel_button_veterinariosMouseExited
 
     private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
-        Login obj = new Login();
-        obj.setVisible(true);
         this.dispose();
+        jDialog_Login obj = new jDialog_Login(this, rootPaneCheckingEnabled);
+        obj.setVisible(true);
     }//GEN-LAST:event_jMenuItem2ActionPerformed
     
     // -> Borda True e false para MouseMoved e MouseExited

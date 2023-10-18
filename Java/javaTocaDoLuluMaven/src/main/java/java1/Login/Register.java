@@ -1,6 +1,6 @@
 package java1.Login;
 
-import java1.Login.Login;
+import java1.Login.jDialog_Login;
 
 public class Register extends javax.swing.JFrame {
 
@@ -179,7 +179,7 @@ public class Register extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void BACK_TO_LOGINActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BACK_TO_LOGINActionPerformed
-        Login obj = new Login();
+        jDialog_Login obj = new jDialog_Login(this, rootPaneCheckingEnabled);
         obj.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_BACK_TO_LOGINActionPerformed
