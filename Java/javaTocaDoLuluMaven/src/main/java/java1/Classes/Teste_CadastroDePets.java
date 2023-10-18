@@ -6,7 +6,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
-public class CadastroDePets {
+public class Teste_CadastroDePets {
     
     public static void main(String[] args) {
         Pets pet = new Pets();

@@ -1,4 +1,4 @@
-package java4.Cadastros;
+package java0.TestesTocaDoLulu;
 
 public class NewJDialog extends javax.swing.JDialog {
 

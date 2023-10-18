@@ -7,7 +7,7 @@ import java1.Classes.Pets;
 import java2.InicialPanel.Swing_Tela_Inicial;
 import java4.Cadastros.Cadastro_Pets_JIFF;
 import java.awt.Font;
-import java4.Cadastros.NewJDialog;
+import java0.TestesTocaDoLulu.NewJDialog;
 import javax.swing.Action;
 import javax.swing.BorderFactory;
 import javax.swing.Icon;
@@ -25,16 +25,7 @@ import javax.swing.border.TitledBorder;
 import javax.swing.table.TableModel;
 
 public class Painel_Pets_JIFF extends javax.swing.JInternalFrame {
-
-        
-    // PROFESSOR POO ----------------------
-    JFrame pai;
     
-    public Painel_Pets_JIFF(JFrame framePai) {
-        initComponents();
-        pai = framePai;
-    }
-    // PROFESSOR POO ----------------------
     
     public Painel_Pets_JIFF() {
         initComponents();
@@ -142,7 +133,7 @@ public class Painel_Pets_JIFF extends javax.swing.JInternalFrame {
             }
         });
 
-        icon_VOLTAR.setIcon(new javax.swing.ImageIcon("C:\\Users\\PC\\Documents\\Dev\\UPX2-Toca-do-Lulu\\Java\\javaTocaDoLuluMaven\\src\\main\\java\\icons_crud\\voltar_icon40.png")); // NOI18N
+        icon_VOLTAR.setIcon(new javax.swing.ImageIcon("C:\\Users\\victo\\Documents\\Dev\\UPX2-Toca-do-Lulu\\Java\\javaTocaDoLuluMaven\\src\\main\\java\\icons_crud\\voltar_icon40.png")); // NOI18N
         icon_VOLTAR.setPreferredSize(new java.awt.Dimension(40, 40));
 
         VOLTAR.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
@@ -183,7 +174,7 @@ public class Painel_Pets_JIFF extends javax.swing.JInternalFrame {
             }
         });
 
-        icon_NOVO.setIcon(new javax.swing.ImageIcon("C:\\Users\\PC\\Documents\\Dev\\UPX2-Toca-do-Lulu\\Java\\javaTocaDoLuluMaven\\src\\main\\java\\icons_crud\\novo_icon40.png")); // NOI18N
+        icon_NOVO.setIcon(new javax.swing.ImageIcon("C:\\Users\\victo\\Documents\\Dev\\UPX2-Toca-do-Lulu\\Java\\javaTocaDoLuluMaven\\src\\main\\java\\icons_crud\\novo_icon40.png")); // NOI18N
 
         NOVO.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         NOVO.setForeground(new java.awt.Color(255, 255, 255));
@@ -223,7 +214,7 @@ public class Painel_Pets_JIFF extends javax.swing.JInternalFrame {
             }
         });
 
-        icon_EDITAR.setIcon(new javax.swing.ImageIcon("C:\\Users\\PC\\Documents\\Dev\\UPX2-Toca-do-Lulu\\Java\\javaTocaDoLuluMaven\\src\\main\\java\\icons_crud\\alterar_icon40.png")); // NOI18N
+        icon_EDITAR.setIcon(new javax.swing.ImageIcon("C:\\Users\\victo\\Documents\\Dev\\UPX2-Toca-do-Lulu\\Java\\javaTocaDoLuluMaven\\src\\main\\java\\icons_crud\\alterar_icon40.png")); // NOI18N
 
         EDITAR.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         EDITAR.setForeground(new java.awt.Color(255, 255, 255));
@@ -260,7 +251,7 @@ public class Painel_Pets_JIFF extends javax.swing.JInternalFrame {
             }
         });
 
-        icon_DELETAR.setIcon(new javax.swing.ImageIcon("C:\\Users\\PC\\Documents\\Dev\\UPX2-Toca-do-Lulu\\Java\\javaTocaDoLuluMaven\\src\\main\\java\\icons_crud\\deletar_icon40.png")); // NOI18N
+        icon_DELETAR.setIcon(new javax.swing.ImageIcon("C:\\Users\\victo\\Documents\\Dev\\UPX2-Toca-do-Lulu\\Java\\javaTocaDoLuluMaven\\src\\main\\java\\icons_crud\\deletar_icon40.png")); // NOI18N
 
         DELETAR.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         DELETAR.setForeground(new java.awt.Color(255, 255, 255));
@@ -412,33 +403,22 @@ public class Painel_Pets_JIFF extends javax.swing.JInternalFrame {
 
     private void Panel_Button_NovoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Panel_Button_NovoMouseClicked
         
-        Cadastro_Pets_JIFF t = Cadastro_Pets_JIFF.getInstance();
+        Cadastro_Pets_JIFF p = Cadastro_Pets_JIFF.getInstance();
 
-        t.pack();
+        p.pack();
 
-        if(!t.isVisible ()){
-            DesktopPaneControl_Pets.add(t);
-            t.setVisible(true);
+        if(!p.isVisible ()){
+            DesktopPaneControl_Pets.add(p);
+            p.setVisible(true);
         } else{
-            t.moveToFront();
+            p.moveToFront();
         }  
         
-        
-        
-        
-        
-        
-        
-        Cadastro_Pets_JIFF obj = new Cadastro_Pets_JIFF();
-        DesktopPaneControl_Pets.add(obj).setVisible(true);
-
-        // PROFESSOR POO ----------------------
-        // NewJDialog x = new NewJDialog(pai, true);
-        // x.setVisible(true);
-        // PROFESSOR POO ----------------------        
+        // Cadastro_Pets_JIFF obj = new Cadastro_Pets_JIFF();
+        // DesktopPaneControl_Pets.add(obj).setVisible(true);
     }//GEN-LAST:event_Panel_Button_NovoMouseClicked
     
-
+    
     
     ArrayList <Pets> listaPets = new ArrayList<>();
     
