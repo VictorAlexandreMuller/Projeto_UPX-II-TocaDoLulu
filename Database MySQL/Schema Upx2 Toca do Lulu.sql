@@ -11,9 +11,8 @@ use toca_do_lulu_upx;                      -- Seleciona o banco para os próximo
 -- LOGIN --------------------------
 
 CREATE TABLE Usuarios (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    email VARCHAR(255) NOT NULL,
-    senha VARCHAR(255) NOT NULL
+    email VARCHAR(70) NOT NULL PRIMARY KEY,
+    senha VARCHAR(30) NOT NULL
 );
 -- Comando para inserir os logins no banco de dados.
 -- INSERT INTO usuarios (email, senha) VALUES ('seuemail@example.com', 'senha_hash');
@@ -26,7 +25,7 @@ CREATE TABLE Usuarios (
 -- O Index serve para referenciar a coluna a ser puxada por outra tabela sem este precisar ser uma chave primária
 CREATE TABLE Pets_Planos_Valores (
   	plano VARCHAR(50) NOT NULL PRIMARY KEY,
-	valor DOUBLE,
+	valor DOUBLE(8,2),
     
     INDEX idx_valor (valor)
  );
@@ -36,25 +35,25 @@ CREATE TABLE Pets_Planos_Valores (
 CREATE TABLE Pets (
 	id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
     
-    nome VARCHAR(150) NOT NULL,
+    nome VARCHAR(50) NOT NULL,
     sexo VARCHAR(1) NOT NULL,
-    raca VARCHAR(50) NOT NULL,
-    cor VARCHAR(50) NOT NULL,
+    raca VARCHAR(30) NOT NULL,
+    cor VARCHAR(30) NOT NULL,
     
     nascimento DATE,
     
-    tipo_rede_1 VARCHAR(50),
-    rede_social_1 VARCHAR(100),
-    tipo_rede_2 VARCHAR(50),
-    rede_social_2 VARCHAR(100),
+    tipo_rede_1 VARCHAR(30),
+    rede_social_1 VARCHAR(50),
+    tipo_rede_2 VARCHAR(30),
+    rede_social_2 VARCHAR(50),
     
-    alergias VARCHAR(500),
-    remedios VARCHAR(500),
-    vacinacao VARCHAR(500),
-    observacoes VARCHAR(500),
+    alergias VARCHAR(150),
+    remedios VARCHAR(150),
+    vacinacao VARCHAR(250),
+    observacoes VARCHAR(250),
     
     tipo_plano VARCHAR(50),
-    tipo_valor DOUBLE,
+    tipo_valor DOUBLE(8,2),
     
     FOREIGN KEY (tipo_plano) REFERENCES Pets_Planos_Valores(plano),
     FOREIGN KEY (tipo_valor) REFERENCES Pets_Planos_Valores(valor)
@@ -73,29 +72,29 @@ CREATE TABLE Pets (
 CREATE TABLE Tutores (
 	id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
     
-    nome VARCHAR(150) NOT NULL,
-    tipo_documento VARCHAR(50) NOT NULL,
+    nome VARCHAR(55) NOT NULL,
+    tipo_documento VARCHAR(20) NOT NULL,
 	documento_identificador VARCHAR(50) NOT NULL,
 	nascimento DATE NOT NULL,
     cep INT,
-    logradouro VARCHAR(100) NOT NULL,
+    logradouro VARCHAR(50) NOT NULL,
     numero VARCHAR(10) NOT NULL,
-    bairro VARCHAR(50) NOT NULL,
+    bairro VARCHAR(30) NOT NULL,
     UF VARCHAR(2) NOT NULL,
-    municipio VARCHAR(50) NOT NULL,
-	complemento VARCHAR(50) NOT NULL,
+    municipio VARCHAR(30) NOT NULL,
+	complemento VARCHAR(30) NOT NULL,
     
     ddd_1 INT,
 	celular_1 INT,
     ddd_2 INT,
 	celular_2 INT,
-    email_1 VARCHAR(100),
-    email_2 VARCHAR(100),
-    tipo_rede_1 VARCHAR(50),
-    rede_social_1 VARCHAR(100),
-    tipo_rede_2 VARCHAR(50),
-    rede_social_2 VARCHAR(100),
-    observacoes VARCHAR(500)
+    email_1 VARCHAR(70),
+    email_2 VARCHAR(70),
+    tipo_rede_1 VARCHAR(20),
+    rede_social_1 VARCHAR(40),
+    tipo_rede_2 VARCHAR(20),
+    rede_social_2 VARCHAR(40),
+    observacoes VARCHAR(250)
 );
 
 
@@ -111,27 +110,27 @@ CREATE TABLE Tutores (
 CREATE TABLE Veterinarios (
 	id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
 	
-    nome VARCHAR(150) NOT NULL,
-    tipo_documento VARCHAR(50) NOT NULL,
+    nome VARCHAR(55) NOT NULL,
+    tipo_documento VARCHAR(20) NOT NULL,
 	documento_identificador VARCHAR(50) NOT NULL,
     crmv VARCHAR(20) NOT NULL,
 	nascimento DATE NOT NULL,
     cep INT,
-    logradouro VARCHAR(100) NOT NULL,
+    logradouro VARCHAR(50) NOT NULL,
     numero VARCHAR(10) NOT NULL,
-    bairro VARCHAR(50) NOT NULL,
+    bairro VARCHAR(30) NOT NULL,
     UF VARCHAR(2) NOT NULL,
-    municipio VARCHAR(50) NOT NULL,
-	complemento VARCHAR(50) NOT NULL,
+    municipio VARCHAR(30) NOT NULL,
+	complemento VARCHAR(30) NOT NULL,
     
 	ddd_1 INT,
 	celular_1 INT,
     ddd_2 INT,
 	celular_2 INT,
-    email_1 VARCHAR(100),
-    email_2 VARCHAR(100),
-    valor double,
-    observacoes VARCHAR(500)
+    email_1 VARCHAR(70),
+    email_2 VARCHAR(70),
+    valor double(8,2),
+    observacoes VARCHAR(250)
   );
 
 
@@ -147,27 +146,27 @@ CREATE TABLE Veterinarios (
   CREATE TABLE Servicos (
 	id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
     
-    nome VARCHAR(150) NOT NULL,
+    nome VARCHAR(55) NOT NULL,
     servico VARCHAR(50) NOT NULL,
-    valor DOUBLE NOT NULL,
-    tipo_documento VARCHAR(50) NOT NULL,
+    valor DOUBLE(8,2) NOT NULL,
+    tipo_documento VARCHAR(20) NOT NULL,
     documento_identificador VARCHAR(50) NOT NULL,
     nascimento DATE NOT NULL,
     cep INT,
-    logradouro VARCHAR(100) NOT NULL,
+    logradouro VARCHAR(50) NOT NULL,
     numero VARCHAR(10) NOT NULL,
-    bairro VARCHAR(50) NOT NULL,
+    bairro VARCHAR(30) NOT NULL,
     UF VARCHAR(2) NOT NULL,
-    municipio VARCHAR(50) NOT NULL,
-	complemento VARCHAR(50) NOT NULL,
+    municipio VARCHAR(30) NOT NULL,
+	complemento VARCHAR(30) NOT NULL,
     
 	ddd_1 INT,
 	celular_1 INT,
     ddd_2 INT,
 	celular_2 INT,
-    email_1 VARCHAR(100),
-    email_2 VARCHAR(100),
-    observacoes VARCHAR(500)
+    email_1 VARCHAR(70),
+    email_2 VARCHAR(70),
+    observacoes VARCHAR(250)
 );
 
 

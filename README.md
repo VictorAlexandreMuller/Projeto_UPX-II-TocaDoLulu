@@ -4,11 +4,9 @@
 
 _Classe: Usuarios_  
 | ---------------------------------- |  
-(-) id : int
 (-) email : String
 (-) senha : String
-(+) Usuarios(int:id, String:email, String:senha)
-(+) Usuarios()
+(+) Usuarios(String:email, String:senha)
 (+) Gets...
 (+) Sets...
 
@@ -97,6 +95,7 @@ _Classe: Veterinarios_
 (-) celular_2 : int
 (-) email_1 : String
 (-) email_2 : String
+(-) valor : double
 (-) observacoes : String
 (+) Veterinarios(todos sem id)
 (+) Veterinarios()
@@ -132,6 +131,27 @@ _Classe: Servicos_
 (+) Gets...
 (+) Sets...
 (+) toString():String
+
+_Classe: TutoresPets_  
+| ---------------------------------- |  
+(-) id_tutor : int
+(-) id_pet : int
+(+) Gets...
+(+) Sets...
+
+_Classe: VeterinariosPets_  
+| ---------------------------------- |  
+(-) id_veterinario : int
+(-) id_pet : int
+(+) Gets...
+(+) Sets...
+
+_Classe: ServicosPets_  
+| ---------------------------------- |  
+(-) id_servico : int
+(-) id_pet : int
+(+) Gets...
+(+) Sets...
 
 # Observações:
 
@@ -216,6 +236,7 @@ _Classe: Servicos_
           - Celular (2)
           - E-mail (1)
           - E-mail (2)
+          - Valor
           - Observações
           - Botão Voltar
           - Botão Salvar

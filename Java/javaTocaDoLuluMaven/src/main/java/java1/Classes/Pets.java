@@ -23,29 +23,36 @@ public class Pets {
     private String cor;
 
     private String nascimento;
-    private String rede_social;
-    private String tipo_rede;
-
+    private String tipo_rede_1;
+    private String rede_social_1;
+    private String tipo_rede_2;
+    private String rede_social_2;
+    
     private String alergias;
     private String remedios;
     private String vacinacao;
     private String observacoes;
+    private String tipo_plano;
+    private double tipo_valor;
 
     public Pets() {
     }
 
-    public Pets(String nome, char sexo, String raca, String cor, String nascimento, String rede_social, String tipo_rede, String alergias, String remedios, String vacinacao, String observacoes) {
+    public Pets(String nome, char sexo, String raca, String cor, String nascimento, String tipo_rede_1, String rede_social_1, String tipo_rede_2, String rede_social_2, String alergias, String remedios, String vacinacao, String observacoes, String tipo_plano) {
         this.nome = nome;
         this.sexo = sexo;
         this.raca = raca;
         this.cor = cor;
         this.nascimento = nascimento;
-        this.rede_social = rede_social;
-        this.tipo_rede = tipo_rede;
+        this.tipo_rede_1 = tipo_rede_1;
+        this.rede_social_1 = rede_social_1;
+        this.tipo_rede_2 = tipo_rede_2;
+        this.rede_social_2 = rede_social_2;
         this.alergias = alergias;
         this.remedios = remedios;
         this.vacinacao = vacinacao;
         this.observacoes = observacoes;
+        this.tipo_plano = tipo_plano;
     }
 
     public int getId() {
@@ -71,14 +78,6 @@ public class Pets {
     public void setSexo(char sexo) {
         this.sexo = sexo;
     }
-    
-    public String getNascimento() {
-        return nascimento;
-    }
-
-    public void setNascimento(String nascimento) {
-        this.nascimento = nascimento;
-    }
 
     public String getRaca() {
         return raca;
@@ -94,6 +93,46 @@ public class Pets {
 
     public void setCor(String cor) {
         this.cor = cor;
+    }
+
+    public String getNascimento() {
+        return nascimento;
+    }
+
+    public void setNascimento(String nascimento) {
+        this.nascimento = nascimento;
+    }
+
+    public String getTipo_rede_1() {
+        return tipo_rede_1;
+    }
+
+    public void setTipo_rede_1(String tipo_rede_1) {
+        this.tipo_rede_1 = tipo_rede_1;
+    }
+
+    public String getRede_social_1() {
+        return rede_social_1;
+    }
+
+    public void setRede_social_1(String rede_social_1) {
+        this.rede_social_1 = rede_social_1;
+    }
+
+    public String getTipo_rede_2() {
+        return tipo_rede_2;
+    }
+
+    public void setTipo_rede_2(String tipo_rede_2) {
+        this.tipo_rede_2 = tipo_rede_2;
+    }
+
+    public String getRede_social_2() {
+        return rede_social_2;
+    }
+
+    public void setRede_social_2(String rede_social_2) {
+        this.rede_social_2 = rede_social_2;
     }
 
     public String getAlergias() {
@@ -120,22 +159,6 @@ public class Pets {
         this.vacinacao = vacinacao;
     }
 
-    public String getRede_social() {
-        return rede_social;
-    }
-
-    public void setRede_social(String rede_social) {
-        this.rede_social = rede_social;
-    }
-
-    public String getTipo_rede() {
-        return tipo_rede;
-    }
-
-    public void setTipo_rede(String tipo_rede) {
-        this.tipo_rede = tipo_rede;
-    }
-
     public String getObservacoes() {
         return observacoes;
     }
@@ -143,6 +166,24 @@ public class Pets {
     public void setObservacoes(String observacoes) {
         this.observacoes = observacoes;
     }
+
+    public String getTipo_plano() {
+        return tipo_plano;
+    }
+
+    public void setTipo_plano(String tipo_plano) {
+        this.tipo_plano = tipo_plano;
+    }
+
+    public double getTipo_valor() {
+        return tipo_valor;
+    }
+
+    public void setTipo_valor(double tipo_valor) {
+        this.tipo_valor = tipo_valor;
+    }
+
+    
 
     @Override
     public String toString() {
@@ -152,11 +193,14 @@ public class Pets {
                 + "\nRaça: " + raca
                 + "\nCor: " + cor
                 + "\nNascimento: " + nascimento
-                + "\nRede Social: " + tipo_rede + " - " + rede_social
+                + "\nRede Social: " + tipo_rede_1 + " - " + rede_social_1
+                + "\nRede Social: " + tipo_rede_2 + " - " + rede_social_2
                 + "\nAlergias: " + alergias
                 + "\nRemédios: " + remedios
                 + "\nVacinação: " + vacinacao
-                + "\nObservações: " + observacoes;
+                + "\nObservações: " + observacoes
+                + "\nPlano: " + tipo_plano
+                + "\nValor: " + tipo_valor;
 
     }
 

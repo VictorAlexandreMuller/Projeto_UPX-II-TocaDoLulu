@@ -7,90 +7,67 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "Veterinario")
+@Table(name = "Veterinarios")
 public class Veterinarios {
 
-    @Id // Informa que o ID é a chave primaria
-    @GeneratedValue(strategy = GenerationType.SEQUENCE) // Informa que o ID será gerado em sequencia
+    @Id
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private int id;
     private String nome;
-    private String documento_identificador;
     private String tipo_documento;
+    private String documento_identificador;
     private String crmv;
     private String nascimento;
-    private String endereco;
+    
+    private int cep;
+    private String logradouro;
+    private String numero;
+    private String bairro;
+    private String UF;
+    private String municipio;
+    private String complemento;
 
-    private int celular;
-    private String email;
+    private int ddd_1;
+    private int celular_1;
+    private int ddd_2;
+    private int celular_2;
+    private String email_1;
+    private String email_2;
+    private double valor;
+    private String observacoes;
 
     public Veterinarios() {
     }
 
-    public Veterinarios(String nome, String documento_identificador, String tipo_documento, String crmv, String nascimento, String endereco, int celular, String email) {
+    public Veterinarios(String nome, String tipo_documento, String documento_identificador, String crmv, String nascimento, int cep, String logradouro, String numero, String bairro, String UF, String municipio, String complemento, int ddd_1, int celular_1, int ddd_2, int celular_2, String email_1, String email_2, double valor, String observacoes) {
         this.nome = nome;
-        this.documento_identificador = documento_identificador;
         this.tipo_documento = tipo_documento;
+        this.documento_identificador = documento_identificador;
         this.crmv = crmv;
         this.nascimento = nascimento;
-        this.endereco = endereco;
-        this.celular = celular;
-        this.email = email;
-    }
-    
-    public String getDocumento_identificador() {
-        return documento_identificador;
-    }
-
-    public void setDocumento_identificador(String documento_identificador) {
-        this.documento_identificador = documento_identificador;
-    }
-
-    public String getTipo_documento() {
-        return tipo_documento;
-    }
-
-    public void setTipo_documento(String tipo_documento) {
-        this.tipo_documento = tipo_documento;
+        this.cep = cep;
+        this.logradouro = logradouro;
+        this.numero = numero;
+        this.bairro = bairro;
+        this.UF = UF;
+        this.municipio = municipio;
+        this.complemento = complemento;
+        this.ddd_1 = ddd_1;
+        this.celular_1 = celular_1;
+        this.ddd_2 = ddd_2;
+        this.celular_2 = celular_2;
+        this.email_1 = email_1;
+        this.email_2 = email_2;
+        this.valor = valor;
+        this.observacoes = observacoes;
     }
 
-    public String getNome() {
-        return nome;
+    public double getValor() {
+        return valor;
     }
 
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
-
-    public String getNascimento() {
-        return nascimento;
-    }
-
-    public void setNascimento(String nascimento) {
-        this.nascimento = nascimento;
-    }
-
-    public int getCelular() {
-        return celular;
-    }
-
-    public void setCelular(int celular) {
-        this.celular = celular;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public String getEndereco() {
-        return endereco;
-    }
-
-    public void setEndereco(String endereco) {
-        this.endereco = endereco;
+    public void setValor(double valor) {
+        this.valor = valor;
     }
 
     public int getId() {
@@ -101,6 +78,30 @@ public class Veterinarios {
         this.id = id;
     }
 
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public String getTipo_documento() {
+        return tipo_documento;
+    }
+
+    public void setTipo_documento(String tipo_documento) {
+        this.tipo_documento = tipo_documento;
+    }
+
+    public String getDocumento_identificador() {
+        return documento_identificador;
+    }
+
+    public void setDocumento_identificador(String documento_identificador) {
+        this.documento_identificador = documento_identificador;
+    }
+
     public String getCrmv() {
         return crmv;
     }
@@ -109,17 +110,146 @@ public class Veterinarios {
         this.crmv = crmv;
     }
 
+    public String getNascimento() {
+        return nascimento;
+    }
+
+    public void setNascimento(String nascimento) {
+        this.nascimento = nascimento;
+    }
+
+    public int getCep() {
+        return cep;
+    }
+
+    public void setCep(int cep) {
+        this.cep = cep;
+    }
+
+    public String getLogradouro() {
+        return logradouro;
+    }
+
+    public void setLogradouro(String logradouro) {
+        this.logradouro = logradouro;
+    }
+
+    public String getNumero() {
+        return numero;
+    }
+
+    public void setNumero(String numero) {
+        this.numero = numero;
+    }
+
+    public String getBairro() {
+        return bairro;
+    }
+
+    public void setBairro(String bairro) {
+        this.bairro = bairro;
+    }
+
+    public String getUf() {
+        return UF;
+    }
+
+    public void setUf(String uf) {
+        this.UF = UF;
+    }
+
+    public String getMunicipio() {
+        return municipio;
+    }
+
+    public void setMunicipio(String municipio) {
+        this.municipio = municipio;
+    }
+
+    public String getComplemento() {
+        return complemento;
+    }
+
+    public void setComplemento(String complemento) {
+        this.complemento = complemento;
+    }
+
+    public int getDdd_1() {
+        return ddd_1;
+    }
+
+    public void setDdd_1(int ddd_1) {
+        this.ddd_1 = ddd_1;
+    }
+
+    public int getCelular_1() {
+        return celular_1;
+    }
+
+    public void setCelular_1(int celular_1) {
+        this.celular_1 = celular_1;
+    }
+
+    public int getDdd_2() {
+        return ddd_2;
+    }
+
+    public void setDdd_2(int ddd_2) {
+        this.ddd_2 = ddd_2;
+    }
+
+    public int getCelular_2() {
+        return celular_2;
+    }
+
+    public void setCelular_2(int celular_2) {
+        this.celular_2 = celular_2;
+    }
+
+    public String getEmail_1() {
+        return email_1;
+    }
+
+    public void setEmail_1(String email_1) {
+        this.email_1 = email_1;
+    }
+
+    public String getEmail_2() {
+        return email_2;
+    }
+
+    public void setEmail_2(String email_2) {
+        this.email_2 = email_2;
+    }
+
+    public String getObservacoes() {
+        return observacoes;
+    }
+
+    public void setObservacoes(String observacoes) {
+        this.observacoes = observacoes;
+    }
+    
+    
+
     @Override
     public String toString() {
-        return "Veterinário ID: " + id + "\n"
+        return "Veterinário ID: " + id
+                + "\n"
                 + "\nNome: " + nome
+                + "\nValor: " + valor
                 + "\nDocumento: " + tipo_documento + " - " + documento_identificador
                 + "\nCRMV: " + crmv
                 + "\nNascimento: " + nascimento
-                + "\nEndereço: " + endereco
-                + "\nCelular: " + celular
-                + "\nE-mail: " + email;
-
+                + "\nCEP: " + cep
+                + "\nEndereço: " + logradouro + ", " + numero + ", " + bairro + " - " + municipio + "/" + UF
+                + "\nComplemento: " + complemento
+                + "\n"
+                + "\nCelular Principal: (" + ddd_1 + ") " + celular_1
+                + "\nCelular Secundário: (" + ddd_2 + ") " + celular_2
+                + "\nE-mail Principal: " + email_1
+                + "\nE-mail Secundário: " + email_2
+                + "\nObservações: " + observacoes;
     }
 
 }

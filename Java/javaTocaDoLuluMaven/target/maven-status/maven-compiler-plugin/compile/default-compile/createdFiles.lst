@@ -24,9 +24,11 @@ dao\JPAUtil.class
 java3\Panels\Painel_Pets_JIFF$13.class
 java3\Panels\TableModelCreator.class
 java2\InicialPanel\Swing_Tela_Inicial$15.class
+java1\Classes\Usuarios.class
 java1\Login\Register$2.class
 java2\InicialPanel\Swing_Tela_Inicial$8.class
 java3\Panels\Painel_Pets_JIFF$10.class
+java1\Classes\Pets_Planos_Valores.class
 java0\TestesTocaDoLulu\NewJDialog.class
 java0\TestesTocaDoLulu\NewJDialog$1$1.class
 java1\Login\jDialog_Login.class
