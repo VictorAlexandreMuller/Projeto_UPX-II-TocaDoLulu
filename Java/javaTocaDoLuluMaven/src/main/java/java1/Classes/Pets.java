@@ -8,7 +8,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity // Informa que esta classe é uma entidade no banco de dados
-@Table(name = "Pet") // Informa que esta classe estará vinculada à Table Pet no banco de dados
+@Table(name = "Pets") // Informa que esta classe estará vinculada à Table Pet no banco de dados
 public class Pets {
 
     // Caso haja algum atributo ENUM, é necessário colocar em cima o "@Enumerated(EnumType.STRING) para ele não puxar enumerado por ordem ao banco de dados.

@@ -4,6 +4,35 @@ use toca_do_lulu_upx;                      -- Seleciona o banco para os próximo
 
 /* As linhas acima não devem ser executas em serviços online como o sqlite oline*/
 
+
+
+
+
+-- LOGIN --------------------------
+
+CREATE TABLE Usuarios (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    email VARCHAR(255) NOT NULL,
+    senha VARCHAR(255) NOT NULL
+);
+-- Comando para inserir os logins no banco de dados.
+-- INSERT INTO usuarios (email, senha) VALUES ('seuemail@example.com', 'senha_hash');
+
+
+
+
+
+-- PETS TABLES 1-N -----------------------------------------------------------------------------------
+-- O Index serve para referenciar a coluna a ser puxada por outra tabela sem este precisar ser uma chave primária
+CREATE TABLE Pets_Planos_Valores (
+  	plano VARCHAR(50) NOT NULL PRIMARY KEY,
+	valor DOUBLE,
+    
+    INDEX idx_valor (valor)
+ );
+
+-- PETS ----------------------------------------------------------------------------------------------
+
 CREATE TABLE Pets (
 	id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
     
@@ -13,57 +42,139 @@ CREATE TABLE Pets (
     cor VARCHAR(50) NOT NULL,
     
     nascimento DATE,
-    rede_social VARCHAR(100),
-    tipo_rede VARCHAR(50),
+    
+    tipo_rede_1 VARCHAR(50),
+    rede_social_1 VARCHAR(100),
+    tipo_rede_2 VARCHAR(50),
+    rede_social_2 VARCHAR(100),
     
     alergias VARCHAR(500),
     remedios VARCHAR(500),
     vacinacao VARCHAR(500),
-    observacoes VARCHAR(500)
-    );
+    observacoes VARCHAR(500),
+    
+    tipo_plano VARCHAR(50),
+    tipo_valor DOUBLE,
+    
+    FOREIGN KEY (tipo_plano) REFERENCES Pets_Planos_Valores(plano),
+    FOREIGN KEY (tipo_valor) REFERENCES Pets_Planos_Valores(valor)
+);
+
+
+
+
+
+-- TUTORES TABLES 1-N --------------------------------------------------------------------------------
+
+
+
+-- TUTORES -------------------------------------------------------------------------------------------
 
 CREATE TABLE Tutores (
 	id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
     
     nome VARCHAR(150) NOT NULL,
-	documento_identificador VARCHAR(50) NOT NULL,
     tipo_documento VARCHAR(50) NOT NULL,
+	documento_identificador VARCHAR(50) NOT NULL,
 	nascimento DATE NOT NULL,
-	endereco VARCHAR(200) NOT NULL,
+    cep INT,
+    logradouro VARCHAR(100) NOT NULL,
+    numero VARCHAR(10) NOT NULL,
+    bairro VARCHAR(50) NOT NULL,
+    UF VARCHAR(2) NOT NULL,
+    municipio VARCHAR(50) NOT NULL,
+	complemento VARCHAR(50) NOT NULL,
     
-	celular INT,
-    email VARCHAR(100),
-	rede_social VARCHAR(100),
-    tipo_rede VARCHAR(50)
-    );
+    ddd_1 INT,
+	celular_1 INT,
+    ddd_2 INT,
+	celular_2 INT,
+    email_1 VARCHAR(100),
+    email_2 VARCHAR(100),
+    tipo_rede_1 VARCHAR(50),
+    rede_social_1 VARCHAR(100),
+    tipo_rede_2 VARCHAR(50),
+    rede_social_2 VARCHAR(100),
+    observacoes VARCHAR(500)
+);
+
+
+
+
+
+-- VETERINARIOS TABLES 1-N --------------------------------------------------------------------------------
+
+
+
+-- VETERINARIOS -------------------------------------------------------------------------------------------
 
 CREATE TABLE Veterinarios (
 	id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
 	
     nome VARCHAR(150) NOT NULL,
+    tipo_documento VARCHAR(50) NOT NULL,
 	documento_identificador VARCHAR(50) NOT NULL,
-	tipo_documento VARCHAR(50) NOT NULL,
     crmv VARCHAR(20) NOT NULL,
 	nascimento DATE NOT NULL,
-    endereco VARCHAR(200) NOT NULL,
+    cep INT,
+    logradouro VARCHAR(100) NOT NULL,
+    numero VARCHAR(10) NOT NULL,
+    bairro VARCHAR(50) NOT NULL,
+    UF VARCHAR(2) NOT NULL,
+    municipio VARCHAR(50) NOT NULL,
+	complemento VARCHAR(50) NOT NULL,
     
-	celular INT,
-	email VARCHAR(100)
+	ddd_1 INT,
+	celular_1 INT,
+    ddd_2 INT,
+	celular_2 INT,
+    email_1 VARCHAR(100),
+    email_2 VARCHAR(100),
+    valor double,
+    observacoes VARCHAR(500)
   );
-  
+
+
+
+
+
+-- SERVICOS TABLES 1-N --------------------------------------------------------------------------------
+
+
+
+-- SERVICOS -------------------------------------------------------------------------------------------
+
   CREATE TABLE Servicos (
 	id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
     
-    tipo_servico VARCHAR(50) NOT NULL,
     nome VARCHAR(150) NOT NULL,
+    servico VARCHAR(50) NOT NULL,
+    valor DOUBLE NOT NULL,
+    tipo_documento VARCHAR(50) NOT NULL,
     documento_identificador VARCHAR(50) NOT NULL,
-	tipo_documento VARCHAR(50) NOT NULL,
     nascimento DATE NOT NULL,
-    endereco VARCHAR(200) NOT NULL,
+    cep INT,
+    logradouro VARCHAR(100) NOT NULL,
+    numero VARCHAR(10) NOT NULL,
+    bairro VARCHAR(50) NOT NULL,
+    UF VARCHAR(2) NOT NULL,
+    municipio VARCHAR(50) NOT NULL,
+	complemento VARCHAR(50) NOT NULL,
     
-    celular INT,
-	email VARCHAR(100)
-  );
+	ddd_1 INT,
+	celular_1 INT,
+    ddd_2 INT,
+	celular_2 INT,
+    email_1 VARCHAR(100),
+    email_2 VARCHAR(100),
+    observacoes VARCHAR(500)
+);
+
+
+
+
+
+-- TABLES N-N --------------------------------------------------------------------------------
 
  CREATE TABLE Tutores_Pets (
 	id_tutor INT,
@@ -85,7 +196,7 @@ CREATE TABLE Veterinarios (
     PRIMARY KEY(id_veterinario, id_pet)
 	);
     
-    CREATE TABLE Servicos_Pets (
+CREATE TABLE Servicos_Pets (
 	id_servico INT,
     id_pet INT,
     

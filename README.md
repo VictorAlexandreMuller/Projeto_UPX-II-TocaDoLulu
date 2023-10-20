@@ -2,6 +2,25 @@
 
 # TRABALHO DE USINA DE PROJETOS EXPERIMENTAIS II (UPX II) - TOCA DO LULU (Em desenvolvimento...)
 
+_Classe: Usuarios_  
+| ---------------------------------- |  
+(-) id : int
+(-) email : String
+(-) senha : String
+(+) Usuarios(int:id, String:email, String:senha)
+(+) Usuarios()
+(+) Gets...
+(+) Sets...
+
+_Classe: PetsPlanosValores_  
+| ---------------------------------- |  
+(-) plano : String
+(-) valor : double
+(+) PetsPlanosValores(String:plano, double:valor)
+(+) PetsPlanosValores()
+(+) Gets...
+(+) Sets...
+
 _Classe: Pets_  
 | ---------------------------------- |  
 (-) id : int
@@ -10,13 +29,17 @@ _Classe: Pets_
 (-) raca : String
 (-) cor : String
 (-) nascimento : String
-(-) rede_social : String
-(-) tipo_rede : String
+(-) tipo_rede_1 : String
+(-) rede_social_1 : String
+(-) tipo_rede_2 : String
+(-) rede_social_2 : String
 (-) alergias : String
 (-) remedios : String
 (-) vacinacao : String
 (-) observacoes : String
-(+) Pets(todos)
+(-) tipo_plano : String
+(-) tipo_valor : double
+(+) Pets(todos sem id)
 (+) Pets()
 (+) Gets...
 (+) Sets...
@@ -25,16 +48,29 @@ _Classe: Pets_
 _Classe: Tutores_  
 | ---------------------------------- |  
 (-) id : int
-(-) documento_identificador : String
-(-) tipo_documento : String
 (-) nome : String
+(-) tipo_documento : String
+(-) documento_identificador : String
 (-) nascimento : String
-(-) endereco : String
-(-) celular : int
-(-) email : String
-(-) rede_social : String
-(-) tipo_rede : String
-(+) Tutores(todos)
+(-) cep : int
+(-) logradouro : String
+(-) numero : String
+(-) bairro : String
+(-) uf : String
+(-) municipio : String
+(-) complemento : String
+(-) ddd_1 : int
+(-) celular_1 : int
+(-) ddd_2 : int
+(-) celular_2 : int
+(-) email_1 : String
+(-) email_2 : String
+(-) tipo_rede_1 : String
+(-) rede_social_1 : String
+(-) tipo_rede_2 : String
+(-) rede_social_2 : String
+(-) observacoes : String
+(+) Tutores(todos sem id)
 (+) Tutores()
 (+) Gets...
 (+) Sets...
@@ -44,14 +80,25 @@ _Classe: Veterinarios_
 | ---------------------------------- |  
 (-) id : int
 (-) nome : String
-(-) documento_identificador : String
 (-) tipo_documento : String
+(-) documento_identificador : String
 (-) crmv : String
 (-) nascimento : String
-(-) endereco : String
-(-) celular : int
-(-) email : String
-(+) Veterinarios(todos)
+(-) cep : int
+(-) logradouro : String
+(-) numero : String
+(-) bairro : String
+(-) uf : String
+(-) municipio : String
+(-) complemento : String
+(-) ddd_1 : int
+(-) celular_1 : int
+(-) ddd_2 : int
+(-) celular_2 : int
+(-) email_1 : String
+(-) email_2 : String
+(-) observacoes : String
+(+) Veterinarios(todos sem id)
 (+) Veterinarios()
 (+) Gets...
 (+) Sets...
@@ -60,15 +107,27 @@ _Classe: Veterinarios_
 _Classe: Servicos_  
 | ---------------------------------- |  
 (-) id : int
-(-) tipo_servico : String
 (-) nome : String
-(-) documento_identificador : String
+(-) servico : String
+(-) valor : double
 (-) tipo_documento : String
+(-) documento_identificador : String
 (-) nascimento : String
-(-) endereco : String
-(-) celular : int
-(-) email : String
-(+) Servicos(todos)
+(-) cep : int
+(-) logradouro : String
+(-) numero : String
+(-) bairro : String
+(-) uf : String
+(-) municipio : String
+(-) complemento : String
+(-) ddd_1 : int
+(-) celular_1 : int
+(-) ddd_2 : int
+(-) celular_2 : int
+(-) email_1 : String
+(-) email_2 : String
+(-) observacoes : String
+(+) Servicos(todos sem id)
 (+) Servicos()
 (+) Gets...
 (+) Sets...
@@ -92,7 +151,7 @@ _Classe: Servicos_
         - Novo
         - Alterar
         - Deletar
-        - Sair
+        - Voltar
 
         1.1.1- Menu Novo Pet (Campos e Botões)
           - Nome
@@ -100,12 +159,15 @@ _Classe: Servicos_
           - Raça
           - Cor
           - Nascimento
-          - Tipo de Rede Social
-          - Rede Social
+          - Tipo de Rede Social (1)
+          - Rede Social (1)
+          - Tipo de Rede Social (2)
+          - Rede Social (2)
           - Alergias
           - Remédios
           - Vacinação
           - Observações
+          - Plano
           - Botão Voltar
           - Botão Salvar
 
@@ -114,11 +176,24 @@ _Classe: Servicos_
           - Tipo de Documento
           - Documento
           - Nascimento
-          - Endereço
-          - Celular
-          - E-mail
-          - Tipo de Rede Social
-          - Rede Social
+          - CEP
+          - Logradouro
+          - Número
+          - Bairro
+          - UF
+          - Município
+          - Complemento
+          - DDD (1)
+          - Celular (1)
+          - DDD (2)
+          - Celular (2)
+          - E-mail (1)
+          - E-mail (2)
+          - Tipo de Rede Social (1)
+          - Rede Social (1)
+          - Tipo de Rede Social (2)
+          - Rede Social (2)
+          - Observações
           - Botão Voltar
           - Botão Salvar
 
@@ -128,21 +203,44 @@ _Classe: Servicos_
           - Documento
           - CRMV
           - Nascimento
-          - Endereço
-          - Celular
-          - E-mail
+          - CEP
+          - Logradouro
+          - Número
+          - Bairro
+          - UF
+          - Município
+          - Complemento
+          - DDD (1)
+          - Celular (1)
+          - DDD (2)
+          - Celular (2)
+          - E-mail (1)
+          - E-mail (2)
+          - Observações
           - Botão Voltar
           - Botão Salvar
 
         1.1.4- Menu Novo Serviço (Campos e Botões)
-          - Tipo de Serviço
           - Nome
+          - Serviço
+          - Valor
           - Tipo de Documento
           - Documento
           - Nascimento
-          - Endereço
-          - Celular
-          - E-mail
+          - CEP
+          - Logradouro
+          - Número
+          - Bairro
+          - UF
+          - Município
+          - Complemento
+          - DDD (1)
+          - Celular (1)
+          - DDD (2)
+          - Celular (2)
+          - E-mail (1)
+          - E-mail (2)
+          - Observações
           - Botão Voltar
           - Botão Salvar
 
@@ -166,7 +264,7 @@ _Classe: Servicos_
 
 (NetBeans IDE - Toca do Lulu - Matéria: UPX II - Segundo Semestre ADS - Professor Fabio Colombini)
 
-Última atualização: 20h02 - 12/10/2023.
+Última atualização: 01h26 - 20/10/2023.
 
 ---
 
