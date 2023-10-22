@@ -485,9 +485,12 @@ public class Cadastro_Pets_JIFF extends javax.swing.JInternalFrame {
     private void BOTAO_SALVAR___ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BOTAO_SALVAR___ActionPerformed
         
         Pets pet = new Pets();
+        Pets_Planos_Valores plano = new Pets_Planos_Valores();
+        
         pet.setNome(txtPET_NOME.getText());
         pet.setSexo(comboPET_SEXO.getSelectedItem().toString().charAt(0));
         pet.setRaca(txtPET_RACA.getText());
+        pet.setCor(txtPET_COR.getText());
         
         // Convertendo a data de DD/MM/YYYY para YYYY-MM-DD
         String dataNascimento = txtPET_NASCIMENTO.getText();
@@ -500,8 +503,8 @@ public class Cadastro_Pets_JIFF extends javax.swing.JInternalFrame {
             JOptionPane.showMessageDialog(null, "Erro na conversão de data: " + erro);
         }
         
-        pet.setCor(txtPET_COR.getText());
-        pet.setTipo_plano(comboPET_PLANO.getSelectedItem().toString().charAt(0));
+        
+        plano.setPlano(comboPET_PLANO.getSelectedItem().toString().charAt(0));
         
         EntityManager em = JPAUtil.getEntityManager();
         DAO dao = new DAO(em);

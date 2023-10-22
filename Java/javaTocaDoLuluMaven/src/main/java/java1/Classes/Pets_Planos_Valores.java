@@ -8,10 +8,10 @@ import javax.persistence.Table;
 @Table(name = "Pets_Planos_Valores")
 public class Pets_Planos_Valores {
     @Id
-    private String plano;
+    private char plano;
     private double valor;
     
-    public Pets_Planos_Valores(String plano, double valor) {
+    public Pets_Planos_Valores(char plano, double valor) {
         this.plano = plano;
         this.valor = valor;
     }
@@ -19,11 +19,11 @@ public class Pets_Planos_Valores {
     public Pets_Planos_Valores() {
     }
 
-    public String getPlano() {
+    public char getPlano() {
         return plano;
     }
 
-    public void setPlano(String plano) {
+    public void setPlano(char plano) {
         this.plano = plano;
     }
 

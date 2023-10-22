@@ -58,13 +58,16 @@ java1\Classes\Pets_Planos_Valores.class
 java0\TestesTocaDoLulu\NewJDialog.class
 java1\ClassesDB\SPPK.class
 java1\Login\jDialog_Login.class
+java1\Login\Register$5.class
 java3\Panels\Painel_Tutores_JIFF$3.class
 java1\Login\jDialog_Login$4.class
 java2\InicialPanel\Swing_Tela_Inicial$4.class
 java3\Panels\Painel_Pets_JIFF$11.class
 java3\Panels\Painel_Tutores_JIFF.class
 java3\Panels\Painel_Tutores_JIFF$2.class
+java1\Login\Register$4.class
 java3\Panels\TableModelCreator$1.class
+java4\Cadastros\Cadastro_Servicos_JIFF$1.class
 java1\Login\jDialog_Login$5$1.class
 java2\InicialPanel\Swing_Tela_Inicial$14.class
 java1\Login\jDialog_Login$5.class
@@ -72,4 +75,5 @@ java1\ClassesDB\Veterinarios_Pets.class
 java0\TestesTocaDoLulu\TesteJDialog$1.class
 dao\PetsDAO.class
 java3\Panels\Painel_Pets_JIFF$6.class
+java4\Cadastros\Cadastro_Servicos_JIFF.class
 java2\InicialPanel\Swing_Tela_Inicial$3.class
