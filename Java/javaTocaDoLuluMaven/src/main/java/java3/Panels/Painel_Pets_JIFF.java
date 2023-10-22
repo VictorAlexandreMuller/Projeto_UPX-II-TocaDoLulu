@@ -426,6 +426,8 @@ public class Painel_Pets_JIFF extends javax.swing.JInternalFrame {
     private void txtSEARCHKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtSEARCHKeyReleased
         ArrayList<Pets> listaFiltrada = listaPets.stream().filter(funcionario -> funcionario.getNome().startsWith(txtSEARCH.getText())).collect(Collectors.toCollection(ArrayList::new));
         
+        
+        
         TableModel tb = TableModelCreator.createTableModel(Pets.class, listaPets, null);
         
         TABLE_PETS___.setModel(tb);
@@ -491,6 +493,7 @@ public class Painel_Pets_JIFF extends javax.swing.JInternalFrame {
             txtSEARCH.setText(null);
             txtSEARCH.requestFocus();
             removePlaceholderStyle(txtSEARCH);
+            
         }
     }//GEN-LAST:event_txtSEARCHFocusGained
 
@@ -498,6 +501,7 @@ public class Painel_Pets_JIFF extends javax.swing.JInternalFrame {
         if(txtSEARCH.getText().length()==0){
             addPlaceholderStyle(txtSEARCH);
             txtSEARCH.setText("  Procurar");
+            
         }
     }//GEN-LAST:event_txtSEARCHFocusLost
     

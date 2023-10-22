@@ -1,15 +1,11 @@
-package java1.Classes;
+package java1.ClassesDB;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import java.io.Serializable;
+import javax.persistence.Embeddable;
 
-@Entity
-@Table(name = "Servicos_Pets")
-public class Servicos_Pets {
-    @Id
+@Embeddable
+public class SPPK implements Serializable{
     private int id_servico;
-    @Id
     private int id_pet;
 
     public int getId_servico() {

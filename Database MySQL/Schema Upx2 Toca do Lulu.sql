@@ -1,5 +1,5 @@
 drop database if exists toca_do_lulu_upx;  -- Remove o banco de dados, caso exista
-create database toca_do_lulu_upx;          -- Cria o banco de dados
+create database toca_do_lulu_upx DEFAULT CHARACTER SET utf8 DEFAULT COLLATE utf8_general_ci;          -- Cria o banco de dados
 use toca_do_lulu_upx;                      -- Seleciona o banco para os próximos comandos
 
 /* As linhas acima não devem ser executas em serviços online como o sqlite oline*/
@@ -30,6 +30,12 @@ CREATE TABLE Pets_Planos_Valores (
     INDEX idx_valor (valor)
  );
 
+INSERT INTO Pets_Planos_Valores (plano, valor)
+VALUES
+	('Básico', 500.00),
+    ('Intermediário', 750.00),
+    ('Premium', 1000.00);
+
 -- PETS ----------------------------------------------------------------------------------------------
 
 CREATE TABLE Pets (
@@ -58,9 +64,11 @@ CREATE TABLE Pets (
     FOREIGN KEY (tipo_plano) REFERENCES Pets_Planos_Valores(plano),
     FOREIGN KEY (tipo_valor) REFERENCES Pets_Planos_Valores(valor)
 );
-
-
-
+-- SET SQL_SAFE_UPDATES = 0;
+-- UPDATE Pets 
+-- SET nascimento = DATE_FORMAT(nascimento, '%d/%m/%Y') 
+-- WHERE nascimento LIKE '__/__/____';
+-- SET SQL_SAFE_UPDATES = 1;
 
 
 -- TUTORES TABLES 1-N --------------------------------------------------------------------------------
@@ -76,7 +84,7 @@ CREATE TABLE Tutores (
     tipo_documento VARCHAR(20) NOT NULL,
 	documento_identificador VARCHAR(50) NOT NULL,
 	nascimento DATE NOT NULL,
-    cep INT,
+    cep INT NOT NULL,
     logradouro VARCHAR(50) NOT NULL,
     numero VARCHAR(10) NOT NULL,
     bairro VARCHAR(30) NOT NULL,
@@ -84,11 +92,12 @@ CREATE TABLE Tutores (
     municipio VARCHAR(30) NOT NULL,
 	complemento VARCHAR(30) NOT NULL,
     
-    ddd_1 INT,
-	celular_1 INT,
+    ddd_1 INT NOT NULL,
+	celular_1 INT NOT NULL,
+    email_1 VARCHAR(70) NOT NULL,
+    
     ddd_2 INT,
 	celular_2 INT,
-    email_1 VARCHAR(70),
     email_2 VARCHAR(70),
     tipo_rede_1 VARCHAR(20),
     rede_social_1 VARCHAR(40),
@@ -96,7 +105,6 @@ CREATE TABLE Tutores (
     rede_social_2 VARCHAR(40),
     observacoes VARCHAR(250)
 );
-
 
 
 
@@ -115,7 +123,7 @@ CREATE TABLE Veterinarios (
 	documento_identificador VARCHAR(50) NOT NULL,
     crmv VARCHAR(20) NOT NULL,
 	nascimento DATE NOT NULL,
-    cep INT,
+    cep INT NOT NULL,
     logradouro VARCHAR(50) NOT NULL,
     numero VARCHAR(10) NOT NULL,
     bairro VARCHAR(30) NOT NULL,
@@ -123,13 +131,14 @@ CREATE TABLE Veterinarios (
     municipio VARCHAR(30) NOT NULL,
 	complemento VARCHAR(30) NOT NULL,
     
-	ddd_1 INT,
-	celular_1 INT,
+	ddd_1 INT NOT NULL,
+	celular_1 INT NOT NULL,
+    email_1 VARCHAR(70) NOT NULL,
+    valor double(8,2) NOT NULL,
+    
     ddd_2 INT,
 	celular_2 INT,
-    email_1 VARCHAR(70),
     email_2 VARCHAR(70),
-    valor double(8,2),
     observacoes VARCHAR(250)
   );
 
@@ -152,7 +161,7 @@ CREATE TABLE Veterinarios (
     tipo_documento VARCHAR(20) NOT NULL,
     documento_identificador VARCHAR(50) NOT NULL,
     nascimento DATE NOT NULL,
-    cep INT,
+    cep INT NOT NULL,
     logradouro VARCHAR(50) NOT NULL,
     numero VARCHAR(10) NOT NULL,
     bairro VARCHAR(30) NOT NULL,
@@ -160,11 +169,12 @@ CREATE TABLE Veterinarios (
     municipio VARCHAR(30) NOT NULL,
 	complemento VARCHAR(30) NOT NULL,
     
-	ddd_1 INT,
-	celular_1 INT,
+	ddd_1 INT NOT NULL,
+	celular_1 INT NOT NULL,
+    email_1 VARCHAR(70) NOT NULL,
+    
     ddd_2 INT,
 	celular_2 INT,
-    email_1 VARCHAR(70),
     email_2 VARCHAR(70),
     observacoes VARCHAR(250)
 );

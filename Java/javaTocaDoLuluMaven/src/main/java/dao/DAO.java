@@ -1,7 +1,10 @@
 package dao;
 
+import static dao.JPAUtil.getEntityManager;
+import java.util.List;
 import java1.Classes.Pets;
 import javax.persistence.EntityManager;
+import javax.persistence.TypedQuery;
 
 public class DAO {
     

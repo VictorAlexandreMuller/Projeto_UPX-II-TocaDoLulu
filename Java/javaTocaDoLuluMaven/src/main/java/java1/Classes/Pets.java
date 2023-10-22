@@ -32,13 +32,13 @@ public class Pets {
     private String remedios;
     private String vacinacao;
     private String observacoes;
-    private String tipo_plano;
+    private char tipo_plano;
     private double tipo_valor;
 
     public Pets() {
     }
 
-    public Pets(String nome, char sexo, String raca, String cor, String nascimento, String tipo_rede_1, String rede_social_1, String tipo_rede_2, String rede_social_2, String alergias, String remedios, String vacinacao, String observacoes, String tipo_plano) {
+    public Pets(String nome, char sexo, String raca, String cor, String nascimento, String tipo_rede_1, String rede_social_1, String tipo_rede_2, String rede_social_2, String alergias, String remedios, String vacinacao, String observacoes, char tipo_plano) {
         this.nome = nome;
         this.sexo = sexo;
         this.raca = raca;
@@ -167,11 +167,11 @@ public class Pets {
         this.observacoes = observacoes;
     }
 
-    public String getTipo_plano() {
+    public char getTipo_plano() {
         return tipo_plano;
     }
 
-    public void setTipo_plano(String tipo_plano) {
+    public void setTipo_plano(char tipo_plano) {
         this.tipo_plano = tipo_plano;
     }
 
