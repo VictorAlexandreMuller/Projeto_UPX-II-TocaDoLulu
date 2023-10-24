@@ -6,7 +6,9 @@ java0\TestesTocaDoLulu\TesteJDialog.class
 java1\ClassesDB\Tutores_Pets.class
 java3\Panels\Painel_Pets_JIFF$7.class
 java2\InicialPanel\Swing_Tela_Inicial$12.class
+java1\Login\jDialog_Login$6$1.class
 java2\InicialPanel\Swing_Tela_Inicial$5.class
+java1\Login\jDialog_Register$3.class
 dao\JPAUtil.class
 java2\InicialPanel\Swing_Tela_Inicial$15.class
 java2\InicialPanel\Swing_Tela_Inicial$8.class
@@ -24,6 +26,7 @@ java0\TestesTocaDoLulu\Teste_CadastroDePets.class
 java1\Login\Register$1.class
 java2\InicialPanel\Swing_Tela_Inicial$7.class
 java2\InicialPanel\Swing_Tela_Inicial$11.class
+java1\Login\jDialog_Register$1.class
 java1\Login\jDialog_Login$1.class
 java1\Login\Register.class
 java1\Login\jDialog_Login$2.class
@@ -36,9 +39,11 @@ java3\Panels\Painel_Pets_JIFF$9.class
 java4\Cadastros\Cadastro_Veterinarios_JIFF$1.class
 java3\Panels\Painel_Pets_JIFF$8.class
 java2\InicialPanel\Swing_Tela_Inicial$6.class
+java1\Login\jDialog_Register$2.class
 java2\InicialPanel\Swing_Tela_Inicial$13.class
 java1\Login\jDialog_Login$3.class
 java2\InicialPanel\Swing_Tela_Inicial$9.class
+java1\Login\jDialog_Login$6.class
 java1\Classes\Servicos.class
 java3\Panels\Painel_Tutores_JIFF$1.class
 java3\Panels\Painel_Pets_JIFF$5.class
@@ -49,6 +54,7 @@ dao\DAO.class
 java2\InicialPanel\Swing_Tela_Inicial$19.class
 java2\InicialPanel\Swing_Tela_Inicial$20.class
 java3\Panels\Painel_Tutores_JIFF$4.class
+java1\Login\jDialog_Register.class
 java3\Panels\Painel_Pets_JIFF$13.class
 java3\Panels\TableModelCreator.class
 java1\Classes\Usuarios.class
@@ -60,6 +66,7 @@ java1\ClassesDB\SPPK.class
 java1\Login\jDialog_Login.class
 java1\Login\Register$5.class
 java3\Panels\Painel_Tutores_JIFF$3.class
+java1\Login\jDialog_Register$4.class
 java1\Login\jDialog_Login$4.class
 java2\InicialPanel\Swing_Tela_Inicial$4.class
 java3\Panels\Painel_Pets_JIFF$11.class
@@ -68,12 +75,13 @@ java3\Panels\Painel_Tutores_JIFF$2.class
 java1\Login\Register$4.class
 java3\Panels\TableModelCreator$1.class
 java4\Cadastros\Cadastro_Servicos_JIFF$1.class
-java1\Login\jDialog_Login$5$1.class
 java2\InicialPanel\Swing_Tela_Inicial$14.class
 java1\Login\jDialog_Login$5.class
 java1\ClassesDB\Veterinarios_Pets.class
 java0\TestesTocaDoLulu\TesteJDialog$1.class
 dao\PetsDAO.class
+java1\Login\jDialog_Register$5$1.class
+java1\Login\jDialog_Register$5.class
 java3\Panels\Painel_Pets_JIFF$6.class
 java4\Cadastros\Cadastro_Servicos_JIFF.class
 java2\InicialPanel\Swing_Tela_Inicial$3.class
