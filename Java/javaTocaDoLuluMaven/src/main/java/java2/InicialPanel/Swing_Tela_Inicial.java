@@ -46,7 +46,7 @@ public class Swing_Tela_Inicial extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        ImageIcon icon = new ImageIcon("src/main/java/imagem_teste/3.jpg");
+        ImageIcon icon = new ImageIcon("src/main/java/Imagens/3.jpg");
         Image image = icon.getImage();
         DesktopPaneControl = new javax.swing.JDesktopPane()
         {public void paintComponent(Graphics g){
@@ -130,7 +130,7 @@ public class Swing_Tela_Inicial extends javax.swing.JFrame {
         PETS.setForeground(new java.awt.Color(255, 255, 255));
         PETS.setText("PETS");
 
-        icon_PETS.setIcon(new javax.swing.ImageIcon("C:\\Users\\victo\\Documents\\Dev\\UPX2-Toca-do-Lulu\\Java\\javaTocaDoLuluMaven\\src\\main\\java\\icons_init\\pets_icon40.png")); // NOI18N
+        icon_PETS.setIcon(new javax.swing.ImageIcon("C:\\Users\\PC\\Documents\\Dev\\UPX2-Toca-do-Lulu\\Java\\javaTocaDoLuluMaven\\src\\main\\java\\iconsInit\\1pets_icon40.png")); // NOI18N
 
         javax.swing.GroupLayout panel_button_petsLayout = new javax.swing.GroupLayout(panel_button_pets);
         panel_button_pets.setLayout(panel_button_petsLayout);
@@ -174,7 +174,7 @@ public class Swing_Tela_Inicial extends javax.swing.JFrame {
         TUTORES.setForeground(new java.awt.Color(255, 255, 255));
         TUTORES.setText("TUTORES");
 
-        icon_TUTORES.setIcon(new javax.swing.ImageIcon("C:\\Users\\victo\\Documents\\Dev\\UPX2-Toca-do-Lulu\\Java\\javaTocaDoLuluMaven\\src\\main\\java\\icons_init\\tutores_icon40.png")); // NOI18N
+        icon_TUTORES.setIcon(new javax.swing.ImageIcon("C:\\Users\\PC\\Documents\\Dev\\UPX2-Toca-do-Lulu\\Java\\javaTocaDoLuluMaven\\src\\main\\java\\iconsInit\\2tutores_icon40.png")); // NOI18N
 
         javax.swing.GroupLayout panel_button_tutoresLayout = new javax.swing.GroupLayout(panel_button_tutores);
         panel_button_tutores.setLayout(panel_button_tutoresLayout);
@@ -218,7 +218,7 @@ public class Swing_Tela_Inicial extends javax.swing.JFrame {
         VETERINARIOS.setForeground(new java.awt.Color(255, 255, 255));
         VETERINARIOS.setText("VETERINÁRIOS");
 
-        icon_VETERINARIOS.setIcon(new javax.swing.ImageIcon("C:\\Users\\victo\\Documents\\Dev\\UPX2-Toca-do-Lulu\\Java\\javaTocaDoLuluMaven\\src\\main\\java\\icons_init\\veterinarios_icon40.png")); // NOI18N
+        icon_VETERINARIOS.setIcon(new javax.swing.ImageIcon("C:\\Users\\PC\\Documents\\Dev\\UPX2-Toca-do-Lulu\\Java\\javaTocaDoLuluMaven\\src\\main\\java\\iconsInit\\3veterinarios_icon40.png")); // NOI18N
 
         javax.swing.GroupLayout panel_button_veterinariosLayout = new javax.swing.GroupLayout(panel_button_veterinarios);
         panel_button_veterinarios.setLayout(panel_button_veterinariosLayout);
@@ -262,7 +262,7 @@ public class Swing_Tela_Inicial extends javax.swing.JFrame {
         SERVICOS.setForeground(new java.awt.Color(255, 255, 255));
         SERVICOS.setText("SERVIÇOS");
 
-        icon_SERVICOS.setIcon(new javax.swing.ImageIcon("C:\\Users\\victo\\Documents\\Dev\\UPX2-Toca-do-Lulu\\Java\\javaTocaDoLuluMaven\\src\\main\\java\\icons_init\\servicos_icon40.png")); // NOI18N
+        icon_SERVICOS.setIcon(new javax.swing.ImageIcon("C:\\Users\\PC\\Documents\\Dev\\UPX2-Toca-do-Lulu\\Java\\javaTocaDoLuluMaven\\src\\main\\java\\iconsInit\\4servicos_icon40.png")); // NOI18N
 
         javax.swing.GroupLayout panel_button_servicosLayout = new javax.swing.GroupLayout(panel_button_servicos);
         panel_button_servicos.setLayout(panel_button_servicosLayout);
@@ -302,7 +302,7 @@ public class Swing_Tela_Inicial extends javax.swing.JFrame {
             }
         });
 
-        icon_LOGOUT.setIcon(new javax.swing.ImageIcon("C:\\Users\\victo\\Documents\\Dev\\UPX2-Toca-do-Lulu\\Java\\javaTocaDoLuluMaven\\src\\main\\java\\icons_init\\logout_icon40.png")); // NOI18N
+        icon_LOGOUT.setIcon(new javax.swing.ImageIcon("C:\\Users\\PC\\Documents\\Dev\\UPX2-Toca-do-Lulu\\Java\\javaTocaDoLuluMaven\\src\\main\\java\\iconsInit\\5logout_icon40.png")); // NOI18N
 
         LOGOUT.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         LOGOUT.setForeground(new java.awt.Color(255, 255, 255));

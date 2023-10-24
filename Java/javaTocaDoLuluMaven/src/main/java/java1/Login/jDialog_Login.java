@@ -1,9 +1,11 @@
 package java1.Login;
 
+import java.awt.Frame;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.KeyEvent;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
-import java1.Login.Register;
-import java2.InicialPanel.Swing_Tela_Inicial;
 import javax.swing.JOptionPane;
 
 public class jDialog_Login extends javax.swing.JDialog {
@@ -12,10 +14,13 @@ public class jDialog_Login extends javax.swing.JDialog {
     private String usuario = "";
     private String senha = "";
 
+    private Frame parentFrame;
+    
     public jDialog_Login(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
+        this.parentFrame = parent;
         initComponents();
-        
+
         this.addWindowListener(new WindowAdapter() {
             @Override
             public void windowClosed(WindowEvent e) {
@@ -24,19 +29,19 @@ public class jDialog_Login extends javax.swing.JDialog {
                 }
             }
         });
+        
+        // Garante que o botão Sign Up só abra uma vez
+        SIGN_UP.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                
+            }
+        });
+        
     }
-    
-    jDialog_Login() {
-        initComponents();
-        
-        this.addWindowListener(new WindowAdapter() {
-            @Override
-            public void windowClosed(WindowEvent e) {
-                if (!autenticado) {
-                    System.exit(0);
-                }
-            }
-        });
+
+    private void openRegistrationDialog() {
+        jDialog_Register registrationDialog = new jDialog_Register(parentFrame, true);
+        registrationDialog.setVisible(true);
     }
 
     public boolean getAutenticado() {
@@ -108,6 +113,12 @@ public class jDialog_Login extends javax.swing.JDialog {
         jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Password");
+
+        txtPASSWORD.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtPASSWORDKeyPressed(evt);
+            }
+        });
 
         LOGIN.setBackground(new java.awt.Color(54, 33, 89));
         LOGIN.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
@@ -232,14 +243,20 @@ public class jDialog_Login extends javax.swing.JDialog {
     }//GEN-LAST:event_LOGINActionPerformed
 
     private void SIGN_UPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SIGN_UPActionPerformed
-        jDialog_Register obj = new jDialog_Register(evt);
-        obj.setVisible(true);
-        
+        //jDialog_Register obj = new jDialog_Register(evt);
+        //obj.setVisible(true);
+        openRegistrationDialog();
     }//GEN-LAST:event_SIGN_UPActionPerformed
 
     private void EXITActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EXITActionPerformed
         System.exit(0);
     }//GEN-LAST:event_EXITActionPerformed
+
+    private void txtPASSWORDKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtPASSWORDKeyPressed
+        if(evt.getKeyCode() == KeyEvent.VK_ENTER){
+            LOGIN.doClick();
+        }
+    }//GEN-LAST:event_txtPASSWORDKeyPressed
 
     /**
      * @param args the command line arguments

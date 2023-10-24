@@ -36,9 +36,9 @@ public class jDialog_Register extends javax.swing.JDialog {
         BACK_TO_LOGIN = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
         txtCONFIRMPASSWORD = new javax.swing.JPasswordField();
-        EXIT = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setResizable(false);
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setPreferredSize(new java.awt.Dimension(710, 546));
@@ -109,16 +109,6 @@ public class jDialog_Register extends javax.swing.JDialog {
             }
         });
 
-        EXIT.setBackground(new java.awt.Color(54, 33, 89));
-        EXIT.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        EXIT.setForeground(new java.awt.Color(255, 255, 255));
-        EXIT.setText("Exit");
-        EXIT.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                EXITActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
@@ -127,11 +117,9 @@ public class jDialog_Register extends javax.swing.JDialog {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(BACK_TO_LOGIN, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(SIGN_UP, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(183, 183, 183)
-                .addComponent(EXIT, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(43, 43, 43))
+                    .addComponent(SIGN_UP, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(BACK_TO_LOGIN))
+                .addGap(300, 300, 300))
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGap(187, 187, 187)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -161,12 +149,10 @@ public class jDialog_Register extends javax.swing.JDialog {
                 .addComponent(jLabel5)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(txtCONFIRMPASSWORD, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 26, Short.MAX_VALUE)
                 .addComponent(SIGN_UP, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(BACK_TO_LOGIN, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(EXIT, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(BACK_TO_LOGIN, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(26, 26, 26))
         );
 
@@ -199,6 +185,7 @@ public class jDialog_Register extends javax.swing.JDialog {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void SIGN_UPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SIGN_UPActionPerformed
@@ -214,7 +201,12 @@ public class jDialog_Register extends javax.swing.JDialog {
             JOptionPane.showMessageDialog(this, "Por favor, digite uma senha para realizar o registro");
         } else if (!txtCONFIRMPASSWORD.getText().equals(txtPASSWORD.getText())){
             JOptionPane.showMessageDialog(this, "A confirmação de senha está incorreta.");
-        } else {
+        } 
+        
+        
+        
+        
+            else {
 
             // Conexão com o banco de dados
             EntityManager em = JPAUtil.getEntityManager();
@@ -230,9 +222,8 @@ public class jDialog_Register extends javax.swing.JDialog {
     }//GEN-LAST:event_SIGN_UPActionPerformed
 
     private void BACK_TO_LOGINActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BACK_TO_LOGINActionPerformed
-        jDialog_Login obj = new jDialog_Login();
-        obj.setVisible(true);
         this.dispose();
+        
     }//GEN-LAST:event_BACK_TO_LOGINActionPerformed
 
     private void txtCONFIRMPASSWORDKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCONFIRMPASSWORDKeyPressed
@@ -240,10 +231,6 @@ public class jDialog_Register extends javax.swing.JDialog {
             SIGN_UP.doClick();
         }
     }//GEN-LAST:event_txtCONFIRMPASSWORDKeyPressed
-
-    private void EXITActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EXITActionPerformed
-        System.exit(0);
-    }//GEN-LAST:event_EXITActionPerformed
 
     /**
      * @param args the command line arguments
@@ -289,7 +276,6 @@ public class jDialog_Register extends javax.swing.JDialog {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BACK_TO_LOGIN;
-    private javax.swing.JButton EXIT;
     private javax.swing.JButton SIGN_UP;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;

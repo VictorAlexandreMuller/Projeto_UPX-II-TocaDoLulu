@@ -194,6 +194,9 @@
               </Properties>
             </Component>
             <Component class="javax.swing.JPasswordField" name="txtPASSWORD">
+              <Events>
+                <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtPASSWORDKeyPressed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JTextField" name="txtUSERNAME">
             </Component>
