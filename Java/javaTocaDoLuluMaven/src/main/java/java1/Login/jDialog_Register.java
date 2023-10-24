@@ -239,13 +239,7 @@ public class jDialog_Register extends javax.swing.JDialog {
             JOptionPane.showMessageDialog(this, "Por favor, digite uma senha para realizar o registro");
         } else if (!txtCONFIRMPASSWORD.getText().equals(txtPASSWORD.getText())){
             JOptionPane.showMessageDialog(this, "Confirme corretamente a sua senha.");
-        } 
-        
-        
-        
-        
-            else {
-                if (!txtCODIGO.getText().equals("naoaguentomais")){
+        } else if(!txtCODIGO.getText().equals("naoaguentomais")){
                     JOptionPane.showMessageDialog(this, "Insira corretamente o código para finalizar o registro.");
                 } else{
             // Conexão com o banco de dados
@@ -258,7 +252,7 @@ public class jDialog_Register extends javax.swing.JDialog {
             em.close();
 
             JOptionPane.showMessageDialog(this, "Usuário cadastrado com sucesso!");
-        }}
+        }
     }//GEN-LAST:event_SIGN_UPActionPerformed
 
     private void BACK_TO_LOGINActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BACK_TO_LOGINActionPerformed
