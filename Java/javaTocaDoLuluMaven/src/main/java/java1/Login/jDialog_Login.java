@@ -120,6 +120,12 @@ public class jDialog_Login extends javax.swing.JDialog {
             }
         });
 
+        txtUSERNAME.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtUSERNAMEKeyPressed(evt);
+            }
+        });
+
         LOGIN.setBackground(new java.awt.Color(54, 33, 89));
         LOGIN.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         LOGIN.setForeground(new java.awt.Color(255, 255, 255));
@@ -127,6 +133,11 @@ public class jDialog_Login extends javax.swing.JDialog {
         LOGIN.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 LOGINActionPerformed(evt);
+            }
+        });
+        LOGIN.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                LOGINKeyPressed(evt);
             }
         });
 
@@ -137,6 +148,11 @@ public class jDialog_Login extends javax.swing.JDialog {
         SIGN_UP.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 SIGN_UPActionPerformed(evt);
+            }
+        });
+        SIGN_UP.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                SIGN_UPKeyPressed(evt);
             }
         });
 
@@ -257,6 +273,24 @@ public class jDialog_Login extends javax.swing.JDialog {
             LOGIN.doClick();
         }
     }//GEN-LAST:event_txtPASSWORDKeyPressed
+
+    private void LOGINKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_LOGINKeyPressed
+        if(evt.getKeyCode() == KeyEvent.VK_ENTER){
+            LOGIN.doClick();
+        }
+    }//GEN-LAST:event_LOGINKeyPressed
+
+    private void txtUSERNAMEKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtUSERNAMEKeyPressed
+        if(evt.getKeyCode() == KeyEvent.VK_ENTER){
+            LOGIN.doClick();
+        }
+    }//GEN-LAST:event_txtUSERNAMEKeyPressed
+
+    private void SIGN_UPKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_SIGN_UPKeyPressed
+        if(evt.getKeyCode() == KeyEvent.VK_ENTER){
+            SIGN_UP.doClick();
+        }
+    }//GEN-LAST:event_SIGN_UPKeyPressed
 
     /**
      * @param args the command line arguments

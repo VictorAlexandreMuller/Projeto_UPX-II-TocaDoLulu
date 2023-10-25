@@ -199,6 +199,9 @@
               </Events>
             </Component>
             <Component class="javax.swing.JTextField" name="txtUSERNAME">
+              <Events>
+                <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtUSERNAMEKeyPressed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="LOGIN">
               <Properties>
@@ -215,6 +218,7 @@
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="LOGINActionPerformed"/>
+                <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="LOGINKeyPressed"/>
               </Events>
             </Component>
             <Component class="javax.swing.JButton" name="SIGN_UP">
@@ -232,6 +236,7 @@
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="SIGN_UPActionPerformed"/>
+                <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="SIGN_UPKeyPressed"/>
               </Events>
             </Component>
             <Component class="javax.swing.JButton" name="EXIT">
