@@ -91,7 +91,7 @@ java3\Panels\PainelPetsJIFF$9.class
 java3\Panels\PainelVeterinariosJIFF$9.class
 java1\ClassesDB\TPPK.class
 java3\Panels\PainelTutoresJIFF$8.class
-dao\DAO.class
+dao\RegisterDAO.class
 java2\InicialPanel\SwingTelaInicial$5.class
 java3\Panels\PainelTutoresJIFF$12.class
 java3\Panels\PainelServicosJIFF$5.class

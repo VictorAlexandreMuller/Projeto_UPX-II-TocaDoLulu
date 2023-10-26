@@ -3,11 +3,11 @@ package dao;
 import java1.Classes.Pets;
 import javax.persistence.EntityManager;
 
-public class DAO {
+public class RegisterDAO {
     
     private EntityManager em;
 
-    public DAO(EntityManager em) {
+    public RegisterDAO(EntityManager em) {
         this.em = em;
     }
     

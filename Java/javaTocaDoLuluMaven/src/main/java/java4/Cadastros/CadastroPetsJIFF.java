@@ -1,6 +1,5 @@
 package java4.Cadastros;
 
-import dao.DAO;
 import dao.JPAUtil;
 import dao.PetsDAO;
 import java.sql.ResultSet;
@@ -42,7 +41,7 @@ public class CadastroPetsJIFF extends javax.swing.JInternalFrame {
     public void restaurarDadosComboBoxPlanos(){
         try {
             PetsDAO objpetsdao = new PetsDAO();
-            ResultSet rs = objpetsdao.listarPets();
+            ResultSet rs = objpetsdao.listarComboPlanos();
             
             while (rs.next()) {
                 // 2: id_plano.addElement(rs.getInt(1));
@@ -537,7 +536,7 @@ public class CadastroPetsJIFF extends javax.swing.JInternalFrame {
         plano.setPlano(comboPET_PLANO.getSelectedItem().toString().charAt(0));
         
         EntityManager em = JPAUtil.getEntityManager();
-        DAO dao = new DAO(em);
+        PetsDAO dao = new PetsDAO(em);
         
         em.getTransaction().begin(); // Inicia a transação no banco de dados
         em.persist(pet); // Adiciona as transações que deseja adicionar o banco de dados

@@ -1,6 +1,6 @@
 package java0.TestesTocaDoLulu;
 
-import dao.DAO;
+import dao.PetsDAO;
 import dao.JPAUtil;
 import java1.Classes.Pets;
 import javax.persistence.EntityManager;
@@ -15,7 +15,7 @@ public class Teste_CadastroDePets {
         pet.setCor("Branca");
         
         EntityManager em = JPAUtil.getEntityManager();
-        DAO dao = new DAO(em);
+        PetsDAO dao = new PetsDAO(em);
         
         em.getTransaction().begin(); // Inicia a transação no banco de dados
         em.persist(pet); // Adiciona as transações que deseja adicionar o banco de dados

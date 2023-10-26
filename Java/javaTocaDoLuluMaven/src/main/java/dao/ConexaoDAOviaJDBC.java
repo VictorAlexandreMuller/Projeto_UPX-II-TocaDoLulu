@@ -5,7 +5,8 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 import javax.swing.JOptionPane;
 
-public class ConexaoDAO {
+public class ConexaoDAOviaJDBC {
+    
     public Connection conectaBD(){
         Connection conn = null;
         
