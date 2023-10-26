@@ -22,7 +22,7 @@ public class Tutores {
     private String logradouro;
     private String numero;
     private String bairro;
-    private String UF;
+    private char UF;
     private String municipio;
     private String complemento;
 
@@ -42,7 +42,7 @@ public class Tutores {
     public Tutores() {
     }
 
-    public Tutores(String nome, String tipo_documento, String documento_identificador, String nascimento, int cep, String logradouro, String numero, String bairro, String UF, String municipio, String complemento, int ddd_1, int celular_1, int ddd_2, int celular_2, String email_1, String email_2, String tipo_rede_1, String rede_social_1, String tipo_rede_2, String rede_social_2, String observacoes) {
+    public Tutores(String nome, String tipo_documento, String documento_identificador, String nascimento, int cep, String logradouro, String numero, String bairro, char UF, String municipio, String complemento, int ddd_1, int celular_1, int ddd_2, int celular_2, String email_1, String email_2, String tipo_rede_1, String rede_social_1, String tipo_rede_2, String rede_social_2, String observacoes) {
         this.nome = nome;
         this.tipo_documento = tipo_documento;
         this.documento_identificador = documento_identificador;
@@ -139,11 +139,11 @@ public class Tutores {
         this.bairro = bairro;
     }
 
-    public String getUf() {
+    public char getUf() {
         return UF;
     }
 
-    public void setUf(String uf) {
+    public void setUf(char uf) {
         this.UF = uf;
     }
 

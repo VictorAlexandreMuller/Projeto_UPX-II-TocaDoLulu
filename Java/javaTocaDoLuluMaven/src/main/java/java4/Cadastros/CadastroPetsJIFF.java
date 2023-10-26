@@ -1,7 +1,7 @@
 package java4.Cadastros;
 
-import dao.JPAUtil;
-import dao.PetsDAO;
+import ConectionsDAO.JPAUtil;
+import ClassesDAO.PetsDAO;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.text.ParseException;
@@ -396,7 +396,7 @@ public class CadastroPetsJIFF extends javax.swing.JInternalFrame {
 
         TIPOREDE2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         TIPOREDE2.setForeground(new java.awt.Color(255, 255, 255));
-        TIPOREDE2.setText("Tutor");
+        TIPOREDE2.setText("Tutor (*)");
 
         comboTUTOR.setBackground(new java.awt.Color(86, 76, 106));
         comboTUTOR.setForeground(new java.awt.Color(255, 255, 255));
@@ -531,8 +531,6 @@ public class CadastroPetsJIFF extends javax.swing.JInternalFrame {
         } catch (ParseException erro) {
             JOptionPane.showMessageDialog(null, "Erro na conversão de data: " + erro);
         }
-        
-        
         plano.setPlano(comboPET_PLANO.getSelectedItem().toString().charAt(0));
         
         EntityManager em = JPAUtil.getEntityManager();

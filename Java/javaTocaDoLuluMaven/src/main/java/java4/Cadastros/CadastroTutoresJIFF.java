@@ -1,5 +1,14 @@
 package java4.Cadastros;
 
+import ClassesDAO.TutoresDAO;
+import ConectionsDAO.JPAUtil;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java1.Classes.Tutores;
+import javax.persistence.EntityManager;
+import javax.swing.JOptionPane;
+
 public class CadastroTutoresJIFF extends javax.swing.JInternalFrame {
 
     public CadastroTutoresJIFF() {
@@ -29,7 +38,6 @@ public class CadastroTutoresJIFF extends javax.swing.JInternalFrame {
         BAIRRO = new javax.swing.JLabel();
         txtTUTOR_BAIRRO = new javax.swing.JTextField();
         UF = new javax.swing.JLabel();
-        txtTUTOR_UF = new javax.swing.JTextField();
         MUNICIPIO = new javax.swing.JLabel();
         txtTUTOR_MUNICIPIO = new javax.swing.JTextField();
         COMPLEMENTO = new javax.swing.JLabel();
@@ -37,6 +45,7 @@ public class CadastroTutoresJIFF extends javax.swing.JInternalFrame {
         OBSERVACOES = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         txtTUTOR_OBSERVACOES = new javax.swing.JTextArea();
+        comboTUTOR_UF = new javax.swing.JComboBox<>();
         jPanel3 = new javax.swing.JPanel();
         NOME = new javax.swing.JLabel();
         txtTUTOR_NOME = new javax.swing.JTextField();
@@ -117,10 +126,6 @@ public class CadastroTutoresJIFF extends javax.swing.JInternalFrame {
         UF.setForeground(new java.awt.Color(255, 255, 255));
         UF.setText("UF (*)");
 
-        txtTUTOR_UF.setBackground(new java.awt.Color(86, 76, 106));
-        txtTUTOR_UF.setForeground(new java.awt.Color(255, 255, 255));
-        txtTUTOR_UF.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
-
         MUNICIPIO.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         MUNICIPIO.setForeground(new java.awt.Color(255, 255, 255));
         MUNICIPIO.setText("Município (*)");
@@ -148,6 +153,12 @@ public class CadastroTutoresJIFF extends javax.swing.JInternalFrame {
         txtTUTOR_OBSERVACOES.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
         jScrollPane1.setViewportView(txtTUTOR_OBSERVACOES);
 
+        comboTUTOR_UF.setBackground(new java.awt.Color(86, 76, 106));
+        comboTUTOR_UF.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
+        comboTUTOR_UF.setForeground(new java.awt.Color(255, 255, 255));
+        comboTUTOR_UF.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "(27 Opções)", "Acre (AC)", "Alagoas (AL)", "Amapá (AP)", "Amazonas (AM)", "Bahia (BA)", "Ceará (CE)", "Distrito Federal (DF)", "Espírito Santo (ES)", "Goiás (GO)", "Maranhão (MA)", "Mato Grosso (MT)", "Mato Grosso do Sul (MS)", "Minas Gerais (MG)", "Pará (PA)", "Paraíba (PB)", "Paraná (PR)", "Pernambuco (PE)", "Piauí (PI)", "Rio de Janeiro (RJ)", "Rio Grande do Norte (RN)", "Rio Grande do Sul (RS)", "Rondônia (RO)", "Roraima (RR)", "Santa Catarina (SC)", "São Paulo (SP)", "Sergipe (SE)", "Tocantins (TO)" }));
+        comboTUTOR_UF.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -155,35 +166,34 @@ public class CadastroTutoresJIFF extends javax.swing.JInternalFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(12, 12, 12)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(jPanel2Layout.createSequentialGroup()
-                            .addComponent(COMPLEMENTO, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(txtTUTOR_COMPLEMENTO, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(jPanel2Layout.createSequentialGroup()
-                            .addComponent(MUNICIPIO, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(txtTUTOR_MUNICIPIO, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(jPanel2Layout.createSequentialGroup()
-                            .addComponent(UF, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(txtTUTOR_UF, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(jPanel2Layout.createSequentialGroup()
-                            .addComponent(BAIRRO, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(txtTUTOR_BAIRRO, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(jPanel2Layout.createSequentialGroup()
-                            .addComponent(NUMERO, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(txtTUTOR_NUMERO, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(jPanel2Layout.createSequentialGroup()
-                            .addComponent(LOGRADOURO, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(txtTUTOR_LOGRADOURO, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(jPanel2Layout.createSequentialGroup()
-                            .addComponent(CEP, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(txtTUTOR_CEP, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
+                        .addComponent(COMPLEMENTO, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txtTUTOR_COMPLEMENTO, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
+                        .addComponent(MUNICIPIO, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txtTUTOR_MUNICIPIO, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
+                        .addComponent(UF, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(comboTUTOR_UF, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
+                        .addComponent(BAIRRO, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txtTUTOR_BAIRRO, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
+                        .addComponent(NUMERO, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txtTUTOR_NUMERO, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
+                        .addComponent(LOGRADOURO, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txtTUTOR_LOGRADOURO, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
+                        .addComponent(CEP, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txtTUTOR_CEP, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(OBSERVACOES, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -210,9 +220,9 @@ public class CadastroTutoresJIFF extends javax.swing.JInternalFrame {
                     .addComponent(txtTUTOR_BAIRRO, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(BAIRRO, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(txtTUTOR_UF, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(UF, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(UF, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(comboTUTOR_UF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(txtTUTOR_MUNICIPIO, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -506,6 +516,11 @@ public class CadastroTutoresJIFF extends javax.swing.JInternalFrame {
         BOTAO_SALVAR___.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         BOTAO_SALVAR___.setForeground(new java.awt.Color(0, 0, 0));
         BOTAO_SALVAR___.setText("Salvar");
+        BOTAO_SALVAR___.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BOTAO_SALVAR___ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -566,6 +581,73 @@ public class CadastroTutoresJIFF extends javax.swing.JInternalFrame {
         this.dispose();
     }//GEN-LAST:event_BOTAO_VOLTAR___ActionPerformed
 
+    private void BOTAO_SALVAR___ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BOTAO_SALVAR___ActionPerformed
+        
+        Tutores tutores = new Tutores();
+        
+        tutores.setNome(txtTUTOR_NOME.getText());
+        tutores.setTipo_documento(txtTUTOR_TIPODOCUMENTO.getText());
+        tutores.setDocumento_identificador(txtTUTOR_DOCUMENTO.getText());
+        
+        String dataNascimento = txtTUTOR_NASCIMENTO.getText();
+        SimpleDateFormat dateFormatInput = new SimpleDateFormat("dd/MM/yyyy");
+        SimpleDateFormat dateFormatOutput = new SimpleDateFormat("yyyy-MM-dd");
+        try {
+            Date date = dateFormatInput.parse(dataNascimento);
+            tutores.setNascimento(dateFormatOutput.format(date));
+        } catch (ParseException erro) {
+            JOptionPane.showMessageDialog(null, "Erro na conversão de data: " + erro);
+        }
+        tutores.setDdd_1(Integer.parseInt(txtTUTOR_DDD1.getText()));
+        tutores.setCelular_1(Integer.parseInt(txtTUTOR_CELULAR1.getText()));
+        
+        if(txtTUTOR_DDD2.getText().isEmpty()){
+            tutores.setDdd_2(0); 
+        } else {
+            tutores.setDdd_2(Integer.parseInt(txtTUTOR_DDD2.getText()));
+        }
+        
+        if(txtTUTOR_CELULAR2.getText().isEmpty()){
+            tutores.setCelular_2(0); 
+        } else {
+            tutores.setCelular_2(Integer.parseInt(txtTUTOR_CELULAR2.getText()));
+        }
+                
+        tutores.setEmail_1(txtTUTOR_EMAIL1.getText());
+        tutores.setEmail_1(txtTUTOR_EMAIL1.getText());
+        tutores.setTipo_rede_1(txtTUTOR_TIPOREDESOCIAL1.getText());
+        tutores.setRede_social_1(txtTUTOR_REDESOCIAL1.getText());
+        tutores.setTipo_rede_2(txtTUTOR_TIPOREDESOCIAL2.getText());
+        tutores.setRede_social_2(txtTUTOR_REDESOCIAL2.getText());
+        tutores.setCep(Integer.parseInt(txtTUTOR_CEP.getText()));
+        tutores.setLogradouro(txtTUTOR_LOGRADOURO.getText());
+        tutores.setNumero(txtTUTOR_NUMERO.getText());
+        tutores.setBairro(txtTUTOR_BAIRRO.getText());
+        tutores.setUf(comboTUTOR_UF.getSelectedItem().toString().charAt(0));
+        tutores.setMunicipio(txtTUTOR_MUNICIPIO.getText());
+        tutores.setComplemento(txtTUTOR_COMPLEMENTO.getText());
+        tutores.setObservacoes(txtTUTOR_OBSERVACOES.getText());
+        
+                
+        if(txtTUTOR_DDD2.getText().isEmpty()){
+            tutores.setDdd_2(0);            
+        } else if (txtTUTOR_CELULAR2.getText().isEmpty()) {
+            tutores.setCelular_2(0);
+        }
+        
+        
+        EntityManager em = JPAUtil.getEntityManager();
+        TutoresDAO dao = new TutoresDAO(em);
+        
+        em.getTransaction().begin();
+        em.persist(tutores);
+        em.getTransaction().commit();
+        em.close();
+        
+        JOptionPane.showMessageDialog(this, "Tutor salvo com sucesso!");
+        this.dispose();
+    }//GEN-LAST:event_BOTAO_SALVAR___ActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel BAIRRO;
@@ -592,6 +674,7 @@ public class CadastroTutoresJIFF extends javax.swing.JInternalFrame {
     private javax.swing.JLabel TIPOREDE;
     private javax.swing.JLabel TIPOREDE1;
     private javax.swing.JLabel UF;
+    private javax.swing.JComboBox<String> comboTUTOR_UF;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
@@ -619,6 +702,5 @@ public class CadastroTutoresJIFF extends javax.swing.JInternalFrame {
     private javax.swing.JTextField txtTUTOR_TIPODOCUMENTO;
     private javax.swing.JTextField txtTUTOR_TIPOREDESOCIAL1;
     private javax.swing.JTextField txtTUTOR_TIPOREDESOCIAL2;
-    private javax.swing.JTextField txtTUTOR_UF;
     // End of variables declaration//GEN-END:variables
 }

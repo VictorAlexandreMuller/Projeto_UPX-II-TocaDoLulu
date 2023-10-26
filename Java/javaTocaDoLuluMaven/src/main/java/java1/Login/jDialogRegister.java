@@ -1,7 +1,7 @@
 package java1.Login;
 
-import dao.RegisterDAO;
-import dao.JPAUtil;
+import ClassesDAO.UsuariosDAO;
+import ConectionsDAO.JPAUtil;
 import java.awt.event.ActionEvent;
 import java.awt.event.KeyEvent;
 import java1.Classes.Usuarios;
@@ -273,7 +273,7 @@ public class jDialogRegister extends javax.swing.JDialog {
                 } else{
             // Conexão com o banco de dados
             EntityManager em = JPAUtil.getEntityManager();
-            RegisterDAO dao = new RegisterDAO(em);
+            UsuariosDAO dao = new UsuariosDAO(em);
 
             em.getTransaction().begin();
             em.persist(usuario);

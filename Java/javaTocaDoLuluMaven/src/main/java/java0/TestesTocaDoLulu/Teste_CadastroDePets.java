@@ -1,7 +1,7 @@
 package java0.TestesTocaDoLulu;
 
-import dao.PetsDAO;
-import dao.JPAUtil;
+import ClassesDAO.PetsDAO;
+import ConectionsDAO.JPAUtil;
 import java1.Classes.Pets;
 import javax.persistence.EntityManager;
 

@@ -1,4 +1,4 @@
-package dao;
+package ConectionsDAO;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;

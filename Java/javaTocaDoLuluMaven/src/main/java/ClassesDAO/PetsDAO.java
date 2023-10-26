@@ -1,5 +1,6 @@
-package dao;
+package ClassesDAO;
 
+import ConectionsDAO.ConexaoDAOviaJDBC;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -17,16 +18,15 @@ public class PetsDAO {
     public PetsDAO(EntityManager em) {
         this.em = em;
     }
-    
-    public PetsDAO() {
         
-    }
-    
     public void cadastrar(Pets pet){
         this.em.persist(pet);
     }
     
-    
+    // Construtor vazio
+        public PetsDAO() {
+        
+    }
     
     
     

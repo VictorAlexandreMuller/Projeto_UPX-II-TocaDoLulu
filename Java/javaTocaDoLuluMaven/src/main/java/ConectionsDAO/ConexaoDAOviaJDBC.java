@@ -1,4 +1,4 @@
-package dao;
+package ConectionsDAO;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -7,6 +7,8 @@ import javax.swing.JOptionPane;
 
 public class ConexaoDAOviaJDBC {
     
+    
+    // Conexão usada do PetsDAO
     public Connection conectaBD(){
         Connection conn = null;
         

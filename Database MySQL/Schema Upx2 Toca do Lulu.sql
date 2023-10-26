@@ -36,6 +36,48 @@ VALUES
     ('Intermediário', 750.00),
     ('Premium', 1000.00);
 
+
+-- TUTORES TABLES 1-N --------------------------------------------------------------------------------
+
+
+
+-- TUTORES -------------------------------------------------------------------------------------------
+
+CREATE TABLE Tutores (
+	id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    
+    nome VARCHAR(55) NOT NULL,
+    tipo_documento VARCHAR(20) NOT NULL,
+	documento_identificador VARCHAR(50) NOT NULL,
+	nascimento DATE NOT NULL,
+    cep INT NOT NULL,
+    logradouro VARCHAR(50) NOT NULL,
+    numero VARCHAR(10) NOT NULL,
+    bairro VARCHAR(30) NOT NULL,
+    UF VARCHAR(24) NOT NULL,
+    municipio VARCHAR(30) NOT NULL,
+	complemento VARCHAR(30) NOT NULL,
+    
+    ddd_1 INT NOT NULL,
+	celular_1 INT NOT NULL,
+    email_1 VARCHAR(70) NOT NULL,
+    
+    ddd_2 INT,
+	celular_2 INT,
+    email_2 VARCHAR(70),
+    tipo_rede_1 VARCHAR(20),
+    rede_social_1 VARCHAR(40),
+    tipo_rede_2 VARCHAR(20),
+    rede_social_2 VARCHAR(40),
+    observacoes VARCHAR(250),
+    
+    INDEX idx_nome (nome)
+);
+
+
+
+
+
 -- PETS ----------------------------------------------------------------------------------------------
 
 CREATE TABLE Pets (
@@ -61,50 +103,18 @@ CREATE TABLE Pets (
     tipo_plano VARCHAR(50),
     tipo_valor DOUBLE(8,2),
     
+    quem_tutor VARCHAR(55),
+    
     FOREIGN KEY (tipo_plano) REFERENCES Pets_Planos_Valores(plano),
-    FOREIGN KEY (tipo_valor) REFERENCES Pets_Planos_Valores(valor)
+    FOREIGN KEY (tipo_valor) REFERENCES Pets_Planos_Valores(valor),
+    
+    FOREIGN KEY (quem_tutor) REFERENCES Tutores(nome)
 );
 -- SET SQL_SAFE_UPDATES = 0;
 -- UPDATE Pets 
 -- SET nascimento = DATE_FORMAT(nascimento, '%d/%m/%Y') 
 -- WHERE nascimento LIKE '__/__/____';
 -- SET SQL_SAFE_UPDATES = 1;
-
-
--- TUTORES TABLES 1-N --------------------------------------------------------------------------------
-
-
-
--- TUTORES -------------------------------------------------------------------------------------------
-
-CREATE TABLE Tutores (
-	id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
-    
-    nome VARCHAR(55) NOT NULL,
-    tipo_documento VARCHAR(20) NOT NULL,
-	documento_identificador VARCHAR(50) NOT NULL,
-	nascimento DATE NOT NULL,
-    cep INT NOT NULL,
-    logradouro VARCHAR(50) NOT NULL,
-    numero VARCHAR(10) NOT NULL,
-    bairro VARCHAR(30) NOT NULL,
-    UF VARCHAR(2) NOT NULL,
-    municipio VARCHAR(30) NOT NULL,
-	complemento VARCHAR(30) NOT NULL,
-    
-    ddd_1 INT NOT NULL,
-	celular_1 INT NOT NULL,
-    email_1 VARCHAR(70) NOT NULL,
-    
-    ddd_2 INT,
-	celular_2 INT,
-    email_2 VARCHAR(70),
-    tipo_rede_1 VARCHAR(20),
-    rede_social_1 VARCHAR(40),
-    tipo_rede_2 VARCHAR(20),
-    rede_social_2 VARCHAR(40),
-    observacoes VARCHAR(250)
-);
 
 
 
@@ -127,7 +137,7 @@ CREATE TABLE Veterinarios (
     logradouro VARCHAR(50) NOT NULL,
     numero VARCHAR(10) NOT NULL,
     bairro VARCHAR(30) NOT NULL,
-    UF VARCHAR(2) NOT NULL,
+    UF VARCHAR(24) NOT NULL,
     municipio VARCHAR(30) NOT NULL,
 	complemento VARCHAR(30) NOT NULL,
     
@@ -165,7 +175,7 @@ CREATE TABLE Veterinarios (
     logradouro VARCHAR(50) NOT NULL,
     numero VARCHAR(10) NOT NULL,
     bairro VARCHAR(30) NOT NULL,
-    UF VARCHAR(2) NOT NULL,
+    UF VARCHAR(24) NOT NULL,
     municipio VARCHAR(30) NOT NULL,
 	complemento VARCHAR(30) NOT NULL,
     

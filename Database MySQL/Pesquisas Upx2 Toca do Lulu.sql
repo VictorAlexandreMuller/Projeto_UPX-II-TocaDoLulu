@@ -8,3 +8,4 @@ SELECT * FROM veterinario;
 
 SELECT * FROM Pets_Planos_Valores;
 SELECT * FROM Usuarios;
+SELECT * FROM Tutores;
