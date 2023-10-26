@@ -254,7 +254,7 @@ public class jDialogLogin extends javax.swing.JDialog {
     }// </editor-fold>//GEN-END:initComponents
 
     private void LOGINActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LOGINActionPerformed
-        
+        /*
         try {
 
             String nome_usuario, senha_usuario;
@@ -285,8 +285,8 @@ public class jDialogLogin extends javax.swing.JDialog {
             JOptionPane.showMessageDialog(null, "ISAHJISUAHSA" + erro);
             
         }
+        */
         
-        /*
         // LOGIN
         if (txtUSERNAME.getText().equals("admin") && txtPASSWORD.getText().equals("123")) {
             autenticado = true;
@@ -296,7 +296,7 @@ public class jDialogLogin extends javax.swing.JDialog {
             autenticado = false;
         }
         // LOGIN
-        */
+        
         //Swing_Tela_Inicial obj = new Swing_Tela_Inicial();
         //obj.setVisible(true);
         //this.dispose();
