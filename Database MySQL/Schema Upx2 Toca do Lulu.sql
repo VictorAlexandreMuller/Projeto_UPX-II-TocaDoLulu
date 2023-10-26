@@ -103,7 +103,7 @@ CREATE TABLE Pets (
     tipo_plano VARCHAR(50),
     tipo_valor DOUBLE(8,2),
     
-    quem_tutor VARCHAR(55),
+    quem_tutor VARCHAR(55) NOT NULL,
     
     FOREIGN KEY (tipo_plano) REFERENCES Pets_Planos_Valores(plano),
     FOREIGN KEY (tipo_valor) REFERENCES Pets_Planos_Valores(valor),

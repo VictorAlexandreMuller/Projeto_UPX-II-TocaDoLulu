@@ -5,24 +5,23 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java1.Classes.Tutores;
+import java1.Classes.PetsPlanosValores;
 import javax.persistence.EntityManager;
 import javax.swing.JOptionPane;
 
-public class TutoresDAO {
-    
+public class PetsPlanosValoresDAO {
     private EntityManager em;
 
-    public TutoresDAO(EntityManager em) {
+    public PetsPlanosValoresDAO(EntityManager em) {
         this.em = em;
     }
 
-    public TutoresDAO() {
+    public PetsPlanosValoresDAO() {
         
     }
     
-    public void cadastrar(Tutores tutores){
-        this.em.persist(tutores);
+    public void cadastrar(PetsPlanosValores petsplanosvalores){
+        this.em.persist(petsplanosvalores);
     }
     
     
@@ -31,17 +30,18 @@ public class TutoresDAO {
     Connection conn;
     PreparedStatement pstm;
     ResultSet rs;
-    
-    public ResultSet listarComboTutores() {
+        
+    public ResultSet listarComboPlanos() {
         conn = new ConexaoDAOviaJDBC().conectaBD();
-        String sql = "SELECT Nome FROM Tutores;";
+        String sql = "SELECT * FROM Pets_Planos_Valores;";
         
         try {
             pstm = conn.prepareStatement(sql);
             return pstm.executeQuery();
         } catch (SQLException erro) {
-            JOptionPane.showMessageDialog(null, "ListarTutores TutoresDAO" + erro.getMessage());
+            JOptionPane.showMessageDialog(null, "ListarPets PetsDAO" + erro.getMessage());
             return null;
         }
     }
+    
 }

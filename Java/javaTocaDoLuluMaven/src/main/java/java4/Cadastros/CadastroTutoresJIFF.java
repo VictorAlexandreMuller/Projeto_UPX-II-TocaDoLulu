@@ -148,6 +148,7 @@ public class CadastroTutoresJIFF extends javax.swing.JInternalFrame {
 
         txtTUTOR_OBSERVACOES.setBackground(new java.awt.Color(86, 76, 106));
         txtTUTOR_OBSERVACOES.setColumns(20);
+        txtTUTOR_OBSERVACOES.setForeground(new java.awt.Color(255, 255, 255));
         txtTUTOR_OBSERVACOES.setLineWrap(true);
         txtTUTOR_OBSERVACOES.setRows(5);
         txtTUTOR_OBSERVACOES.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
@@ -602,7 +603,7 @@ public class CadastroTutoresJIFF extends javax.swing.JInternalFrame {
         tutores.setCelular_1(Integer.parseInt(txtTUTOR_CELULAR1.getText()));
         
         if(txtTUTOR_DDD2.getText().isEmpty()){
-            tutores.setDdd_2(0); 
+            tutores.setDdd_2(0);
         } else {
             tutores.setDdd_2(Integer.parseInt(txtTUTOR_DDD2.getText()));
         }

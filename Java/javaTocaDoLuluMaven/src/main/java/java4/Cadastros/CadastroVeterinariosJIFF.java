@@ -152,6 +152,7 @@ public class CadastroVeterinariosJIFF extends javax.swing.JInternalFrame {
 
         txtVETERINARIO_OBSERVACOES.setBackground(new java.awt.Color(86, 76, 106));
         txtVETERINARIO_OBSERVACOES.setColumns(20);
+        txtVETERINARIO_OBSERVACOES.setForeground(new java.awt.Color(255, 255, 255));
         txtVETERINARIO_OBSERVACOES.setLineWrap(true);
         txtVETERINARIO_OBSERVACOES.setRows(5);
         txtVETERINARIO_OBSERVACOES.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));

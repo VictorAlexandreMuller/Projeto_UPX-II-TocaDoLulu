@@ -153,6 +153,7 @@ public class CadastroServicosJIFF extends javax.swing.JInternalFrame {
 
         txtSERVICO_OBSERVACOES.setBackground(new java.awt.Color(86, 76, 106));
         txtSERVICO_OBSERVACOES.setColumns(20);
+        txtSERVICO_OBSERVACOES.setForeground(new java.awt.Color(255, 255, 255));
         txtSERVICO_OBSERVACOES.setLineWrap(true);
         txtSERVICO_OBSERVACOES.setRows(5);
         txtSERVICO_OBSERVACOES.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));

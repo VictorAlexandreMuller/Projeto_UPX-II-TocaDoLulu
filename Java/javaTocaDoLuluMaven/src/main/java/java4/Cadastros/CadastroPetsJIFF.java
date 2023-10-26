@@ -11,13 +11,15 @@ import java1.Classes.Pets;
 import java1.Classes.PetsPlanosValores;
 import javax.persistence.EntityManager;
 import javax.swing.JOptionPane;
+import ClassesDAO.PetsPlanosValoresDAO;
+import ClassesDAO.TutoresDAO;
 
 public class CadastroPetsJIFF extends javax.swing.JInternalFrame {
 
     public CadastroPetsJIFF() {
         initComponents();
         restaurarDadosComboBoxPlanos();
-        // restaurarDadosComboBoxTutores();
+        restaurarDadosComboBoxTutores();
     }
 
     private static CadastroPetsJIFF myInstance;
@@ -40,7 +42,7 @@ public class CadastroPetsJIFF extends javax.swing.JInternalFrame {
     
     public void restaurarDadosComboBoxPlanos(){
         try {
-            PetsDAO objpetsdao = new PetsDAO();
+            PetsPlanosValoresDAO objpetsdao = new PetsPlanosValoresDAO();
             ResultSet rs = objpetsdao.listarComboPlanos();
             
             while (rs.next()) {
@@ -53,22 +55,20 @@ public class CadastroPetsJIFF extends javax.swing.JInternalFrame {
         }
     }
     
-    /* AJUSTAR TAMBEM O INIT COMPONENT
     public void restaurarDadosComboBoxTutores(){
         try {
-            TutoresDAO objtutoressdao = new TutoresDAO();
-            ResultSet rs = objtutoresdao.listarTutores();
+            TutoresDAO obj = new TutoresDAO();
+            ResultSet rs = obj.listarComboTutores();
             
             while (rs.next()) {
-                // 2: id_plano.addElement(rs.getInt(1));
                 comboTUTOR.addItem(rs.getString(1));
             }
             
         } catch (SQLException erro) {
-            JOptionPane.showMessageDialog(null, "Carregar Plano VIEW: " + erro);
+            JOptionPane.showMessageDialog(null, "Carregar Tutor VIEW: " + erro);
         }
     }
-    */
+    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -515,12 +515,11 @@ public class CadastroPetsJIFF extends javax.swing.JInternalFrame {
         
         Pets pet = new Pets();
         PetsPlanosValores plano = new PetsPlanosValores();
-        
+                
         pet.setNome(txtPET_NOME.getText());
         pet.setSexo(comboPET_SEXO.getSelectedItem().toString().charAt(0));
         pet.setRaca(txtPET_RACA.getText());
         pet.setCor(txtPET_COR.getText());
-        
         // Convertendo a data de DD/MM/YYYY para YYYY-MM-DD
         String dataNascimento = txtPET_NASCIMENTO.getText();
         SimpleDateFormat dateFormatInput = new SimpleDateFormat("dd/MM/yyyy");
@@ -531,7 +530,16 @@ public class CadastroPetsJIFF extends javax.swing.JInternalFrame {
         } catch (ParseException erro) {
             JOptionPane.showMessageDialog(null, "Erro na conversão de data: " + erro);
         }
-        plano.setPlano(comboPET_PLANO.getSelectedItem().toString().charAt(0));
+        pet.setTipo_rede_1(txtPET_TIPOREDESOCIAL1.getText());
+        pet.setRede_social_1(txtPET_REDESOCIAL1.getText());
+        pet.setTipo_rede_2(txtPET_TIPOREDESOCIAL2.getText());
+        pet.setRede_social_2(txtPET_REDESOCIAL2.getText());
+        pet.setTipo_plano(comboPET_PLANO.getSelectedItem().toString().charAt(0));
+        pet.setAlergias(txtPET_ALERGIAS.getText());
+        pet.setVacinacao(txtPET_VACINACAO.getText());
+        pet.setRemedios(txtPET_REMEDIOS.getText());
+        pet.setObservacoes(txtPET_OBSERVACOES.getText());
+        pet.setQuem_tutor(comboTUTOR.getSelectedItem().toString().charAt(0));
         
         EntityManager em = JPAUtil.getEntityManager();
         PetsDAO dao = new PetsDAO(em);

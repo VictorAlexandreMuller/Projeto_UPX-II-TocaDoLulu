@@ -34,11 +34,12 @@ public class Pets {
     private String observacoes;
     private char tipo_plano;
     private double tipo_valor;
+    private char quem_tutor;
 
     public Pets() {
     }
 
-    public Pets(String nome, char sexo, String raca, String cor, String nascimento, String tipo_rede_1, String rede_social_1, String tipo_rede_2, String rede_social_2, String alergias, String remedios, String vacinacao, String observacoes, char tipo_plano) {
+    public Pets(String nome, char sexo, String raca, String cor, String nascimento, String tipo_rede_1, String rede_social_1, String tipo_rede_2, String rede_social_2, String alergias, String remedios, String vacinacao, String observacoes, char tipo_plano, char quem_tutor) {
         this.nome = nome;
         this.sexo = sexo;
         this.raca = raca;
@@ -53,6 +54,7 @@ public class Pets {
         this.vacinacao = vacinacao;
         this.observacoes = observacoes;
         this.tipo_plano = tipo_plano;
+        this.quem_tutor = quem_tutor;
     }
 
     public int getId() {
@@ -181,6 +183,14 @@ public class Pets {
 
     public void setTipo_valor(double tipo_valor) {
         this.tipo_valor = tipo_valor;
+    }
+
+    public char getQuem_tutor() {
+        return quem_tutor;
+    }
+
+    public void setQuem_tutor(char quem_tutor) {
+        this.quem_tutor = quem_tutor;
     }
 
     
