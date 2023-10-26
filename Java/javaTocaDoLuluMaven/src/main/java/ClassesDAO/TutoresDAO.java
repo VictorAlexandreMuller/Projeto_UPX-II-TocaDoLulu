@@ -34,7 +34,7 @@ public class TutoresDAO {
     
     public ResultSet listarComboTutores() {
         conn = new ConexaoDAOviaJDBC().conectaBD();
-        String sql = "SELECT Nome FROM Tutores;";
+        String sql = "SELECT Id, Nome FROM Tutores;";
         
         try {
             pstm = conn.prepareStatement(sql);

@@ -55,15 +55,14 @@ public class CadastroPetsJIFF extends javax.swing.JInternalFrame {
         }
     }
     
-    public void restaurarDadosComboBoxTutores(){
+    public void restaurarDadosComboBoxTutores() {
         try {
             TutoresDAO obj = new TutoresDAO();
             ResultSet rs = obj.listarComboTutores();
             
             while (rs.next()) {
-                comboTUTOR.addItem(rs.getString(1));
+                comboTUTOR.addItem(rs.getString(2));
             }
-            
         } catch (SQLException erro) {
             JOptionPane.showMessageDialog(null, "Carregar Tutor VIEW: " + erro);
         }
@@ -515,7 +514,7 @@ public class CadastroPetsJIFF extends javax.swing.JInternalFrame {
         
         Pets pet = new Pets();
         PetsPlanosValores plano = new PetsPlanosValores();
-                
+        
         pet.setNome(txtPET_NOME.getText());
         pet.setSexo(comboPET_SEXO.getSelectedItem().toString().charAt(0));
         pet.setRaca(txtPET_RACA.getText());
@@ -539,7 +538,7 @@ public class CadastroPetsJIFF extends javax.swing.JInternalFrame {
         pet.setVacinacao(txtPET_VACINACAO.getText());
         pet.setRemedios(txtPET_REMEDIOS.getText());
         pet.setObservacoes(txtPET_OBSERVACOES.getText());
-        pet.setQuem_tutor(comboTUTOR.getSelectedItem().toString().charAt(0));
+        pet.setId_tutores((int)comboTUTOR.getSelectedItem());
         
         EntityManager em = JPAUtil.getEntityManager();
         PetsDAO dao = new PetsDAO(em);

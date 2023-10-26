@@ -1,6 +1,5 @@
 package java1.ClassesDB;
 
-import java1.ClassesDB.TPPK;
 import java.io.Serializable;
 import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;

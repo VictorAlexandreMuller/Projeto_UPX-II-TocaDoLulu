@@ -1,11 +1,16 @@
 package java1.Login;
 
+import ClassesDAO.UsuariosDAO;
 import java.awt.Frame;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java1.Classes.Usuarios;
+import java2.InicialPanel.SwingTelaInicial;
 import javax.swing.JOptionPane;
 
 public class jDialogLogin extends javax.swing.JDialog {
@@ -249,6 +254,39 @@ public class jDialogLogin extends javax.swing.JDialog {
     }// </editor-fold>//GEN-END:initComponents
 
     private void LOGINActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LOGINActionPerformed
+        
+        try {
+
+            String nome_usuario, senha_usuario;
+
+            nome_usuario = txtUSERNAME.getText();
+            senha_usuario = txtPASSWORD.getText();
+
+            Usuarios objusuario = new Usuarios();
+
+            objusuario.setEmail(nome_usuario);
+            objusuario.setSenha(senha_usuario);
+            
+            UsuariosDAO objusuariodao = new UsuariosDAO();
+            ResultSet rsUsuarioDao = objusuariodao.autenticacaoUsuario(objusuario);
+            
+            
+            if(rsUsuarioDao.next()) {
+                SwingTelaInicial objSwingInit = new SwingTelaInicial();
+                objSwingInit.setVisible(true);
+                autenticado = true;
+                dispose();
+            } else {
+                JOptionPane.showMessageDialog(null, "Usuário ou Senha Inválida.");
+                autenticado = false;
+            }
+            
+        } catch (SQLException erro) {
+            JOptionPane.showMessageDialog(null, "ISAHJISUAHSA" + erro);
+            
+        }
+        
+        /*
         // LOGIN
         if (txtUSERNAME.getText().equals("admin") && txtPASSWORD.getText().equals("123")) {
             autenticado = true;
@@ -258,7 +296,7 @@ public class jDialogLogin extends javax.swing.JDialog {
             autenticado = false;
         }
         // LOGIN
-        
+        */
         //Swing_Tela_Inicial obj = new Swing_Tela_Inicial();
         //obj.setVisible(true);
         //this.dispose();

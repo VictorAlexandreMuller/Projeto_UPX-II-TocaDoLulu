@@ -1,6 +1,8 @@
 package java1.Classes;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
@@ -8,6 +10,8 @@ import javax.persistence.Table;
 @Table(name = "Usuarios")
 public class Usuarios {
     @Id
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    private int id_usuario;
     private String email;
     private String senha;
 
@@ -34,6 +38,13 @@ public class Usuarios {
     public void setSenha(String senha) {
         this.senha = senha;
     }
-    
+
+    public int getId_usuario() {
+        return id_usuario;
+    }
+
+    public void setId_usuario(int id_usuario) {
+        this.id_usuario = id_usuario;
+    }
     
 }

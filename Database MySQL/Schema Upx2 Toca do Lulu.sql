@@ -69,9 +69,7 @@ CREATE TABLE Tutores (
     rede_social_1 VARCHAR(40),
     tipo_rede_2 VARCHAR(20),
     rede_social_2 VARCHAR(40),
-    observacoes VARCHAR(250),
-    
-    INDEX idx_nome (nome)
+    observacoes VARCHAR(250)
 );
 
 
@@ -103,12 +101,12 @@ CREATE TABLE Pets (
     tipo_plano VARCHAR(50),
     tipo_valor DOUBLE(8,2),
     
-    quem_tutor VARCHAR(55) NOT NULL,
+    id_tutores INT NOT NULL,
     
     FOREIGN KEY (tipo_plano) REFERENCES Pets_Planos_Valores(plano),
     FOREIGN KEY (tipo_valor) REFERENCES Pets_Planos_Valores(valor),
     
-    FOREIGN KEY (quem_tutor) REFERENCES Tutores(nome)
+    FOREIGN KEY (id_tutores) REFERENCES Tutores(id)
 );
 -- SET SQL_SAFE_UPDATES = 0;
 -- UPDATE Pets 
