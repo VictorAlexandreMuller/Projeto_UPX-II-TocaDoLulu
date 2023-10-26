@@ -18,7 +18,7 @@ public class CadastroPetsJIFF extends javax.swing.JInternalFrame {
     public CadastroPetsJIFF() {
         initComponents();
         restaurarDadosComboBoxPlanos();
-        restaurarDadosComboBoxTutores();
+        // restaurarDadosComboBoxTutores();
     }
 
     private static CadastroPetsJIFF myInstance;
@@ -54,6 +54,7 @@ public class CadastroPetsJIFF extends javax.swing.JInternalFrame {
         }
     }
     
+    /* AJUSTAR TAMBEM O INIT COMPONENT
     public void restaurarDadosComboBoxTutores(){
         try {
             TutoresDAO objtutoressdao = new TutoresDAO();
@@ -68,7 +69,7 @@ public class CadastroPetsJIFF extends javax.swing.JInternalFrame {
             JOptionPane.showMessageDialog(null, "Carregar Plano VIEW: " + erro);
         }
     }
-    
+    */
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {

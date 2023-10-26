@@ -4,8 +4,6 @@ import dao.DAO;
 import dao.JPAUtil;
 import java1.Classes.Pets;
 import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.Persistence;
 
 public class Teste_CadastroDePets {
     
