@@ -23,7 +23,7 @@ public class Veterinarios {
     private String logradouro;
     private String numero;
     private String bairro;
-    private char UF;
+    private String UF;
     private String municipio;
     private String complemento;
 
@@ -39,7 +39,7 @@ public class Veterinarios {
     public Veterinarios() {
     }
 
-    public Veterinarios(String nome, String tipo_documento, String documento_identificador, String crmv, String nascimento, int cep, String logradouro, String numero, String bairro, char UF, String municipio, String complemento, int ddd_1, int celular_1, int ddd_2, int celular_2, String email_1, String email_2, double valor, String observacoes) {
+    public Veterinarios(String nome, String tipo_documento, String documento_identificador, String crmv, String nascimento, int cep, String logradouro, String numero, String bairro, String UF, String municipio, String complemento, int ddd_1, int celular_1, int ddd_2, int celular_2, String email_1, String email_2, double valor, String observacoes) {
         this.nome = nome;
         this.tipo_documento = tipo_documento;
         this.documento_identificador = documento_identificador;
@@ -150,12 +150,12 @@ public class Veterinarios {
         this.bairro = bairro;
     }
 
-    public char getUf() {
+    public String getUf() {
         return UF;
     }
 
-    public void setUf(char uf) {
-        this.UF = UF;
+    public void setUf(String uf) {
+        this.UF = uf;
     }
 
     public String getMunicipio() {

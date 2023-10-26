@@ -24,7 +24,7 @@ public class Servicos {
     private String logradouro;
     private String numero;
     private String bairro;
-    private char UF;
+    private String UF;
     private String municipio;
     private String complemento;
 
@@ -39,7 +39,7 @@ public class Servicos {
     public Servicos() {
     }
 
-    public Servicos(String nome, String servico, double valor, String tipo_documento, String documento_identificador, String nascimento, int cep, String logradouro, String numero, String bairro, char UF, String municipio, String complemento, int ddd_1, int celular_1, int ddd_2, int celular_2, String email_1, String email_2, String observacoes) {
+    public Servicos(String nome, String servico, double valor, String tipo_documento, String documento_identificador, String nascimento, int cep, String logradouro, String numero, String bairro, String UF, String municipio, String complemento, int ddd_1, int celular_1, int ddd_2, int celular_2, String email_1, String email_2, String observacoes) {
         this.nome = nome;
         this.servico = servico;
         this.valor = valor;
@@ -150,12 +150,12 @@ public class Servicos {
         this.bairro = bairro;
     }
 
-    public char getUf() {
+    public String getUf() {
         return UF;
     }
 
-    public void setUf(char uf) {
-        this.UF = UF;
+    public void setUf(String uf) {
+        this.UF = uf;
     }
 
     public String getMunicipio() {

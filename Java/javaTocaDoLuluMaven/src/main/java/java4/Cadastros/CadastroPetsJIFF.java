@@ -533,12 +533,12 @@ public class CadastroPetsJIFF extends javax.swing.JInternalFrame {
         pet.setRede_social_1(txtPET_REDESOCIAL1.getText());
         pet.setTipo_rede_2(txtPET_TIPOREDESOCIAL2.getText());
         pet.setRede_social_2(txtPET_REDESOCIAL2.getText());
-        pet.setTipo_plano(comboPET_PLANO.getSelectedItem().toString().charAt(0));
+        pet.setTipo_plano(comboPET_PLANO.getSelectedItem().toString());
         pet.setAlergias(txtPET_ALERGIAS.getText());
         pet.setVacinacao(txtPET_VACINACAO.getText());
         pet.setRemedios(txtPET_REMEDIOS.getText());
         pet.setObservacoes(txtPET_OBSERVACOES.getText());
-        pet.setId_tutores((int)comboTUTOR.getSelectedItem());
+        pet.setId_tutores(Integer.parseInt(comboTUTOR.getSelectedItem().toString()));
         
         EntityManager em = JPAUtil.getEntityManager();
         PetsDAO dao = new PetsDAO(em);

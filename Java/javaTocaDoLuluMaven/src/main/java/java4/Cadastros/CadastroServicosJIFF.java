@@ -591,12 +591,12 @@ public class CadastroServicosJIFF extends javax.swing.JInternalFrame {
         }
         
         servicos.setEmail_1(txtSERVICO_EMAIL1.getText());
-        servicos.setEmail_1(txtSERVICO_EMAIL1.getText());
+        servicos.setEmail_2(txtSERVICO_EMAIL2.getText());
         servicos.setCep(Integer.parseInt(txtSERVICO_CEP.getText()));
         servicos.setLogradouro(txtSERVICO_LOGRADOURO.getText());
         servicos.setNumero(txtSERVICO_NUMERO.getText());
         servicos.setBairro(txtSERVICO_BAIRRO.getText());
-        servicos.setUf(comboSERVICO_UF.getSelectedItem().toString().charAt(0));
+        servicos.setUf(comboSERVICO_UF.getSelectedItem().toString());
         servicos.setMunicipio(txtSERVICO_MUNICIPIO.getText());
         servicos.setComplemento(txtSERVICO_COMPLEMENTO.getText());
         servicos.setObservacoes(txtSERVICO_OBSERVACOES.getText());

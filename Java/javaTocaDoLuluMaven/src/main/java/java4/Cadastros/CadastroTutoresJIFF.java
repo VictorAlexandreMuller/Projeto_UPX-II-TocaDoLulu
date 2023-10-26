@@ -615,7 +615,7 @@ public class CadastroTutoresJIFF extends javax.swing.JInternalFrame {
         }
         
         tutores.setEmail_1(txtTUTOR_EMAIL1.getText());
-        tutores.setEmail_1(txtTUTOR_EMAIL1.getText());
+        tutores.setEmail_2(txtTUTOR_EMAIL2.getText());
         tutores.setTipo_rede_1(txtTUTOR_TIPOREDESOCIAL1.getText());
         tutores.setRede_social_1(txtTUTOR_REDESOCIAL1.getText());
         tutores.setTipo_rede_2(txtTUTOR_TIPOREDESOCIAL2.getText());

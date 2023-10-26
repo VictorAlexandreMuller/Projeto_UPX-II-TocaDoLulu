@@ -571,14 +571,14 @@ public class CadastroVeterinariosJIFF extends javax.swing.JInternalFrame {
         }
         
         veterinarios.setEmail_1(txtVETERINARIO_EMAIL1.getText());
-        veterinarios.setEmail_1(txtVETERINARIO_EMAIL1.getText());
+        veterinarios.setEmail_2(txtVETERINARIO_EMAIL2.getText());
         veterinarios.setValor(Double.parseDouble(txtVETERINARIO_VALOR.getText()));
         
         veterinarios.setCep(Integer.parseInt(txtVETERINARIO_CEP.getText()));
         veterinarios.setLogradouro(txtVETERINARIO_LOGRADOURO.getText());
         veterinarios.setNumero(txtVETERINARIO_NUMERO.getText());
         veterinarios.setBairro(txtVETERINARIO_BAIRRO.getText());
-        veterinarios.setUf(comboVETERINARIO_UF.getSelectedItem().toString().charAt(0));
+        veterinarios.setUf(comboVETERINARIO_UF.getSelectedItem().toString());
         veterinarios.setMunicipio(txtVETERINARIO_MUNICIPIO.getText());
         veterinarios.setComplemento(txtVETERINARIO_COMPLEMENTO.getText());
         veterinarios.setObservacoes(txtVETERINARIO_OBSERVACOES.getText());
