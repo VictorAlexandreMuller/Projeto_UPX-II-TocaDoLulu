@@ -624,7 +624,7 @@ public class CadastroTutoresJIFF extends javax.swing.JInternalFrame {
         tutores.setLogradouro(txtTUTOR_LOGRADOURO.getText());
         tutores.setNumero(txtTUTOR_NUMERO.getText());
         tutores.setBairro(txtTUTOR_BAIRRO.getText());
-        tutores.setUf(comboTUTOR_UF.getSelectedItem().toString().charAt(0));
+        tutores.setUf(comboTUTOR_UF.getSelectedItem().toString());
         tutores.setMunicipio(txtTUTOR_MUNICIPIO.getText());
         tutores.setComplemento(txtTUTOR_COMPLEMENTO.getText());
         tutores.setObservacoes(txtTUTOR_OBSERVACOES.getText());
