@@ -6,7 +6,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java1.Classes.Pets;
-import java1.Classes.Pets_Planos_Valores;
+import java1.Classes.PetsPlanosValores;
 import javax.swing.JOptionPane;
 
 public class PetsDAO {
@@ -14,7 +14,7 @@ public class PetsDAO {
     PreparedStatement pstm;
     ResultSet rs;
     ArrayList<Pets> listaPets = new ArrayList<>();
-    ArrayList<Pets_Planos_Valores> listaCargo = new ArrayList<>();
+    ArrayList<PetsPlanosValores> listaCargo = new ArrayList<>();
     
     public void cadastrarPets(Pets objPets) {
         String sql = "insert into funcionario";

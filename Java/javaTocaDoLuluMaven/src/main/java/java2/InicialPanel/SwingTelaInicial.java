@@ -4,15 +4,16 @@ import java.awt.Color;
 import java.awt.Image;
 import java.awt.Graphics;
 import java3.Panels.PainelPetsJIFF;
-import java3.Panels.Painel_Tutores_JIFF;
-import java3.Panels.Painel_Veterinarios_JIFF;
 import javax.swing.JMenu;
 import javax.swing.JPanel;
 import java1.Login.jDialogLogin;
 import java3.Panels.PainelServicosJIFF;
 import java3.Panels.PainelTutoresJIFF;
 import java3.Panels.PainelVeterinariosJIFF;
+import java3.Panels.Precos;
+import java3.Panels.Sobre;
 import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
 
 
 public class SwingTelaInicial extends javax.swing.JFrame {
@@ -119,7 +120,7 @@ public class SwingTelaInicial extends javax.swing.JFrame {
         PETS.setForeground(new java.awt.Color(255, 255, 255));
         PETS.setText("PETS");
 
-        icon_PETS.setIcon(new javax.swing.ImageIcon("C:\\Users\\PC\\Documents\\Dev\\UPX2-Toca-do-Lulu\\Java\\javaTocaDoLuluMaven\\src\\main\\java\\iconsInit\\1pets_icon40.png")); // NOI18N
+        icon_PETS.setIcon(new javax.swing.ImageIcon("C:\\Users\\PC\\Documents\\Dev\\UPX2-Toca-do-Lulu\\Java\\javaTocaDoLuluMaven\\src\\main\\java\\iconsInit\\1PetsIcon40.png")); // NOI18N
 
         javax.swing.GroupLayout panel_button_petsLayout = new javax.swing.GroupLayout(panel_button_pets);
         panel_button_pets.setLayout(panel_button_petsLayout);
@@ -164,7 +165,7 @@ public class SwingTelaInicial extends javax.swing.JFrame {
         TUTORES.setForeground(new java.awt.Color(255, 255, 255));
         TUTORES.setText("TUTORES");
 
-        icon_TUTORES.setIcon(new javax.swing.ImageIcon("C:\\Users\\PC\\Documents\\Dev\\UPX2-Toca-do-Lulu\\Java\\javaTocaDoLuluMaven\\src\\main\\java\\iconsInit\\2tutores_icon40.png")); // NOI18N
+        icon_TUTORES.setIcon(new javax.swing.ImageIcon("C:\\Users\\PC\\Documents\\Dev\\UPX2-Toca-do-Lulu\\Java\\javaTocaDoLuluMaven\\src\\main\\java\\iconsInit\\2TutoresIcon40.png")); // NOI18N
 
         javax.swing.GroupLayout panel_button_tutoresLayout = new javax.swing.GroupLayout(panel_button_tutores);
         panel_button_tutores.setLayout(panel_button_tutoresLayout);
@@ -208,7 +209,7 @@ public class SwingTelaInicial extends javax.swing.JFrame {
         VETERINARIOS.setForeground(new java.awt.Color(255, 255, 255));
         VETERINARIOS.setText("VETERINÁRIOS");
 
-        icon_VETERINARIOS.setIcon(new javax.swing.ImageIcon("C:\\Users\\PC\\Documents\\Dev\\UPX2-Toca-do-Lulu\\Java\\javaTocaDoLuluMaven\\src\\main\\java\\iconsInit\\3veterinarios_icon40.png")); // NOI18N
+        icon_VETERINARIOS.setIcon(new javax.swing.ImageIcon("C:\\Users\\PC\\Documents\\Dev\\UPX2-Toca-do-Lulu\\Java\\javaTocaDoLuluMaven\\src\\main\\java\\iconsInit\\3VeterinariosIcon40.png")); // NOI18N
 
         javax.swing.GroupLayout panel_button_veterinariosLayout = new javax.swing.GroupLayout(panel_button_veterinarios);
         panel_button_veterinarios.setLayout(panel_button_veterinariosLayout);
@@ -252,7 +253,7 @@ public class SwingTelaInicial extends javax.swing.JFrame {
         SERVICOS.setForeground(new java.awt.Color(255, 255, 255));
         SERVICOS.setText("SERVIÇOS");
 
-        icon_SERVICOS.setIcon(new javax.swing.ImageIcon("C:\\Users\\PC\\Documents\\Dev\\UPX2-Toca-do-Lulu\\Java\\javaTocaDoLuluMaven\\src\\main\\java\\iconsInit\\4servicos_icon40.png")); // NOI18N
+        icon_SERVICOS.setIcon(new javax.swing.ImageIcon("C:\\Users\\PC\\Documents\\Dev\\UPX2-Toca-do-Lulu\\Java\\javaTocaDoLuluMaven\\src\\main\\java\\iconsInit\\4ServicosIcon40.png")); // NOI18N
 
         javax.swing.GroupLayout panel_button_servicosLayout = new javax.swing.GroupLayout(panel_button_servicos);
         panel_button_servicos.setLayout(panel_button_servicosLayout);
@@ -292,7 +293,7 @@ public class SwingTelaInicial extends javax.swing.JFrame {
             }
         });
 
-        icon_LOGOUT.setIcon(new javax.swing.ImageIcon("C:\\Users\\PC\\Documents\\Dev\\UPX2-Toca-do-Lulu\\Java\\javaTocaDoLuluMaven\\src\\main\\java\\iconsInit\\5logout_icon40.png")); // NOI18N
+        icon_LOGOUT.setIcon(new javax.swing.ImageIcon("C:\\Users\\PC\\Documents\\Dev\\UPX2-Toca-do-Lulu\\Java\\javaTocaDoLuluMaven\\src\\main\\java\\iconsInit\\5LogoutIcon40.png")); // NOI18N
 
         LOGOUT.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         LOGOUT.setForeground(new java.awt.Color(255, 255, 255));
@@ -475,12 +476,23 @@ public class SwingTelaInicial extends javax.swing.JFrame {
         MENU_ITEM_PRECOS.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         MENU_ITEM_PRECOS.setForeground(new java.awt.Color(255, 255, 255));
         MENU_ITEM_PRECOS.setText("Preços");
+        MENU_ITEM_PRECOS.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MENU_ITEM_PRECOSActionPerformed(evt);
+            }
+        });
         MENU_HEADDER_OPCOES.add(MENU_ITEM_PRECOS);
 
+        jMenuItem3.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_5, java.awt.event.InputEvent.CTRL_DOWN_MASK));
         jMenuItem3.setBackground(new java.awt.Color(64, 43, 100));
         jMenuItem3.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jMenuItem3.setForeground(new java.awt.Color(255, 255, 255));
-        jMenuItem3.setText("About");
+        jMenuItem3.setText("Sobre");
+        jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem3ActionPerformed(evt);
+            }
+        });
         MENU_HEADDER_OPCOES.add(jMenuItem3);
 
         jMenuBar1.add(MENU_HEADDER_OPCOES);
@@ -737,6 +749,30 @@ public class SwingTelaInicial extends javax.swing.JFrame {
             t.moveToFront();
         }  
     }//GEN-LAST:event_jMenuItem1ActionPerformed
+
+    private void MENU_ITEM_PRECOSActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MENU_ITEM_PRECOSActionPerformed
+        Precos t = Precos.getInstance();
+        
+        t.pack();
+        
+        if(!t.isVisible ()){
+            t.setVisible(true);
+        } else{
+            t.toFront();
+        }        
+    }//GEN-LAST:event_MENU_ITEM_PRECOSActionPerformed
+
+    private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
+        Sobre t = Sobre.getInstance();
+        
+        t.pack();
+        
+        if(!t.isVisible ()){
+            t.setVisible(true);
+        } else{
+            t.toFront();
+        }        
+    }//GEN-LAST:event_jMenuItem3ActionPerformed
     
     // -> Borda True e false para MouseMoved e MouseExited
     // MENU_HEADDER_BUTTON.setBorderPainted(true);

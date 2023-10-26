@@ -93,6 +93,7 @@ public class PainelTutoresJIFF extends javax.swing.JInternalFrame {
         setIconifiable(true);
         setMaximizable(true);
         setResizable(true);
+        setTitle(" Tutores");
         setMinimumSize(new java.awt.Dimension(929, 631));
 
         DesktopPaneControl_Pets.setBackground(new java.awt.Color(175, 175, 226));
@@ -144,7 +145,7 @@ public class PainelTutoresJIFF extends javax.swing.JInternalFrame {
             }
         });
 
-        icon_VOLTAR.setIcon(new javax.swing.ImageIcon("C:\\Users\\PC\\Documents\\Dev\\UPX2-Toca-do-Lulu\\Java\\javaTocaDoLuluMaven\\src\\main\\java\\iconsCrud\\1voltar_icon40.png")); // NOI18N
+        icon_VOLTAR.setIcon(new javax.swing.ImageIcon("C:\\Users\\PC\\Documents\\Dev\\UPX2-Toca-do-Lulu\\Java\\javaTocaDoLuluMaven\\src\\main\\java\\iconsCrud\\1VoltarIcon40.png")); // NOI18N
         icon_VOLTAR.setPreferredSize(new java.awt.Dimension(40, 40));
 
         VOLTAR.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
@@ -185,7 +186,7 @@ public class PainelTutoresJIFF extends javax.swing.JInternalFrame {
             }
         });
 
-        icon_NOVO.setIcon(new javax.swing.ImageIcon("C:\\Users\\PC\\Documents\\Dev\\UPX2-Toca-do-Lulu\\Java\\javaTocaDoLuluMaven\\src\\main\\java\\iconsCrud\\2novo_icon40.png")); // NOI18N
+        icon_NOVO.setIcon(new javax.swing.ImageIcon("C:\\Users\\PC\\Documents\\Dev\\UPX2-Toca-do-Lulu\\Java\\javaTocaDoLuluMaven\\src\\main\\java\\iconsCrud\\2NovoIcon40.png")); // NOI18N
 
         NOVO.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         NOVO.setForeground(new java.awt.Color(255, 255, 255));
@@ -225,7 +226,7 @@ public class PainelTutoresJIFF extends javax.swing.JInternalFrame {
             }
         });
 
-        icon_EDITAR.setIcon(new javax.swing.ImageIcon("C:\\Users\\PC\\Documents\\Dev\\UPX2-Toca-do-Lulu\\Java\\javaTocaDoLuluMaven\\src\\main\\java\\iconsCrud\\3alterar_icon40.png")); // NOI18N
+        icon_EDITAR.setIcon(new javax.swing.ImageIcon("C:\\Users\\PC\\Documents\\Dev\\UPX2-Toca-do-Lulu\\Java\\javaTocaDoLuluMaven\\src\\main\\java\\iconsCrud\\3AlterarIcon40.png")); // NOI18N
 
         EDITAR.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         EDITAR.setForeground(new java.awt.Color(255, 255, 255));
@@ -262,7 +263,7 @@ public class PainelTutoresJIFF extends javax.swing.JInternalFrame {
             }
         });
 
-        icon_DELETAR.setIcon(new javax.swing.ImageIcon("C:\\Users\\PC\\Documents\\Dev\\UPX2-Toca-do-Lulu\\Java\\javaTocaDoLuluMaven\\src\\main\\java\\iconsCrud\\4deletar_icon40.png")); // NOI18N
+        icon_DELETAR.setIcon(new javax.swing.ImageIcon("C:\\Users\\PC\\Documents\\Dev\\UPX2-Toca-do-Lulu\\Java\\javaTocaDoLuluMaven\\src\\main\\java\\iconsCrud\\4DeletarIcon40.png")); // NOI18N
 
         DELETAR.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         DELETAR.setForeground(new java.awt.Color(255, 255, 255));

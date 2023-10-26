@@ -208,8 +208,14 @@
               </Properties>
             </Component>
             <Component class="javax.swing.JPasswordField" name="txtPASSWORD">
+              <Events>
+                <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtPASSWORDKeyPressed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JTextField" name="txtEMAIL">
+              <Events>
+                <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtEMAILKeyPressed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="SIGN_UP">
               <Properties>
@@ -226,6 +232,7 @@
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="SIGN_UPActionPerformed"/>
+                <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="SIGN_UPKeyPressed"/>
               </Events>
             </Component>
             <Component class="javax.swing.JButton" name="BACK_TO_LOGIN">
@@ -243,6 +250,7 @@
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BACK_TO_LOGINActionPerformed"/>
+                <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="BACK_TO_LOGINKeyPressed"/>
               </Events>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel5">
@@ -317,6 +325,9 @@
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JPasswordField" name="txtCODIGO">
+                  <Events>
+                    <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtCODIGOKeyPressed"/>
+                  </Events>
                 </Component>
               </SubComponents>
             </Container>

@@ -6,17 +6,17 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "Pets_Planos_Valores")
-public class Pets_Planos_Valores {
+public class PetsPlanosValores {
     @Id
     private char plano;
     private double valor;
     
-    public Pets_Planos_Valores(char plano, double valor) {
+    public PetsPlanosValores(char plano, double valor) {
         this.plano = plano;
         this.valor = valor;
     }
 
-    public Pets_Planos_Valores() {
+    public PetsPlanosValores() {
     }
 
     public char getPlano() {

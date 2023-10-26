@@ -166,6 +166,11 @@ public class jDialogLogin extends javax.swing.JDialog {
                 EXITActionPerformed(evt);
             }
         });
+        EXIT.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                EXITKeyPressed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -292,6 +297,12 @@ public class jDialogLogin extends javax.swing.JDialog {
             SIGN_UP.doClick();
         }
     }//GEN-LAST:event_SIGN_UPKeyPressed
+
+    private void EXITKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_EXITKeyPressed
+        if(evt.getKeyCode() == KeyEvent.VK_ENTER){
+            EXIT.doClick();
+        }
+    }//GEN-LAST:event_EXITKeyPressed
 
     /**
      * @param args the command line arguments

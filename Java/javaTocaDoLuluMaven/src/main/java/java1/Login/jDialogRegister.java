@@ -83,6 +83,18 @@ public class jDialogRegister extends javax.swing.JDialog {
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Password");
 
+        txtPASSWORD.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtPASSWORDKeyPressed(evt);
+            }
+        });
+
+        txtEMAIL.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtEMAILKeyPressed(evt);
+            }
+        });
+
         SIGN_UP.setBackground(new java.awt.Color(54, 33, 89));
         SIGN_UP.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         SIGN_UP.setForeground(new java.awt.Color(255, 255, 255));
@@ -90,6 +102,11 @@ public class jDialogRegister extends javax.swing.JDialog {
         SIGN_UP.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 SIGN_UPActionPerformed(evt);
+            }
+        });
+        SIGN_UP.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                SIGN_UPKeyPressed(evt);
             }
         });
 
@@ -100,6 +117,11 @@ public class jDialogRegister extends javax.swing.JDialog {
         BACK_TO_LOGIN.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BACK_TO_LOGINActionPerformed(evt);
+            }
+        });
+        BACK_TO_LOGIN.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                BACK_TO_LOGINKeyPressed(evt);
             }
         });
 
@@ -121,6 +143,12 @@ public class jDialogRegister extends javax.swing.JDialog {
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel6.setText("Código");
+
+        txtCODIGO.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtCODIGOKeyPressed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -266,6 +294,36 @@ public class jDialogRegister extends javax.swing.JDialog {
             SIGN_UP.doClick();
         }
     }//GEN-LAST:event_txtCONFIRMPASSWORDKeyPressed
+
+    private void txtEMAILKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtEMAILKeyPressed
+        if(evt.getKeyCode() == KeyEvent.VK_ENTER){
+            SIGN_UP.doClick();
+        }
+    }//GEN-LAST:event_txtEMAILKeyPressed
+
+    private void txtPASSWORDKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtPASSWORDKeyPressed
+        if(evt.getKeyCode() == KeyEvent.VK_ENTER){
+            SIGN_UP.doClick();
+        }
+    }//GEN-LAST:event_txtPASSWORDKeyPressed
+
+    private void txtCODIGOKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCODIGOKeyPressed
+        if(evt.getKeyCode() == KeyEvent.VK_ENTER){
+            SIGN_UP.doClick();
+        }
+    }//GEN-LAST:event_txtCODIGOKeyPressed
+
+    private void SIGN_UPKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_SIGN_UPKeyPressed
+        if(evt.getKeyCode() == KeyEvent.VK_ENTER){
+            SIGN_UP.doClick();
+        }
+    }//GEN-LAST:event_SIGN_UPKeyPressed
+
+    private void BACK_TO_LOGINKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_BACK_TO_LOGINKeyPressed
+        if(evt.getKeyCode() == KeyEvent.VK_ENTER){
+            BACK_TO_LOGIN.doClick();
+        }
+    }//GEN-LAST:event_BACK_TO_LOGINKeyPressed
 
     /**
      * @param args the command line arguments
