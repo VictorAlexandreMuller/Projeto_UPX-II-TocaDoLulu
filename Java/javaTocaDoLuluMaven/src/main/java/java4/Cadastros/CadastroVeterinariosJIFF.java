@@ -1,5 +1,14 @@
 package java4.Cadastros;
 
+import ClassesDAO.VeterinariosDAO;
+import ConectionsDAO.JPAUtil;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java1.Classes.Veterinarios;
+import javax.persistence.EntityManager;
+import javax.swing.JOptionPane;
+
 public class CadastroVeterinariosJIFF extends javax.swing.JInternalFrame {
 
     public CadastroVeterinariosJIFF() {
@@ -31,7 +40,6 @@ public class CadastroVeterinariosJIFF extends javax.swing.JInternalFrame {
         BAIRRO = new javax.swing.JLabel();
         txtVETERINARIO_BAIRRO = new javax.swing.JTextField();
         UF = new javax.swing.JLabel();
-        txtVETERINARIO_UF = new javax.swing.JTextField();
         MUNICIPIO = new javax.swing.JLabel();
         txtVETERINARIO_MUNICIPIO = new javax.swing.JTextField();
         COMPLEMENTO = new javax.swing.JLabel();
@@ -39,6 +47,7 @@ public class CadastroVeterinariosJIFF extends javax.swing.JInternalFrame {
         OBSERVACOES = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         txtVETERINARIO_OBSERVACOES = new javax.swing.JTextArea();
+        comboVETERINARIO_UF = new javax.swing.JComboBox<>();
         jPanel3 = new javax.swing.JPanel();
         DOCUMENTO = new javax.swing.JLabel();
         txtVETERINARIO_DOCUMENTO = new javax.swing.JTextField();
@@ -87,6 +96,11 @@ public class CadastroVeterinariosJIFF extends javax.swing.JInternalFrame {
         BOTAO_SALVAR___.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         BOTAO_SALVAR___.setForeground(new java.awt.Color(0, 0, 0));
         BOTAO_SALVAR___.setText("Salvar");
+        BOTAO_SALVAR___.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BOTAO_SALVAR___ActionPerformed(evt);
+            }
+        });
 
         jPanel2.setBackground(new java.awt.Color(45, 18, 72));
 
@@ -126,10 +140,6 @@ public class CadastroVeterinariosJIFF extends javax.swing.JInternalFrame {
         UF.setForeground(new java.awt.Color(255, 255, 255));
         UF.setText("UF (*)");
 
-        txtVETERINARIO_UF.setBackground(new java.awt.Color(86, 76, 106));
-        txtVETERINARIO_UF.setForeground(new java.awt.Color(255, 255, 255));
-        txtVETERINARIO_UF.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
-
         MUNICIPIO.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         MUNICIPIO.setForeground(new java.awt.Color(255, 255, 255));
         MUNICIPIO.setText("Município (*)");
@@ -158,6 +168,12 @@ public class CadastroVeterinariosJIFF extends javax.swing.JInternalFrame {
         txtVETERINARIO_OBSERVACOES.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
         jScrollPane1.setViewportView(txtVETERINARIO_OBSERVACOES);
 
+        comboVETERINARIO_UF.setBackground(new java.awt.Color(86, 76, 106));
+        comboVETERINARIO_UF.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
+        comboVETERINARIO_UF.setForeground(new java.awt.Color(255, 255, 255));
+        comboVETERINARIO_UF.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "(27 Opções)", "Acre (AC)", "Alagoas (AL)", "Amapá (AP)", "Amazonas (AM)", "Bahia (BA)", "Ceará (CE)", "Distrito Federal (DF)", "Espírito Santo (ES)", "Goiás (GO)", "Maranhão (MA)", "Mato Grosso (MT)", "Mato Grosso do Sul (MS)", "Minas Gerais (MG)", "Pará (PA)", "Paraíba (PB)", "Paraná (PR)", "Pernambuco (PE)", "Piauí (PI)", "Rio de Janeiro (RJ)", "Rio Grande do Norte (RN)", "Rio Grande do Sul (RS)", "Rondônia (RO)", "Roraima (RR)", "Santa Catarina (SC)", "São Paulo (SP)", "Sergipe (SE)", "Tocantins (TO)" }));
+        comboVETERINARIO_UF.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -165,35 +181,34 @@ public class CadastroVeterinariosJIFF extends javax.swing.JInternalFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(10, 10, 10)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(jPanel2Layout.createSequentialGroup()
-                            .addComponent(COMPLEMENTO, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(txtVETERINARIO_COMPLEMENTO, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(jPanel2Layout.createSequentialGroup()
-                            .addComponent(MUNICIPIO, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(txtVETERINARIO_MUNICIPIO, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(jPanel2Layout.createSequentialGroup()
-                            .addComponent(UF, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(txtVETERINARIO_UF, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(jPanel2Layout.createSequentialGroup()
-                            .addComponent(BAIRRO, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(txtVETERINARIO_BAIRRO, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(jPanel2Layout.createSequentialGroup()
-                            .addComponent(NUMERO, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(txtVETERINARIO_NUMERO, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(jPanel2Layout.createSequentialGroup()
-                            .addComponent(LOGRADOURO, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(txtVETERINARIO_LOGRADOURO, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(jPanel2Layout.createSequentialGroup()
-                            .addComponent(CEP, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(txtVETERINARIO_CEP, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
+                        .addComponent(COMPLEMENTO, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txtVETERINARIO_COMPLEMENTO, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
+                        .addComponent(MUNICIPIO, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txtVETERINARIO_MUNICIPIO, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
+                        .addComponent(UF, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(comboVETERINARIO_UF, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
+                        .addComponent(BAIRRO, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txtVETERINARIO_BAIRRO, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
+                        .addComponent(NUMERO, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txtVETERINARIO_NUMERO, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
+                        .addComponent(LOGRADOURO, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txtVETERINARIO_LOGRADOURO, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
+                        .addComponent(CEP, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txtVETERINARIO_CEP, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(OBSERVACOES, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -220,9 +235,9 @@ public class CadastroVeterinariosJIFF extends javax.swing.JInternalFrame {
                     .addComponent(txtVETERINARIO_BAIRRO, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(BAIRRO, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(txtVETERINARIO_UF, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(UF, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(UF, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(comboVETERINARIO_UF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(txtVETERINARIO_MUNICIPIO, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -278,6 +293,7 @@ public class CadastroVeterinariosJIFF extends javax.swing.JInternalFrame {
 
         txtVETERINARIO_NASCIMENTO.setBackground(new java.awt.Color(86, 76, 106));
         txtVETERINARIO_NASCIMENTO.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
+        txtVETERINARIO_NASCIMENTO.setForeground(new java.awt.Color(255, 255, 255));
         try {
             txtVETERINARIO_NASCIMENTO.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##/##/####")));
         } catch (java.text.ParseException ex) {
@@ -522,6 +538,63 @@ public class CadastroVeterinariosJIFF extends javax.swing.JInternalFrame {
         this.dispose();
     }//GEN-LAST:event_BOTAO_VOLTAR___ActionPerformed
 
+    private void BOTAO_SALVAR___ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BOTAO_SALVAR___ActionPerformed
+        
+        Veterinarios veterinarios = new Veterinarios();
+        
+        veterinarios.setNome(txtVETERINARIO_NOME.getText());
+        veterinarios.setTipo_documento(txtVETERINARIO_TIPODOCUMENTO.getText());
+        veterinarios.setDocumento_identificador(txtVETERINARIO_DOCUMENTO.getText());
+        veterinarios.setCrmv(txtVETERINARIO_CRMV.getText());
+        String dataNascimento = txtVETERINARIO_NASCIMENTO.getText();
+        SimpleDateFormat dateFormatInput = new SimpleDateFormat("dd/MM/yyyy");
+        SimpleDateFormat dateFormatOutput = new SimpleDateFormat("yyyy-MM-dd");
+        try {
+            Date date = dateFormatInput.parse(dataNascimento);
+            veterinarios.setNascimento(dateFormatOutput.format(date));
+        } catch (ParseException erro) {
+            JOptionPane.showMessageDialog(null, "Erro na conversão de data: " + erro);
+        }
+        veterinarios.setDdd_1(Integer.parseInt(txtVETERINARIO_DDD1.getText()));
+        veterinarios.setCelular_1(Integer.parseInt(txtVETERINARIO_CELULAR1.getText()));
+        
+        if(txtVETERINARIO_DDD2.getText().isEmpty()){
+            veterinarios.setDdd_2(0);
+        } else {
+            veterinarios.setDdd_2(Integer.parseInt(txtVETERINARIO_DDD2.getText()));
+        }
+        
+        if(txtVETERINARIO_CELULAR2.getText().isEmpty()){
+            veterinarios.setCelular_2(0); 
+        } else {
+            veterinarios.setCelular_2(Integer.parseInt(txtVETERINARIO_CELULAR2.getText()));
+        }
+        
+        veterinarios.setEmail_1(txtVETERINARIO_EMAIL1.getText());
+        veterinarios.setEmail_1(txtVETERINARIO_EMAIL1.getText());
+        veterinarios.setValor(Double.parseDouble(txtVETERINARIO_VALOR.getText()));
+        
+        veterinarios.setCep(Integer.parseInt(txtVETERINARIO_CEP.getText()));
+        veterinarios.setLogradouro(txtVETERINARIO_LOGRADOURO.getText());
+        veterinarios.setNumero(txtVETERINARIO_NUMERO.getText());
+        veterinarios.setBairro(txtVETERINARIO_BAIRRO.getText());
+        veterinarios.setUf(comboVETERINARIO_UF.getSelectedItem().toString().charAt(0));
+        veterinarios.setMunicipio(txtVETERINARIO_MUNICIPIO.getText());
+        veterinarios.setComplemento(txtVETERINARIO_COMPLEMENTO.getText());
+        veterinarios.setObservacoes(txtVETERINARIO_OBSERVACOES.getText());
+        
+        EntityManager em = JPAUtil.getEntityManager();
+        VeterinariosDAO dao = new VeterinariosDAO(em);
+        
+        em.getTransaction().begin();
+        em.persist(veterinarios);
+        em.getTransaction().commit();
+        em.close();
+        
+        JOptionPane.showMessageDialog(this, "Veterinário salvo com sucesso!");
+        this.dispose();
+    }//GEN-LAST:event_BOTAO_SALVAR___ActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel BAIRRO;
@@ -546,6 +619,7 @@ public class CadastroVeterinariosJIFF extends javax.swing.JInternalFrame {
     private javax.swing.JLabel TIPODOCUMENTO;
     private javax.swing.JLabel UF;
     private javax.swing.JLabel VALOR;
+    private javax.swing.JComboBox<String> comboVETERINARIO_UF;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
@@ -569,7 +643,6 @@ public class CadastroVeterinariosJIFF extends javax.swing.JInternalFrame {
     private javax.swing.JTextField txtVETERINARIO_NUMERO;
     private javax.swing.JTextArea txtVETERINARIO_OBSERVACOES;
     private javax.swing.JTextField txtVETERINARIO_TIPODOCUMENTO;
-    private javax.swing.JTextField txtVETERINARIO_UF;
     private javax.swing.JTextField txtVETERINARIO_VALOR;
     // End of variables declaration//GEN-END:variables
 }

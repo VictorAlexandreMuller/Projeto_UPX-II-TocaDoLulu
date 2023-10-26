@@ -1,16 +1,11 @@
 package java1.Login;
 
-import ClassesDAO.UsuariosDAO;
 import java.awt.Frame;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java1.Classes.Usuarios;
-import java2.InicialPanel.SwingTelaInicial;
 import javax.swing.JOptionPane;
 
 public class jDialogLogin extends javax.swing.JDialog {
@@ -254,7 +249,7 @@ public class jDialogLogin extends javax.swing.JDialog {
     }// </editor-fold>//GEN-END:initComponents
 
     private void LOGINActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LOGINActionPerformed
-        /*
+        /* Tentativa falha de buscar o login com o banco de dados
         try {
 
             String nome_usuario, senha_usuario;

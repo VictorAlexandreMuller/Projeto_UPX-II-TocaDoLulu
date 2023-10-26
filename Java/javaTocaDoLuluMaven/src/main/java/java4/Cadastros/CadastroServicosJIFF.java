@@ -279,6 +279,7 @@ public class CadastroServicosJIFF extends javax.swing.JInternalFrame {
 
         txtSERVICO_NASCIMENTO.setBackground(new java.awt.Color(86, 76, 106));
         txtSERVICO_NASCIMENTO.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
+        txtSERVICO_NASCIMENTO.setForeground(new java.awt.Color(255, 255, 255));
         try {
             txtSERVICO_NASCIMENTO.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##/##/####")));
         } catch (java.text.ParseException ex) {

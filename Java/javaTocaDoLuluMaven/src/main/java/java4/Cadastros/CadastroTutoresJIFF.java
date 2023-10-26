@@ -613,7 +613,7 @@ public class CadastroTutoresJIFF extends javax.swing.JInternalFrame {
         } else {
             tutores.setCelular_2(Integer.parseInt(txtTUTOR_CELULAR2.getText()));
         }
-                
+        
         tutores.setEmail_1(txtTUTOR_EMAIL1.getText());
         tutores.setEmail_1(txtTUTOR_EMAIL1.getText());
         tutores.setTipo_rede_1(txtTUTOR_TIPOREDESOCIAL1.getText());
@@ -628,14 +628,6 @@ public class CadastroTutoresJIFF extends javax.swing.JInternalFrame {
         tutores.setMunicipio(txtTUTOR_MUNICIPIO.getText());
         tutores.setComplemento(txtTUTOR_COMPLEMENTO.getText());
         tutores.setObservacoes(txtTUTOR_OBSERVACOES.getText());
-        
-                
-        if(txtTUTOR_DDD2.getText().isEmpty()){
-            tutores.setDdd_2(0);            
-        } else if (txtTUTOR_CELULAR2.getText().isEmpty()) {
-            tutores.setCelular_2(0);
-        }
-        
         
         EntityManager em = JPAUtil.getEntityManager();
         TutoresDAO dao = new TutoresDAO(em);
