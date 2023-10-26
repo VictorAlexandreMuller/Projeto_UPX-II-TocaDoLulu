@@ -1,5 +1,14 @@
 package java4.Cadastros;
 
+import ClassesDAO.TutoresDAO;
+import ConectionsDAO.JPAUtil;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java1.Classes.Servicos;
+import javax.persistence.EntityManager;
+import javax.swing.JOptionPane;
+
 public class CadastroServicosJIFF extends javax.swing.JInternalFrame {
 
     public CadastroServicosJIFF() {
@@ -7,7 +16,7 @@ public class CadastroServicosJIFF extends javax.swing.JInternalFrame {
     }
     
     private static CadastroServicosJIFF myInstance;
-
+    
     public static CadastroServicosJIFF getInstance() {
         if (myInstance == null) {
             myInstance = new CadastroServicosJIFF();
@@ -31,7 +40,6 @@ public class CadastroServicosJIFF extends javax.swing.JInternalFrame {
         BAIRRO = new javax.swing.JLabel();
         txtSERVICO_BAIRRO = new javax.swing.JTextField();
         UF = new javax.swing.JLabel();
-        txtSERVICO_UF = new javax.swing.JTextField();
         MUNICIPIO = new javax.swing.JLabel();
         txtSERVICO_MUNICIPIO = new javax.swing.JTextField();
         COMPLEMENTO = new javax.swing.JLabel();
@@ -39,6 +47,7 @@ public class CadastroServicosJIFF extends javax.swing.JInternalFrame {
         OBSERVACOES = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         txtSERVICO_OBSERVACOES = new javax.swing.JTextArea();
+        comboSERVICO_UF = new javax.swing.JComboBox<>();
         jPanel3 = new javax.swing.JPanel();
         DOCUMENTO = new javax.swing.JLabel();
         txtSERVICO_DOCUMENTO = new javax.swing.JTextField();
@@ -88,6 +97,11 @@ public class CadastroServicosJIFF extends javax.swing.JInternalFrame {
         BOTAO_SALVAR___.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         BOTAO_SALVAR___.setForeground(new java.awt.Color(0, 0, 0));
         BOTAO_SALVAR___.setText("Salvar");
+        BOTAO_SALVAR___.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BOTAO_SALVAR___ActionPerformed(evt);
+            }
+        });
 
         jPanel2.setBackground(new java.awt.Color(45, 18, 72));
 
@@ -127,10 +141,6 @@ public class CadastroServicosJIFF extends javax.swing.JInternalFrame {
         UF.setForeground(new java.awt.Color(255, 255, 255));
         UF.setText("UF (*)");
 
-        txtSERVICO_UF.setBackground(new java.awt.Color(86, 76, 106));
-        txtSERVICO_UF.setForeground(new java.awt.Color(255, 255, 255));
-        txtSERVICO_UF.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
-
         MUNICIPIO.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         MUNICIPIO.setForeground(new java.awt.Color(255, 255, 255));
         MUNICIPIO.setText("Município (*)");
@@ -159,6 +169,12 @@ public class CadastroServicosJIFF extends javax.swing.JInternalFrame {
         txtSERVICO_OBSERVACOES.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
         jScrollPane1.setViewportView(txtSERVICO_OBSERVACOES);
 
+        comboSERVICO_UF.setBackground(new java.awt.Color(86, 76, 106));
+        comboSERVICO_UF.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
+        comboSERVICO_UF.setForeground(new java.awt.Color(255, 255, 255));
+        comboSERVICO_UF.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "(27 Opções)", "Acre (AC)", "Alagoas (AL)", "Amapá (AP)", "Amazonas (AM)", "Bahia (BA)", "Ceará (CE)", "Distrito Federal (DF)", "Espírito Santo (ES)", "Goiás (GO)", "Maranhão (MA)", "Mato Grosso (MT)", "Mato Grosso do Sul (MS)", "Minas Gerais (MG)", "Pará (PA)", "Paraíba (PB)", "Paraná (PR)", "Pernambuco (PE)", "Piauí (PI)", "Rio de Janeiro (RJ)", "Rio Grande do Norte (RN)", "Rio Grande do Sul (RS)", "Rondônia (RO)", "Roraima (RR)", "Santa Catarina (SC)", "São Paulo (SP)", "Sergipe (SE)", "Tocantins (TO)" }));
+        comboSERVICO_UF.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -166,35 +182,34 @@ public class CadastroServicosJIFF extends javax.swing.JInternalFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(10, 10, 10)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(jPanel2Layout.createSequentialGroup()
-                            .addComponent(COMPLEMENTO, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(txtSERVICO_COMPLEMENTO, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(jPanel2Layout.createSequentialGroup()
-                            .addComponent(MUNICIPIO, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(txtSERVICO_MUNICIPIO, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(jPanel2Layout.createSequentialGroup()
-                            .addComponent(UF, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(txtSERVICO_UF, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(jPanel2Layout.createSequentialGroup()
-                            .addComponent(BAIRRO, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(txtSERVICO_BAIRRO, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(jPanel2Layout.createSequentialGroup()
-                            .addComponent(NUMERO, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(txtSERVICO_NUMERO, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(jPanel2Layout.createSequentialGroup()
-                            .addComponent(LOGRADOURO, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(txtSERVICO_LOGRADOURO, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(jPanel2Layout.createSequentialGroup()
-                            .addComponent(CEP, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(txtSERVICO_CEP, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
+                        .addComponent(COMPLEMENTO, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txtSERVICO_COMPLEMENTO, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
+                        .addComponent(MUNICIPIO, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txtSERVICO_MUNICIPIO, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
+                        .addComponent(UF, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(comboSERVICO_UF, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
+                        .addComponent(BAIRRO, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txtSERVICO_BAIRRO, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
+                        .addComponent(NUMERO, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txtSERVICO_NUMERO, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
+                        .addComponent(LOGRADOURO, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txtSERVICO_LOGRADOURO, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
+                        .addComponent(CEP, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txtSERVICO_CEP, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(OBSERVACOES, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -221,9 +236,9 @@ public class CadastroServicosJIFF extends javax.swing.JInternalFrame {
                     .addComponent(txtSERVICO_BAIRRO, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(BAIRRO, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(txtSERVICO_UF, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(UF, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(UF, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(comboSERVICO_UF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(txtSERVICO_MUNICIPIO, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -510,7 +525,7 @@ public class CadastroServicosJIFF extends javax.swing.JInternalFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(29, 29, 29)
+                        .addGap(41, 41, 41)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(BOTAO_SALVAR___)
                             .addComponent(BOTAO_VOLTAR___)))
@@ -538,12 +553,67 @@ public class CadastroServicosJIFF extends javax.swing.JInternalFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+    
     private void BOTAO_VOLTAR___ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BOTAO_VOLTAR___ActionPerformed
         this.dispose();
     }//GEN-LAST:event_BOTAO_VOLTAR___ActionPerformed
 
-
+    private void BOTAO_SALVAR___ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BOTAO_SALVAR___ActionPerformed
+        Servicos servicos = new Servicos();
+        
+        servicos.setNome(txtSERVICO_NOME.getText());
+        servicos.setServico(txtSERVICO_SERVICO.getText());
+        servicos.setValor(Double.parseDouble(txtSERVICO_VALOR.getText()));
+        servicos.setTipo_documento(txtSERVICO_TIPODOCUMENTO.getText());
+        servicos.setDocumento_identificador(txtSERVICO_DOCUMENTO.getText());
+        String dataNascimento = txtSERVICO_NASCIMENTO.getText();
+        SimpleDateFormat dateFormatInput = new SimpleDateFormat("dd/MM/yyyy");
+        SimpleDateFormat dateFormatOutput = new SimpleDateFormat("yyyy-MM-dd");
+        try {
+            Date date = dateFormatInput.parse(dataNascimento);
+            servicos.setNascimento(dateFormatOutput.format(date));
+        } catch (ParseException erro) {
+            JOptionPane.showMessageDialog(null, "Erro na conversão de data: " + erro);
+        }
+        servicos.setDdd_1(Integer.parseInt(txtSERVICO_DDD1.getText()));
+        servicos.setCelular_1(Integer.parseInt(txtSERVICO_CELULAR1.getText()));
+        
+        if(txtSERVICO_DDD2.getText().isEmpty()){
+            servicos.setDdd_2(0);
+        } else {
+            servicos.setDdd_2(Integer.parseInt(txtSERVICO_DDD2.getText()));
+        }
+        
+        if(txtSERVICO_CELULAR2.getText().isEmpty()){
+            servicos.setCelular_2(0); 
+        } else {
+            servicos.setCelular_2(Integer.parseInt(txtSERVICO_CELULAR2.getText()));
+        }
+        
+        servicos.setEmail_1(txtSERVICO_EMAIL1.getText());
+        servicos.setEmail_1(txtSERVICO_EMAIL1.getText());
+        servicos.setCep(Integer.parseInt(txtSERVICO_CEP.getText()));
+        servicos.setLogradouro(txtSERVICO_LOGRADOURO.getText());
+        servicos.setNumero(txtSERVICO_NUMERO.getText());
+        servicos.setBairro(txtSERVICO_BAIRRO.getText());
+        servicos.setUf(comboSERVICO_UF.getSelectedItem().toString().charAt(0));
+        servicos.setMunicipio(txtSERVICO_MUNICIPIO.getText());
+        servicos.setComplemento(txtSERVICO_COMPLEMENTO.getText());
+        servicos.setObservacoes(txtSERVICO_OBSERVACOES.getText());
+        
+        EntityManager em = JPAUtil.getEntityManager();
+        TutoresDAO dao = new TutoresDAO(em);
+        
+        em.getTransaction().begin();
+        em.persist(servicos);
+        em.getTransaction().commit();
+        em.close();
+        
+        JOptionPane.showMessageDialog(this, "Serviço salvo com sucesso!");
+        this.dispose();
+    }//GEN-LAST:event_BOTAO_SALVAR___ActionPerformed
+    
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel BAIRRO;
     private javax.swing.JButton BOTAO_SALVAR___;
@@ -567,6 +637,7 @@ public class CadastroServicosJIFF extends javax.swing.JInternalFrame {
     private javax.swing.JLabel TIPODOCUMENTO;
     private javax.swing.JLabel UF;
     private javax.swing.JLabel VALOR;
+    private javax.swing.JComboBox<String> comboSERVICO_UF;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
@@ -591,7 +662,6 @@ public class CadastroServicosJIFF extends javax.swing.JInternalFrame {
     private javax.swing.JTextArea txtSERVICO_OBSERVACOES;
     private javax.swing.JTextField txtSERVICO_SERVICO;
     private javax.swing.JTextField txtSERVICO_TIPODOCUMENTO;
-    private javax.swing.JTextField txtSERVICO_UF;
     private javax.swing.JTextField txtSERVICO_VALOR;
     // End of variables declaration//GEN-END:variables
 }
