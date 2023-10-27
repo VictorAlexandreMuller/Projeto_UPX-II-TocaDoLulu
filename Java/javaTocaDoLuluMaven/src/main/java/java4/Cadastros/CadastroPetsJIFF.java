@@ -13,6 +13,9 @@ import javax.persistence.EntityManager;
 import javax.swing.JOptionPane;
 import ClassesDAO.PetsPlanosValoresDAO;
 import ClassesDAO.TutoresDAO;
+import java.util.List;
+import java1.Classes.Tutores;
+import javax.swing.DefaultComboBoxModel;
 
 public class CadastroPetsJIFF extends javax.swing.JInternalFrame {
 
@@ -65,6 +68,17 @@ public class CadastroPetsJIFF extends javax.swing.JInternalFrame {
             }
         } catch (SQLException erro) {
             JOptionPane.showMessageDialog(null, "Carregar Tutor VIEW: " + erro);
+        }
+    }
+    
+    public void popularCombo() {
+
+        try {
+            List<Tutores> lstTutores = new TutoresDAO().getAll(Tutores.class);
+            comboTUTOR.setModel(new DefaultComboBoxModel<Tutores>(
+                    lstTutores.toArray(new Tutores[lstTutores.size()])));
+
+        } catch (Exception e) {
         }
     }
     
@@ -538,7 +552,8 @@ public class CadastroPetsJIFF extends javax.swing.JInternalFrame {
         pet.setVacinacao(txtPET_VACINACAO.getText());
         pet.setRemedios(txtPET_REMEDIOS.getText());
         pet.setObservacoes(txtPET_OBSERVACOES.getText());
-        pet.setId_tutores(Integer.parseInt(comboTUTOR.getSelectedItem().toString()));
+        ((Produto)cmb.getSelectedItem()).getId();
+        //pet.setId_tutores(Integer.parseInt(comboTUTOR.getSelectedItem().toString()));
         
         EntityManager em = JPAUtil.getEntityManager();
         PetsDAO dao = new PetsDAO(em);
