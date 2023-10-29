@@ -10,10 +10,9 @@ import java1.Login.jDialogLogin;
 import java3.Panels.PainelServicosJIFF;
 import java3.Panels.PainelTutoresJIFF;
 import java3.Panels.PainelVeterinariosJIFF;
-import java3.Panels.Precos;
-import java3.Panels.Sobre;
+import java3.Panels.PrecosJIFF;
+import java3.Panels.SobreJIFF;
 import javax.swing.ImageIcon;
-import javax.swing.JOptionPane;
 
 
 public class SwingTelaInicial extends javax.swing.JFrame {
@@ -30,6 +29,43 @@ public class SwingTelaInicial extends javax.swing.JFrame {
         }
         
     }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    // Colors Settings - for - Moved, Pressed, Exiters and Releaseds below --------------------------
+    
+    void MovedReleasedColor(JPanel panel){
+        panel.setBackground(new Color(204,204,255));
+    }
+    
+    void ExitedColor(JPanel panel){
+        panel.setBackground(new Color(85,65,118));
+    }
+    
+    void PressedColor(JPanel panel){
+        panel.setBackground(new Color(175,175,226));
+    }
+    
+    // -------------------------------------------------------------
+    
+    void MovedMENUColor(JMenu menu){
+        menu.setBackground(new Color(204,204,255));
+    }
+    
+    void ExitedMENUColor(JMenu menu){
+        menu.setBackground(new Color(64,43,100));
+    }
+    
+    // -------------------------------------------------------------
     
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -120,7 +156,7 @@ public class SwingTelaInicial extends javax.swing.JFrame {
         PETS.setForeground(new java.awt.Color(255, 255, 255));
         PETS.setText("PETS");
 
-        icon_PETS.setIcon(new javax.swing.ImageIcon("C:\\Users\\victo\\Documents\\Dev\\UPX2-Toca-do-Lulu\\Java\\javaTocaDoLuluMaven\\src\\main\\java\\iconsInit\\1PetsIcon40.png")); // NOI18N
+        icon_PETS.setIcon(new javax.swing.ImageIcon("C:\\Users\\PC\\Documents\\Dev\\UPX2-Toca-do-Lulu\\Java\\javaTocaDoLuluMaven\\src\\main\\java\\iconsInit\\1PetsIcon40.png")); // NOI18N
 
         javax.swing.GroupLayout panel_button_petsLayout = new javax.swing.GroupLayout(panel_button_pets);
         panel_button_pets.setLayout(panel_button_petsLayout);
@@ -165,7 +201,7 @@ public class SwingTelaInicial extends javax.swing.JFrame {
         TUTORES.setForeground(new java.awt.Color(255, 255, 255));
         TUTORES.setText("TUTORES");
 
-        icon_TUTORES.setIcon(new javax.swing.ImageIcon("C:\\Users\\victo\\Documents\\Dev\\UPX2-Toca-do-Lulu\\Java\\javaTocaDoLuluMaven\\src\\main\\java\\iconsInit\\2TutoresIcon40.png")); // NOI18N
+        icon_TUTORES.setIcon(new javax.swing.ImageIcon("C:\\Users\\PC\\Documents\\Dev\\UPX2-Toca-do-Lulu\\Java\\javaTocaDoLuluMaven\\src\\main\\java\\iconsInit\\2TutoresIcon40.png")); // NOI18N
 
         javax.swing.GroupLayout panel_button_tutoresLayout = new javax.swing.GroupLayout(panel_button_tutores);
         panel_button_tutores.setLayout(panel_button_tutoresLayout);
@@ -209,7 +245,7 @@ public class SwingTelaInicial extends javax.swing.JFrame {
         VETERINARIOS.setForeground(new java.awt.Color(255, 255, 255));
         VETERINARIOS.setText("VETERINÁRIOS");
 
-        icon_VETERINARIOS.setIcon(new javax.swing.ImageIcon("C:\\Users\\victo\\Documents\\Dev\\UPX2-Toca-do-Lulu\\Java\\javaTocaDoLuluMaven\\src\\main\\java\\iconsInit\\3VeterinariosIcon40.png")); // NOI18N
+        icon_VETERINARIOS.setIcon(new javax.swing.ImageIcon("C:\\Users\\PC\\Documents\\Dev\\UPX2-Toca-do-Lulu\\Java\\javaTocaDoLuluMaven\\src\\main\\java\\iconsInit\\3VeterinariosIcon40.png")); // NOI18N
 
         javax.swing.GroupLayout panel_button_veterinariosLayout = new javax.swing.GroupLayout(panel_button_veterinarios);
         panel_button_veterinarios.setLayout(panel_button_veterinariosLayout);
@@ -253,7 +289,7 @@ public class SwingTelaInicial extends javax.swing.JFrame {
         SERVICOS.setForeground(new java.awt.Color(255, 255, 255));
         SERVICOS.setText("SERVIÇOS");
 
-        icon_SERVICOS.setIcon(new javax.swing.ImageIcon("C:\\Users\\victo\\Documents\\Dev\\UPX2-Toca-do-Lulu\\Java\\javaTocaDoLuluMaven\\src\\main\\java\\iconsInit\\4ServicosIcon40.png")); // NOI18N
+        icon_SERVICOS.setIcon(new javax.swing.ImageIcon("C:\\Users\\PC\\Documents\\Dev\\UPX2-Toca-do-Lulu\\Java\\javaTocaDoLuluMaven\\src\\main\\java\\iconsInit\\4ServicosIcon40.png")); // NOI18N
 
         javax.swing.GroupLayout panel_button_servicosLayout = new javax.swing.GroupLayout(panel_button_servicos);
         panel_button_servicos.setLayout(panel_button_servicosLayout);
@@ -293,7 +329,7 @@ public class SwingTelaInicial extends javax.swing.JFrame {
             }
         });
 
-        icon_LOGOUT.setIcon(new javax.swing.ImageIcon("C:\\Users\\victo\\Documents\\Dev\\UPX2-Toca-do-Lulu\\Java\\javaTocaDoLuluMaven\\src\\main\\java\\iconsInit\\5LogoutIcon40.png")); // NOI18N
+        icon_LOGOUT.setIcon(new javax.swing.ImageIcon("C:\\Users\\PC\\Documents\\Dev\\UPX2-Toca-do-Lulu\\Java\\javaTocaDoLuluMaven\\src\\main\\java\\iconsInit\\5LogoutIcon40.png")); // NOI18N
 
         LOGOUT.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         LOGOUT.setForeground(new java.awt.Color(255, 255, 255));
@@ -514,32 +550,6 @@ public class SwingTelaInicial extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
     
-    // Colors Settings - for - Moved, Pressed, Exiters and Releaseds below --------------------------
-    
-    void MovedReleasedColor(JPanel panel){
-        panel.setBackground(new Color(204,204,255));
-    }
-    
-    void ExitedColor(JPanel panel){
-        panel.setBackground(new Color(85,65,118));
-    }
-    
-    void PressedColor(JPanel panel){
-        panel.setBackground(new Color(175,175,226));
-    }
-    
-    // -------------------------------------------------------------
-    
-    void MovedMENUColor(JMenu menu){
-        menu.setBackground(new Color(204,204,255));
-    }
-    
-    void ExitedMENUColor(JMenu menu){
-        menu.setBackground(new Color(64,43,100));
-    }
-    
-    // -------------------------------------------------------------
-    
     // NavBar
     
     private void MENU_ITEM_SAIRActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MENU_ITEM_SAIRActionPerformed
@@ -751,26 +761,28 @@ public class SwingTelaInicial extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItem1ActionPerformed
 
     private void MENU_ITEM_PRECOSActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MENU_ITEM_PRECOSActionPerformed
-        Precos t = Precos.getInstance();
+        PrecosJIFF t = PrecosJIFF.getInstance();
         
         t.pack();
         
         if(!t.isVisible ()){
+            DesktopPaneControl.add(t);
             t.setVisible(true);
         } else{
-            t.toFront();
+            t.moveToFront();
         }        
     }//GEN-LAST:event_MENU_ITEM_PRECOSActionPerformed
 
     private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
-        Sobre t = Sobre.getInstance();
+        SobreJIFF t = SobreJIFF.getInstance();
         
         t.pack();
         
         if(!t.isVisible ()){
+            DesktopPaneControl.add(t);
             t.setVisible(true);
         } else{
-            t.toFront();
+            t.moveToFront();
         }        
     }//GEN-LAST:event_jMenuItem3ActionPerformed
     
@@ -778,7 +790,7 @@ public class SwingTelaInicial extends javax.swing.JFrame {
     // MENU_HEADDER_BUTTON.setBorderPainted(true);
     // Border whiteline = BorderFactory.createLineBorder(Color.white);
     // MENU_HEADDER_BUTTON.setBorder(whiteline);
-        
+    
     // MENU_HEADDER_BUTTON.setBorderPainted(false);
     
     

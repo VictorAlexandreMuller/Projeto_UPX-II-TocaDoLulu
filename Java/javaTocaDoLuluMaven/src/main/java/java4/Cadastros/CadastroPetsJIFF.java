@@ -64,13 +64,13 @@ public class CadastroPetsJIFF extends javax.swing.JInternalFrame {
             ResultSet rs = obj.listarComboTutores();
             
             while (rs.next()) {
-                comboTUTOR.addItem(rs.getString(2));
+                comboTUTOR.addItem(rs.getString(1));
             }
         } catch (SQLException erro) {
             JOptionPane.showMessageDialog(null, "Carregar Tutor VIEW: " + erro);
         }
     }
-    
+    /*
     public void popularCombo() {
 
         try {
@@ -81,7 +81,7 @@ public class CadastroPetsJIFF extends javax.swing.JInternalFrame {
         } catch (Exception e) {
         }
     }
-    
+    */
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -552,8 +552,8 @@ public class CadastroPetsJIFF extends javax.swing.JInternalFrame {
         pet.setVacinacao(txtPET_VACINACAO.getText());
         pet.setRemedios(txtPET_REMEDIOS.getText());
         pet.setObservacoes(txtPET_OBSERVACOES.getText());
-        ((Produto)cmb.getSelectedItem()).getId();
-        //pet.setId_tutores(Integer.parseInt(comboTUTOR.getSelectedItem().toString()));
+        // ((Produto)cmb.getSelectedItem()).getId();
+        pet.setId_tutores(Integer.parseInt(comboTUTOR.getSelectedItem().toString()));
         
         EntityManager em = JPAUtil.getEntityManager();
         PetsDAO dao = new PetsDAO(em);

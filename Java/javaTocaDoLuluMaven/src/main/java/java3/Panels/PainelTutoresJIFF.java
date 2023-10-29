@@ -1,21 +1,85 @@
 package java3.Panels;
 
+import ClassesDAO.TutoresDAO;
 import java.awt.Color;
 import java.awt.Font;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.stream.Collectors;
 import java1.Classes.Tutores;
-import java4.Cadastros.CadastroTutoresJIFF;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import javax.swing.JTable;
 import javax.swing.JTextField;
+import javax.swing.SwingConstants;
 import javax.swing.table.TableModel;
 
 public class PainelTutoresJIFF extends javax.swing.JInternalFrame {
+    private int idSelecionado;
+    private Tutores tutorSelecionado =  null;
+    
+    public Tutores getTutorSelecionado() {
+        return tutorSelecionado;
+    }
 
     public PainelTutoresJIFF() {
         initComponents();
+        
         addPlaceholderStyle(txtSEARCH);
+        atualizarTabela();
+        mudaEstadoBotoes(false);
     }
+    
+    private static PainelTutoresJIFF myInstancePainel;
+    public static PainelTutoresJIFF getInstance() {
+        if (myInstancePainel == null) {
+            myInstancePainel = new PainelTutoresJIFF();
+        } return myInstancePainel;
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    // Muda o estado dos botões Editar e Deletar para habilitado ou desabilitado
+    
+    private void mudaEstadoBotoes(boolean novoEstado) {
+        Panel_Button_Editar.setEnabled(novoEstado);
+        Panel_Button_Deletar.setEnabled(novoEstado);
+    }
+            
+    // Atualizar Tabela
+    
+    public void atualizarTabela() {
+        
+        ArrayList<String> colunas = new ArrayList<>();
+        colunas.add("id");
+        colunas.add("nome");
+        colunas.add("ddd_1");
+        colunas.add("celular_1");
+        colunas.add("email_1");
+        
+        try {
+            List<Tutores> lstTutores = new TutoresDAO().getColunasTableTutores(); // Pode-se alternar: "getAll" ou "getColunasTableTutores"
+            TableModel tableModelProdutos = TableModelCreator.createTableModel(Tutores.class, lstTutores,colunas); // Pode-se alternar: "colunas" ou "null"
+            TableTutores.setModel(tableModelProdutos);
+        } catch (Exception e) {
+            System.out.println("Houve um erro ao tentar popular a tabela");
+        }
+    }
+    
+    // -------------------------------
+    
+    // Cores
     
     public void addPlaceholderStyle(JTextField textField){
         Font font = textField.getFont();
@@ -30,14 +94,6 @@ public class PainelTutoresJIFF extends javax.swing.JInternalFrame {
         textField.setFont(font);
         textField.setForeground(Color.black);
     }
-
-    private static PainelTutoresJIFF myInstance;
-
-    public static PainelTutoresJIFF getInstance() {
-        if (myInstance == null) {
-            myInstance = new PainelTutoresJIFF();
-        } return myInstance;
-    }
     
     // Cores dos Holders -------------
     void ExitedButtonColor(JPanel panel){
@@ -51,19 +107,16 @@ public class PainelTutoresJIFF extends javax.swing.JInternalFrame {
     void MovedReleasedButtonColor(JPanel panel){
         panel.setBackground(new Color(204,204,255));
     }
-    // -------------------------------
-
-    ArrayList <Tutores> listaTutores = new ArrayList<>();
-    
-    // -------------------------------
     
     public void SearchColorHolderMoved(JTextField textf){
         textf.setBackground(new Color(96,65,134));
     }
     
-    public void SearchColorHolderExited(JTextField textf){
-        textf.setBackground(new Color(85,65,118));
+    public void SearchColorHolderExited(JTextField textf) {
+        textf.setBackground(new Color(85, 65, 118));
     }
+    
+    // --------------------------------------------------------------------------------------------------------------
     
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -71,7 +124,7 @@ public class PainelTutoresJIFF extends javax.swing.JInternalFrame {
 
         DesktopPaneControl_Pets = new javax.swing.JDesktopPane();
         jScrollPane4 = new javax.swing.JScrollPane();
-        TABLE_PETS___ = new javax.swing.JTable();
+        TableTutores = new javax.swing.JTable();
         Panel_Button_Voltar = new javax.swing.JPanel();
         icon_VOLTAR = new javax.swing.JLabel();
         VOLTAR = new javax.swing.JLabel();
@@ -89,7 +142,6 @@ public class PainelTutoresJIFF extends javax.swing.JInternalFrame {
         jSeparator2 = new javax.swing.JSeparator();
         jPanel6 = new javax.swing.JPanel();
 
-        setClosable(true);
         setIconifiable(true);
         setMaximizable(true);
         setResizable(true);
@@ -99,35 +151,53 @@ public class PainelTutoresJIFF extends javax.swing.JInternalFrame {
         DesktopPaneControl_Pets.setBackground(new java.awt.Color(175, 175, 226));
         DesktopPaneControl_Pets.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)), "  TUTORES  ", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Gill Sans Ultra Bold", 1, 24), new java.awt.Color(255, 255, 255))); // NOI18N
 
-        TABLE_PETS___.setAutoCreateRowSorter(true);
-        TABLE_PETS___.setBackground(new java.awt.Color(85, 65, 118));
-        TABLE_PETS___.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        TABLE_PETS___.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        TABLE_PETS___.setForeground(new java.awt.Color(255, 255, 255));
-        TABLE_PETS___.setModel(new javax.swing.table.DefaultTableModel(
+        TableTutores.setAutoCreateRowSorter(true);
+        TableTutores.setBackground(new java.awt.Color(85, 65, 118));
+        TableTutores.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        TableTutores.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        TableTutores.setForeground(new java.awt.Color(255, 255, 255));
+        TableTutores.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null}
             },
             new String [] {
-                "ID", "Nome", "Raça", "Cor"
+                "Id", "Nome", "E-mail", "DDD", "Celular"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+                java.lang.Integer.class, java.lang.String.class, java.lang.Object.class, java.lang.Integer.class, java.lang.Integer.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false
             };
 
             public Class getColumnClass(int columnIndex) {
                 return types [columnIndex];
             }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
         });
-        TABLE_PETS___.setGridColor(new java.awt.Color(175, 175, 226));
-        TABLE_PETS___.setIntercellSpacing(new java.awt.Dimension(5, 5));
-        TABLE_PETS___.setSelectionBackground(new java.awt.Color(204, 204, 255));
-        TABLE_PETS___.setSelectionForeground(new java.awt.Color(0, 0, 0));
-        jScrollPane4.setViewportView(TABLE_PETS___);
+        TableTutores.setGridColor(new java.awt.Color(175, 175, 226));
+        TableTutores.setIntercellSpacing(new java.awt.Dimension(5, 5));
+        TableTutores.setSelectionBackground(new java.awt.Color(204, 204, 255));
+        TableTutores.setSelectionForeground(new java.awt.Color(0, 0, 0));
+        TableTutores.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                TableTutoresMouseClicked(evt);
+            }
+        });
+        jScrollPane4.setViewportView(TableTutores);
 
         Panel_Button_Voltar.setBackground(new java.awt.Color(85, 65, 118));
         Panel_Button_Voltar.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
@@ -145,7 +215,7 @@ public class PainelTutoresJIFF extends javax.swing.JInternalFrame {
             }
         });
 
-        icon_VOLTAR.setIcon(new javax.swing.ImageIcon("C:\\Users\\victo\\Documents\\Dev\\UPX2-Toca-do-Lulu\\Java\\javaTocaDoLuluMaven\\src\\main\\java\\iconsCrud\\1VoltarIcon40.png")); // NOI18N
+        icon_VOLTAR.setIcon(new javax.swing.ImageIcon("C:\\Users\\PC\\Documents\\Dev\\UPX2-Toca-do-Lulu\\Java\\javaTocaDoLuluMaven\\src\\main\\java\\iconsCrud\\1VoltarIcon40.png")); // NOI18N
         icon_VOLTAR.setPreferredSize(new java.awt.Dimension(40, 40));
 
         VOLTAR.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
@@ -186,7 +256,7 @@ public class PainelTutoresJIFF extends javax.swing.JInternalFrame {
             }
         });
 
-        icon_NOVO.setIcon(new javax.swing.ImageIcon("C:\\Users\\victo\\Documents\\Dev\\UPX2-Toca-do-Lulu\\Java\\javaTocaDoLuluMaven\\src\\main\\java\\iconsCrud\\2NovoIcon40.png")); // NOI18N
+        icon_NOVO.setIcon(new javax.swing.ImageIcon("C:\\Users\\PC\\Documents\\Dev\\UPX2-Toca-do-Lulu\\Java\\javaTocaDoLuluMaven\\src\\main\\java\\iconsCrud\\2NovoIcon40.png")); // NOI18N
 
         NOVO.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         NOVO.setForeground(new java.awt.Color(255, 255, 255));
@@ -221,16 +291,19 @@ public class PainelTutoresJIFF extends javax.swing.JInternalFrame {
             }
         });
         Panel_Button_Editar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Panel_Button_EditarMouseClicked(evt);
+            }
             public void mouseExited(java.awt.event.MouseEvent evt) {
                 Panel_Button_EditarPanel_Button_DeletarMouseExited(evt);
             }
         });
 
-        icon_EDITAR.setIcon(new javax.swing.ImageIcon("C:\\Users\\victo\\Documents\\Dev\\UPX2-Toca-do-Lulu\\Java\\javaTocaDoLuluMaven\\src\\main\\java\\iconsCrud\\3AlterarIcon40.png")); // NOI18N
+        icon_EDITAR.setIcon(new javax.swing.ImageIcon("C:\\Users\\PC\\Documents\\Dev\\UPX2-Toca-do-Lulu\\Java\\javaTocaDoLuluMaven\\src\\main\\java\\iconsCrud\\3AlterarIcon40.png")); // NOI18N
 
         EDITAR.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         EDITAR.setForeground(new java.awt.Color(255, 255, 255));
-        EDITAR.setText("Alterar");
+        EDITAR.setText("Editar");
 
         javax.swing.GroupLayout Panel_Button_EditarLayout = new javax.swing.GroupLayout(Panel_Button_Editar);
         Panel_Button_Editar.setLayout(Panel_Button_EditarLayout);
@@ -241,7 +314,7 @@ public class PainelTutoresJIFF extends javax.swing.JInternalFrame {
                 .addComponent(icon_EDITAR, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(EDITAR)
-                .addContainerGap(30, Short.MAX_VALUE))
+                .addContainerGap(37, Short.MAX_VALUE))
         );
         Panel_Button_EditarLayout.setVerticalGroup(
             Panel_Button_EditarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -258,12 +331,15 @@ public class PainelTutoresJIFF extends javax.swing.JInternalFrame {
             }
         });
         Panel_Button_Deletar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Panel_Button_DeletarMouseClicked(evt);
+            }
             public void mouseExited(java.awt.event.MouseEvent evt) {
                 Panel_Button_DeletarMouseExited(evt);
             }
         });
 
-        icon_DELETAR.setIcon(new javax.swing.ImageIcon("C:\\Users\\victo\\Documents\\Dev\\UPX2-Toca-do-Lulu\\Java\\javaTocaDoLuluMaven\\src\\main\\java\\iconsCrud\\4DeletarIcon40.png")); // NOI18N
+        icon_DELETAR.setIcon(new javax.swing.ImageIcon("C:\\Users\\PC\\Documents\\Dev\\UPX2-Toca-do-Lulu\\Java\\javaTocaDoLuluMaven\\src\\main\\java\\iconsCrud\\4DeletarIcon40.png")); // NOI18N
 
         DELETAR.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         DELETAR.setForeground(new java.awt.Color(255, 255, 255));
@@ -414,6 +490,7 @@ public class PainelTutoresJIFF extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_Panel_Button_VoltarMouseMoved
 
     private void Panel_Button_VoltarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Panel_Button_VoltarMouseClicked
+        atualizarTabela();
         this.dispose();
     }//GEN-LAST:event_Panel_Button_VoltarMouseClicked
 
@@ -429,20 +506,11 @@ public class PainelTutoresJIFF extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_Panel_Button_NovoMouseMoved
 
     private void Panel_Button_NovoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Panel_Button_NovoMouseClicked
-
-        CadastroTutoresJIFF p = CadastroTutoresJIFF.getInstance();
         
-        p.pack();
-
-        if(!p.isVisible ()){
-            DesktopPaneControl_Pets.add(p);
-            p.setVisible(true);
-        } else{
-            p.moveToFront();
-        }
-
-        // Cadastro_Pets_JIFF obj = new Cadastro_Pets_JIFF();
-        // DesktopPaneControl_Pets.add(obj).setVisible(true);
+        tutorSelecionado = null;
+        
+        JDialogTeste obj = new JDialogTeste(null, true, this);
+        obj.setVisible(true);
     }//GEN-LAST:event_Panel_Button_NovoMouseClicked
 
     private void Panel_Button_NovoPanel_Button_DeletarMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Panel_Button_NovoPanel_Button_DeletarMouseExited
@@ -491,7 +559,6 @@ public class PainelTutoresJIFF extends javax.swing.JInternalFrame {
         if(txtSEARCH.getText().length()==0){
             addPlaceholderStyle(txtSEARCH);
             txtSEARCH.setText("  Procurar");
-
         }
     }//GEN-LAST:event_txtSEARCHFocusLost
 
@@ -500,12 +567,77 @@ public class PainelTutoresJIFF extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_txtSEARCHMouseExited
 
     private void txtSEARCHKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtSEARCHKeyReleased
-        ArrayList<Tutores> listaFiltrada = listaTutores.stream().filter(funcionario -> funcionario.getNome().startsWith(txtSEARCH.getText())).collect(Collectors.toCollection(ArrayList::new));
+        
+        ArrayList <Tutores> listaTutores = new ArrayList<>();
+        
+        List<Tutores> listaFiltrada = listaTutores.stream().filter(tutor -> 
+                tutor.getNome().startsWith(txtSEARCH.getText())).collect(Collectors.toCollection(ArrayList::new));
 
-        TableModel tb = TableModelCreator.createTableModel(Tutores.class, listaTutores, null);
+        TableModel tb = TableModelCreator.createTableModel(
+                Tutores.class, listaFiltrada, null);
 
-        TABLE_PETS___.setModel(tb);
+        TableTutores.setModel(tb);
+        
     }//GEN-LAST:event_txtSEARCHKeyReleased
+
+    private void TableTutoresMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TableTutoresMouseClicked
+
+        JTable source = (JTable)evt.getSource();
+        
+        int row = source.rowAtPoint( evt.getPoint() );
+        int column = TableTutores.convertColumnIndexToView(TableTutores.getColumn("Id ").getModelIndex());
+                 
+        String s = source.getModel().getValueAt(row, column).toString();
+        // JOptionPane.showMessageDialog(null, s);
+
+        
+        idSelecionado = Integer.parseInt(s);
+        
+        mudaEstadoBotoes(true);
+        // btnEditar.setEnabled(true);
+        // btnExcluir.setEnabled(true);
+        
+    }//GEN-LAST:event_TableTutoresMouseClicked
+
+    private void Panel_Button_EditarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Panel_Button_EditarMouseClicked
+
+        tutorSelecionado = new TutoresDAO().getByID(idSelecionado);
+        
+        if (tutorSelecionado == null) {
+            JOptionPane.showMessageDialog(this, "Por favor, selecione um campo a ser alterado.");
+        } else if (tutorSelecionado != null) {
+            JDialogTeste obj = new JDialogTeste(null, true, this);
+            obj.setVisible(true);
+        }
+    }//GEN-LAST:event_Panel_Button_EditarMouseClicked
+
+    private void Panel_Button_DeletarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Panel_Button_DeletarMouseClicked
+
+        tutorSelecionado = new TutoresDAO().getByID(idSelecionado);
+
+        if (tutorSelecionado == null) {
+            JOptionPane.showMessageDialog(this, "Por favor, selecione a ser deletado.");
+        } else if (tutorSelecionado != null) {
+            String opc;
+
+            JLabel label = new JLabel("<html><center>ATENÇÃO!<br>ESTA AÇÃO NÃO PODERÁ SER DESFEITA.<br><br>Você tem certeza de que deseja excluir este registro?<br><br>Escreva 'CONFIRMAR' para excluir.");
+            label.setHorizontalAlignment(SwingConstants.CENTER);
+            opc = JOptionPane.showInputDialog(null, label, "Atenção!", JOptionPane.INFORMATION_MESSAGE);
+
+            if (opc != null) {
+
+                if (opc.equals("CONFIRMAR")) {
+                    new TutoresDAO().excluir(idSelecionado);
+
+                    atualizarTabela();
+
+                    mudaEstadoBotoes(false);
+                }
+            } else {
+                JOptionPane.showMessageDialog(this, "Nada foi alterado.");
+            }
+        }
+    }//GEN-LAST:event_Panel_Button_DeletarMouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -517,7 +649,7 @@ public class PainelTutoresJIFF extends javax.swing.JInternalFrame {
     private javax.swing.JPanel Panel_Button_Editar;
     private javax.swing.JPanel Panel_Button_Novo;
     private javax.swing.JPanel Panel_Button_Voltar;
-    private javax.swing.JTable TABLE_PETS___;
+    private javax.swing.JTable TableTutores;
     private javax.swing.JLabel VOLTAR;
     private javax.swing.JLabel icon_DELETAR;
     private javax.swing.JLabel icon_EDITAR;

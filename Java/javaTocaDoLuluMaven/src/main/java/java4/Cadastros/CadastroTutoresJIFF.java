@@ -1,27 +1,63 @@
 package java4.Cadastros;
 
 import ClassesDAO.TutoresDAO;
-import ConectionsDAO.JPAUtil;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java1.Classes.Tutores;
-import javax.persistence.EntityManager;
+import java3.Panels.PainelTutoresJIFF;
 import javax.swing.JOptionPane;
 
 public class CadastroTutoresJIFF extends javax.swing.JInternalFrame {
 
+    private Tutores tutor;
+    PainelTutoresJIFF main;
+    boolean isEditar = false;
+    
+    private static CadastroTutoresJIFF myInstanceCadastro;
+    
+    
     public CadastroTutoresJIFF() {
         initComponents();
+        
+        try{
+        if (main.getTutorSelecionado() == null) {
+            isEditar = true;
+            this.tutor = main.getTutorSelecionado();
+            popularForm();
+        }
+        } catch (Exception erro){
+            JOptionPane.showMessageDialog(null, "Erro abertura: " + erro);
+        }
     }
-
-    private static CadastroTutoresJIFF myInstance;
 
     public static CadastroTutoresJIFF getInstance() {
-        if (myInstance == null) {
-            myInstance = new CadastroTutoresJIFF();
-        } return myInstance;
+        if (myInstanceCadastro == null) {
+            myInstanceCadastro = new CadastroTutoresJIFF();
+        } return myInstanceCadastro;
     }
+
+
+    
+    
+    
+    
+    
+    // Formas da janela Cadastro Tutores, se ela virá preenchida ou brand-new
+    
+    private void popularForm() {
+        txtTUTOR_NOME.setText(tutor.getNome());
+        txtTUTOR_TIPODOCUMENTO.setText(String.valueOf(tutor.getTipo_documento()));
+        txtTUTOR_DOCUMENTO.setText(String.valueOf(tutor.getDocumento_identificador()));
+    }
+    
+    private void resetForm() {
+        txtTUTOR_NOME.setText("");
+        txtTUTOR_TIPODOCUMENTO.setText("");
+        txtTUTOR_DOCUMENTO.setText("");
+    }
+    
+    // ------------------------------------------------------------------------------------------------------------
     
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -84,6 +120,23 @@ public class CadastroTutoresJIFF extends javax.swing.JInternalFrame {
         setClosable(true);
         setIconifiable(true);
         setTitle(" Cadastro de Tutores");
+        addInternalFrameListener(new javax.swing.event.InternalFrameListener() {
+            public void internalFrameActivated(javax.swing.event.InternalFrameEvent evt) {
+            }
+            public void internalFrameClosed(javax.swing.event.InternalFrameEvent evt) {
+                formInternalFrameClosed(evt);
+            }
+            public void internalFrameClosing(javax.swing.event.InternalFrameEvent evt) {
+            }
+            public void internalFrameDeactivated(javax.swing.event.InternalFrameEvent evt) {
+            }
+            public void internalFrameDeiconified(javax.swing.event.InternalFrameEvent evt) {
+            }
+            public void internalFrameIconified(javax.swing.event.InternalFrameEvent evt) {
+            }
+            public void internalFrameOpened(javax.swing.event.InternalFrameEvent evt) {
+            }
+        });
 
         jPanel1.setBackground(new java.awt.Color(45, 18, 72));
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)), " CADASTRO DE TUTOR ", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Gill Sans Ultra Bold", 1, 24), new java.awt.Color(255, 255, 255))); // NOI18N
@@ -584,62 +637,58 @@ public class CadastroTutoresJIFF extends javax.swing.JInternalFrame {
 
     private void BOTAO_SALVAR___ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BOTAO_SALVAR___ActionPerformed
         
-        Tutores tutores = new Tutores();
-        
-        tutores.setNome(txtTUTOR_NOME.getText());
-        tutores.setTipo_documento(txtTUTOR_TIPODOCUMENTO.getText());
-        tutores.setDocumento_identificador(txtTUTOR_DOCUMENTO.getText());
-        
-        String dataNascimento = txtTUTOR_NASCIMENTO.getText();
+        String nome = txtTUTOR_NOME.getText();
+        String tipo_documento = txtTUTOR_TIPODOCUMENTO.getText();
+        String documento_identificador = txtTUTOR_DOCUMENTO.getText();
+        String nascimento = txtTUTOR_NASCIMENTO.getText();
         SimpleDateFormat dateFormatInput = new SimpleDateFormat("dd/MM/yyyy");
         SimpleDateFormat dateFormatOutput = new SimpleDateFormat("yyyy-MM-dd");
         try {
-            Date date = dateFormatInput.parse(dataNascimento);
-            tutores.setNascimento(dateFormatOutput.format(date));
+            Date date = dateFormatInput.parse(nascimento);
+            tutor.setNascimento(dateFormatOutput.format(date));
         } catch (ParseException erro) {
             JOptionPane.showMessageDialog(null, "Erro na conversão de data: " + erro);
         }
-        tutores.setDdd_1(Integer.parseInt(txtTUTOR_DDD1.getText()));
-        tutores.setCelular_1(Integer.parseInt(txtTUTOR_CELULAR1.getText()));
+
+        int cep = Integer.parseInt(txtTUTOR_CEP.getText());
+        String logradouro = txtTUTOR_LOGRADOURO.getText();
+        String numero = txtTUTOR_NUMERO.getText();
+        String bairro = txtTUTOR_BAIRRO.getText();
+        String UF = comboTUTOR_UF.getSelectedItem().toString();
+        String municipio = txtTUTOR_MUNICIPIO.getText();
+        String complemento = txtTUTOR_COMPLEMENTO.getText();
+
+        int ddd_1 = Integer.parseInt(txtTUTOR_DDD1.getText());
+        int celular_1 = Integer.parseInt(txtTUTOR_CELULAR1.getText());
+        int ddd_2 = Integer.parseInt(txtTUTOR_DDD2.getText());
+        int celular_2 = Integer.parseInt(txtTUTOR_CELULAR2.getText());
+
+        String email_1 = txtTUTOR_EMAIL1.getText();
+        String email_2 = txtTUTOR_EMAIL2.getText();
+        String tipo_rede_1 = txtTUTOR_TIPOREDESOCIAL1.getText();
+        String rede_social_1 = txtTUTOR_REDESOCIAL1.getText();
+        String tipo_rede_2 = txtTUTOR_TIPOREDESOCIAL2.getText();
+        String rede_social_2 = txtTUTOR_REDESOCIAL2.getText();
+        String observacoes = txtTUTOR_OBSERVACOES.getText();
         
-        if(txtTUTOR_DDD2.getText().isEmpty()){
-            tutores.setDdd_2(0);
-        } else {
-            tutores.setDdd_2(Integer.parseInt(txtTUTOR_DDD2.getText()));
+        if (isEditar) {
+            tutor = new Tutores(tutor.getId(), nome, tipo_documento, documento_identificador, nascimento, cep, logradouro, numero, bairro, 
+                    UF, municipio, complemento, ddd_1, celular_1, ddd_2, celular_2, email_1, email_2, tipo_rede_1,rede_social_1, tipo_rede_2, rede_social_2, observacoes);
+            new TutoresDAO().editar(tutor);
+            dispose();
+        }
+        else {
+            tutor = new Tutores(0, nome, tipo_documento, documento_identificador, nascimento, cep, logradouro, numero, bairro, 
+                    UF, municipio, complemento, ddd_1, celular_1, ddd_2, celular_2, email_1, email_2, tipo_rede_1,rede_social_1, tipo_rede_2, rede_social_2, observacoes);
+            new TutoresDAO().inserir(tutor); 
+            resetForm();
         }
         
-        if(txtTUTOR_CELULAR2.getText().isEmpty()){
-            tutores.setCelular_2(0); 
-        } else {
-            tutores.setCelular_2(Integer.parseInt(txtTUTOR_CELULAR2.getText()));
-        }
-        
-        tutores.setEmail_1(txtTUTOR_EMAIL1.getText());
-        tutores.setEmail_2(txtTUTOR_EMAIL2.getText());
-        tutores.setTipo_rede_1(txtTUTOR_TIPOREDESOCIAL1.getText());
-        tutores.setRede_social_1(txtTUTOR_REDESOCIAL1.getText());
-        tutores.setTipo_rede_2(txtTUTOR_TIPOREDESOCIAL2.getText());
-        tutores.setRede_social_2(txtTUTOR_REDESOCIAL2.getText());
-        tutores.setCep(Integer.parseInt(txtTUTOR_CEP.getText()));
-        tutores.setLogradouro(txtTUTOR_LOGRADOURO.getText());
-        tutores.setNumero(txtTUTOR_NUMERO.getText());
-        tutores.setBairro(txtTUTOR_BAIRRO.getText());
-        tutores.setUf(comboTUTOR_UF.getSelectedItem().toString());
-        tutores.setMunicipio(txtTUTOR_MUNICIPIO.getText());
-        tutores.setComplemento(txtTUTOR_COMPLEMENTO.getText());
-        tutores.setObservacoes(txtTUTOR_OBSERVACOES.getText());
-        
-        EntityManager em = JPAUtil.getEntityManager();
-        TutoresDAO dao = new TutoresDAO(em);
-        
-        em.getTransaction().begin();
-        em.persist(tutores);
-        em.getTransaction().commit();
-        em.close();
-        
-        JOptionPane.showMessageDialog(this, "Tutor salvo com sucesso!");
-        this.dispose();
     }//GEN-LAST:event_BOTAO_SALVAR___ActionPerformed
+
+    private void formInternalFrameClosed(javax.swing.event.InternalFrameEvent evt) {//GEN-FIRST:event_formInternalFrameClosed
+        main.atualizarTabela();
+    }//GEN-LAST:event_formInternalFrameClosed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

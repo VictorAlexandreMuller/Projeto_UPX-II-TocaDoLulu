@@ -42,7 +42,8 @@ public class Tutores {
     public Tutores() {
     }
 
-    public Tutores(String nome, String tipo_documento, String documento_identificador, String nascimento, int cep, String logradouro, String numero, String bairro, String UF, String municipio, String complemento, int ddd_1, int celular_1, int ddd_2, int celular_2, String email_1, String email_2, String tipo_rede_1, String rede_social_1, String tipo_rede_2, String rede_social_2, String observacoes) {
+    public Tutores(int id, String nome, String tipo_documento, String documento_identificador, String nascimento, int cep, String logradouro, String numero, String bairro, String UF, String municipio, String complemento, int ddd_1, int celular_1, int ddd_2, int celular_2, String email_1, String email_2, String tipo_rede_1, String rede_social_1, String tipo_rede_2, String rede_social_2, String observacoes) {
+        this.id = id;
         this.nome = nome;
         this.tipo_documento = tipo_documento;
         this.documento_identificador = documento_identificador;
@@ -67,7 +68,15 @@ public class Tutores {
         this.observacoes = observacoes;
     }
 
-    public int getId() {
+    public Tutores(int id, String nome, int ddd_1, int celular_1, String email_1) {
+        this.id = id;
+        this.nome = nome;
+        this.ddd_1 = ddd_1;
+        this.celular_1 = celular_1;
+        this.email_1 = email_1;
+    }
+    
+        public int getId() {
         return id;
     }
 
