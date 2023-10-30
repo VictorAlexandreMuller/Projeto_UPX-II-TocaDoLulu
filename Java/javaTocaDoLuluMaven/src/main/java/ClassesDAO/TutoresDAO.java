@@ -5,7 +5,9 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.List;
 import java1.Classes.Tutores;
 import javax.persistence.EntityManager;
 import javax.swing.JOptionPane;
@@ -44,6 +46,33 @@ public class TutoresDAO {
         }
     }
     
+    /*
+    // Classe em singular
+    public static List<Tutores> listaTutor() {
+        String sql = "SELECT * FROM Tutores";
+        List<Tutores> listaTutores = new ArrayList<>();
+
+        try {
+            Connection con = ConexaoDAOviaJDBC.getConnection();
+                Statement stm = con.createStatement();
+            ResultSet rs = stm.executeQuery(sql);
+
+            while (rs.next()) {
+                Tutores t = new Tutores();
+
+                t.setId(rs.getInt("id"));
+
+                t.setNome(rs.getString("nome"));
+                listaTutores.add(t);
+            }
+
+        } catch (SQLException ex) {
+            System.out.println("Erro ao PESQUISAR produtos: " + ex.getMessage());
+        }
+        return listaTutores;
+
+    }
+    */
     public void inserir(Tutores tutor) {
         String sql = "INSERT INTO Tutores (nome, tipo_documento, documento_identificador, "
                 + "nascimento, cep, logradouro, numero, bairro, UF, municipio, complemento, "
@@ -129,6 +158,8 @@ public class TutoresDAO {
             stmt.setString(21, tutor.getRede_social_2());
             stmt.setString(22, tutor.getObservacoes());
             
+            stmt.setInt(23, tutor.getId());
+            
             stmt.execute();
   
         } catch (SQLException ex) {
@@ -195,7 +226,7 @@ public class TutoresDAO {
         return tutores;
     }
     
-    public ArrayList<Tutores> getColunasTableTutores() {
+    public static ArrayList<Tutores> getColunasTableTutores() {
         String sql = "SELECT * FROM Tutores";
         
         ArrayList<Tutores> tutores = new ArrayList<>();
