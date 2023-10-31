@@ -748,7 +748,6 @@ public class JDialogTeste extends javax.swing.JDialog {
             tutor = new Tutores(tutor.getId(), nome, tipo_documento, documento_identificador, nascimento, cep, logradouro, numero, bairro,
                     UF, municipio, complemento, ddd_1, celular_1, ddd_2, celular_2, email_1, email_2, tipo_rede_1, rede_social_1, tipo_rede_2, rede_social_2, observacoes);
             new TutoresDAO().editar(tutor);
-            JOptionPane.showMessageDialog(this, "Tutor alterado com sucesso.");
             dispose();
         } else if (main.getTutorSelecionado() == null) {
             tutor = new Tutores(0, nome, tipo_documento, documento_identificador, nascimento, cep, logradouro, numero, bairro,
@@ -758,11 +757,12 @@ public class JDialogTeste extends javax.swing.JDialog {
         } else {
             
         }
-
+        
     }//GEN-LAST:event_BOTAO_SALVAR___ActionPerformed
 
     private void formWindowClosed(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosed
         main.atualizarTabela();
+        
     }//GEN-LAST:event_formWindowClosed
     
     

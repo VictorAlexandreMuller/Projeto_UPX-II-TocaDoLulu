@@ -19,18 +19,18 @@ import javax.swing.table.TableModel;
 
 public class PainelTutoresJIFF extends javax.swing.JInternalFrame {
     private int idSelecionado;
-    private Tutores tutorSelecionado =  null;
+    public Tutores tutorSelecionado =  null;
     
     public Tutores getTutorSelecionado() {
         return tutorSelecionado;
     }
-
+    
     public PainelTutoresJIFF() {
         initComponents();
         
         addPlaceholderStyle(txtSEARCH);
         atualizarTabela();
-        mudaEstadoBotoes(false);
+        
     }
     
     private static PainelTutoresJIFF myInstancePainel;
@@ -51,14 +51,9 @@ public class PainelTutoresJIFF extends javax.swing.JInternalFrame {
     
     
     
-
-    // Muda o estado dos botões Editar e Deletar para habilitado ou desabilitado
     
-    private void mudaEstadoBotoes(boolean novoEstado) {
-        Panel_Button_Editar.setEnabled(novoEstado);
-        Panel_Button_Deletar.setEnabled(novoEstado);
-    }
-            
+    
+    
     // Atualizar Tabela
     
     public void atualizarTabela() {
@@ -203,7 +198,6 @@ public class PainelTutoresJIFF extends javax.swing.JInternalFrame {
             }
         });
 
-        icon_VOLTAR.setIcon(new javax.swing.ImageIcon("C:\\Users\\victo\\Documents\\Dev\\UPX2-Toca-do-Lulu\\Java\\javaTocaDoLuluMaven\\src\\main\\java\\iconsCrud\\1VoltarIcon40.png")); // NOI18N
         icon_VOLTAR.setPreferredSize(new java.awt.Dimension(40, 40));
 
         VOLTAR.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
@@ -243,8 +237,6 @@ public class PainelTutoresJIFF extends javax.swing.JInternalFrame {
                 Panel_Button_NovoPanel_Button_DeletarMouseExited(evt);
             }
         });
-
-        icon_NOVO.setIcon(new javax.swing.ImageIcon("C:\\Users\\victo\\Documents\\Dev\\UPX2-Toca-do-Lulu\\Java\\javaTocaDoLuluMaven\\src\\main\\java\\iconsCrud\\2NovoIcon40.png")); // NOI18N
 
         NOVO.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         NOVO.setForeground(new java.awt.Color(255, 255, 255));
@@ -287,8 +279,6 @@ public class PainelTutoresJIFF extends javax.swing.JInternalFrame {
             }
         });
 
-        icon_EDITAR.setIcon(new javax.swing.ImageIcon("C:\\Users\\victo\\Documents\\Dev\\UPX2-Toca-do-Lulu\\Java\\javaTocaDoLuluMaven\\src\\main\\java\\iconsCrud\\3AlterarIcon40.png")); // NOI18N
-
         EDITAR.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         EDITAR.setForeground(new java.awt.Color(255, 255, 255));
         EDITAR.setText("Editar");
@@ -326,8 +316,6 @@ public class PainelTutoresJIFF extends javax.swing.JInternalFrame {
                 Panel_Button_DeletarMouseExited(evt);
             }
         });
-
-        icon_DELETAR.setIcon(new javax.swing.ImageIcon("C:\\Users\\victo\\Documents\\Dev\\UPX2-Toca-do-Lulu\\Java\\javaTocaDoLuluMaven\\src\\main\\java\\iconsCrud\\4DeletarIcon40.png")); // NOI18N
 
         DELETAR.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         DELETAR.setForeground(new java.awt.Color(255, 255, 255));
@@ -572,19 +560,27 @@ public class PainelTutoresJIFF extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_txtSEARCHKeyReleased
 
     private void TableTutoresMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TableTutoresMouseClicked
+        
+        Tutores tutorTeste = new Tutores();
+        
+                if (evt.getClickCount() == 1 && !evt.isConsumed()) {
+                    evt.consume();
+                    JTable source = (JTable) evt.getSource();
+                    int row = source.rowAtPoint(evt.getPoint());
+                    int column = TableTutores.convertColumnIndexToView(TableTutores.getColumn("Id ").getModelIndex());
+                    idSelecionado = Integer.parseInt(source.getModel().getValueAt(row, column) + "");
 
-        JTable source = (JTable)evt.getSource();
+                } else if (evt.getClickCount() == 2 && !evt.isConsumed()) {
+                    evt.consume();
+                    JTable source = (JTable) evt.getSource();
+                    int row = source.getSelectedRow();
+                    int column = TableTutores.convertColumnIndexToView(TableTutores.getColumn("Id ").getModelIndex());
+                    String s = source.getModel().getValueAt(row, column) + " - " + tutorTeste.toString();
+                    JOptionPane.showMessageDialog(null, s);
+                }        
         
-        int row = source.rowAtPoint( evt.getPoint() );
-        int column = TableTutores.convertColumnIndexToView(TableTutores.getColumn("Id ").getModelIndex());
-                 
-        String s = source.getModel().getValueAt(row, column).toString();
-        // JOptionPane.showMessageDialog(null, s);
-
-        
-        idSelecionado = Integer.parseInt(s);
-        
-        mudaEstadoBotoes(true);
+        // Estes dois abaixo podem ser implementados caso estejamos utilizando realmente botoes
+        // Propriedade Enable dos botoes Editar e Excluir são desmarcadas no swing
         // btnEditar.setEnabled(true);
         // btnExcluir.setEnabled(true);
         
@@ -596,9 +592,11 @@ public class PainelTutoresJIFF extends javax.swing.JInternalFrame {
         
         if (tutorSelecionado == null) {
             JOptionPane.showMessageDialog(this, "Por favor, selecione um campo a ser alterado.");
+            
         } else if (tutorSelecionado != null) {
             JDialogTeste obj = new JDialogTeste(null, true, this);
             obj.setVisible(true);
+            
         }
     }//GEN-LAST:event_Panel_Button_EditarMouseClicked
 
@@ -622,7 +620,7 @@ public class PainelTutoresJIFF extends javax.swing.JInternalFrame {
 
                     atualizarTabela();
 
-                    mudaEstadoBotoes(false);
+                    
                 }
             } else {
                 JOptionPane.showMessageDialog(this, "Nada foi alterado.");
