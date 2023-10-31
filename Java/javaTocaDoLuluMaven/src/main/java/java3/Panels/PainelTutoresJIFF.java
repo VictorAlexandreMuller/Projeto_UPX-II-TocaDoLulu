@@ -5,6 +5,7 @@ import static ClassesDAO.TutoresDAO.getColunasTableTutores;
 import java.awt.Color;
 import java.awt.Font;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 import java1.Classes.Tutores;
@@ -62,16 +63,13 @@ public class PainelTutoresJIFF extends javax.swing.JInternalFrame {
     
     public void atualizarTabela() {
         
-        ArrayList<String> colunas = new ArrayList<>();
-        colunas.add("id");
-        colunas.add("nome");
-        colunas.add("ddd_1");
-        colunas.add("celular_1");
-        colunas.add("email_1");
+        List<String> colunasVisiveis = new ArrayList<>
+        (Arrays.asList("id", "nome", "ddd_1", "celular_1", "email_1"));
         
         try {
             List<Tutores> lstTutores = getColunasTableTutores(); // Pode-se alternar: "getAll" ou "getColunasTableTutores"
-            TableModel tableModelTutores = TableModelCreator.createTableModel(Tutores.class, lstTutores,colunas); // Pode-se alternar: "colunas" ou "null"
+            TableModel tableModelTutores = TableModelCreator.
+                    createTableModel(Tutores.class, lstTutores, colunasVisiveis); // Pode-se alternar: "colunas" ou "null"
             TableTutores.setModel(tableModelTutores);
         } catch (Exception e) {
             System.out.println("Houve um erro ao tentar popular a tabela");
@@ -162,16 +160,14 @@ public class PainelTutoresJIFF extends javax.swing.JInternalFrame {
                 {null, null, null, null, null},
                 {null, null, null, null, null},
                 {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
                 {null, null, null, null, null}
             },
             new String [] {
-                "Id", "Nome", "E-mail", "DDD", "Celular"
+                "Id", "Nome", "E-mail", "DDD", "Telefone"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.Integer.class, java.lang.String.class, java.lang.Object.class, java.lang.Integer.class, java.lang.Integer.class
+                java.lang.Integer.class, java.lang.Object.class, java.lang.Object.class, java.lang.Integer.class, java.lang.Integer.class
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -207,7 +203,7 @@ public class PainelTutoresJIFF extends javax.swing.JInternalFrame {
             }
         });
 
-        icon_VOLTAR.setIcon(new javax.swing.ImageIcon("C:\\Users\\PC\\Documents\\Dev\\UPX2-Toca-do-Lulu\\Java\\javaTocaDoLuluMaven\\src\\main\\java\\iconsCrud\\1VoltarIcon40.png")); // NOI18N
+        icon_VOLTAR.setIcon(new javax.swing.ImageIcon("C:\\Users\\victo\\Documents\\Dev\\UPX2-Toca-do-Lulu\\Java\\javaTocaDoLuluMaven\\src\\main\\java\\iconsCrud\\1VoltarIcon40.png")); // NOI18N
         icon_VOLTAR.setPreferredSize(new java.awt.Dimension(40, 40));
 
         VOLTAR.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
@@ -248,7 +244,7 @@ public class PainelTutoresJIFF extends javax.swing.JInternalFrame {
             }
         });
 
-        icon_NOVO.setIcon(new javax.swing.ImageIcon("C:\\Users\\PC\\Documents\\Dev\\UPX2-Toca-do-Lulu\\Java\\javaTocaDoLuluMaven\\src\\main\\java\\iconsCrud\\2NovoIcon40.png")); // NOI18N
+        icon_NOVO.setIcon(new javax.swing.ImageIcon("C:\\Users\\victo\\Documents\\Dev\\UPX2-Toca-do-Lulu\\Java\\javaTocaDoLuluMaven\\src\\main\\java\\iconsCrud\\2NovoIcon40.png")); // NOI18N
 
         NOVO.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         NOVO.setForeground(new java.awt.Color(255, 255, 255));
@@ -291,7 +287,7 @@ public class PainelTutoresJIFF extends javax.swing.JInternalFrame {
             }
         });
 
-        icon_EDITAR.setIcon(new javax.swing.ImageIcon("C:\\Users\\PC\\Documents\\Dev\\UPX2-Toca-do-Lulu\\Java\\javaTocaDoLuluMaven\\src\\main\\java\\iconsCrud\\3AlterarIcon40.png")); // NOI18N
+        icon_EDITAR.setIcon(new javax.swing.ImageIcon("C:\\Users\\victo\\Documents\\Dev\\UPX2-Toca-do-Lulu\\Java\\javaTocaDoLuluMaven\\src\\main\\java\\iconsCrud\\3AlterarIcon40.png")); // NOI18N
 
         EDITAR.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         EDITAR.setForeground(new java.awt.Color(255, 255, 255));
@@ -331,7 +327,7 @@ public class PainelTutoresJIFF extends javax.swing.JInternalFrame {
             }
         });
 
-        icon_DELETAR.setIcon(new javax.swing.ImageIcon("C:\\Users\\PC\\Documents\\Dev\\UPX2-Toca-do-Lulu\\Java\\javaTocaDoLuluMaven\\src\\main\\java\\iconsCrud\\4DeletarIcon40.png")); // NOI18N
+        icon_DELETAR.setIcon(new javax.swing.ImageIcon("C:\\Users\\victo\\Documents\\Dev\\UPX2-Toca-do-Lulu\\Java\\javaTocaDoLuluMaven\\src\\main\\java\\iconsCrud\\4DeletarIcon40.png")); // NOI18N
 
         DELETAR.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         DELETAR.setForeground(new java.awt.Color(255, 255, 255));
@@ -562,18 +558,14 @@ public class PainelTutoresJIFF extends javax.swing.JInternalFrame {
 
     private void txtSEARCHKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtSEARCHKeyReleased
         
-        ArrayList<String> colunas = new ArrayList<>();
-        colunas.add("id");
-        colunas.add("nome");
-        colunas.add("ddd_1");
-        colunas.add("celular_1");
-        colunas.add("email_1");
+        List<String> colunasVisiveis = new ArrayList<>
+        (Arrays.asList("id", "nome", "ddd_1", "celular_1", "email_1"));
         
         List<Tutores> listaFiltrada = getColunasTableTutores().stream().filter(tutor -> 
                 tutor.getNome().startsWith(txtSEARCH.getText())).collect(Collectors.toCollection(ArrayList::new));
 
         TableModel tb = TableModelCreator.createTableModel(
-                Tutores.class, listaFiltrada, colunas);
+                Tutores.class, listaFiltrada, colunasVisiveis);
 
         TableTutores.setModel(tb);
         
