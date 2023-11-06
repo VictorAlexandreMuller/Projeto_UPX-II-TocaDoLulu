@@ -35,7 +35,7 @@ public class TableModelCreator {
                 for (String s1 : s) {
                     displayName += s1 + " ";
                 }
-
+                
                 columns.add(displayName);
                 Method m = pd.getReadMethod();
                 getters.add(m);

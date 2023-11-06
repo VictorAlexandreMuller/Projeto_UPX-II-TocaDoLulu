@@ -118,6 +118,8 @@ public class TutoresDAO {
         JOptionPane.showMessageDialog(null, "Tutor cadastrado com sucesso!");
     }
     
+    
+    
     public void editar(Tutores tutor) {
         String sql = "UPDATE Tutores SET nome = ?, tipo_documento = ?, documento_identificador = ?, "
                 + "nascimento = ?, cep = ?, logradouro = ?, numero = ?, bairro = ?, uf = ?, municipio = ?, "
@@ -166,6 +168,8 @@ public class TutoresDAO {
         JOptionPane.showMessageDialog(null, "Tutor alterado com sucesso.");
     }
     
+    
+    
     public boolean excluir(int codigo) {
         String sql = "delete from Tutores where id = ?";
 
@@ -179,6 +183,8 @@ public class TutoresDAO {
         }
         return false;
     }
+    
+    
     
     public ArrayList<Tutores> getAll() {
         String sql = "SELECT * FROM Tutores";
@@ -225,6 +231,8 @@ public class TutoresDAO {
         return tutores;
     }
     
+    
+    
     public static ArrayList<Tutores> getColunasTableTutores() {
         String sql = "SELECT * FROM Tutores";
         
@@ -250,6 +258,14 @@ public class TutoresDAO {
         }
         return tutores;
     }
+    
+    
+    
+    
+    
+    
+    
+    
     
     public Tutores getByID(int idParam) {
         String sql = "SELECT * FROM tutores where id=?";

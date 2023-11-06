@@ -61,15 +61,46 @@ public class PainelTutoresJIFF extends javax.swing.JInternalFrame {
         List<String> colunasVisiveis = new ArrayList<>
         (Arrays.asList("id", "nome", "ddd_1", "celular_1", "email_1"));
         
+        List<Tutores> lstTutores = getColunasTableTutores();
+        
         try {
-            List<Tutores> lstTutores = getColunasTableTutores(); // Pode-se alternar: "getAll" ou "getColunasTableTutores"
+             // Pode-se alternar: "getAll" ou "getColunasTableTutores"
             TableModel tableModelTutores = TableModelCreator.
                     createTableModel(Tutores.class, lstTutores, colunasVisiveis); // Pode-se alternar: "colunas" ou "null"
+            
             TableTutores.setModel(tableModelTutores);
+            
+            organizarTabela();
+            widthTabela();
+            renameTabela();
+            
         } catch (Exception e) {
             System.out.println("Houve um erro ao tentar popular a tabela");
         }
     }
+    
+    public void organizarTabela() {
+        TableTutores.getTableHeader().getColumnModel().moveColumn(3, 0);
+        TableTutores.getTableHeader().getColumnModel().moveColumn(4, 1);
+        TableTutores.getTableHeader().getColumnModel().moveColumn(4, 2);
+        TableTutores.getTableHeader().getColumnModel().moveColumn(4, 3);
+    }
+    
+    public void widthTabela() {
+        TableTutores.getColumnModel().getColumn(0).setPreferredWidth(50);
+        TableTutores.getColumnModel().getColumn(1).setPreferredWidth(500);
+        TableTutores.getColumnModel().getColumn(2).setPreferredWidth(500);
+        TableTutores.getColumnModel().getColumn(3).setPreferredWidth(100);
+        TableTutores.getColumnModel().getColumn(4).setPreferredWidth(200);
+    }
+    
+    public void renameTabela() {
+        TableTutores.getColumnModel().getColumn(2).setHeaderValue("Email");
+        TableTutores.getColumnModel().getColumn(3).setHeaderValue("DDD");
+        TableTutores.getColumnModel().getColumn(4).setHeaderValue("Telefone");
+        
+    }
+    
     
     // -------------------------------
     
@@ -79,14 +110,12 @@ public class PainelTutoresJIFF extends javax.swing.JInternalFrame {
         Font font = textField.getFont();
         font = font.deriveFont(Font.ITALIC);
         textField.setFont(font);
-        textField.setForeground(Color.gray);
     }
     
     public void removePlaceholderStyle(JTextField textField){
         Font font = textField.getFont();
         font = font.deriveFont(Font.PLAIN|Font.BOLD);
         textField.setFont(font);
-        textField.setForeground(Color.black);
     }
     
     // Cores dos Holders -------------
@@ -136,6 +165,7 @@ public class PainelTutoresJIFF extends javax.swing.JInternalFrame {
         jSeparator2 = new javax.swing.JSeparator();
         jPanel6 = new javax.swing.JPanel();
 
+        setClosable(true);
         setIconifiable(true);
         setMaximizable(true);
         setResizable(true);
@@ -198,6 +228,7 @@ public class PainelTutoresJIFF extends javax.swing.JInternalFrame {
             }
         });
 
+        icon_VOLTAR.setIcon(new javax.swing.ImageIcon("C:\\Users\\PC\\Documents\\Dev\\UPX2-Toca-do-Lulu\\Java\\javaTocaDoLuluMaven\\src\\main\\java\\iconsCrud\\1VoltarIcon40.png")); // NOI18N
         icon_VOLTAR.setPreferredSize(new java.awt.Dimension(40, 40));
 
         VOLTAR.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
@@ -237,6 +268,8 @@ public class PainelTutoresJIFF extends javax.swing.JInternalFrame {
                 Panel_Button_NovoPanel_Button_DeletarMouseExited(evt);
             }
         });
+
+        icon_NOVO.setIcon(new javax.swing.ImageIcon("C:\\Users\\PC\\Documents\\Dev\\UPX2-Toca-do-Lulu\\Java\\javaTocaDoLuluMaven\\src\\main\\java\\iconsCrud\\2NovoIcon40.png")); // NOI18N
 
         NOVO.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         NOVO.setForeground(new java.awt.Color(255, 255, 255));
@@ -279,6 +312,8 @@ public class PainelTutoresJIFF extends javax.swing.JInternalFrame {
             }
         });
 
+        icon_EDITAR.setIcon(new javax.swing.ImageIcon("C:\\Users\\PC\\Documents\\Dev\\UPX2-Toca-do-Lulu\\Java\\javaTocaDoLuluMaven\\src\\main\\java\\iconsCrud\\3AlterarIcon40.png")); // NOI18N
+
         EDITAR.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         EDITAR.setForeground(new java.awt.Color(255, 255, 255));
         EDITAR.setText("Editar");
@@ -317,6 +352,8 @@ public class PainelTutoresJIFF extends javax.swing.JInternalFrame {
             }
         });
 
+        icon_DELETAR.setIcon(new javax.swing.ImageIcon("C:\\Users\\PC\\Documents\\Dev\\UPX2-Toca-do-Lulu\\Java\\javaTocaDoLuluMaven\\src\\main\\java\\iconsCrud\\4DeletarIcon40.png")); // NOI18N
+
         DELETAR.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         DELETAR.setForeground(new java.awt.Color(255, 255, 255));
         DELETAR.setText("Deletar");
@@ -344,10 +381,8 @@ public class PainelTutoresJIFF extends javax.swing.JInternalFrame {
         txtSEARCH.setBackground(new java.awt.Color(85, 65, 118));
         txtSEARCH.setForeground(new java.awt.Color(255, 255, 255));
         txtSEARCH.setText("  Procurar");
-        txtSEARCH.setToolTipText("");
-        txtSEARCH.setCaretColor(new java.awt.Color(0, 0, 0));
-        txtSEARCH.setDisabledTextColor(new java.awt.Color(0, 0, 0));
-        txtSEARCH.setSelectedTextColor(new java.awt.Color(0, 0, 0));
+        txtSEARCH.setCaretColor(new java.awt.Color(255, 255, 255));
+        txtSEARCH.setSelectedTextColor(new java.awt.Color(255, 255, 255));
         txtSEARCH.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseMoved(java.awt.event.MouseEvent evt) {
                 txtSEARCHMouseMoved(evt);
@@ -550,35 +585,61 @@ public class PainelTutoresJIFF extends javax.swing.JInternalFrame {
         (Arrays.asList("id", "nome", "ddd_1", "celular_1", "email_1"));
         
         List<Tutores> listaFiltrada = getColunasTableTutores().stream().filter(tutor -> 
-                tutor.getNome().startsWith(txtSEARCH.getText())).collect(Collectors.toCollection(ArrayList::new));
-
+                tutor.getNome().toLowerCase().contains(txtSEARCH.getText())).collect(Collectors.toCollection(ArrayList::new));
+        
         TableModel tb = TableModelCreator.createTableModel(
                 Tutores.class, listaFiltrada, colunasVisiveis);
-
+        
         TableTutores.setModel(tb);
         
+        organizarTabela();
+        widthTabela();
     }//GEN-LAST:event_txtSEARCHKeyReleased
 
     private void TableTutoresMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TableTutoresMouseClicked
         
-        Tutores tutorTeste = new Tutores();
-        
+        tutorSelecionado = new TutoresDAO().getByID(idSelecionado);
+                
                 if (evt.getClickCount() == 1 && !evt.isConsumed()) {
                     evt.consume();
                     JTable source = (JTable) evt.getSource();
                     int row = source.rowAtPoint(evt.getPoint());
-                    int column = TableTutores.convertColumnIndexToView(TableTutores.getColumn("Id ").getModelIndex());
+                    int column = TableTutores.convertColumnIndexToView(TableTutores.getColumn("DDD").getModelIndex());
                     idSelecionado = Integer.parseInt(source.getModel().getValueAt(row, column) + "");
 
                 } else if (evt.getClickCount() == 2 && !evt.isConsumed()) {
                     evt.consume();
                     JTable source = (JTable) evt.getSource();
                     int row = source.getSelectedRow();
-                    int column = TableTutores.convertColumnIndexToView(TableTutores.getColumn("Id ").getModelIndex());
-                    String s = source.getModel().getValueAt(row, column) + " - " + tutorTeste.toString();
+                    int column = TableTutores.convertColumnIndexToView(TableTutores.getColumn("DDD").getModelIndex());
+                    String s = source.getModel().getValueAt(row, column) + " - " + tutorSelecionado.toString();
                     JOptionPane.showMessageDialog(null, s);
                 }        
-        
+                /*
+                    OBS: O getColumn("DDD") puxa o valor correto do ID na tabela.
+                    Explicação: O TableModelCreator, criada pelo professor e utilizada em aulas, cria uma tabela genérica.
+                                Esta tabela TableModelCreator traz as colunas em ordem alfabética.
+                                Dessa forma, foi criado o método "organizarTabela()" que organiza a Table na order que preferir, entretanto isso se aplica apenas ao front-end.
+                                
+                                Ou seja, antes a TableTutores apresentava as suas colunas na ordem (padrão back-end): 
+                                                                                     Celular_1 = index 0
+                                                                                     Ddd_1     = index 1
+                                                                                     Email_1   = index 2
+                                                                                     Id        = index 3
+                                                                                     Nome      = index 4
+                
+                                Após o método "organizarTabela()", APENAS PARA O FRONT-END, as colunas foram alteradas para:
+                                                                                     Id
+                                                                                     Nome
+                                                                                     Email
+                                                                                     DDD
+                                                                                     Telefone
+                
+                                Mas os seus valores de Index permaneceram os mesmos de antes.
+                                Sendo assim, para puxarmos em getColumn o valor correto de Id, precisamos colocar o nome referente à nova coluna que está no index 3, ou seja, DDD.
+                */
+                
+                
         // Estes dois abaixo podem ser implementados caso estejamos utilizando realmente botoes
         // Propriedade Enable dos botoes Editar e Excluir são desmarcadas no swing
         // btnEditar.setEnabled(true);
