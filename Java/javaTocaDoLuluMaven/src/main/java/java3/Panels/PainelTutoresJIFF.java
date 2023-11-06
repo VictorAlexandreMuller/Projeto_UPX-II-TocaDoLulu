@@ -1,5 +1,6 @@
 package java3.Panels;
 
+import java4.Cadastros.CadastroTutoresJDialog;
 import ClassesDAO.TutoresDAO;
 import static ClassesDAO.TutoresDAO.getColunasTableTutores;
 import java.awt.Color;
@@ -522,7 +523,7 @@ public class PainelTutoresJIFF extends javax.swing.JInternalFrame {
         
         tutorSelecionado = null;
         
-        JDialogTeste obj = new JDialogTeste(null, true, this);
+        CadastroTutoresJDialog obj = new CadastroTutoresJDialog(null, true, this);
         obj.setVisible(true);
     }//GEN-LAST:event_Panel_Button_NovoMouseClicked
 
@@ -655,7 +656,7 @@ public class PainelTutoresJIFF extends javax.swing.JInternalFrame {
             JOptionPane.showMessageDialog(this, "Por favor, selecione um campo a ser alterado.");
             
         } else if (tutorSelecionado != null) {
-            JDialogTeste obj = new JDialogTeste(null, true, this);
+            CadastroTutoresJDialog obj = new CadastroTutoresJDialog(null, true, this);
             obj.setVisible(true);
             
         }
