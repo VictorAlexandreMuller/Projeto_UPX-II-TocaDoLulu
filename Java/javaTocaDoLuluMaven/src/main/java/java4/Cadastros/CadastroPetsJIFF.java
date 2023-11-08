@@ -522,7 +522,7 @@ public class CadastroPetsJIFF extends javax.swing.JInternalFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void BOTAO_SALVAR___ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BOTAO_SALVAR___ActionPerformed
-        
+        /*
         Pets pet = new Pets();
         PetsPlanosValores plano = new PetsPlanosValores();
         
@@ -562,6 +562,7 @@ public class CadastroPetsJIFF extends javax.swing.JInternalFrame {
         
         JOptionPane.showMessageDialog(this, "Pet salvo com sucesso!");
         this.dispose();
+        */
     }//GEN-LAST:event_BOTAO_SALVAR___ActionPerformed
 
     private void BOTAO_VOLTAR___ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BOTAO_VOLTAR___ActionPerformed

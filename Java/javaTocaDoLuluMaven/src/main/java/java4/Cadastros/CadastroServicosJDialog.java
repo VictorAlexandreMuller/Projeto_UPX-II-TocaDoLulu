@@ -1,22 +1,125 @@
 package java4.Cadastros;
 
+import ClassesDAO.ServicosDAO;
 import ClassesDAO.TutoresDAO;
 import ConectionsDAO.JPAUtil;
+import java.awt.Color;
+import java.awt.Font;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java1.Classes.Servicos;
+import java3.Panels.PainelServicosJIFF;
 import javax.persistence.EntityManager;
+import javax.swing.BorderFactory;
 import javax.swing.JOptionPane;
+import javax.swing.border.LineBorder;
+import javax.swing.border.TitledBorder;
 
 public class CadastroServicosJDialog extends javax.swing.JDialog {
 
-    public CadastroServicosJDialog(java.awt.Frame parent, boolean modal) {
+    private Servicos serv;
+    PainelServicosJIFF main;
+    boolean isEditar = false;
+    
+    public CadastroServicosJDialog(java.awt.Frame parent, boolean modal, PainelServicosJIFF main) {
         super(parent, modal);
         initComponents();
+        
+        this.main = main;
+
+        if (main.getServicoSelecionado() != null) {
+            isEditar = true;
+            this.serv = main.getServicoSelecionado();
+            popularForm();
+            ChangeTitle();
+        }
     }
     
     
+    
+    
+    
+    // Altera o título do EDITAR CADASTRO
+    private void ChangeTitle() {
+        
+        LineBorder lineBorder = new LineBorder(Color.WHITE);
+        Font customFont = new Font("Gill Sans Ultra Bold", Font.BOLD, 24);
+        
+        TitledBorder titledBorder = BorderFactory.createTitledBorder("tentativa is true");
+        titledBorder.setBorder(lineBorder);
+        titledBorder.setTitle(" ALTERAR CADASTRO DE SERVICO ");
+        titledBorder.setTitleColor(Color.RED);
+        titledBorder.setTitleFont(customFont);
+        titledBorder.setTitleJustification(titledBorder.CENTER);
+        titledBorder.setTitlePosition(titledBorder.TOP);
+        
+        jPanel1.setBorder(titledBorder);
+    }
+    
+    // Formas da janela Cadastro Tutores, se ela virá preenchida ou brand-new
+    private void popularForm() {
+        
+        
+        txtSERVICO_NOME.setText(serv.getNome());
+        txtSERVICO_SERVICO.setText(serv.getServico());
+        txtSERVICO_VALOR.setText(String.valueOf(serv.getValor()));
+        
+        txtSERVICO_TIPODOCUMENTO.setText(String.valueOf(serv.getTipo_documento()));
+        txtSERVICO_DOCUMENTO.setText(String.valueOf(serv.getDocumento_identificador()));
+        
+        txtSERVICO_NASCIMENTO.setText(String.valueOf(serv.getNascimento()));
+        SimpleDateFormat dateFormatInput = new SimpleDateFormat("yyyy-MM-dd");
+        SimpleDateFormat dateFormatOutput = new SimpleDateFormat("dd/MM/yyyy");
+        try {
+            Date date = dateFormatInput.parse(serv.getNascimento());
+            txtSERVICO_NASCIMENTO.setText(dateFormatOutput.format(date));
+        } catch (ParseException erro) {
+            JOptionPane.showMessageDialog(null, "Erro na conversão de data: " + erro);
+            return;
+        }
+        
+        txtSERVICO_DDD1.setText(String.valueOf(serv.getDdd_1()));
+        txtSERVICO_CELULAR1.setText(String.valueOf(serv.getCelular_1()));
+        txtSERVICO_EMAIL1.setText(String.valueOf(serv.getEmail_1()));
+        txtSERVICO_DDD2.setText(String.valueOf(serv.getDdd_2()));
+        txtSERVICO_CELULAR2.setText(String.valueOf(serv.getCelular_2()));
+        txtSERVICO_EMAIL2.setText(String.valueOf(serv.getEmail_2()));
+        
+        txtSERVICO_CEP.setText(String.valueOf(serv.getCep()));
+        txtSERVICO_LOGRADOURO.setText(String.valueOf(serv.getLogradouro()));
+        txtSERVICO_NUMERO.setText(String.valueOf(serv.getNumero()));
+        txtSERVICO_BAIRRO.setText(String.valueOf(serv.getBairro()));
+        comboSERVICO_UF.setSelectedItem(serv.getUf());
+        txtSERVICO_MUNICIPIO.setText(String.valueOf(serv.getMunicipio()));
+        txtSERVICO_COMPLEMENTO.setText(String.valueOf(serv.getComplemento()));
+        txtSERVICO_OBSERVACOES.setText(String.valueOf(serv.getObservacoes()));
+    }
+    
+    private void resetForm() {
+        txtSERVICO_NOME.setText("");
+        txtSERVICO_SERVICO.setText("");
+        txtSERVICO_VALOR.setText("");
+        txtSERVICO_TIPODOCUMENTO.setText("");
+        txtSERVICO_DOCUMENTO.setText("");
+        txtSERVICO_NASCIMENTO.setText("");
+        txtSERVICO_DDD1.setText("");
+        txtSERVICO_CELULAR1.setText("");
+        txtSERVICO_EMAIL1.setText("");
+        txtSERVICO_DDD2.setText("");
+        txtSERVICO_CELULAR2.setText("");
+        txtSERVICO_EMAIL2.setText("");
+        txtSERVICO_CEP.setText("");
+        txtSERVICO_LOGRADOURO.setText("");
+        txtSERVICO_NUMERO.setText("");
+        txtSERVICO_BAIRRO.setText("");
+        comboSERVICO_UF.setSelectedItem("-");
+        txtSERVICO_MUNICIPIO.setText("");
+        txtSERVICO_COMPLEMENTO.setText("");
+        txtSERVICO_OBSERVACOES.setText("");
+    }
+    
+    // ------------------------------------------------------------------------------------------------------------
     
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -551,6 +654,8 @@ public class CadastroServicosJDialog extends javax.swing.JDialog {
     }//GEN-LAST:event_BOTAO_VOLTAR___ActionPerformed
 
     private void BOTAO_SALVAR___ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BOTAO_SALVAR___ActionPerformed
+        // SÓ EXCLUIR QUANDO TUDO ESTIVER FUNCIONANDO 
+        /*
         Servicos servicos = new Servicos();
 
         servicos.setNome(txtSERVICO_NOME.getText());
@@ -603,6 +708,79 @@ public class CadastroServicosJDialog extends javax.swing.JDialog {
 
         JOptionPane.showMessageDialog(this, "Serviço salvo com sucesso!");
         this.dispose();
+        
+        */
+        
+        
+        Servicos servicos = new Servicos();
+        
+        String nome = txtSERVICO_NOME.getText();
+        String servico = txtSERVICO_SERVICO.getText();
+        double valor = Double.parseDouble(txtSERVICO_VALOR.getText());
+        
+        String tipo_documento = txtSERVICO_TIPODOCUMENTO.getText();
+        String documento_identificador = txtSERVICO_DOCUMENTO.getText();
+        int ddd_1 = Integer.parseInt(txtSERVICO_DDD1.getText());
+        int celular_1 = Integer.parseInt(txtSERVICO_CELULAR1.getText());
+        String email_1 = txtSERVICO_EMAIL1.getText();
+        String email_2 = txtSERVICO_EMAIL2.getText();
+        
+        int cep = Integer.parseInt(txtSERVICO_CEP.getText());
+        String logradouro = txtSERVICO_LOGRADOURO.getText();
+        String numero = txtSERVICO_NUMERO.getText();
+        String bairro = txtSERVICO_BAIRRO.getText();
+        String UF = comboSERVICO_UF.getSelectedItem().toString();
+        String municipio = txtSERVICO_MUNICIPIO.getText();
+        String complemento = txtSERVICO_COMPLEMENTO.getText();
+        String observacoes = txtSERVICO_OBSERVACOES.getText();
+        
+        // captando os ints obrigatorios
+        int DDD2_, Celular2_;
+        
+            if(txtSERVICO_DDD2.getText().isEmpty()){
+                DDD2_ = 0;
+        } else {
+                DDD2_ = Integer.parseInt(txtSERVICO_DDD2.getText());
+        }
+        
+            if(txtSERVICO_CELULAR2.getText().isEmpty()){
+                Celular2_ = 0;
+        } else {
+                Celular2_ = Integer.parseInt(txtSERVICO_CELULAR2.getText());
+        }
+        int ddd_2 = DDD2_;
+        int celular_2 = Celular2_;
+        
+        // captando a data transformada (necessitou ser transformada novamente no insert jdbc mysql)
+        String nascimento = txtSERVICO_NASCIMENTO.getText();
+        SimpleDateFormat dateFormatInput = new SimpleDateFormat("dd/MM/yyyy");
+        SimpleDateFormat dateFormatOutput = new SimpleDateFormat("yyyy-MM-dd");
+        try {
+            Date date = dateFormatInput.parse(nascimento);
+            servicos.setNascimento(dateFormatOutput.format(date));
+        } catch (ParseException erro) {
+            JOptionPane.showMessageDialog(null, "Erro na conversão de data: " + erro);
+            return;
+        }
+ 
+        
+        if (main.getServicoSelecionado() != null) {
+            serv = new Servicos(serv.getId(), nome, servico, valor, tipo_documento, documento_identificador, nascimento, cep, logradouro, numero, bairro,
+                    UF, municipio, complemento, ddd_1, celular_1, ddd_2, celular_2, email_1, email_2, observacoes);
+            new ServicosDAO().editar(serv);
+            dispose();
+        } else if (main.getServicoSelecionado() == null) {
+            serv = new Servicos(0, nome, servico, valor, tipo_documento, documento_identificador, nascimento, cep, logradouro, numero, bairro,
+                    UF, municipio, complemento, ddd_1, celular_1, ddd_2, celular_2, email_1, email_2, observacoes);
+            new ServicosDAO().inserir(serv);
+            resetForm();
+        } else {
+            
+        }
+        
+        
+        
+        
     }//GEN-LAST:event_BOTAO_SALVAR___ActionPerformed
 
     /**
@@ -635,7 +813,7 @@ public class CadastroServicosJDialog extends javax.swing.JDialog {
         /* Create and display the dialog */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                CadastroServicosJDialog dialog = new CadastroServicosJDialog(new javax.swing.JFrame(), true);
+                CadastroServicosJDialog dialog = new CadastroServicosJDialog(new javax.swing.JFrame(), true, null);
                 dialog.addWindowListener(new java.awt.event.WindowAdapter() {
                     @Override
                     public void windowClosing(java.awt.event.WindowEvent e) {

@@ -17,12 +17,13 @@ public class Pets {
     @GeneratedValue(strategy = GenerationType.SEQUENCE) // Informa que o ID será gerado em sequencia
     private int id;
     private String nome;
-    private char sexo;
+    private String sexo;
     private String raca;
     @Column(name = "cor")
     private String cor;
 
     private String nascimento;
+    
     private String tipo_rede_1;
     private String rede_social_1;
     private String tipo_rede_2;
@@ -39,7 +40,8 @@ public class Pets {
     public Pets() {
     }
 
-    public Pets(String nome, char sexo, String raca, String cor, String nascimento, String tipo_rede_1, String rede_social_1, String tipo_rede_2, String rede_social_2, String alergias, String remedios, String vacinacao, String observacoes, String tipo_plano, int id_tutores) {
+    public Pets(int id, String nome, String sexo, String raca, String cor, String nascimento, String tipo_rede_1, String rede_social_1, String tipo_rede_2, String rede_social_2, String alergias, String remedios, String vacinacao, String observacoes, String tipo_plano, int id_tutores) {
+        this.id = id;
         this.nome = nome;
         this.sexo = sexo;
         this.raca = raca;
@@ -57,6 +59,18 @@ public class Pets {
         this.id_tutores = id_tutores;
     }
 
+    public Pets(int id, String nome, String sexo, String raca, String cor, String tipo_plano, int id_tutores) {
+        this.id = id;
+        this.nome = nome;
+        this.sexo = sexo;
+        this.raca = raca;
+        this.cor = cor;
+        this.tipo_plano = tipo_plano;
+        this.id_tutores = id_tutores;
+    }
+
+    
+    
     public int getId() {
         return id;
     }
@@ -73,11 +87,11 @@ public class Pets {
         this.nome = nome;
     }
 
-    public char getSexo() {
+    public String getSexo() {
         return sexo;
     }
 
-    public void setSexo(char sexo) {
+    public void setSexo(String sexo) {
         this.sexo = sexo;
     }
 

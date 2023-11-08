@@ -39,7 +39,8 @@ public class Servicos {
     public Servicos() {
     }
 
-    public Servicos(String nome, String servico, double valor, String tipo_documento, String documento_identificador, String nascimento, int cep, String logradouro, String numero, String bairro, String UF, String municipio, String complemento, int ddd_1, int celular_1, int ddd_2, int celular_2, String email_1, String email_2, String observacoes) {
+    public Servicos(int id, String nome, String servico, double valor, String tipo_documento, String documento_identificador, String nascimento, int cep, String logradouro, String numero, String bairro, String UF, String municipio, String complemento, int ddd_1, int celular_1, int ddd_2, int celular_2, String email_1, String email_2, String observacoes) {
+        this.id = id;
         this.nome = nome;
         this.servico = servico;
         this.valor = valor;
@@ -61,6 +62,18 @@ public class Servicos {
         this.email_2 = email_2;
         this.observacoes = observacoes;
     }
+
+    public Servicos(int id, String nome, String servico, double valor, int ddd_1, int celular_1, String email_1) {
+        this.id = id;
+        this.nome = nome;
+        this.servico = servico;
+        this.valor = valor;
+        this.ddd_1 = ddd_1;
+        this.celular_1 = celular_1;
+        this.email_1 = email_1;
+    }
+    
+    
 
     public int getId() {
         return id;

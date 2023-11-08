@@ -39,7 +39,8 @@ public class Veterinarios {
     public Veterinarios() {
     }
 
-    public Veterinarios(String nome, String tipo_documento, String documento_identificador, String crmv, String nascimento, int cep, String logradouro, String numero, String bairro, String UF, String municipio, String complemento, int ddd_1, int celular_1, int ddd_2, int celular_2, String email_1, String email_2, double valor, String observacoes) {
+    public Veterinarios(int id, String nome, String tipo_documento, String documento_identificador, String crmv, String nascimento, int cep, String logradouro, String numero, String bairro, String UF, String municipio, String complemento, int ddd_1, int celular_1, int ddd_2, int celular_2, String email_1, String email_2, double valor, String observacoes) {
+        this.id = id;
         this.nome = nome;
         this.tipo_documento = tipo_documento;
         this.documento_identificador = documento_identificador;
@@ -61,6 +62,17 @@ public class Veterinarios {
         this.valor = valor;
         this.observacoes = observacoes;
     }
+
+    public Veterinarios(int id, String nome, int ddd_1, int celular_1, String email_1, double valor) {
+        this.id = id;
+        this.nome = nome;
+        this.ddd_1 = ddd_1;
+        this.celular_1 = celular_1;
+        this.email_1 = email_1;
+        this.valor = valor;
+    }
+    
+    
 
     public double getValor() {
         return valor;

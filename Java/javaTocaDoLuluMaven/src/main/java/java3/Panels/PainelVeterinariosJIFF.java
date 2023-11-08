@@ -1,8 +1,11 @@
 package java3.Panels;
 
+import static ClassesDAO.VeterinariosDAO.getColunasTableVeterinarios;
 import java.awt.Color;
 import java.awt.Font;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 import java.util.stream.Collectors;
 import java1.Classes.Veterinarios;
 import java4.Cadastros.CadastroVeterinariosJIFF;
@@ -12,31 +15,105 @@ import javax.swing.table.TableModel;
 
 public class PainelVeterinariosJIFF extends javax.swing.JInternalFrame {
 
+    private int idSelecionado;
+    public Veterinarios veterinarioSelecionado =  null;
+    
+    public Veterinarios getVeterinarioSelecionado() {
+        return veterinarioSelecionado;
+    }
+    
     public PainelVeterinariosJIFF() {
         initComponents();
         addPlaceholderStyle(txtSEARCH);
+        atualizarTabela();
     }
     
-    public void addPlaceholderStyle(JTextField textField){
-        Font font = textField.getFont();
-        font = font.deriveFont(Font.ITALIC);
-        textField.setFont(font);
-        textField.setForeground(Color.gray);
-    }
-    
-    public void removePlaceholderStyle(JTextField textField){
-        Font font = textField.getFont();
-        font = font.deriveFont(Font.PLAIN|Font.BOLD);
-        textField.setFont(font);
-        textField.setForeground(Color.black);
-    }
-
     private static PainelVeterinariosJIFF myInstance;
 
     public static PainelVeterinariosJIFF getInstance() {
         if (myInstance == null) {
             myInstance = new PainelVeterinariosJIFF();
         } return myInstance;
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    // Atualizar Tabela
+    
+    public void atualizarTabela() {
+        
+        List<String> colunasVisiveis = new ArrayList<>
+        (Arrays.asList("id", "nome", "ddd_1", "celular_1", "email_1", "valor"));
+        
+        List<Veterinarios> lstVeterinarios = getColunasTableVeterinarios();
+        
+        try {
+             // Pode-se alternar: "getAll" ou "getColunasTableTutores"
+            TableModel tableModelVeterinarios = TableModelCreator.
+                    createTableModel(Veterinarios.class, lstVeterinarios, colunasVisiveis); // Pode-se alternar: "colunas" ou "null"
+            
+            TableVeterinarios.setModel(tableModelVeterinarios);
+            
+            //organizarTabela();
+            //widthTabela();
+            //renameTabela();
+            
+        } catch (Exception e) {
+            System.out.println("Houve um erro ao tentar popular a tabela");
+        }
+    }
+    
+    
+    
+    /*
+    public void organizarTabela() {
+        TableVeterinarios.getTableHeader().getColumnModel().moveColumn(3, 0);
+        TableVeterinarios.getTableHeader().getColumnModel().moveColumn(4, 1);
+        TableVeterinarios.getTableHeader().getColumnModel().moveColumn(4, 2);
+        TableVeterinarios.getTableHeader().getColumnModel().moveColumn(4, 3);
+    }
+    
+    public void widthTabela() {
+        TableVeterinarios.getColumnModel().getColumn(0).setPreferredWidth(50);
+        TableVeterinarios.getColumnModel().getColumn(1).setPreferredWidth(500);
+        TableVeterinarios.getColumnModel().getColumn(2).setPreferredWidth(500);
+        TableVeterinarios.getColumnModel().getColumn(3).setPreferredWidth(100);
+        TableVeterinarios.getColumnModel().getColumn(4).setPreferredWidth(200);
+    }
+    
+    public void renameTabela() {
+        TableVeterinarios.getColumnModel().getColumn(2).setHeaderValue("Email");
+        TableVeterinarios.getColumnModel().getColumn(3).setHeaderValue("DDD");
+        TableVeterinarios.getColumnModel().getColumn(4).setHeaderValue("Telefone");
+        
+    }
+    */
+    
+    
+    
+    
+    
+    
+    // -------------------------------
+    
+    // Cores
+    
+    public void addPlaceholderStyle(JTextField textField){
+        Font font = textField.getFont();
+        font = font.deriveFont(Font.ITALIC);
+        textField.setFont(font);
+    }
+    
+    public void removePlaceholderStyle(JTextField textField){
+        Font font = textField.getFont();
+        font = font.deriveFont(Font.PLAIN|Font.BOLD);
+        textField.setFont(font);
     }
     
     // Cores dos Holders -------------
@@ -53,7 +130,7 @@ public class PainelVeterinariosJIFF extends javax.swing.JInternalFrame {
     }
     // -------------------------------
 
-    ArrayList <Veterinarios> listaVeterinarios = new ArrayList<>();
+    //ArrayList <Veterinarios> listaVeterinarios = new ArrayList<>();
     
     // -------------------------------
     
@@ -71,7 +148,7 @@ public class PainelVeterinariosJIFF extends javax.swing.JInternalFrame {
 
         DesktopPaneControl_Pets = new javax.swing.JDesktopPane();
         jScrollPane4 = new javax.swing.JScrollPane();
-        TABLE_PETS___ = new javax.swing.JTable();
+        TableVeterinarios = new javax.swing.JTable();
         Panel_Button_Voltar = new javax.swing.JPanel();
         icon_VOLTAR = new javax.swing.JLabel();
         VOLTAR = new javax.swing.JLabel();
@@ -99,12 +176,12 @@ public class PainelVeterinariosJIFF extends javax.swing.JInternalFrame {
         DesktopPaneControl_Pets.setBackground(new java.awt.Color(175, 175, 226));
         DesktopPaneControl_Pets.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)), "  VETERINÁRIOS  ", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Gill Sans Ultra Bold", 1, 24), new java.awt.Color(255, 255, 255))); // NOI18N
 
-        TABLE_PETS___.setAutoCreateRowSorter(true);
-        TABLE_PETS___.setBackground(new java.awt.Color(85, 65, 118));
-        TABLE_PETS___.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        TABLE_PETS___.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        TABLE_PETS___.setForeground(new java.awt.Color(255, 255, 255));
-        TABLE_PETS___.setModel(new javax.swing.table.DefaultTableModel(
+        TableVeterinarios.setAutoCreateRowSorter(true);
+        TableVeterinarios.setBackground(new java.awt.Color(85, 65, 118));
+        TableVeterinarios.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        TableVeterinarios.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        TableVeterinarios.setForeground(new java.awt.Color(255, 255, 255));
+        TableVeterinarios.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -123,11 +200,11 @@ public class PainelVeterinariosJIFF extends javax.swing.JInternalFrame {
                 return types [columnIndex];
             }
         });
-        TABLE_PETS___.setGridColor(new java.awt.Color(175, 175, 226));
-        TABLE_PETS___.setIntercellSpacing(new java.awt.Dimension(5, 5));
-        TABLE_PETS___.setSelectionBackground(new java.awt.Color(204, 204, 255));
-        TABLE_PETS___.setSelectionForeground(new java.awt.Color(0, 0, 0));
-        jScrollPane4.setViewportView(TABLE_PETS___);
+        TableVeterinarios.setGridColor(new java.awt.Color(175, 175, 226));
+        TableVeterinarios.setIntercellSpacing(new java.awt.Dimension(5, 5));
+        TableVeterinarios.setSelectionBackground(new java.awt.Color(204, 204, 255));
+        TableVeterinarios.setSelectionForeground(new java.awt.Color(0, 0, 0));
+        jScrollPane4.setViewportView(TableVeterinarios);
 
         Panel_Button_Voltar.setBackground(new java.awt.Color(85, 65, 118));
         Panel_Button_Voltar.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
@@ -500,11 +577,33 @@ public class PainelVeterinariosJIFF extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_txtSEARCHMouseExited
 
     private void txtSEARCHKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtSEARCHKeyReleased
+        // SÓ EXCLUIR QUANDO ESTIVER FUNCIONANDO
+        /*
         ArrayList<Veterinarios> listaFiltrada = listaVeterinarios.stream().filter(funcionario -> funcionario.getNome().startsWith(txtSEARCH.getText())).collect(Collectors.toCollection(ArrayList::new));
 
         TableModel tb = TableModelCreator.createTableModel(Veterinarios.class, listaVeterinarios, null);
 
-        TABLE_PETS___.setModel(tb);
+        TableVeterinarios.setModel(tb);
+        */
+        
+        
+        
+        List<String> colunasVisiveis = new ArrayList<>
+        (Arrays.asList("id", "nome", "ddd_1", "celular_1", "email_1", "valor"));
+        
+        List<Veterinarios> listaFiltrada = getColunasTableVeterinarios().stream().filter(veterinario -> 
+                veterinario.getNome().toLowerCase().contains(txtSEARCH.getText())).collect(Collectors.toCollection(ArrayList::new));
+        
+        TableModel tb = TableModelCreator.createTableModel(
+                Veterinarios.class, listaFiltrada, colunasVisiveis);
+        
+        TableVeterinarios.setModel(tb);
+        
+        //organizarTabela();
+        //widthTabela();
+        
+        
+        
     }//GEN-LAST:event_txtSEARCHKeyReleased
 
 
@@ -517,7 +616,7 @@ public class PainelVeterinariosJIFF extends javax.swing.JInternalFrame {
     private javax.swing.JPanel Panel_Button_Editar;
     private javax.swing.JPanel Panel_Button_Novo;
     private javax.swing.JPanel Panel_Button_Voltar;
-    private javax.swing.JTable TABLE_PETS___;
+    private javax.swing.JTable TableVeterinarios;
     private javax.swing.JLabel VOLTAR;
     private javax.swing.JLabel icon_DELETAR;
     private javax.swing.JLabel icon_EDITAR;

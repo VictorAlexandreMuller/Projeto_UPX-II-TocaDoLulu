@@ -1,25 +1,118 @@
 package java4.Cadastros;
 
-import ConectionsDAO.JPAUtil;
 import ClassesDAO.PetsDAO;
-import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java1.Classes.Pets;
-import java1.Classes.PetsPlanosValores;
-import javax.persistence.EntityManager;
 import javax.swing.JOptionPane;
-import ClassesDAO.PetsPlanosValoresDAO;
-import ClassesDAO.TutoresDAO;
+import java.awt.Color;
+import java.awt.Font;
+import java3.Panels.PainelPetsJIFF;
+import javax.swing.BorderFactory;
+import javax.swing.border.LineBorder;
+import javax.swing.border.TitledBorder;
 
 public class CadastroPetsJDialog extends javax.swing.JDialog {
 
-    public CadastroPetsJDialog(java.awt.Frame parent, boolean modal) {
+    private Pets pet;
+    PainelPetsJIFF main;
+    boolean isEditar = false;
+    
+    public CadastroPetsJDialog(java.awt.Frame parent, boolean modal, PainelPetsJIFF main) {
         super(parent, modal);
         initComponents();
+        
+        this.main = main;
+
+        if (main.getPetSelecionado() != null) {
+            isEditar = true;
+            this.pet = main.getPetSelecionado();
+            popularForm();
+            ChangeTitle();
+        }
     }
+    
+    
+    
+    
+    
+    
+    
+    // Altera o título do EDITAR CADASTRO
+    private void ChangeTitle() {
+        
+        LineBorder lineBorder = new LineBorder(Color.WHITE);
+        Font customFont = new Font("Gill Sans Ultra Bold", Font.BOLD, 24);
+        
+        TitledBorder titledBorder = BorderFactory.createTitledBorder("tentativa is true");
+        titledBorder.setBorder(lineBorder);
+        titledBorder.setTitle(" ALTERAR CADASTRO DE PET ");
+        titledBorder.setTitleColor(Color.RED);
+        titledBorder.setTitleFont(customFont);
+        titledBorder.setTitleJustification(titledBorder.CENTER);
+        titledBorder.setTitlePosition(titledBorder.TOP);
+        
+        jPanel1.setBorder(titledBorder);
+    }
+    
+    // Formas da janela Cadastro Tutores, se ela virá preenchida ou brand-new
+    private void popularForm() {
+        
+        
+        txtPET_NOME.setText(pet.getNome());
+        comboPET_SEXO.setSelectedItem(pet.getSexo());
+        txtPET_RACA.setText(pet.getRaca());
+        txtPET_COR.setText(pet.getCor());
+        
+        txtPET_NASCIMENTO.setText(String.valueOf(pet.getNascimento()));
+        SimpleDateFormat dateFormatInput = new SimpleDateFormat("yyyy-MM-dd");
+        SimpleDateFormat dateFormatOutput = new SimpleDateFormat("dd/MM/yyyy");
+        try {
+            Date date = dateFormatInput.parse(pet.getNascimento());
+            txtPET_NASCIMENTO.setText(dateFormatOutput.format(date));
+        } catch (ParseException erro) {
+            JOptionPane.showMessageDialog(null, "Erro na conversão de data: " + erro);
+            return;
+        }
+        
+        txtPET_TIPOREDESOCIAL1.setText(String.valueOf(pet.getTipo_rede_1()));
+        txtPET_REDESOCIAL1.setText(String.valueOf(pet.getRede_social_1()));
+        txtPET_TIPOREDESOCIAL2.setText(String.valueOf(pet.getTipo_rede_2()));
+        txtPET_REDESOCIAL2.setText(String.valueOf(pet.getRede_social_2()));
+        
+        comboPET_PLANO.setSelectedItem(pet.getTipo_plano());
+        
+        txtPET_ALERGIAS.setText(pet.getAlergias());
+        txtPET_VACINACAO.setText(pet.getVacinacao());
+        txtPET_ALERGIAS.setText(pet.getAlergias());
+        txtPET_OBSERVACOES.setText(pet.getObservacoes());
+        
+        comboTUTOR.setSelectedItem(pet.getId_tutores());
+    }
+    
+    private void resetForm() {
+        txtPET_NOME.setText("");
+        comboPET_SEXO.setSelectedItem("-");
+        txtPET_RACA.setText("");
+        txtPET_COR.setText("");
+        txtPET_NASCIMENTO.setText("");
+        txtPET_TIPOREDESOCIAL1.setText("");
+        txtPET_REDESOCIAL1.setText("");
+        txtPET_TIPOREDESOCIAL2.setText("");
+        txtPET_REDESOCIAL2.setText("");
+        
+        comboPET_PLANO.setSelectedItem("-");
+        
+        txtPET_ALERGIAS.setText("");
+        txtPET_VACINACAO.setText("");
+        txtPET_REMEDIOS.setText("");
+        txtPET_OBSERVACOES.setText("");
+        
+        comboTUTOR.setSelectedItem("-");
+    }
+    
+    // ------------------------------------------------------------------------------------------------------------
     
     
     
@@ -467,7 +560,8 @@ public class CadastroPetsJDialog extends javax.swing.JDialog {
     }//GEN-LAST:event_BOTAO_VOLTAR___ActionPerformed
 
     private void BOTAO_SALVAR___ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BOTAO_SALVAR___ActionPerformed
-
+        // SÓ EXCLUIR QUANDO ESTIVER TUDO OK
+        /*
         Pets pet = new Pets();
         PetsPlanosValores plano = new PetsPlanosValores();
 
@@ -507,6 +601,57 @@ public class CadastroPetsJDialog extends javax.swing.JDialog {
 
         JOptionPane.showMessageDialog(this, "Pet salvo com sucesso!");
         this.dispose();
+        */
+        
+        
+        Pets pets = new Pets();
+        
+        String nome = txtPET_NOME.getText();
+        String sexo = comboPET_SEXO.getSelectedItem().toString();
+        String raca = txtPET_RACA.getText();
+        String cor = txtPET_COR.getText();
+        
+        String tipo_rede_1 = txtPET_TIPOREDESOCIAL1.getText();
+        String rede_social_1 = txtPET_REDESOCIAL1.getText();
+        String tipo_rede_2 = txtPET_TIPOREDESOCIAL2.getText();
+        String rede_social_2 = txtPET_REDESOCIAL2.getText();
+        
+        String tipo_plano = comboPET_PLANO.getSelectedItem().toString();
+        
+        String alergias = txtPET_ALERGIAS.getText();
+        String vacinacao = txtPET_VACINACAO.getText();
+        String remedios = txtPET_REMEDIOS.getText();
+        String observacoes = txtPET_OBSERVACOES.getText();
+        
+        int id_tutor = Integer.parseInt(comboTUTOR.getSelectedItem().toString());
+        
+        
+        // captando a data transformada (necessitou ser transformada novamente no insert jdbc mysql)
+        String nascimento = txtPET_NASCIMENTO.getText();
+        SimpleDateFormat dateFormatInput = new SimpleDateFormat("dd/MM/yyyy");
+        SimpleDateFormat dateFormatOutput = new SimpleDateFormat("yyyy-MM-dd");
+        try {
+            Date date = dateFormatInput.parse(nascimento);
+            pets.setNascimento(dateFormatOutput.format(date));
+        } catch (ParseException erro) {
+            JOptionPane.showMessageDialog(null, "Erro na conversão de data: " + erro);
+            return;
+        }
+
+        
+        if (main.getPetSelecionado() != null) {
+            pet = new Pets(pet.getId(), nome, sexo, raca, cor, nascimento, tipo_rede_1, rede_social_1, tipo_rede_2, rede_social_2, alergias, remedios, vacinacao, observacoes, tipo_plano, id_tutor);
+            new PetsDAO().editar(pet);
+            dispose();
+        } else if (main.getPetSelecionado() == null) {
+            pet = new Pets(0, nome, sexo, raca, cor, nascimento, tipo_rede_1, rede_social_1, tipo_rede_2, rede_social_2, alergias, remedios, vacinacao, observacoes, tipo_plano, id_tutor);
+            new PetsDAO().inserir(pet);
+            resetForm();
+        } else {
+            
+        }
+        
+        
     }//GEN-LAST:event_BOTAO_SALVAR___ActionPerformed
 
     /**
@@ -539,7 +684,7 @@ public class CadastroPetsJDialog extends javax.swing.JDialog {
         /* Create and display the dialog */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                CadastroPetsJDialog dialog = new CadastroPetsJDialog(new javax.swing.JFrame(), true);
+                CadastroPetsJDialog dialog = new CadastroPetsJDialog(new javax.swing.JFrame(), true, null);
                 dialog.addWindowListener(new java.awt.event.WindowAdapter() {
                     @Override
                     public void windowClosing(java.awt.event.WindowEvent e) {

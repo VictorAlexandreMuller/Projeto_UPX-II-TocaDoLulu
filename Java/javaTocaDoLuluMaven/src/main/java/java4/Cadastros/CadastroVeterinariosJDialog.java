@@ -1,21 +1,122 @@
 package java4.Cadastros;
 
 import ClassesDAO.VeterinariosDAO;
-import ConectionsDAO.JPAUtil;
+import java.awt.Color;
+import java.awt.Font;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java1.Classes.Veterinarios;
-import javax.persistence.EntityManager;
+import java3.Panels.PainelVeterinariosJIFF;
+import javax.swing.BorderFactory;
 import javax.swing.JOptionPane;
+import javax.swing.border.LineBorder;
+import javax.swing.border.TitledBorder;
 
 public class CadastroVeterinariosJDialog extends javax.swing.JDialog {
 
-    public CadastroVeterinariosJDialog(java.awt.Frame parent, boolean modal) {
+    private Veterinarios veterinario;
+    PainelVeterinariosJIFF main;
+    boolean isEditar = false;
+    
+    public CadastroVeterinariosJDialog(java.awt.Frame parent, boolean modal, PainelVeterinariosJIFF main) {
         super(parent, modal);
         initComponents();
+        
+        this.main = main;
+
+        if (main.getVeterinarioSelecionado() != null) {
+            isEditar = true;
+            this.veterinario = main.getVeterinarioSelecionado();
+            popularForm();
+            ChangeTitle();
+        }
     }
     
+    
+    
+    
+    
+    // Altera o título do EDITAR CADASTRO
+    private void ChangeTitle() {
+        
+        LineBorder lineBorder = new LineBorder(Color.WHITE);
+        Font customFont = new Font("Gill Sans Ultra Bold", Font.BOLD, 24);
+        
+        TitledBorder titledBorder = BorderFactory.createTitledBorder("tentativa is true");
+        titledBorder.setBorder(lineBorder);
+        titledBorder.setTitle(" ALTERAR CADASTRO DE VETERINARIO ");
+        titledBorder.setTitleColor(Color.RED);
+        titledBorder.setTitleFont(customFont);
+        titledBorder.setTitleJustification(titledBorder.CENTER);
+        titledBorder.setTitlePosition(titledBorder.TOP);
+        
+        jPanel1.setBorder(titledBorder);
+    }
+    
+    // Formas da janela Cadastro Tutores, se ela virá preenchida ou brand-new
+    private void popularForm() {
+        
+        
+        txtVETERINARIO_NOME.setText(veterinario.getNome());
+        txtVETERINARIO_TIPODOCUMENTO.setText(String.valueOf(veterinario.getTipo_documento()));
+        txtVETERINARIO_DOCUMENTO.setText(String.valueOf(veterinario.getDocumento_identificador()));
+        txtVETERINARIO_CRMV.setText(String.valueOf(veterinario.getCrmv()));
+        
+        txtVETERINARIO_NASCIMENTO.setText(String.valueOf(veterinario.getNascimento()));
+        SimpleDateFormat dateFormatInput = new SimpleDateFormat("yyyy-MM-dd");
+        SimpleDateFormat dateFormatOutput = new SimpleDateFormat("dd/MM/yyyy");
+        try {
+            Date date = dateFormatInput.parse(veterinario.getNascimento());
+            txtVETERINARIO_NASCIMENTO.setText(dateFormatOutput.format(date));
+        } catch (ParseException erro) {
+            JOptionPane.showMessageDialog(null, "Erro na conversão de data: " + erro);
+            return;
+        }
+        
+        txtVETERINARIO_DDD1.setText(String.valueOf(veterinario.getDdd_1()));
+        txtVETERINARIO_CELULAR1.setText(String.valueOf(veterinario.getCelular_1()));
+        txtVETERINARIO_EMAIL1.setText(String.valueOf(veterinario.getEmail_1()));
+        txtVETERINARIO_DDD2.setText(String.valueOf(veterinario.getDdd_2()));
+        txtVETERINARIO_CELULAR2.setText(String.valueOf(veterinario.getCelular_2()));
+        txtVETERINARIO_EMAIL2.setText(String.valueOf(veterinario.getEmail_2()));
+        txtVETERINARIO_VALOR.setText(String.valueOf(veterinario.getValor()));
+        
+        txtVETERINARIO_CEP.setText(String.valueOf(veterinario.getCep()));
+        txtVETERINARIO_LOGRADOURO.setText(String.valueOf(veterinario.getLogradouro()));
+        txtVETERINARIO_NUMERO.setText(String.valueOf(veterinario.getNumero()));
+        txtVETERINARIO_BAIRRO.setText(String.valueOf(veterinario.getBairro()));
+        comboVETERINARIO_UF.setSelectedItem(veterinario.getUf());
+        txtVETERINARIO_MUNICIPIO.setText(String.valueOf(veterinario.getMunicipio()));
+        txtVETERINARIO_COMPLEMENTO.setText(String.valueOf(veterinario.getComplemento()));
+        txtVETERINARIO_OBSERVACOES.setText(String.valueOf(veterinario.getObservacoes()));
+    }
+    
+    private void resetForm() {
+        txtVETERINARIO_NOME.setText("");
+        txtVETERINARIO_TIPODOCUMENTO.setText("");
+        txtVETERINARIO_DOCUMENTO.setText("");
+        txtVETERINARIO_CRMV.setText("");
+        txtVETERINARIO_NASCIMENTO.setText("");
+        txtVETERINARIO_DDD1.setText("");
+        txtVETERINARIO_CELULAR1.setText("");
+        txtVETERINARIO_EMAIL1.setText("");
+        txtVETERINARIO_DDD2.setText("");
+        txtVETERINARIO_CELULAR2.setText("");
+        txtVETERINARIO_EMAIL2.setText("");
+        txtVETERINARIO_VALOR.setText("");
+        
+        txtVETERINARIO_CEP.setText("");
+        txtVETERINARIO_LOGRADOURO.setText("");
+        txtVETERINARIO_NUMERO.setText("");
+        txtVETERINARIO_BAIRRO.setText("");
+        comboVETERINARIO_UF.setSelectedItem("-");
+        txtVETERINARIO_MUNICIPIO.setText("");
+        txtVETERINARIO_COMPLEMENTO.setText("");
+        txtVETERINARIO_OBSERVACOES.setText("");
+    }
+    
+    // ------------------------------------------------------------------------------------------------------------
     
     
     @SuppressWarnings("unchecked")
@@ -531,7 +632,10 @@ public class CadastroVeterinariosJDialog extends javax.swing.JDialog {
     }//GEN-LAST:event_BOTAO_VOLTAR___ActionPerformed
 
     private void BOTAO_SALVAR___ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BOTAO_SALVAR___ActionPerformed
-
+        
+        // SÓ EXCLUIR QUANDO TUDO ESTIVER FUNCIONANDO 
+        
+        /*
         Veterinarios veterinarios = new Veterinarios();
 
         veterinarios.setNome(txtVETERINARIO_NOME.getText());
@@ -585,6 +689,82 @@ public class CadastroVeterinariosJDialog extends javax.swing.JDialog {
 
         JOptionPane.showMessageDialog(this, "Veterinário salvo com sucesso!");
         this.dispose();
+        */
+        
+        
+        
+        
+        Veterinarios veterinarios = new Veterinarios();
+        
+        String nome = txtVETERINARIO_NOME.getText();
+        String tipo_documento = txtVETERINARIO_TIPODOCUMENTO.getText();
+        String documento_identificador = txtVETERINARIO_DOCUMENTO.getText();
+        String crmv = txtVETERINARIO_CRMV.getText();
+        
+        int ddd_1 = Integer.parseInt(txtVETERINARIO_DDD1.getText());
+        int celular_1 = Integer.parseInt(txtVETERINARIO_CELULAR1.getText());
+        String email_1 = txtVETERINARIO_EMAIL1.getText();
+        String email_2 = txtVETERINARIO_EMAIL2.getText();
+        double valor = Double.parseDouble(txtVETERINARIO_VALOR.getText());
+        
+        int cep = Integer.parseInt(txtVETERINARIO_CEP.getText());
+        String logradouro = txtVETERINARIO_LOGRADOURO.getText();
+        String numero = txtVETERINARIO_NUMERO.getText();
+        String bairro = txtVETERINARIO_BAIRRO.getText();
+        String UF = comboVETERINARIO_UF.getSelectedItem().toString();
+        String municipio = txtVETERINARIO_MUNICIPIO.getText();
+        String complemento = txtVETERINARIO_COMPLEMENTO.getText();
+        String observacoes = txtVETERINARIO_OBSERVACOES.getText();
+
+        // captando os ints obrigatorios
+        int DDD2_, Celular2_;
+        
+            if(txtVETERINARIO_DDD2.getText().isEmpty()){
+                DDD2_ = 0;
+        } else {
+                DDD2_ = Integer.parseInt(txtVETERINARIO_DDD2.getText());
+        }
+        
+            if(txtVETERINARIO_CELULAR2.getText().isEmpty()){
+                Celular2_ = 0;
+        } else {
+                Celular2_ = Integer.parseInt(txtVETERINARIO_CELULAR2.getText());
+        }
+        int ddd_2 = DDD2_;
+        int celular_2 = Celular2_;
+        
+        // captando a data transformada (necessitou ser transformada novamente no insert jdbc mysql)
+        String nascimento = txtVETERINARIO_NASCIMENTO.getText();
+        SimpleDateFormat dateFormatInput = new SimpleDateFormat("dd/MM/yyyy");
+        SimpleDateFormat dateFormatOutput = new SimpleDateFormat("yyyy-MM-dd");
+        try {
+            Date date = dateFormatInput.parse(nascimento);
+            veterinarios.setNascimento(dateFormatOutput.format(date));
+        } catch (ParseException erro) {
+            JOptionPane.showMessageDialog(null, "Erro na conversão de data: " + erro);
+            return;
+        }
+
+        
+        
+        
+        
+        if (main.getVeterinarioSelecionado() != null) {
+            veterinario = new Veterinarios(veterinario.getId(), nome, tipo_documento, documento_identificador, crmv, nascimento, cep, logradouro, numero, bairro,
+                    UF, municipio, complemento, ddd_1, celular_1, ddd_2, celular_2, email_1, email_2, valor, observacoes);
+            new VeterinariosDAO().editar(veterinario);
+            dispose();
+        } else if (main.getVeterinarioSelecionado() == null) {
+            veterinario = new Veterinarios(0, nome, tipo_documento, documento_identificador, crmv, nascimento, cep, logradouro, numero, bairro,
+                    UF, municipio, complemento, ddd_1, celular_1, ddd_2, celular_2, email_1, email_2, valor, observacoes);
+            new VeterinariosDAO().inserir(veterinario);
+            resetForm();
+        } else {
+            
+        }
+        
+        
+        
     }//GEN-LAST:event_BOTAO_SALVAR___ActionPerformed
 
     /**
@@ -617,7 +797,7 @@ public class CadastroVeterinariosJDialog extends javax.swing.JDialog {
         /* Create and display the dialog */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                CadastroVeterinariosJDialog dialog = new CadastroVeterinariosJDialog(new javax.swing.JFrame(), true);
+                CadastroVeterinariosJDialog dialog = new CadastroVeterinariosJDialog(new javax.swing.JFrame(), true, null);
                 dialog.addWindowListener(new java.awt.event.WindowAdapter() {
                     @Override
                     public void windowClosing(java.awt.event.WindowEvent e) {
