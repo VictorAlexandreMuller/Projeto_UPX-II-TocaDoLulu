@@ -133,6 +133,7 @@ java1\Login\jDialogRegister$2.class
 java2\InicialPanel\SwingTelaInicial$22.class
 java3\Panels\PainelServicosJIFF$6.class
 java3\Panels\PainelTutoresJIFF$9.class
+java3\Panels\PainelServicosJIFF$14.class
 java3\Panels\PainelVeterinariosJIFF$1.class
 java3\Panels\PrecosJIFF.class
 java1\Login\jDialogRegister$9.class
@@ -145,6 +146,7 @@ java3\Panels\SobreJIFF.class
 java4\Cadastros\CadastroPetsJDialog$3.class
 java2\InicialPanel\SwingTelaInicial$6.class
 java4\Cadastros\CadastroPetsJIFF$2.class
+java3\Panels\PainelPetsJIFF$14.class
 java2\InicialPanel\SwingTelaInicial$21.class
 java2\InicialPanel\SwingTelaInicial$15.class
 java3\Panels\TableModelCreator$1.class
@@ -162,3 +164,4 @@ java3\Panels\PainelTutoresJIFF$14.class
 java3\Panels\PainelVeterinariosJIFF$8.class
 java3\Panels\PainelPetsJIFF$4.class
 java3\Panels\PainelServicosJIFF$7.class
+java3\Panels\PainelVeterinariosJIFF$14.class

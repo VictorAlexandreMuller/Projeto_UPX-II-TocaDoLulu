@@ -1,5 +1,6 @@
 package java3.Panels;
 
+import ClassesDAO.PetsDAO;
 import static ClassesDAO.PetsDAO.getColunasTablePets;
 import java.awt.Color;
 import java.util.ArrayList;
@@ -9,7 +10,10 @@ import java4.Cadastros.CadastroPetsJIFF;
 import java.awt.Font;
 import java.util.Arrays;
 import java.util.List;
+import java4.Cadastros.CadastroPetsJDialog;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import javax.swing.JTable;
 import javax.swing.JTextField;
 import javax.swing.table.TableModel;
 
@@ -59,38 +63,38 @@ public class PainelPetsJIFF extends javax.swing.JInternalFrame {
             
             TablePets.setModel(tableModelPets);
             
-            //organizarTabela();
-            //widthTabela();
-            //renameTabela();
+            organizarTabela();
+            widthTabela();
+            renameTabela();
             
         } catch (Exception e) {
             System.out.println("Houve um erro ao tentar popular a tabela");
         }
     }
     
-    /*
     public void organizarTabela() {
-        TablePets.getTableHeader().getColumnModel().moveColumn(3, 0);
-        TablePets.getTableHeader().getColumnModel().moveColumn(4, 1);
+        TablePets.getTableHeader().getColumnModel().moveColumn(1, 0);
+        TablePets.getTableHeader().getColumnModel().moveColumn(3, 1);
         TablePets.getTableHeader().getColumnModel().moveColumn(4, 2);
-        TablePets.getTableHeader().getColumnModel().moveColumn(4, 3);
+        TablePets.getTableHeader().getColumnModel().moveColumn(5, 3);
     }
     
     public void widthTabela() {
-        TablePets.getColumnModel().getColumn(0).setPreferredWidth(50);
-        TablePets.getColumnModel().getColumn(1).setPreferredWidth(500);
-        TablePets.getColumnModel().getColumn(2).setPreferredWidth(500);
-        TablePets.getColumnModel().getColumn(3).setPreferredWidth(100);
-        TablePets.getColumnModel().getColumn(4).setPreferredWidth(200);
+        TablePets.getColumnModel().getColumn(0).setPreferredWidth(100);
+        TablePets.getColumnModel().getColumn(1).setPreferredWidth(400);
+        TablePets.getColumnModel().getColumn(2).setPreferredWidth(400);
+        TablePets.getColumnModel().getColumn(3).setPreferredWidth(300);
+        TablePets.getColumnModel().getColumn(4).setPreferredWidth(300);
+        TablePets.getColumnModel().getColumn(5).setPreferredWidth(350);
+        TablePets.getColumnModel().getColumn(6).setPreferredWidth(350);
     }
     
     public void renameTabela() {
-        TablePets.getColumnModel().getColumn(2).setHeaderValue("Email");
-        TablePets.getColumnModel().getColumn(3).setHeaderValue("DDD");
-        TablePets.getColumnModel().getColumn(4).setHeaderValue("Telefone");
+        TablePets.getColumnModel().getColumn(2).setHeaderValue("Raça");
+        TablePets.getColumnModel().getColumn(5).setHeaderValue("Tutor");
+        TablePets.getColumnModel().getColumn(6).setHeaderValue("Plano");
         
     }
-    */
     
     // -------------------------------
     
@@ -120,11 +124,6 @@ public class PainelPetsJIFF extends javax.swing.JInternalFrame {
     void MovedReleasedButtonColor(JPanel panel){
         panel.setBackground(new Color(204,204,255));
     }
-    // -------------------------------
-    
-    //ArrayList <Pets> listaPets = new ArrayList<>();
-    
-    // -------------------------------
     
     public void SearchColorHolderMoved(JTextField textf){
         textf.setBackground(new Color(96,65,134));
@@ -199,6 +198,11 @@ public class PainelPetsJIFF extends javax.swing.JInternalFrame {
         TablePets.setIntercellSpacing(new java.awt.Dimension(5, 5));
         TablePets.setSelectionBackground(new java.awt.Color(204, 204, 255));
         TablePets.setSelectionForeground(new java.awt.Color(0, 0, 0));
+        TablePets.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                TablePetsMouseClicked(evt);
+            }
+        });
         jScrollPane4.setViewportView(TablePets);
 
         Panel_Button_Voltar.setBackground(new java.awt.Color(85, 65, 118));
@@ -482,11 +486,13 @@ public class PainelPetsJIFF extends javax.swing.JInternalFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void Panel_Button_VoltarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Panel_Button_VoltarMouseClicked
+        atualizarTabela();
         this.dispose();
     }//GEN-LAST:event_Panel_Button_VoltarMouseClicked
 
     private void Panel_Button_NovoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Panel_Button_NovoMouseClicked
-        
+        // SÓ EXCLUIR QUANDO ESTIVER TUDO 100% FUNCIONANDO
+        /*
         CadastroPetsJIFF p = CadastroPetsJIFF.getInstance();
 
         p.pack();
@@ -497,9 +503,14 @@ public class PainelPetsJIFF extends javax.swing.JInternalFrame {
         } else{
             p.moveToFront();
         }  
-        
+        */
         // Cadastro_Pets_JIFF obj = new Cadastro_Pets_JIFF();
         // DesktopPaneControl_Pets.add(obj).setVisible(true);
+        
+        petSelecionado = null;
+        
+        CadastroPetsJDialog obj = new CadastroPetsJDialog(null, true, this);
+        obj.setVisible(true);
     }//GEN-LAST:event_Panel_Button_NovoMouseClicked
     
     // Campo de pesquisa Search para a tabela
@@ -526,9 +537,9 @@ public class PainelPetsJIFF extends javax.swing.JInternalFrame {
         
         TablePets.setModel(tb);
         
-        //organizarTabela();
-        //widthTabela();
-        
+        organizarTabela();
+        widthTabela();
+        renameTabela();
         
     }//GEN-LAST:event_txtSEARCHKeyReleased
         
@@ -579,6 +590,53 @@ public class PainelPetsJIFF extends javax.swing.JInternalFrame {
             
         }
     }//GEN-LAST:event_txtSEARCHFocusLost
+
+    private void TablePetsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TablePetsMouseClicked
+        
+        
+        petSelecionado = new PetsDAO().getByID(idSelecionado);
+                
+                if (evt.getClickCount() == 1 && !evt.isConsumed()) {
+                    evt.consume();
+                    JTable source = (JTable) evt.getSource();
+                    int row = source.rowAtPoint(evt.getPoint());
+                    int column = TablePets.convertColumnIndexToView(TablePets.getColumn("DDD").getModelIndex());
+                    idSelecionado = Integer.parseInt(source.getModel().getValueAt(row, column) + "");
+
+                } else if (evt.getClickCount() == 2 && !evt.isConsumed()) {
+                    evt.consume();
+                    JTable source = (JTable) evt.getSource();
+                    int row = source.getSelectedRow();
+                    int column = TablePets.convertColumnIndexToView(TablePets.getColumn("DDD").getModelIndex());
+                    String s = source.getModel().getValueAt(row, column) + " - " + petSelecionado.toString();
+                    JOptionPane.showMessageDialog(null, s);
+                }        
+                /*
+                    OBS: O getColumn("DDD") puxa o valor correto do ID na tabela.
+                    Explicação: O TableModelCreator, criada pelo professor e utilizada em aulas, cria uma tabela genérica.
+                                Esta tabela TableModelCreator traz as colunas em ordem alfabética.
+                                Dessa forma, foi criado o método "organizarTabela()" que organiza a Table na order que preferir, entretanto isso se aplica apenas ao front-end.
+                                
+                                Ou seja, antes a TableTutores apresentava as suas colunas na ordem (padrão back-end): 
+                                                                                     Celular_1 = index 0
+                                                                                     Ddd_1     = index 1
+                                                                                     Email_1   = index 2
+                                                                                     Id        = index 3
+                                                                                     Nome      = index 4
+                
+                                Após o método "organizarTabela()", APENAS PARA O FRONT-END, as colunas foram alteradas para:
+                                                                                     Id
+                                                                                     Nome
+                                                                                     Email
+                                                                                     DDD
+                                                                                     Telefone
+                
+                                Mas os seus valores de Index permaneceram os mesmos de antes.
+                                Sendo assim, para puxarmos em getColumn o valor correto de Id, precisamos colocar o nome referente à nova coluna que está no index 3, ou seja, DDD.
+                */
+                
+                
+    }//GEN-LAST:event_TablePetsMouseClicked
     
     
     

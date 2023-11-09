@@ -96,7 +96,7 @@ public class PainelTutoresJIFF extends javax.swing.JInternalFrame {
     }
     
     public void renameTabela() {
-        TableTutores.getColumnModel().getColumn(2).setHeaderValue("Email");
+        TableTutores.getColumnModel().getColumn(2).setHeaderValue("E-mail");
         TableTutores.getColumnModel().getColumn(3).setHeaderValue("DDD");
         TableTutores.getColumnModel().getColumn(4).setHeaderValue("Telefone");
         
@@ -595,6 +595,7 @@ public class PainelTutoresJIFF extends javax.swing.JInternalFrame {
         
         organizarTabela();
         widthTabela();
+        renameTabela();
     }//GEN-LAST:event_txtSEARCHKeyReleased
 
     private void TableTutoresMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TableTutoresMouseClicked
