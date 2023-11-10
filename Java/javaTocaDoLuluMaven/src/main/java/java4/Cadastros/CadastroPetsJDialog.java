@@ -10,8 +10,6 @@ import java1.Classes.Pets;
 import javax.swing.JOptionPane;
 import java.awt.Color;
 import java.awt.Font;
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import java1.Classes.PetsPlanosValores;
 import java1.Classes.Tutores;
@@ -43,12 +41,9 @@ public class CadastroPetsJDialog extends javax.swing.JDialog {
         }
     }
     
-    // Popula ComboBox de Tutores no Cadastro de Pets - DO JEITO DO PROFESSOR
+    // Popula ComboBox de Tutores no Cadastro de Pets - DO JEITO DO PROFESSOR -- Na propriedade Code da ComboBox, deve-se alterar também o "Type Parameters"
     public void popularComboPlano() {
         try {
-            
-            List<String> valorVisivel = new ArrayList<>(Arrays.asList("plano"));
-            
             List<PetsPlanosValores> lstPetsPlanosValores = new PetsPlanosValoresDAO().getAll();
             comboPET_PLANO.setModel(new DefaultComboBoxModel<PetsPlanosValores>(
                     lstPetsPlanosValores.toArray(new PetsPlanosValores[lstPetsPlanosValores.size()])));
@@ -66,8 +61,7 @@ public class CadastroPetsJDialog extends javax.swing.JDialog {
         }
     }
     
-    
-    /*
+    /* Jeito errado que o Victor estava fazendo
     public void popularComboTutores() {
         try {
             TutoresDAO obj = new TutoresDAO();
@@ -81,21 +75,6 @@ public class CadastroPetsJDialog extends javax.swing.JDialog {
             JOptionPane.showMessageDialog(null, "Carregar Plano VIEW: " + erro);
         }
     }
-    
-    public void popularComboPlano() {
-        try {
-            PetsPlanosValoresDAO objpetsdao = new PetsPlanosValoresDAO();
-            ResultSet rs = objpetsdao.listarComboPlanos();
-            
-            while (rs.next()) {
-                comboPET_PLANO.addItem(rs.getString(2));
-            }
-            
-        } catch (SQLException erro) {
-            JOptionPane.showMessageDialog(null, "Carregar Plano VIEW: " + erro);
-        }
-    }
-    
     */
     
     // Altera o título do EDITAR CADASTRO
@@ -117,7 +96,6 @@ public class CadastroPetsJDialog extends javax.swing.JDialog {
     
     // Formas da janela Cadastro Tutores, se ela virá preenchida ou brand-new
     private void popularForm() {
-        
         
         txtPET_NOME.setText(pet.getNome());
         comboPET_SEXO.setSelectedItem(pet.getSexo());
@@ -161,14 +139,14 @@ public class CadastroPetsJDialog extends javax.swing.JDialog {
         txtPET_TIPOREDESOCIAL2.setText("");
         txtPET_REDESOCIAL2.setText("");
         
-        comboPET_PLANO.setSelectedItem("-");
+        comboPET_PLANO.setSelectedItem("");
         
         txtPET_ALERGIAS.setText("");
         txtPET_VACINACAO.setText("");
         txtPET_REMEDIOS.setText("");
         txtPET_OBSERVACOES.setText("");
         
-        comboTUTOR.setSelectedItem("-");
+        comboTUTOR.setSelectedItem("");
     }
     
     // ------------------------------------------------------------------------------------------------------------
@@ -622,49 +600,6 @@ public class CadastroPetsJDialog extends javax.swing.JDialog {
     }//GEN-LAST:event_BOTAO_VOLTAR___ActionPerformed
 
     private void BOTAO_SALVAR___ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BOTAO_SALVAR___ActionPerformed
-        // SÓ EXCLUIR QUANDO ESTIVER TUDO OK
-        /*
-        Pets pet = new Pets();
-        PetsPlanosValores plano = new PetsPlanosValores();
-
-        pet.setNome(txtPET_NOME.getText());
-        pet.setSexo(comboPET_SEXO.getSelectedItem().toString().charAt(0));
-        pet.setRaca(txtPET_RACA.getText());
-        pet.setCor(txtPET_COR.getText());
-        // Convertendo a data de DD/MM/YYYY para YYYY-MM-DD
-        String dataNascimento = txtPET_NASCIMENTO.getText();
-        SimpleDateFormat dateFormatInput = new SimpleDateFormat("dd/MM/yyyy");
-        SimpleDateFormat dateFormatOutput = new SimpleDateFormat("yyyy-MM-dd");
-        try {
-            Date date = dateFormatInput.parse(dataNascimento);
-            pet.setNascimento(dateFormatOutput.format(date));
-        } catch (ParseException erro) {
-            JOptionPane.showMessageDialog(null, "Erro na conversão de data: " + erro);
-        }
-        pet.setTipo_rede_1(txtPET_TIPOREDESOCIAL1.getText());
-        pet.setRede_social_1(txtPET_REDESOCIAL1.getText());
-        pet.setTipo_rede_2(txtPET_TIPOREDESOCIAL2.getText());
-        pet.setRede_social_2(txtPET_REDESOCIAL2.getText());
-        pet.setTipo_plano(comboPET_PLANO.getSelectedItem().toString()); -------------------------------------------------------
-        pet.setAlergias(txtPET_ALERGIAS.getText());
-        pet.setVacinacao(txtPET_VACINACAO.getText());
-        pet.setRemedios(txtPET_REMEDIOS.getText());
-        pet.setObservacoes(txtPET_OBSERVACOES.getText());
-        // ((Produto)cmb.getSelectedItem()).getId();
-        pet.setId_tutores(Integer.parseInt(comboTUTOR.getSelectedItem().toString())); -----------------------------------------
-
-        EntityManager em = JPAUtil.getEntityManager();
-        PetsDAO dao = new PetsDAO(em);
-
-        em.getTransaction().begin(); // Inicia a transação no banco de dados
-        em.persist(pet); // Adiciona as transações que deseja adicionar o banco de dados
-        em.getTransaction().commit(); // Envia as transações para o banco de dados
-        em.close(); // Fecha a transação para não ficar aberta atoa
-
-        JOptionPane.showMessageDialog(this, "Pet salvo com sucesso!");
-        this.dispose();
-        */
-        
         
         Pets pets = new Pets();
         
@@ -694,48 +629,8 @@ public class CadastroPetsJDialog extends javax.swing.JDialog {
         }
         
         
-        
-        
-        
-        
-        /*
-        PetsPlanosValores tipo_plano = null;
-        Tutores id_tutores = null;
-        
-        ArrayList<PetsPlanosValores> lstPetsPlanosValores = new ArrayList<>();
-        ArrayList<Tutores> lstTutores = new ArrayList<>();
-        */
-        
-        //String BUSCARplano = comboPET_PLANO.getSelectedItem().toString();
-        //int BUSCARtutor = Integer.parseInt(comboTUTOR.getSelectedItem().toString());
-        
         int id_tutores = ((Tutores)comboTUTOR.getSelectedItem()).getId();
         int id_plano = ((PetsPlanosValores)comboPET_PLANO.getSelectedItem()).getId();
-        
-        /*
-        for (PetsPlanosValores ppv : lstPetsPlanosValores) {
-            if (ppv.getPlano().equals(BUSCARplano)) {
-                tipo_plano = ppv;
-                break;
-            }
-        } 
-        
-        for (Tutores t : lstTutores) {
-            if (t.getNome().equals(BUSCARtutor)) {
-                id_tutores = t;
-                break;
-            }
-        }
-        
-        
-        
-        if (tipo_plano != null && id_tutores != null) {
-            
-            pets.addPlano(tipo_plano);
-            pets.addTutor(id_tutores);
-        }
-        */
-        
         
         
         if (main.getPetSelecionado() != null) {

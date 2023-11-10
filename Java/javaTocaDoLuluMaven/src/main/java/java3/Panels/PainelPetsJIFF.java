@@ -53,7 +53,7 @@ public class PainelPetsJIFF extends javax.swing.JInternalFrame {
     public void atualizarTabela() {
         
         List<String> colunasVisiveis = new ArrayList<>
-        (Arrays.asList("id", "nome", "sexo", "raca", "cor", "tipo_plano", "id_tutores"));
+        (Arrays.asList("id", "nome", "sexo", "raca", "cor", "id_petsPlanosValores", "id_tutores"));
         
         List<Pets> lstPets = getColunasTablePets();
         
@@ -64,9 +64,9 @@ public class PainelPetsJIFF extends javax.swing.JInternalFrame {
             
             TablePets.setModel(tableModelPets);
             
-            organizarTabela();
-            widthTabela();
             renameTabela();
+            widthTabela();
+            organizarTabela();            
             
         } catch (Exception e) {
             System.out.println("Houve um erro ao tentar popular a tabela");
@@ -75,26 +75,26 @@ public class PainelPetsJIFF extends javax.swing.JInternalFrame {
     
     public void organizarTabela() {
         TablePets.getTableHeader().getColumnModel().moveColumn(1, 0);
-        TablePets.getTableHeader().getColumnModel().moveColumn(3, 1);
-        TablePets.getTableHeader().getColumnModel().moveColumn(4, 2);
-        TablePets.getTableHeader().getColumnModel().moveColumn(5, 3);
+        TablePets.getTableHeader().getColumnModel().moveColumn(4, 1);
+        TablePets.getTableHeader().getColumnModel().moveColumn(5, 2);
+        TablePets.getTableHeader().getColumnModel().moveColumn(6, 3);
     }
     
     public void widthTabela() {
-        TablePets.getColumnModel().getColumn(0).setPreferredWidth(100);
-        TablePets.getColumnModel().getColumn(1).setPreferredWidth(400);
-        TablePets.getColumnModel().getColumn(2).setPreferredWidth(400);
-        TablePets.getColumnModel().getColumn(3).setPreferredWidth(300);
-        TablePets.getColumnModel().getColumn(4).setPreferredWidth(300);
-        TablePets.getColumnModel().getColumn(5).setPreferredWidth(350);
-        TablePets.getColumnModel().getColumn(6).setPreferredWidth(350);
+        TablePets.getColumnModel().getColumn(0).setPreferredWidth(300);
+        TablePets.getColumnModel().getColumn(1).setPreferredWidth(80);
+        TablePets.getColumnModel().getColumn(2).setPreferredWidth(200);
+        TablePets.getColumnModel().getColumn(3).setPreferredWidth(400);
+        TablePets.getColumnModel().getColumn(4).setPreferredWidth(400);
+        TablePets.getColumnModel().getColumn(5).setPreferredWidth(300);
+        TablePets.getColumnModel().getColumn(6).setPreferredWidth(80);
     }
     
     public void renameTabela() {
-        TablePets.getColumnModel().getColumn(2).setHeaderValue("Raça");
-        TablePets.getColumnModel().getColumn(5).setHeaderValue("Tutor");
-        TablePets.getColumnModel().getColumn(6).setHeaderValue("Plano");
-        
+        TablePets.getColumnModel().getColumn(2).setHeaderValue("Plano");
+        TablePets.getColumnModel().getColumn(3).setHeaderValue("Tutor");
+        TablePets.getColumnModel().getColumn(5).setHeaderValue("Raça");
+                
     }
     
     // -------------------------------
@@ -497,21 +497,6 @@ public class PainelPetsJIFF extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_Panel_Button_VoltarMouseClicked
 
     private void Panel_Button_NovoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Panel_Button_NovoMouseClicked
-        // SÓ EXCLUIR QUANDO ESTIVER TUDO 100% FUNCIONANDO
-        /*
-        CadastroPetsJIFF p = CadastroPetsJIFF.getInstance();
-
-        p.pack();
-
-        if(!p.isVisible ()){
-            DesktopPaneControl_Pets.add(p);
-            p.setVisible(true);
-        } else{
-            p.moveToFront();
-        }  
-        */
-        // Cadastro_Pets_JIFF obj = new Cadastro_Pets_JIFF();
-        // DesktopPaneControl_Pets.add(obj).setVisible(true);
         
         petSelecionado = null;
         
@@ -522,18 +507,8 @@ public class PainelPetsJIFF extends javax.swing.JInternalFrame {
     // Campo de pesquisa Search para a tabela
     private void txtSEARCHKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtSEARCHKeyReleased
         
-        // SÓ EXCLUIR QUANDO ESTIVER TUDO FUNCIONANDO
-        
-        //ArrayList<Pets> listaFiltrada = listaPets.stream().filter(funcionario -> funcionario.getNome().startsWith(txtSEARCH.getText())).collect(Collectors.toCollection(ArrayList::new));
-        //TableModel tb = TableModelCreator.createTableModel(Pets.class, listaPets, null);
-        //TablePets.setModel(tb);
-        
-        
-        
-        
-        
         List<String> colunasVisiveis = new ArrayList<>
-        (Arrays.asList("id", "nome", "sexo", "raca", "cor", "tipo_plano", "id_tutores"));
+        (Arrays.asList("id", "nome", "sexo", "raca", "cor", "id_petsPlanosValores", "id_tutores"));
         
         List<Pets> listaFiltrada = getColunasTablePets().stream().filter(pet -> 
                 pet.getNome().toLowerCase().contains(txtSEARCH.getText())).collect(Collectors.toCollection(ArrayList::new));
@@ -543,9 +518,9 @@ public class PainelPetsJIFF extends javax.swing.JInternalFrame {
         
         TablePets.setModel(tb);
         
-        organizarTabela();
-        widthTabela();
         renameTabela();
+        widthTabela();
+        organizarTabela();        
         
     }//GEN-LAST:event_txtSEARCHKeyReleased
         
@@ -598,7 +573,6 @@ public class PainelPetsJIFF extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_txtSEARCHFocusLost
 
     private void TablePetsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TablePetsMouseClicked
-        
         
         petSelecionado = new PetsDAO().getByID(idSelecionado);
                 
