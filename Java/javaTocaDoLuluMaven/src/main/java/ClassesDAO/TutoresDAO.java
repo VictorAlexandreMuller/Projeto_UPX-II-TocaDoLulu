@@ -33,7 +33,7 @@ public class TutoresDAO {
     
     public ResultSet listarComboTutores() {
         conn = new ConexaoDAOviaJDBC().conectaBD();
-        String sql = "SELECT Id FROM Tutores;";
+        String sql = "SELECT * FROM Tutores;";
         
         try {
             pstm = conn.prepareStatement(sql);

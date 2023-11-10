@@ -260,8 +260,7 @@ public class Tutores {
         this.observacoes = observacoes;
     }
 
-    @Override
-    public String toString() {
+    public String imprimir() {
         return "Tutor ID: " + id
                 + "\n"
                 + "\nNome: " + nome
@@ -280,4 +279,9 @@ public class Tutores {
                 + "\nObservações: " + observacoes;
     }
 
+    @Override
+    public String toString(){
+        return nome;
+    }
+    
 }

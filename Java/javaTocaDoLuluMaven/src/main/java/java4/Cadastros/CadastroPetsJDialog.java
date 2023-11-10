@@ -1,6 +1,7 @@
 package java4.Cadastros;
 
 import ClassesDAO.PetsDAO;
+import ClassesDAO.PetsPlanosValoresDAO;
 import ClassesDAO.TutoresDAO;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -9,7 +10,10 @@ import java1.Classes.Pets;
 import javax.swing.JOptionPane;
 import java.awt.Color;
 import java.awt.Font;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
+import java1.Classes.PetsPlanosValores;
 import java1.Classes.Tutores;
 import java3.Panels.PainelPetsJIFF;
 import javax.swing.BorderFactory;
@@ -26,6 +30,8 @@ public class CadastroPetsJDialog extends javax.swing.JDialog {
     public CadastroPetsJDialog(java.awt.Frame parent, boolean modal, PainelPetsJIFF main) {
         super(parent, modal);
         initComponents();
+        popularComboPlano();
+        popularComboTutores();
         
         this.main = main;
 
@@ -37,11 +43,21 @@ public class CadastroPetsJDialog extends javax.swing.JDialog {
         }
     }
     
+    // Popula ComboBox de Tutores no Cadastro de Pets - DO JEITO DO PROFESSOR
+    public void popularComboPlano() {
+        try {
+            
+            List<String> valorVisivel = new ArrayList<>(Arrays.asList("plano"));
+            
+            List<PetsPlanosValores> lstPetsPlanosValores = new PetsPlanosValoresDAO().getAll();
+            comboPET_PLANO.setModel(new DefaultComboBoxModel<PetsPlanosValores>(
+                    lstPetsPlanosValores.toArray(new PetsPlanosValores[lstPetsPlanosValores.size()])));
+        } catch (Exception e) {
+        }
+    }
     
-    
-    
-    // TESTAR
-    public void popularCombo() {
+    // Popula ComboBox de Tutores no Cadastro de Pets - DO JEITO DO PROFESSOR
+    public void popularComboTutores() {
         try {
             List<Tutores> lstTutores = new TutoresDAO().getAll();
             comboTUTOR.setModel(new DefaultComboBoxModel<Tutores>(
@@ -49,6 +65,38 @@ public class CadastroPetsJDialog extends javax.swing.JDialog {
         } catch (Exception e) {
         }
     }
+    
+    
+    /*
+    public void popularComboTutores() {
+        try {
+            TutoresDAO obj = new TutoresDAO();
+            ResultSet rs = obj.listarComboTutores();
+            
+            while (rs.next()) {
+                comboTUTOR.addItem(rs.getString(2));
+            }
+            
+        } catch (SQLException erro) {
+            JOptionPane.showMessageDialog(null, "Carregar Plano VIEW: " + erro);
+        }
+    }
+    
+    public void popularComboPlano() {
+        try {
+            PetsPlanosValoresDAO objpetsdao = new PetsPlanosValoresDAO();
+            ResultSet rs = objpetsdao.listarComboPlanos();
+            
+            while (rs.next()) {
+                comboPET_PLANO.addItem(rs.getString(2));
+            }
+            
+        } catch (SQLException erro) {
+            JOptionPane.showMessageDialog(null, "Carregar Plano VIEW: " + erro);
+        }
+    }
+    
+    */
     
     // Altera o título do EDITAR CADASTRO
     private void ChangeTitle() {
@@ -92,7 +140,7 @@ public class CadastroPetsJDialog extends javax.swing.JDialog {
         txtPET_TIPOREDESOCIAL2.setText(String.valueOf(pet.getTipo_rede_2()));
         txtPET_REDESOCIAL2.setText(String.valueOf(pet.getRede_social_2()));
         
-        comboPET_PLANO.setSelectedItem(pet.getTipo_plano());
+        comboPET_PLANO.setSelectedItem(pet.getId_petsPlanosValores());
         
         txtPET_ALERGIAS.setText(pet.getAlergias());
         txtPET_VACINACAO.setText(pet.getVacinacao());
@@ -265,7 +313,6 @@ public class CadastroPetsJDialog extends javax.swing.JDialog {
 
         comboPET_PLANO.setBackground(new java.awt.Color(86, 76, 106));
         comboPET_PLANO.setForeground(new java.awt.Color(255, 255, 255));
-        comboPET_PLANO.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-" }));
         comboPET_PLANO.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
 
         TIPOREDE1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -460,7 +507,6 @@ public class CadastroPetsJDialog extends javax.swing.JDialog {
 
         comboTUTOR.setBackground(new java.awt.Color(86, 76, 106));
         comboTUTOR.setForeground(new java.awt.Color(255, 255, 255));
-        comboTUTOR.setToolTipText("");
         comboTUTOR.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
@@ -568,6 +614,7 @@ public class CadastroPetsJDialog extends javax.swing.JDialog {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void BOTAO_VOLTAR___ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BOTAO_VOLTAR___ActionPerformed
@@ -598,13 +645,13 @@ public class CadastroPetsJDialog extends javax.swing.JDialog {
         pet.setRede_social_1(txtPET_REDESOCIAL1.getText());
         pet.setTipo_rede_2(txtPET_TIPOREDESOCIAL2.getText());
         pet.setRede_social_2(txtPET_REDESOCIAL2.getText());
-        pet.setTipo_plano(comboPET_PLANO.getSelectedItem().toString());
+        pet.setTipo_plano(comboPET_PLANO.getSelectedItem().toString()); -------------------------------------------------------
         pet.setAlergias(txtPET_ALERGIAS.getText());
         pet.setVacinacao(txtPET_VACINACAO.getText());
         pet.setRemedios(txtPET_REMEDIOS.getText());
         pet.setObservacoes(txtPET_OBSERVACOES.getText());
         // ((Produto)cmb.getSelectedItem()).getId();
-        pet.setId_tutores(Integer.parseInt(comboTUTOR.getSelectedItem().toString()));
+        pet.setId_tutores(Integer.parseInt(comboTUTOR.getSelectedItem().toString())); -----------------------------------------
 
         EntityManager em = JPAUtil.getEntityManager();
         PetsDAO dao = new PetsDAO(em);
@@ -625,22 +672,15 @@ public class CadastroPetsJDialog extends javax.swing.JDialog {
         String sexo = comboPET_SEXO.getSelectedItem().toString();
         String raca = txtPET_RACA.getText();
         String cor = txtPET_COR.getText();
-        
         String tipo_rede_1 = txtPET_TIPOREDESOCIAL1.getText();
         String rede_social_1 = txtPET_REDESOCIAL1.getText();
         String tipo_rede_2 = txtPET_TIPOREDESOCIAL2.getText();
         String rede_social_2 = txtPET_REDESOCIAL2.getText();
-        
-        String tipo_plano = comboPET_PLANO.getSelectedItem().toString();
-        
         String alergias = txtPET_ALERGIAS.getText();
         String vacinacao = txtPET_VACINACAO.getText();
         String remedios = txtPET_REMEDIOS.getText();
         String observacoes = txtPET_OBSERVACOES.getText();
-        
-        int id_tutor = Integer.parseInt(comboTUTOR.getSelectedItem().toString());
-        
-        
+
         // captando a data transformada (necessitou ser transformada novamente no insert jdbc mysql)
         String nascimento = txtPET_NASCIMENTO.getText();
         SimpleDateFormat dateFormatInput = new SimpleDateFormat("dd/MM/yyyy");
@@ -652,14 +692,62 @@ public class CadastroPetsJDialog extends javax.swing.JDialog {
             JOptionPane.showMessageDialog(null, "Erro na conversão de data: " + erro);
             return;
         }
-
+        
+        
+        
+        
+        
+        
+        /*
+        PetsPlanosValores tipo_plano = null;
+        Tutores id_tutores = null;
+        
+        ArrayList<PetsPlanosValores> lstPetsPlanosValores = new ArrayList<>();
+        ArrayList<Tutores> lstTutores = new ArrayList<>();
+        */
+        
+        //String BUSCARplano = comboPET_PLANO.getSelectedItem().toString();
+        //int BUSCARtutor = Integer.parseInt(comboTUTOR.getSelectedItem().toString());
+        
+        int id_tutores = ((Tutores)comboTUTOR.getSelectedItem()).getId();
+        int id_plano = ((PetsPlanosValores)comboPET_PLANO.getSelectedItem()).getId();
+        
+        /*
+        for (PetsPlanosValores ppv : lstPetsPlanosValores) {
+            if (ppv.getPlano().equals(BUSCARplano)) {
+                tipo_plano = ppv;
+                break;
+            }
+        } 
+        
+        for (Tutores t : lstTutores) {
+            if (t.getNome().equals(BUSCARtutor)) {
+                id_tutores = t;
+                break;
+            }
+        }
+        
+        
+        
+        if (tipo_plano != null && id_tutores != null) {
+            
+            pets.addPlano(tipo_plano);
+            pets.addTutor(id_tutores);
+        }
+        */
+        
+        
         
         if (main.getPetSelecionado() != null) {
-            pet = new Pets(pet.getId(), nome, sexo, raca, cor, nascimento, tipo_rede_1, rede_social_1, tipo_rede_2, rede_social_2, alergias, remedios, vacinacao, observacoes, tipo_plano, id_tutor);
+            pet = new Pets(pet.getId(), nome, sexo, raca, cor, nascimento, tipo_rede_1, rede_social_1, 
+                    tipo_rede_2, rede_social_2, alergias, remedios, vacinacao, observacoes, 
+                    id_plano, id_tutores);
             new PetsDAO().editar(pet);
             dispose();
         } else if (main.getPetSelecionado() == null) {
-            pet = new Pets(0, nome, sexo, raca, cor, nascimento, tipo_rede_1, rede_social_1, tipo_rede_2, rede_social_2, alergias, remedios, vacinacao, observacoes, tipo_plano, id_tutor);
+            pet = new Pets(0, nome, sexo, raca, cor, nascimento, tipo_rede_1, rede_social_1, 
+                    tipo_rede_2, rede_social_2, alergias, remedios, vacinacao, observacoes, 
+                    id_plano, id_tutores);
             new PetsDAO().inserir(pet);
             resetForm();
         } else {
@@ -733,9 +821,9 @@ public class CadastroPetsJDialog extends javax.swing.JDialog {
     private javax.swing.JLabel TIPOREDE1;
     private javax.swing.JLabel TIPOREDE2;
     private javax.swing.JLabel VACINACAO;
-    private javax.swing.JComboBox<String> comboPET_PLANO;
+    private javax.swing.JComboBox<PetsPlanosValores> comboPET_PLANO;
     private javax.swing.JComboBox<String> comboPET_SEXO;
-    private javax.swing.JComboBox<Tutor> comboTUTOR;
+    private javax.swing.JComboBox<Tutores> comboTUTOR;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;

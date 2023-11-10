@@ -1,15 +1,7 @@
 package java4.Cadastros;
 
-import ConectionsDAO.JPAUtil;
-import ClassesDAO.PetsDAO;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import java1.Classes.Pets;
-import java1.Classes.PetsPlanosValores;
-import javax.persistence.EntityManager;
 import javax.swing.JOptionPane;
 import ClassesDAO.PetsPlanosValoresDAO;
 import ClassesDAO.TutoresDAO;

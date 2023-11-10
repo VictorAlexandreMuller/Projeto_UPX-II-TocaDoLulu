@@ -24,17 +24,16 @@ CREATE TABLE Usuarios (
 -- PETS TABLES 1-N -----------------------------------------------------------------------------------
 -- O Index serve para referenciar a coluna a ser puxada por outra tabela sem este precisar ser uma chave primária
 CREATE TABLE Pets_Planos_Valores (
-  	plano VARCHAR(50) NOT NULL PRIMARY KEY,
-	valor DOUBLE(8,2),
-    
-    INDEX idx_valor (valor)
+	id int NOT NULL PRIMARY KEY,
+  	plano VARCHAR(50) NOT NULL,
+	valor DOUBLE(8,2) NOT NULL
  );
 
-INSERT INTO Pets_Planos_Valores (plano, valor)
+INSERT INTO Pets_Planos_Valores (id, plano, valor)
 VALUES
-	('Básico', 500.00),
-    ('Intermediário', 750.00),
-    ('Premium', 1000.00);
+	(1, 'Básico', 500.00),
+    (2, 'Intermediário', 750.00),
+    (3, 'Premium', 1000.00);
 
 
 -- TUTORES TABLES 1-N --------------------------------------------------------------------------------
@@ -98,14 +97,10 @@ CREATE TABLE Pets (
     vacinacao VARCHAR(250),
     observacoes VARCHAR(250),
     
-    tipo_plano VARCHAR(50),
-    tipo_valor DOUBLE(8,2),
-    
+    id_petsPlanosValores INT NOT NULL,
     id_tutores INT NOT NULL,
     
-    FOREIGN KEY (tipo_plano) REFERENCES Pets_Planos_Valores(plano),
-    FOREIGN KEY (tipo_valor) REFERENCES Pets_Planos_Valores(valor),
-    
+    FOREIGN KEY (id_petsPlanosValores) REFERENCES Pets_Planos_Valores(id),
     FOREIGN KEY (id_tutores) REFERENCES Tutores(id)
 );
 -- SET SQL_SAFE_UPDATES = 0;

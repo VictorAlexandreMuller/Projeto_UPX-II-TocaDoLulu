@@ -73,8 +73,8 @@ public class PetsDAO {
     public void inserir(Pets pet) {
         String sql = "INSERT INTO Pets (nome, sexo, raca, "
                 + "cor, nascimento, tipo_rede_1, rede_social_1, tipo_rede_2, "
-                + "rede_social_2, alergias, remedios, vacinacao, observacoes, tipo_plano, tipo_valor, id_tutores) "
-                + "VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+                + "rede_social_2, alergias, remedios, vacinacao, observacoes, id_petsPlanosValores, id_tutores) "
+                + "VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
 
         try (Connection conn = ConexaoDAOviaJDBC.getConnection();
              PreparedStatement stmt = conn.prepareStatement(sql)) {
@@ -101,9 +101,8 @@ public class PetsDAO {
             stmt.setString(13, pet.getObservacoes());
             
             // ARRUMAR A PESQUISA REFERENTE AO PLANO, VALOR E ID_TUTORES -----------------------------------------------
-            stmt.setString(14, pet.getObservacoes());
-            stmt.setString(15, pet.getObservacoes());
-            stmt.setString(16, pet.getObservacoes());
+            stmt.setInt(14, pet.getId_petsPlanosValores());
+            stmt.setInt(15, pet.getId_tutores());
             
             stmt.executeUpdate();
 
@@ -114,7 +113,7 @@ public class PetsDAO {
     }
     
     
-    
+    // REVER
     public void editar(Pets pet) {
         String sql = "UPDATE Tutores SET nome = ?, tipo_documento = ?, documento_identificador = ?, "
                 + "nascimento = ?, cep = ?, logradouro = ?, numero = ?, bairro = ?, uf = ?, municipio = ?, "
@@ -206,11 +205,13 @@ public class PetsDAO {
                 String vacinacao = rs.getString("vacinacao");
                 String observacoes = rs.getString("observacoes");
                 
-                String tipo_plano = rs.getString("tipo_plano");
-                double tipo_valor = rs.getDouble("tipo_valor");
+                int id_petsPlanosValores = rs.getInt("id_petsPlanosValores");
                 int id_tutores = rs.getInt("id_tutores");
-                                
-                Pets pet = new Pets(id, nome, sexo, raca, cor, nascimento, tipo_rede_1, rede_social_1, tipo_rede_2, rede_social_2, alergias, remedios, vacinacao, observacoes, tipo_plano, id_tutores);
+                
+                
+                
+                Pets pet = new Pets(id, nome, sexo, raca, cor, nascimento, tipo_rede_1, 
+                        rede_social_1, tipo_rede_2, rede_social_2, alergias, remedios, vacinacao, observacoes, id_petsPlanosValores, id_tutores);
                 pets.add(pet);
             }
 
@@ -238,10 +239,10 @@ public class PetsDAO {
                 String raca = rs.getString("raca");
                 String cor = rs.getString("cor");
                 
-                String tipo_plano = rs.getString("tipo_plano");
+                int id_petsPlanosValores = rs.getInt("id_petsPlanosValores");
                 int id_tutores = rs.getInt("id_tutores");
                 
-                Pets pet = new Pets(id, nome, sexo, raca, cor, tipo_plano, id_tutores);
+                Pets pet = new Pets(id, nome, sexo, raca, cor, id_petsPlanosValores, id_tutores);
                 pets.add(pet);
             }
 
@@ -283,12 +284,11 @@ public class PetsDAO {
                 String vacinacao = rs.getString("vacinacao");
                 String observacoes = rs.getString("observacoes");
                 
-                String tipo_plano = rs.getString("tipo_plano");
-                double tipo_valor = rs.getDouble("tipo_valor");
+                int id_petsPlanosValores = rs.getInt("id_petsPlanosValores");
                 int id_tutores = rs.getInt("id_tutores");
 
                 pet = new Pets(id, nome, sexo, raca, cor, nascimento, tipo_rede_1, rede_social_1, 
-                        tipo_rede_2, rede_social_2, alergias, remedios, vacinacao, observacoes, tipo_plano, id_tutores);
+                        tipo_rede_2, rede_social_2, alergias, remedios, vacinacao, observacoes, id_petsPlanosValores, id_tutores);
             }
 
         } catch (SQLException ex) {

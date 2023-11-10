@@ -33,14 +33,17 @@ public class Pets {
     private String remedios;
     private String vacinacao;
     private String observacoes;
-    private String tipo_plano;
-    private double tipo_valor;
+    private int id_petsPlanosValores;
     private int id_tutores;
+    
 
     public Pets() {
+        
     }
 
-    public Pets(int id, String nome, String sexo, String raca, String cor, String nascimento, String tipo_rede_1, String rede_social_1, String tipo_rede_2, String rede_social_2, String alergias, String remedios, String vacinacao, String observacoes, String tipo_plano, int id_tutores) {
+    public Pets(int id, String nome, String sexo, String raca, String cor, String nascimento, String tipo_rede_1, 
+            String rede_social_1, String tipo_rede_2, String rede_social_2, String alergias, String remedios, 
+            String vacinacao, String observacoes, int id_petsPlanosValores, int id_tutores) {
         this.id = id;
         this.nome = nome;
         this.sexo = sexo;
@@ -55,17 +58,20 @@ public class Pets {
         this.remedios = remedios;
         this.vacinacao = vacinacao;
         this.observacoes = observacoes;
-        this.tipo_plano = tipo_plano;
+        
+        this.id_petsPlanosValores = id_petsPlanosValores;
         this.id_tutores = id_tutores;
+                
+        
     }
 
-    public Pets(int id, String nome, String sexo, String raca, String cor, String tipo_plano, int id_tutores) {
+    public Pets(int id, String nome, String sexo, String raca, String cor, int id_petsPlanosValores, int id_tutores) {
         this.id = id;
         this.nome = nome;
         this.sexo = sexo;
         this.raca = raca;
         this.cor = cor;
-        this.tipo_plano = tipo_plano;
+        this.id_petsPlanosValores = id_petsPlanosValores;
         this.id_tutores = id_tutores;
     }
 
@@ -183,20 +189,12 @@ public class Pets {
         this.observacoes = observacoes;
     }
 
-    public String getTipo_plano() {
-        return tipo_plano;
+    public int getId_petsPlanosValores() {
+        return id_petsPlanosValores;
     }
 
-    public void setTipo_plano(String tipo_plano) {
-        this.tipo_plano = tipo_plano;
-    }
-
-    public double getTipo_valor() {
-        return tipo_valor;
-    }
-
-    public void setTipo_valor(double tipo_valor) {
-        this.tipo_valor = tipo_valor;
+    public void setId_petsPlanosValores(int id_petsPlanosValores) {
+        this.id_petsPlanosValores = id_petsPlanosValores;
     }
 
     public int getId_tutores() {
@@ -206,11 +204,9 @@ public class Pets {
     public void setId_tutores(int id_tutores) {
         this.id_tutores = id_tutores;
     }
-
     
-
-    @Override
-    public String toString() {
+    // MUDAR PARA VIEW EM BANCO DE DADOS E PUXAR PELA DAO
+    public String imprimir() {
         return "Pet ID: " + id + "\n"
                 + "\nNome: " + nome
                 + "\nSexo: " + sexo
@@ -222,9 +218,7 @@ public class Pets {
                 + "\nAlergias: " + alergias
                 + "\nRemédios: " + remedios
                 + "\nVacinação: " + vacinacao
-                + "\nObservações: " + observacoes
-                + "\nPlano: " + tipo_plano
-                + "\nValor: " + tipo_valor;
+                + "\nObservações: " + observacoes;
 
     }
 

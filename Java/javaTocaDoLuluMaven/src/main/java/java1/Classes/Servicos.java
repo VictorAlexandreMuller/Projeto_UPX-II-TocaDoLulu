@@ -242,11 +242,9 @@ public class Servicos {
     public void setObservacoes(String observacoes) {
         this.observacoes = observacoes;
     }
-
     
     
-    @Override
-    public String toString() {
+    public String imprimir() {
         return "Serviço ID: " + id
                 + "\nNome: " + nome
                 + "\nServiço: " + servico

@@ -243,9 +243,7 @@ public class Veterinarios {
     }
     
     
-
-    @Override
-    public String toString() {
+    public String imprimir() {
         return "Veterinário ID: " + id
                 + "\n"
                 + "\nNome: " + nome
