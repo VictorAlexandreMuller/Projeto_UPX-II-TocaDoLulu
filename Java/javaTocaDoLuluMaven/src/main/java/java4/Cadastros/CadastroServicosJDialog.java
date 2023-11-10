@@ -1,8 +1,6 @@
 package java4.Cadastros;
 
 import ClassesDAO.ServicosDAO;
-import ClassesDAO.TutoresDAO;
-import ConectionsDAO.JPAUtil;
 import java.awt.Color;
 import java.awt.Font;
 import java.text.ParseException;
@@ -10,7 +8,6 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java1.Classes.Servicos;
 import java3.Panels.PainelServicosJIFF;
-import javax.persistence.EntityManager;
 import javax.swing.BorderFactory;
 import javax.swing.JOptionPane;
 import javax.swing.border.LineBorder;
@@ -175,6 +172,11 @@ public class CadastroServicosJDialog extends javax.swing.JDialog {
         jSeparator1 = new javax.swing.JSeparator();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowClosed(java.awt.event.WindowEvent evt) {
+                formWindowClosed(evt);
+            }
+        });
 
         jPanel1.setBackground(new java.awt.Color(45, 18, 72));
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)), " CADASTRO DE SERVIÇO ", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Gill Sans Ultra Bold", 1, 24), new java.awt.Color(255, 255, 255))); // NOI18N
@@ -267,7 +269,7 @@ public class CadastroServicosJDialog extends javax.swing.JDialog {
         comboSERVICO_UF.setBackground(new java.awt.Color(86, 76, 106));
         comboSERVICO_UF.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         comboSERVICO_UF.setForeground(new java.awt.Color(255, 255, 255));
-        comboSERVICO_UF.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "(27 Opções)", "Acre (AC)", "Alagoas (AL)", "Amapá (AP)", "Amazonas (AM)", "Bahia (BA)", "Ceará (CE)", "Distrito Federal (DF)", "Espírito Santo (ES)", "Goiás (GO)", "Maranhão (MA)", "Mato Grosso (MT)", "Mato Grosso do Sul (MS)", "Minas Gerais (MG)", "Pará (PA)", "Paraíba (PB)", "Paraná (PR)", "Pernambuco (PE)", "Piauí (PI)", "Rio de Janeiro (RJ)", "Rio Grande do Norte (RN)", "Rio Grande do Sul (RS)", "Rondônia (RO)", "Roraima (RR)", "Santa Catarina (SC)", "São Paulo (SP)", "Sergipe (SE)", "Tocantins (TO)" }));
+        comboSERVICO_UF.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-", "Acre (AC)", "Alagoas (AL)", "Amapá (AP)", "Amazonas (AM)", "Bahia (BA)", "Ceará (CE)", "Distrito Federal (DF)", "Espírito Santo (ES)", "Goiás (GO)", "Maranhão (MA)", "Mato Grosso (MT)", "Mato Grosso do Sul (MS)", "Minas Gerais (MG)", "Pará (PA)", "Paraíba (PB)", "Paraná (PR)", "Pernambuco (PE)", "Piauí (PI)", "Rio de Janeiro (RJ)", "Rio Grande do Norte (RN)", "Rio Grande do Sul (RS)", "Rondônia (RO)", "Roraima (RR)", "Santa Catarina (SC)", "São Paulo (SP)", "Sergipe (SE)", "Tocantins (TO)" }));
         comboSERVICO_UF.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
@@ -782,6 +784,10 @@ public class CadastroServicosJDialog extends javax.swing.JDialog {
         
         
     }//GEN-LAST:event_BOTAO_SALVAR___ActionPerformed
+
+    private void formWindowClosed(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosed
+        main.atualizarTabela();
+    }//GEN-LAST:event_formWindowClosed
 
     /**
      * @param args the command line arguments

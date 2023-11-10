@@ -1,6 +1,7 @@
 package java4.Cadastros;
 
 import ClassesDAO.PetsDAO;
+import ClassesDAO.TutoresDAO;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -8,8 +9,11 @@ import java1.Classes.Pets;
 import javax.swing.JOptionPane;
 import java.awt.Color;
 import java.awt.Font;
+import java.util.List;
+import java1.Classes.Tutores;
 import java3.Panels.PainelPetsJIFF;
 import javax.swing.BorderFactory;
+import javax.swing.DefaultComboBoxModel;
 import javax.swing.border.LineBorder;
 import javax.swing.border.TitledBorder;
 
@@ -36,8 +40,15 @@ public class CadastroPetsJDialog extends javax.swing.JDialog {
     
     
     
-    
-    
+    // TESTAR
+    public void popularCombo() {
+        try {
+            List<Tutores> lstTutores = new TutoresDAO().getAll();
+            comboTUTOR.setModel(new DefaultComboBoxModel<Tutores>(
+                    lstTutores.toArray(new Tutores[lstTutores.size()])));
+        } catch (Exception e) {
+        }
+    }
     
     // Altera o título do EDITAR CADASTRO
     private void ChangeTitle() {
@@ -162,6 +173,11 @@ public class CadastroPetsJDialog extends javax.swing.JDialog {
         comboTUTOR = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowClosed(java.awt.event.WindowEvent evt) {
+                formWindowClosed(evt);
+            }
+        });
 
         jPanel1.setBackground(new java.awt.Color(45, 18, 72));
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)), " CADASTRO DE PET ", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Gill Sans Ultra Bold", 1, 24), new java.awt.Color(255, 255, 255))); // NOI18N
@@ -444,7 +460,6 @@ public class CadastroPetsJDialog extends javax.swing.JDialog {
 
         comboTUTOR.setBackground(new java.awt.Color(86, 76, 106));
         comboTUTOR.setForeground(new java.awt.Color(255, 255, 255));
-        comboTUTOR.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-" }));
         comboTUTOR.setToolTipText("");
         comboTUTOR.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
 
@@ -654,6 +669,10 @@ public class CadastroPetsJDialog extends javax.swing.JDialog {
         
     }//GEN-LAST:event_BOTAO_SALVAR___ActionPerformed
 
+    private void formWindowClosed(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosed
+        main.atualizarTabela();
+    }//GEN-LAST:event_formWindowClosed
+
     /**
      * @param args the command line arguments
      */
@@ -716,7 +735,7 @@ public class CadastroPetsJDialog extends javax.swing.JDialog {
     private javax.swing.JLabel VACINACAO;
     private javax.swing.JComboBox<String> comboPET_PLANO;
     private javax.swing.JComboBox<String> comboPET_SEXO;
-    private javax.swing.JComboBox<String> comboTUTOR;
+    private javax.swing.JComboBox<Tutor> comboTUTOR;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;

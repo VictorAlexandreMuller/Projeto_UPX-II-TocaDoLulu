@@ -11,10 +11,12 @@ import java.util.stream.Collectors;
 import java1.Classes.Servicos;
 import java4.Cadastros.CadastroServicosJDialog;
 import java4.Cadastros.CadastroServicosJIFF;
+import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTable;
 import javax.swing.JTextField;
+import javax.swing.SwingConstants;
 import javax.swing.table.TableModel;
 
 public class PainelServicosJIFF extends javax.swing.JInternalFrame {
@@ -221,7 +223,7 @@ public class PainelServicosJIFF extends javax.swing.JInternalFrame {
             }
         });
 
-        icon_VOLTAR.setIcon(new javax.swing.ImageIcon("C:\\Users\\PC\\Documents\\Dev\\UPX2-Toca-do-Lulu\\Java\\javaTocaDoLuluMaven\\src\\main\\java\\iconsCrud\\1VoltarIcon40.png")); // NOI18N
+        icon_VOLTAR.setIcon(new javax.swing.ImageIcon("C:\\Users\\victo\\Documents\\Dev\\UPX2-Toca-do-Lulu\\Java\\javaTocaDoLuluMaven\\src\\main\\java\\iconsCrud\\1VoltarIcon40.png")); // NOI18N
         icon_VOLTAR.setPreferredSize(new java.awt.Dimension(40, 40));
 
         VOLTAR.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
@@ -262,7 +264,7 @@ public class PainelServicosJIFF extends javax.swing.JInternalFrame {
             }
         });
 
-        icon_NOVO.setIcon(new javax.swing.ImageIcon("C:\\Users\\PC\\Documents\\Dev\\UPX2-Toca-do-Lulu\\Java\\javaTocaDoLuluMaven\\src\\main\\java\\iconsCrud\\2NovoIcon40.png")); // NOI18N
+        icon_NOVO.setIcon(new javax.swing.ImageIcon("C:\\Users\\victo\\Documents\\Dev\\UPX2-Toca-do-Lulu\\Java\\javaTocaDoLuluMaven\\src\\main\\java\\iconsCrud\\2NovoIcon40.png")); // NOI18N
 
         NOVO.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         NOVO.setForeground(new java.awt.Color(255, 255, 255));
@@ -297,12 +299,15 @@ public class PainelServicosJIFF extends javax.swing.JInternalFrame {
             }
         });
         Panel_Button_Editar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Panel_Button_EditarMouseClicked(evt);
+            }
             public void mouseExited(java.awt.event.MouseEvent evt) {
                 Panel_Button_EditarPanel_Button_DeletarMouseExited(evt);
             }
         });
 
-        icon_EDITAR.setIcon(new javax.swing.ImageIcon("C:\\Users\\PC\\Documents\\Dev\\UPX2-Toca-do-Lulu\\Java\\javaTocaDoLuluMaven\\src\\main\\java\\iconsCrud\\3AlterarIcon40.png")); // NOI18N
+        icon_EDITAR.setIcon(new javax.swing.ImageIcon("C:\\Users\\victo\\Documents\\Dev\\UPX2-Toca-do-Lulu\\Java\\javaTocaDoLuluMaven\\src\\main\\java\\iconsCrud\\3AlterarIcon40.png")); // NOI18N
 
         EDITAR.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         EDITAR.setForeground(new java.awt.Color(255, 255, 255));
@@ -334,12 +339,15 @@ public class PainelServicosJIFF extends javax.swing.JInternalFrame {
             }
         });
         Panel_Button_Deletar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Panel_Button_DeletarMouseClicked(evt);
+            }
             public void mouseExited(java.awt.event.MouseEvent evt) {
                 Panel_Button_DeletarMouseExited(evt);
             }
         });
 
-        icon_DELETAR.setIcon(new javax.swing.ImageIcon("C:\\Users\\PC\\Documents\\Dev\\UPX2-Toca-do-Lulu\\Java\\javaTocaDoLuluMaven\\src\\main\\java\\iconsCrud\\4DeletarIcon40.png")); // NOI18N
+        icon_DELETAR.setIcon(new javax.swing.ImageIcon("C:\\Users\\victo\\Documents\\Dev\\UPX2-Toca-do-Lulu\\Java\\javaTocaDoLuluMaven\\src\\main\\java\\iconsCrud\\4DeletarIcon40.png")); // NOI18N
 
         DELETAR.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         DELETAR.setForeground(new java.awt.Color(255, 255, 255));
@@ -368,7 +376,6 @@ public class PainelServicosJIFF extends javax.swing.JInternalFrame {
         txtSEARCH.setBackground(new java.awt.Color(85, 65, 118));
         txtSEARCH.setForeground(new java.awt.Color(255, 255, 255));
         txtSEARCH.setText("  Procurar");
-        txtSEARCH.setToolTipText("");
         txtSEARCH.setDisabledTextColor(new java.awt.Color(255, 255, 255));
         txtSEARCH.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseMoved(java.awt.event.MouseEvent evt) {
@@ -619,43 +626,65 @@ public class PainelServicosJIFF extends javax.swing.JInternalFrame {
                     evt.consume();
                     JTable source = (JTable) evt.getSource();
                     int row = source.rowAtPoint(evt.getPoint());
-                    int column = TableServicos.convertColumnIndexToView(TableServicos.getColumn("DDD").getModelIndex());
+                    int column = TableServicos.convertColumnIndexToView(TableServicos.getColumn("Valor").getModelIndex());
                     idSelecionado = Integer.parseInt(source.getModel().getValueAt(row, column) + "");
 
                 } else if (evt.getClickCount() == 2 && !evt.isConsumed()) {
                     evt.consume();
                     JTable source = (JTable) evt.getSource();
                     int row = source.getSelectedRow();
-                    int column = TableServicos.convertColumnIndexToView(TableServicos.getColumn("DDD").getModelIndex());
+                    int column = TableServicos.convertColumnIndexToView(TableServicos.getColumn("Valor").getModelIndex());
                     String s = source.getModel().getValueAt(row, column) + " - " + servicoSelecionado.toString();
                     JOptionPane.showMessageDialog(null, s);
-                }        
+                }      
                 /*
-                    OBS: O getColumn("DDD") puxa o valor correto do ID na tabela.
-                    Explicação: O TableModelCreator, criada pelo professor e utilizada em aulas, cria uma tabela genérica.
-                                Esta tabela TableModelCreator traz as colunas em ordem alfabética.
-                                Dessa forma, foi criado o método "organizarTabela()" que organiza a Table na order que preferir, entretanto isso se aplica apenas ao front-end.
-                                
-                                Ou seja, antes a TableTutores apresentava as suas colunas na ordem (padrão back-end): 
-                                                                                     Celular_1 = index 0
-                                                                                     Ddd_1     = index 1
-                                                                                     Email_1   = index 2
-                                                                                     Id        = index 3
-                                                                                     Nome      = index 4
-                
-                                Após o método "organizarTabela()", APENAS PARA O FRONT-END, as colunas foram alteradas para:
-                                                                                     Id
-                                                                                     Nome
-                                                                                     Email
-                                                                                     DDD
-                                                                                     Telefone
-                
-                                Mas os seus valores de Index permaneceram os mesmos de antes.
-                                Sendo assim, para puxarmos em getColumn o valor correto de Id, precisamos colocar o nome referente à nova coluna que está no index 3, ou seja, DDD.
+                    OBS: O getColumn("Valor") puxa o valor correto do ID na tabela.
+                    Explicação: A explicação para este ocorrido está no PainelTutoresJIFF.
                 */
                 
                 
     }//GEN-LAST:event_TableServicosMouseClicked
+
+    private void Panel_Button_EditarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Panel_Button_EditarMouseClicked
+        
+        servicoSelecionado = new ServicosDAO().getByID(idSelecionado);
+        
+        if (servicoSelecionado == null) {
+            JOptionPane.showMessageDialog(this, "Por favor, selecione um campo a ser alterado.");
+            
+        } else if (servicoSelecionado != null) {
+            CadastroServicosJDialog obj = new CadastroServicosJDialog(null, true, this);
+            obj.setVisible(true);
+            
+        }
+    }//GEN-LAST:event_Panel_Button_EditarMouseClicked
+
+    private void Panel_Button_DeletarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Panel_Button_DeletarMouseClicked
+        
+        servicoSelecionado = new ServicosDAO().getByID(idSelecionado);
+
+        if (servicoSelecionado == null) {
+            JOptionPane.showMessageDialog(this, "Por favor, selecione a ser deletado.");
+        } else if (servicoSelecionado != null) {
+            String opc;
+
+            JLabel label = new JLabel("<html><center>ATENÇÃO!<br>ESTA AÇÃO NÃO PODERÁ SER DESFEITA.<br><br>Você tem certeza de que deseja excluir este registro?<br><br>Escreva 'CONFIRMAR' para excluir.");
+            label.setHorizontalAlignment(SwingConstants.CENTER);
+            opc = JOptionPane.showInputDialog(null, label, "Atenção!", JOptionPane.INFORMATION_MESSAGE);
+
+            if (opc != null) {
+
+                if (opc.equals("CONFIRMAR")) {
+                    new ServicosDAO().excluir(idSelecionado);
+                    atualizarTabela();
+                } else {
+                    JOptionPane.showMessageDialog(this, "Nada foi alterado.");
+                }
+            } else {
+                JOptionPane.showMessageDialog(this, "Nada foi alterado.");
+            }
+        }
+    }//GEN-LAST:event_Panel_Button_DeletarMouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

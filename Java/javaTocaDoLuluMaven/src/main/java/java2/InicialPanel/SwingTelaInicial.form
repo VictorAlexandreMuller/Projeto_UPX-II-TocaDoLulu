@@ -245,9 +245,6 @@
   <Properties>
     <Property name="defaultCloseOperation" type="int" value="3"/>
     <Property name="title" type="java.lang.String" value=" Toca do Lulu"/>
-    <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-      <Dimension value="[1281, 721]"/>
-    </Property>
     <Property name="minimumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
       <Dimension value="[1280, 720]"/>
     </Property>
@@ -421,7 +418,7 @@
                 <Component class="javax.swing.JLabel" name="icon_PETS">
                   <Properties>
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="2" name="C:\Users\PC\Documents\Dev\UPX2-Toca-do-Lulu\Java\javaTocaDoLuluMaven\src\main\java\iconsInit\1PetsIcon40.png"/>
+                      <Image iconType="2" name="C:\Users\victo\Documents\Dev\UPX2-Toca-do-Lulu\Java\javaTocaDoLuluMaven\src\main\java\iconsInit\1PetsIcon40.png"/>
                     </Property>
                   </Properties>
                 </Component>
@@ -475,7 +472,7 @@
                 <Component class="javax.swing.JLabel" name="icon_TUTORES">
                   <Properties>
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="2" name="C:\Users\PC\Documents\Dev\UPX2-Toca-do-Lulu\Java\javaTocaDoLuluMaven\src\main\java\iconsInit\2TutoresIcon40.png"/>
+                      <Image iconType="2" name="C:\Users\victo\Documents\Dev\UPX2-Toca-do-Lulu\Java\javaTocaDoLuluMaven\src\main\java\iconsInit\2TutoresIcon40.png"/>
                     </Property>
                   </Properties>
                 </Component>
@@ -529,7 +526,7 @@
                 <Component class="javax.swing.JLabel" name="icon_VETERINARIOS">
                   <Properties>
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="2" name="C:\Users\PC\Documents\Dev\UPX2-Toca-do-Lulu\Java\javaTocaDoLuluMaven\src\main\java\iconsInit\3VeterinariosIcon40.png"/>
+                      <Image iconType="2" name="C:\Users\victo\Documents\Dev\UPX2-Toca-do-Lulu\Java\javaTocaDoLuluMaven\src\main\java\iconsInit\3VeterinariosIcon40.png"/>
                     </Property>
                   </Properties>
                 </Component>
@@ -583,7 +580,7 @@
                 <Component class="javax.swing.JLabel" name="icon_SERVICOS">
                   <Properties>
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="2" name="C:\Users\PC\Documents\Dev\UPX2-Toca-do-Lulu\Java\javaTocaDoLuluMaven\src\main\java\iconsInit\4ServicosIcon40.png"/>
+                      <Image iconType="2" name="C:\Users\victo\Documents\Dev\UPX2-Toca-do-Lulu\Java\javaTocaDoLuluMaven\src\main\java\iconsInit\4ServicosIcon40.png"/>
                     </Property>
                   </Properties>
                 </Component>
@@ -626,7 +623,7 @@
                 <Component class="javax.swing.JLabel" name="icon_LOGOUT">
                   <Properties>
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="2" name="C:\Users\PC\Documents\Dev\UPX2-Toca-do-Lulu\Java\javaTocaDoLuluMaven\src\main\java\iconsInit\5LogoutIcon40.png"/>
+                      <Image iconType="2" name="C:\Users\victo\Documents\Dev\UPX2-Toca-do-Lulu\Java\javaTocaDoLuluMaven\src\main\java\iconsInit\5LogoutIcon40.png"/>
                     </Property>
                   </Properties>
                 </Component>

@@ -103,7 +103,7 @@ public class VeterinariosDAO {
     
     
     public void editar(Veterinarios veterinario) {
-        String sql = "UPDATE Tutores SET nome = ?, tipo_documento = ?, documento_identificador = ?, crmv = ? "
+        String sql = "UPDATE Veterinarios SET nome = ?, tipo_documento = ?, documento_identificador = ?, crmv = ? "
                 + "nascimento = ?, cep = ?, logradouro = ?, numero = ?, bairro = ?, uf = ?, municipio = ?, "
                 + "complemento = ?, ddd_1 = ?, celular_1 = ?, email_1 = ?, valor = ?, ddd_2 = ?, celular_2 = ?, email_2 = ?, observacoes = ? WHERE id = ?";
 
