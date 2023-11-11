@@ -279,6 +279,9 @@ public class Tutores {
                 + "\nObservações: " + observacoes;
     }
 
+    
+    // Este método toString é utilizado de forma default (ou seja, ele não é mostrado explicitamente no código, apenas funciona desse jeito)
+    //      no Cadastro de Pets, no método "popularComboTutores" para retornar o "nome" dos tutores na ComboBox.
     @Override
     public String toString(){
         return nome;

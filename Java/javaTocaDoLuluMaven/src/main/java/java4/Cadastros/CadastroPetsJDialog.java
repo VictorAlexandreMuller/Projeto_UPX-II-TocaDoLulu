@@ -1,4 +1,4 @@
-package java4.Cadastros;
+    package java4.Cadastros;
 
 import ClassesDAO.PetsDAO;
 import ClassesDAO.PetsPlanosValoresDAO;
@@ -61,6 +61,19 @@ public class CadastroPetsJDialog extends javax.swing.JDialog {
         }
     }
     
+    public void popularComboPlanoEdited(){
+        try {
+            PetsPlanosValores petsPlanosValores = new PetsPlanosValoresDAO().getPlano();
+            comboPET_PLANO.setModel(new DefaultComboBoxModel<PetsPlanosValores>(
+                    lstPetsPlanosValores.toArray(new PetsPlanosValores[lstPetsPlanosValores.size()])));
+        } catch (Exception e) {
+        }
+    }
+    
+    public void popularComboTutoresEdited(){
+        
+    }
+    
     /* Jeito errado que o Victor estava fazendo
     public void popularComboTutores() {
         try {
@@ -118,14 +131,20 @@ public class CadastroPetsJDialog extends javax.swing.JDialog {
         txtPET_TIPOREDESOCIAL2.setText(String.valueOf(pet.getTipo_rede_2()));
         txtPET_REDESOCIAL2.setText(String.valueOf(pet.getRede_social_2()));
         
-        comboPET_PLANO.setSelectedItem(pet.getId_petsPlanosValores());
-        
         txtPET_ALERGIAS.setText(pet.getAlergias());
         txtPET_VACINACAO.setText(pet.getVacinacao());
-        txtPET_ALERGIAS.setText(pet.getAlergias());
+        txtPET_REMEDIOS.setText(pet.getRemedios());
         txtPET_OBSERVACOES.setText(pet.getObservacoes());
         
-        comboTUTOR.setSelectedItem(pet.getId_tutores());
+        
+        
+        // ARRUMAR AQUI
+        //comboPET_PLANO.setSelectedItem(ppv.getPlano());
+        //comboTUTOR.setSelectedItem(tutor.getNome());
+        
+        ((Tutores)comboTUTOR.getSelectedItem()).getId();
+        ((PetsPlanosValores)comboPET_PLANO.getSelectedItem()).getId();
+        
     }
     
     private void resetForm() {
@@ -139,14 +158,14 @@ public class CadastroPetsJDialog extends javax.swing.JDialog {
         txtPET_TIPOREDESOCIAL2.setText("");
         txtPET_REDESOCIAL2.setText("");
         
-        comboPET_PLANO.setSelectedItem("");
+        comboPET_PLANO.setSelectedItem(null);
         
         txtPET_ALERGIAS.setText("");
         txtPET_VACINACAO.setText("");
         txtPET_REMEDIOS.setText("");
         txtPET_OBSERVACOES.setText("");
         
-        comboTUTOR.setSelectedItem("");
+        comboTUTOR.setSelectedItem(null);
     }
     
     // ------------------------------------------------------------------------------------------------------------

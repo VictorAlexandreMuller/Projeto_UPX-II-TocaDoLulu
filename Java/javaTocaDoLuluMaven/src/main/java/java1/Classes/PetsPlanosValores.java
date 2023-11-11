@@ -53,6 +53,9 @@ public class PetsPlanosValores {
         return plano;
     }
 
+    
+    // Este método toString é utilizado de forma default (ou seja, ele não é mostrado explicitamente no código, apenas funciona desse jeito)
+    //      no Cadastro de Pets, no método "popularComboPlano" para retornar o "plano" dos planos na ComboBox.
     @Override
     public String toString() {
         return plano;

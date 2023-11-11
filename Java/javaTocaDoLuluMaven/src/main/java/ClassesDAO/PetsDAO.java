@@ -115,10 +115,10 @@ public class PetsDAO {
     
     // REVER
     public void editar(Pets pet) {
-        String sql = "UPDATE Tutores SET nome = ?, tipo_documento = ?, documento_identificador = ?, "
-                + "nascimento = ?, cep = ?, logradouro = ?, numero = ?, bairro = ?, uf = ?, municipio = ?, "
-                + "complemento = ?, ddd_1 = ?, celular_1 = ?, email_1 = ?, ddd_2 = ?, celular_2 = ?, email_2 = ?, "
-                + "tipo_rede_1 = ?, rede_social_1 = ?, tipo_rede_2 = ?, rede_social_2 = ?, observacoes = ? WHERE id = ?";
+        String sql = "UPDATE Pets SET nome = ?, sexo = ?, raca = ?, cor = ?, "
+                + "nascimento = ?, tipo_rede_1 = ?, rede_social_1 = ?, tipo_rede_2 = ?, "
+                + "rede_social_2 = ?, alergias = ?, remedios = ?, vacinacao = ?, "
+                + "observacoes = ?, id_petsPlanosValores = ?, id_tutores = ? WHERE id = ?";
 
         try (Connection conn = ConexaoDAOviaJDBC.getConnection(); 
              PreparedStatement stmt = conn.prepareStatement(sql)) {
@@ -145,11 +145,10 @@ public class PetsDAO {
             stmt.setString(13, pet.getObservacoes());
             
             // ARRUMAR A PESQUISA REFERENTE AO PLANO, VALOR E ID_TUTORES -----------------------------------------------
-            stmt.setString(14, pet.getObservacoes());
-            stmt.setString(15, pet.getObservacoes());
-            stmt.setString(16, pet.getObservacoes());
+            stmt.setInt(14, pet.getId_petsPlanosValores());
+            stmt.setInt(15, pet.getId_tutores());
             
-            stmt.setInt(17, pet.getId());
+            stmt.setInt(16, pet.getId());
             
             stmt.execute();
   

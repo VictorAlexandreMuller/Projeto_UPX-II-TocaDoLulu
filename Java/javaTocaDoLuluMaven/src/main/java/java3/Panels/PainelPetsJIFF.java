@@ -580,19 +580,20 @@ public class PainelPetsJIFF extends javax.swing.JInternalFrame {
                     evt.consume();
                     JTable source = (JTable) evt.getSource();
                     int row = source.rowAtPoint(evt.getPoint());
-                    int column = TablePets.convertColumnIndexToView(TablePets.getColumn("Nome").getModelIndex());
+                    int column = TablePets.convertColumnIndexToView(TablePets.getColumn("Nome ").getModelIndex());
                     idSelecionado = Integer.parseInt(source.getModel().getValueAt(row, column) + "");
 
                 } else if (evt.getClickCount() == 2 && !evt.isConsumed()) {
                     evt.consume();
                     JTable source = (JTable) evt.getSource();
                     int row = source.getSelectedRow();
-                    int column = TablePets.convertColumnIndexToView(TablePets.getColumn("Nome").getModelIndex());
-                    String s = source.getModel().getValueAt(row, column) + " - " + petSelecionado.toString();
+                    int column = TablePets.convertColumnIndexToView(TablePets.getColumn("Nome ").getModelIndex());
+                    String s = source.getModel().getValueAt(row, column) + " - " + petSelecionado.imprimir();
                     JOptionPane.showMessageDialog(null, s);
                 }        
                 /*
-                    OBS: O getColumn("Nome") puxa o valor correto do ID na tabela.
+                    OBS 1: O getColumn("Nome ") puxa o valor correto do ID na tabela.
+                    OBS 2: Foi colocado um espaço depois de Nome: "Nome ", pois não foi renomeado. Diferente de DDD nos outros Panels.
                     Explicação: A explicação para este ocorrido está no PainelTutoresJIFF.
                 */
                 
