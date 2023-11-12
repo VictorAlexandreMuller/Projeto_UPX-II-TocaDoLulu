@@ -626,19 +626,19 @@ public class PainelServicosJIFF extends javax.swing.JInternalFrame {
                     evt.consume();
                     JTable source = (JTable) evt.getSource();
                     int row = source.rowAtPoint(evt.getPoint());
-                    int column = TableServicos.convertColumnIndexToView(TableServicos.getColumn("Valor").getModelIndex());
+                    int column = TableServicos.convertColumnIndexToView(TableServicos.getColumn("Valor ").getModelIndex());
                     idSelecionado = Integer.parseInt(source.getModel().getValueAt(row, column) + "");
 
                 } else if (evt.getClickCount() == 2 && !evt.isConsumed()) {
                     evt.consume();
                     JTable source = (JTable) evt.getSource();
                     int row = source.getSelectedRow();
-                    int column = TableServicos.convertColumnIndexToView(TableServicos.getColumn("Valor").getModelIndex());
+                    int column = TableServicos.convertColumnIndexToView(TableServicos.getColumn("Valor ").getModelIndex());
                     String s = source.getModel().getValueAt(row, column) + " - " + servicoSelecionado.imprimir();
                     JOptionPane.showMessageDialog(null, s);
                 }      
                 /*
-                    OBS: O getColumn("Valor") puxa o valor correto do ID na tabela.
+                    OBS: O getColumn("Valor ") puxa o valor correto do ID na tabela.
                     Explicação: A explicação para este ocorrido está no PainelTutoresJIFF.
                 */
                 

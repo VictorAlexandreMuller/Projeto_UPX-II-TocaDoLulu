@@ -10,7 +10,6 @@ import java.util.List;
 import java.util.stream.Collectors;
 import java1.Classes.Veterinarios;
 import java4.Cadastros.CadastroVeterinariosJDialog;
-import java4.Cadastros.CadastroVeterinariosJIFF;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
