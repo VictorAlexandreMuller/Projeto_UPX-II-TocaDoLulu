@@ -61,19 +61,6 @@ public class CadastroPetsJDialog extends javax.swing.JDialog {
         }
     }
     
-    public void popularComboPlanoEdited(){
-        try {
-            PetsPlanosValores petsPlanosValores = new PetsPlanosValoresDAO().getPlano();
-            comboPET_PLANO.setModel(new DefaultComboBoxModel<PetsPlanosValores>(
-                    lstPetsPlanosValores.toArray(new PetsPlanosValores[lstPetsPlanosValores.size()])));
-        } catch (Exception e) {
-        }
-    }
-    
-    public void popularComboTutoresEdited(){
-        
-    }
-    
     /* Jeito errado que o Victor estava fazendo
     public void popularComboTutores() {
         try {
@@ -137,13 +124,26 @@ public class CadastroPetsJDialog extends javax.swing.JDialog {
         txtPET_OBSERVACOES.setText(pet.getObservacoes());
         
         
+        // Alimenta as ComboBox com as informações corretas.
+        // No quesito PERFORMANCE este código "for" não está bom,
+        //      pois caso haja 9000 registros, o if será rodado 8999x
+        //      até buscar o último, caso a gente precise do 9000.
+        int i;
+        for( i=0 ; i<=comboTUTOR.getItemCount() ; i++){
+            comboTUTOR.setSelectedIndex(i);
+            if(((Tutores)comboTUTOR.getSelectedItem()).getId() == pet.getId_tutores()){
+                break;
+            }
+        }
         
-        // ARRUMAR AQUI
-        //comboPET_PLANO.setSelectedItem(ppv.getPlano());
-        //comboTUTOR.setSelectedItem(tutor.getNome());
+        for( i=0 ; i<=comboPET_PLANO.getItemCount() ; i++){
+            comboPET_PLANO.setSelectedIndex(i);
+            if(((PetsPlanosValores)comboPET_PLANO.getSelectedItem()).getId() == pet.getId_petsPlanosValores()){
+                break;
+            }
+        }
         
-        ((Tutores)comboTUTOR.getSelectedItem()).getId();
-        ((PetsPlanosValores)comboPET_PLANO.getSelectedItem()).getId();
+        
         
     }
     
