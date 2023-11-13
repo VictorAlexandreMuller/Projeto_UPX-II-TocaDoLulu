@@ -71,9 +71,9 @@ public class PainelTutoresJIFF extends javax.swing.JInternalFrame {
             
             TableTutores.setModel(tableModelTutores);
             
-            organizarTabela();
-            widthTabela();
             renameTabela();
+            widthTabela();
+            organizarTabela();
             
         } catch (Exception e) {
             System.out.println("Houve um erro ao tentar popular a tabela");
@@ -88,17 +88,19 @@ public class PainelTutoresJIFF extends javax.swing.JInternalFrame {
     }
     
     public void widthTabela() {
-        TableTutores.getColumnModel().getColumn(0).setPreferredWidth(50);
-        TableTutores.getColumnModel().getColumn(1).setPreferredWidth(500);
-        TableTutores.getColumnModel().getColumn(2).setPreferredWidth(500);
-        TableTutores.getColumnModel().getColumn(3).setPreferredWidth(100);
-        TableTutores.getColumnModel().getColumn(4).setPreferredWidth(200);
+        TableTutores.getColumnModel().getColumn(0).setPreferredWidth(200);      //TELEFONE
+        TableTutores.getColumnModel().getColumn(1).setPreferredWidth(100);      //DDD
+        TableTutores.getColumnModel().getColumn(2).setPreferredWidth(500);      //EMAIL
+        TableTutores.getColumnModel().getColumn(3).setPreferredWidth(50);       //ID
+        TableTutores.getColumnModel().getColumn(4).setPreferredWidth(500);      //NOME
     }
     
     public void renameTabela() {
+        
+        TableTutores.getColumnModel().getColumn(0).setHeaderValue("Telefone");
+        TableTutores.getColumnModel().getColumn(1).setHeaderValue("DDD");
         TableTutores.getColumnModel().getColumn(2).setHeaderValue("E-mail");
-        TableTutores.getColumnModel().getColumn(3).setHeaderValue("DDD");
-        TableTutores.getColumnModel().getColumn(4).setHeaderValue("Telefone");
+        
         
     }
     
@@ -593,9 +595,9 @@ public class PainelTutoresJIFF extends javax.swing.JInternalFrame {
         
         TableTutores.setModel(tb);
         
-        organizarTabela();
-        widthTabela();
         renameTabela();
+        widthTabela();
+        organizarTabela();
     }//GEN-LAST:event_txtSEARCHKeyReleased
 
     private void TableTutoresMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TableTutoresMouseClicked

@@ -276,7 +276,6 @@ public class CadastroPetsJDialog extends javax.swing.JDialog {
 
         txtPET_NOME.setBackground(new java.awt.Color(86, 76, 106));
         txtPET_NOME.setForeground(new java.awt.Color(255, 255, 255));
-        txtPET_NOME.setToolTipText("");
         txtPET_NOME.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
         txtPET_NOME.setPreferredSize(new java.awt.Dimension(5, 20));
 

@@ -10,7 +10,6 @@ import java.util.List;
 import java.util.stream.Collectors;
 import java1.Classes.Servicos;
 import java4.Cadastros.CadastroServicosJDialog;
-import java4.Cadastros.CadastroServicosJIFF;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
@@ -65,9 +64,9 @@ public class PainelServicosJIFF extends javax.swing.JInternalFrame {
             
             TableServicos.setModel(tableModelServicos);
             
-            organizarTabela();
-            widthTabela();
             renameTabela();
+            widthTabela();
+            organizarTabela();
             
         } catch (Exception e) {
             System.out.println("Houve um erro ao tentar popular a tabela");
@@ -84,20 +83,20 @@ public class PainelServicosJIFF extends javax.swing.JInternalFrame {
     }
     
     public void widthTabela() {
-        TableServicos.getColumnModel().getColumn(0).setPreferredWidth(100);
-        TableServicos.getColumnModel().getColumn(1).setPreferredWidth(400);
-        TableServicos.getColumnModel().getColumn(2).setPreferredWidth(400);
-        TableServicos.getColumnModel().getColumn(3).setPreferredWidth(200);
-        TableServicos.getColumnModel().getColumn(4).setPreferredWidth(500);
-        TableServicos.getColumnModel().getColumn(5).setPreferredWidth(100);
-        TableServicos.getColumnModel().getColumn(6).setPreferredWidth(200);
+        TableServicos.getColumnModel().getColumn(0).setPreferredWidth(200);     //TELEFONE
+        TableServicos.getColumnModel().getColumn(1).setPreferredWidth(100);     //DDD
+        TableServicos.getColumnModel().getColumn(2).setPreferredWidth(500);     //EMAIL
+        TableServicos.getColumnModel().getColumn(3).setPreferredWidth(100);     //ID
+        TableServicos.getColumnModel().getColumn(4).setPreferredWidth(400);     //NOME
+        TableServicos.getColumnModel().getColumn(5).setPreferredWidth(400);     //SERVICO
+        TableServicos.getColumnModel().getColumn(6).setPreferredWidth(200);     //VALOR
     }
     
     public void renameTabela() {
-        TableServicos.getColumnModel().getColumn(2).setHeaderValue("Serviço");
-        TableServicos.getColumnModel().getColumn(4).setHeaderValue("E-mail");
-        TableServicos.getColumnModel().getColumn(5).setHeaderValue("DDD");
-        TableServicos.getColumnModel().getColumn(6).setHeaderValue("Telefone");
+        TableServicos.getColumnModel().getColumn(0).setHeaderValue("Telefone");
+        TableServicos.getColumnModel().getColumn(1).setHeaderValue("DDD");
+        TableServicos.getColumnModel().getColumn(2).setHeaderValue("E-mail");
+        TableServicos.getColumnModel().getColumn(5).setHeaderValue("Serviço");
     }
     
     // -------------------------------
@@ -611,9 +610,9 @@ public class PainelServicosJIFF extends javax.swing.JInternalFrame {
         
         TableServicos.setModel(tb);
         
-        organizarTabela();
-        widthTabela();
         renameTabela();
+        widthTabela();
+        organizarTabela();
         
     }//GEN-LAST:event_txtSEARCHKeyReleased
 

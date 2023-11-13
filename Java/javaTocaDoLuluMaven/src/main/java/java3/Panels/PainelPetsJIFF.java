@@ -81,13 +81,13 @@ public class PainelPetsJIFF extends javax.swing.JInternalFrame {
     }
     
     public void widthTabela() {
-        TablePets.getColumnModel().getColumn(0).setPreferredWidth(300);
-        TablePets.getColumnModel().getColumn(1).setPreferredWidth(80);
-        TablePets.getColumnModel().getColumn(2).setPreferredWidth(200);
-        TablePets.getColumnModel().getColumn(3).setPreferredWidth(400);
-        TablePets.getColumnModel().getColumn(4).setPreferredWidth(400);
-        TablePets.getColumnModel().getColumn(5).setPreferredWidth(300);
-        TablePets.getColumnModel().getColumn(6).setPreferredWidth(80);
+        TablePets.getColumnModel().getColumn(0).setPreferredWidth(300);     //COR
+        TablePets.getColumnModel().getColumn(1).setPreferredWidth(80);      //ID
+        TablePets.getColumnModel().getColumn(2).setPreferredWidth(200);     //PLANO
+        TablePets.getColumnModel().getColumn(3).setPreferredWidth(400);     //TUTOR
+        TablePets.getColumnModel().getColumn(4).setPreferredWidth(400);     //NOME
+        TablePets.getColumnModel().getColumn(5).setPreferredWidth(300);     //RAÇA
+        TablePets.getColumnModel().getColumn(6).setPreferredWidth(80);      //SEXO
     }
     
     public void renameTabela() {
@@ -96,6 +96,8 @@ public class PainelPetsJIFF extends javax.swing.JInternalFrame {
         TablePets.getColumnModel().getColumn(5).setHeaderValue("Raça");
                 
     }
+    
+    
     
     // -------------------------------
     

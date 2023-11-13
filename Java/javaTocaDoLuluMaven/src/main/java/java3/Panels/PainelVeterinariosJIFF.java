@@ -65,9 +65,9 @@ public class PainelVeterinariosJIFF extends javax.swing.JInternalFrame {
             
             TableVeterinarios.setModel(tableModelVeterinarios);
             
-            organizarTabela();
-            widthTabela();
             renameTabela();
+            widthTabela();
+            organizarTabela();
             
         } catch (Exception e) {
             System.out.println("Houve um erro ao tentar popular a tabela");
@@ -85,19 +85,18 @@ public class PainelVeterinariosJIFF extends javax.swing.JInternalFrame {
     }
     
     public void widthTabela() {
-        TableVeterinarios.getColumnModel().getColumn(0).setPreferredWidth(50);
-        TableVeterinarios.getColumnModel().getColumn(1).setPreferredWidth(500);
-        TableVeterinarios.getColumnModel().getColumn(2).setPreferredWidth(500);
-        TableVeterinarios.getColumnModel().getColumn(3).setPreferredWidth(100);
-        TableVeterinarios.getColumnModel().getColumn(4).setPreferredWidth(200);
-        TableVeterinarios.getColumnModel().getColumn(5).setPreferredWidth(200);
+        TableVeterinarios.getColumnModel().getColumn(0).setPreferredWidth(200);     //TELEFONE
+        TableVeterinarios.getColumnModel().getColumn(1).setPreferredWidth(100);     //DDD
+        TableVeterinarios.getColumnModel().getColumn(2).setPreferredWidth(500);     //EMAIL
+        TableVeterinarios.getColumnModel().getColumn(3).setPreferredWidth(50);      //ID
+        TableVeterinarios.getColumnModel().getColumn(4).setPreferredWidth(500);     //NOME
+        TableVeterinarios.getColumnModel().getColumn(5).setPreferredWidth(200);     //VALOR
     }
     
     public void renameTabela() {
+        TableVeterinarios.getColumnModel().getColumn(0).setHeaderValue("Telefone");
+        TableVeterinarios.getColumnModel().getColumn(1).setHeaderValue("DDD");
         TableVeterinarios.getColumnModel().getColumn(2).setHeaderValue("E-mail");
-        TableVeterinarios.getColumnModel().getColumn(3).setHeaderValue("DDD");
-        TableVeterinarios.getColumnModel().getColumn(4).setHeaderValue("Telefone");
-        
     }
     
     // -------------------------------
@@ -611,9 +610,9 @@ public class PainelVeterinariosJIFF extends javax.swing.JInternalFrame {
         
         TableVeterinarios.setModel(tb);
         
-        organizarTabela();
-        widthTabela();
         renameTabela();
+        widthTabela();
+        organizarTabela();
         
         
     }//GEN-LAST:event_txtSEARCHKeyReleased
