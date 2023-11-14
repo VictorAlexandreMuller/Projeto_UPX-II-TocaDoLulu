@@ -213,12 +213,15 @@ public class Pets {
                 + "\nRaça: " + raca
                 + "\nCor: " + cor
                 + "\nNascimento: " + nascimento
-                + "\nRede Social: " + tipo_rede_1 + " - " + rede_social_1
-                + "\nRede Social: " + tipo_rede_2 + " - " + rede_social_2
+                + "\nRede Social: " + tipo_rede_1 + " - '" + rede_social_1 + "'"
+                + "\nRede Social: " + tipo_rede_2 + " - '" + rede_social_2 + "'"
                 + "\nAlergias: " + alergias
-                + "\nRemédios: " + remedios
                 + "\nVacinação: " + vacinacao
-                + "\nObservações: " + observacoes;
+                + "\nRemédios: " + remedios
+                + "\nObservações: " + observacoes
+                + "\n"
+                + "\nTutor: " + id_tutores
+                + "\nPlano: " + id_petsPlanosValores;
 
     }
 
