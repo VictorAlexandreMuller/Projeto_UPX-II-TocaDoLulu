@@ -195,7 +195,7 @@ public class SobreJIFF extends javax.swing.JInternalFrame {
         jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel4.setText("Creche canina com serviço de hospedagem e os melhores serviços para do seu melhor amigo.");
+        jLabel4.setText("Creche canina com serviço de hospedagem e os melhores serviços para o seu melhor amigo.");
 
         jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));

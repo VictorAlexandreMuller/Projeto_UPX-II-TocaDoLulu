@@ -439,7 +439,7 @@
                       <Color blue="ff" green="ff" red="ff" type="rgb"/>
                     </Property>
                     <Property name="horizontalAlignment" type="int" value="0"/>
-                    <Property name="text" type="java.lang.String" value="Creche canina com servi&#xe7;o de hospedagem e os melhores servi&#xe7;os para do seu melhor amigo."/>
+                    <Property name="text" type="java.lang.String" value="Creche canina com servi&#xe7;o de hospedagem e os melhores servi&#xe7;os para o seu melhor amigo."/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel3">
