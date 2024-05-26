@@ -48,5 +48,46 @@
         </dependency>
     </dependencies>
         
+    <!-- para criar um executavel, deve-se criar um arquivo bloco de notas, -->
+    <!-- escrever "java -jar javaTocaDoLuluMaven-1.0-SNAPSHOT.jar" -->
+    <!-- e renomea-lo de ".txt" para ".bat" para executar corretamente o programa -->
+    
+    <build>
+        <plugins>
+            <plugin>
+                
+                <!-- plugin que garante que a classe principal seja especificada corretamente no MANIFEST.MF -->
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>3.2.0</version>
+                <configuration>
+                    <archive>
+                        <manifest>
+                            <addDefaultImplementationEntries>true</addDefaultImplementationEntries>
+                            <mainClass>java2.InicialPanel.SwingTelaInicial</mainClass> <!-- Substitua pela sua classe principal correta -->
+                        </manifest>
+                    </archive>
+                </configuration>
+            </plugin>
+            
+            
+            <!-- plugin que fez conectar o banco de dados mysql -->
+            <!-- garante que todas as dependências sejam incluídas no .jar final -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-shade-plugin</artifactId>
+                <version>3.2.4</version>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>shade</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            
+        </plugins>
+    </build>
     
 </project>
