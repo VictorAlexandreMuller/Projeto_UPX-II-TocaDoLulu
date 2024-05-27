@@ -7,6 +7,10 @@ Toca do Lulu: Creche Canina</h1>
 
 <a href="https://github.com/VictorAlexandreMuller/UPX-II-TocaDoLulu/blob/main/TocaDoLulu.pdf"><p align="center">Documentação completa</p></a>
 
+<a href="https://youtu.be/J5mVUVe2DoQ"><p align="center"> YouTube: UPX-II-TocaDoLulu</p></a>
+
+<a href="https://github.com/VictorAlexandreMuller/UPX-II-TocaDoLulu/blob/main/TocaDoLulu.pdf"><p align="center"> YouTube: UPX-II-TocaDoLulu</p></a>
+
 <br>
 
 <h2 align="center"> O que significa UPX? </h2>
