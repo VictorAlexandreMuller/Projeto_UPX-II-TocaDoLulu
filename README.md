@@ -1,294 +1,88 @@
-# UPX2-Toca-do-Lulu
+<h1 align="center"> UPX-II-TocaDoLulu
+<br>
+<br>
+Documentação
+<br>
+<br>
+Toca do Lulu: Creche Canina </h1>
 
-# TRABALHO DE USINA DE PROJETOS EXPERIMENTAIS II (UPX II) - TOCA DO LULU (Em desenvolvimento...)
+<a href="./TocaDoLulu.pdf" target="_blank"> <h6 align="center">Documentação completa</h6> </a>
 
-_Classe: Usuarios_  
-| ---------------------------------- |  
-(-) email : String
-(-) senha : String
-(+) Usuarios(String:email, String:senha)
-(+) Gets...
-(+) Sets...
+<blockquote>
+<h2 align="center"> O que significa UPX? </h2>
 
-_Classe: PetsPlanosValores_  
-| ---------------------------------- |  
-(-) plano : String
-(-) valor : double
-(+) PetsPlanosValores(String:plano, double:valor)
-(+) PetsPlanosValores()
-(+) Gets...
-(+) Sets...
+<p> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; A unidade curricular de Usina de Projetos Experimentais (UPX) é uma iniciativa da Faculdade de Engenharia de Sorocaba (FACENS) que integra todo o ecossistema do nosso centro universitário.
+Esta disciplina tem como finalidade abordar o desenvolvimento de competências técnicas e as atitudes empreendedoras de cada aluno por meio de trilhas socioemocionais e sustentáveis, buscando soluções desafiadoras para problemas reais, auxiliando também na inserção do aluno ao mercado de trabalho por meio de uma narrativa criativa e inovadoras dentro da sala de aula. </p>
+<br>
+</blockquote>
 
-_Classe: Pets_  
-| ---------------------------------- |  
-(-) id : int
-(-) nome : String
-(-) sexo : char
-(-) raca : String
-(-) cor : String
-(-) nascimento : String
-(-) tipo_rede_1 : String
-(-) rede_social_1 : String
-(-) tipo_rede_2 : String
-(-) rede_social_2 : String
-(-) alergias : String
-(-) remedios : String
-(-) vacinacao : String
-(-) observacoes : String
-(-) tipo_plano : String
-(-) tipo_valor : double
-(+) Pets(todos sem id)
-(+) Pets()
-(+) Gets...
-(+) Sets...
-(+) toString():String
+<br>
 
-_Classe: Tutores_  
-| ---------------------------------- |  
-(-) id : int
-(-) nome : String
-(-) tipo_documento : String
-(-) documento_identificador : String
-(-) nascimento : String
-(-) cep : int
-(-) logradouro : String
-(-) numero : String
-(-) bairro : String
-(-) uf : String
-(-) municipio : String
-(-) complemento : String
-(-) ddd_1 : int
-(-) celular_1 : int
-(-) ddd_2 : int
-(-) celular_2 : int
-(-) email_1 : String
-(-) email_2 : String
-(-) tipo_rede_1 : String
-(-) rede_social_1 : String
-(-) tipo_rede_2 : String
-(-) rede_social_2 : String
-(-) observacoes : String
-(+) Tutores(todos sem id)
-(+) Tutores()
-(+) Gets...
-(+) Sets...
-(+) toString():String
+<blockquote>
+<h2 align="center">1. A Toca do Lulu</h2>
 
-_Classe: Veterinarios_  
-| ---------------------------------- |  
-(-) id : int
-(-) nome : String
-(-) tipo_documento : String
-(-) documento_identificador : String
-(-) crmv : String
-(-) nascimento : String
-(-) cep : int
-(-) logradouro : String
-(-) numero : String
-(-) bairro : String
-(-) uf : String
-(-) municipio : String
-(-) complemento : String
-(-) ddd_1 : int
-(-) celular_1 : int
-(-) ddd_2 : int
-(-) celular_2 : int
-(-) email_1 : String
-(-) email_2 : String
-(-) valor : double
-(-) observacoes : String
-(+) Veterinarios(todos sem id)
-(+) Veterinarios()
-(+) Gets...
-(+) Sets...
-(+) toString():String
+<p> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; A Toca do Lulu foi uma iniciativa de creche canina voltada para cachorros de pequeno porte, principalmente aos cachorros da raça Zwergspitz, Lulu da Pomerânia. Tendo a estrutura do projeto ainda em folha de papel, a futura dona do estabelecimento, localizada na cidade de Sorocaba, buscou o auxílio dos alunos de ADS e GTI através das aulas de UPX para solucionar o problema de cadastro tanto dos seus clientes (cachorros e tutores), como também de serviços em geral (veterinários e outros). </p>
+<br>
+</blockquote>
 
-_Classe: Servicos_  
-| ---------------------------------- |  
-(-) id : int
-(-) nome : String
-(-) servico : String
-(-) valor : double
-(-) tipo_documento : String
-(-) documento_identificador : String
-(-) nascimento : String
-(-) cep : int
-(-) logradouro : String
-(-) numero : String
-(-) bairro : String
-(-) uf : String
-(-) municipio : String
-(-) complemento : String
-(-) ddd_1 : int
-(-) celular_1 : int
-(-) ddd_2 : int
-(-) celular_2 : int
-(-) email_1 : String
-(-) email_2 : String
-(-) observacoes : String
-(+) Servicos(todos sem id)
-(+) Servicos()
-(+) Gets...
-(+) Sets...
-(+) toString():String
+<br>
 
-_Classe: TutoresPets_  
-| ---------------------------------- |  
-(-) id_tutor : int
-(-) id_pet : int
-(+) Gets...
-(+) Sets...
+<blockquote>
+<h2 align="center">2. O projeto</h2>
 
-_Classe: VeterinariosPets_  
-| ---------------------------------- |  
-(-) id_veterinario : int
-(-) id_pet : int
-(+) Gets...
-(+) Sets...
+<p> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; A Toca do Lulu foi um projeto desenvolvido no 2º Semestre de 2023, durante os meses de Outubro e Novembro, com a orientação do Professor Fábio Colombini. </p>
 
-_Classe: ServicosPets_  
-| ---------------------------------- |  
-(-) id_servico : int
-(-) id_pet : int
-(+) Gets...
-(+) Sets...
+- **Back-End**: Java JDK 21;
+- **Front-End**: Java Swing;
+- **Data Base**: MySQL - Connector: 8.0.30 – JDBC.
 
-# Observações:
+<br>
+</blockquote>
 
-- Os botões "Alterar" devem abrir a janela de criação do pet selecionado com as suas informações em cada um dos seus campos para realizar a alteração desejada. Após realizar a alteração, o objeto atualizado deve aparecer devidamente corrigido na tabela.
-- Os botões "Excluir" devem excluir a linha selecionada na tabela correspondente, gerando um aviso de dupla verificação para realizar o feito.
+<br>
 
-# Menus
+<blockquote>
+<h2 align="center">3. O Sistema</h2>
 
-    1- Menu Principal (Botões)
-      - Pets
-      - Tutores
-      - Veterinários
-      - Serviços
-      - Sair
+<p> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Para fins de facilidade ao acesso de cada informação dentro do projeto, optou-se pela organização e separação das classes em alguns packages, são eles: </p>
 
-      1.1- Menus Pets, Tutores, Veterinários e Serviços (Botões)
-        - Novo
-        - Alterar
-        - Deletar
-        - Voltar
+- **ClassesDAO**
+- **ConectionsDAO**
+- **Imagens**
+- **IconsCrud**
+- **IconsInit**
+- **Java1.Classes**
+- **Java1.ClassesDB**
+- **Java1.Login**
+- **Java2.InicialPanel**
+- **Java3.Panels**
+- **Java4.Cadastros**
 
-        1.1.1- Menu Novo Pet (Campos e Botões)
-          - Nome
-          - Sexo
-          - Raça
-          - Cor
-          - Nascimento
-          - Tipo de Rede Social (1)
-          - Rede Social (1)
-          - Tipo de Rede Social (2)
-          - Rede Social (2)
-          - Alergias
-          - Remédios
-          - Vacinação
-          - Observações
-          - Plano
-          - Botão Voltar
-          - Botão Salvar
+<p> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Para fins de desenvolvimento e testes, implementou-se um login padrão em código para facilitar o acesso ao projeto: </p>
 
-        1.1.2- Menu Novo Tutor (Campos e Botões)
-          - Nome
-          - Tipo de Documento
-          - Documento
-          - Nascimento
-          - CEP
-          - Logradouro
-          - Número
-          - Bairro
-          - UF
-          - Município
-          - Complemento
-          - DDD (1)
-          - Celular (1)
-          - DDD (2)
-          - Celular (2)
-          - E-mail (1)
-          - E-mail (2)
-          - Tipo de Rede Social (1)
-          - Rede Social (1)
-          - Tipo de Rede Social (2)
-          - Rede Social (2)
-          - Observações
-          - Botão Voltar
-          - Botão Salvar
+- **Usuário**: admin
+- **Senha**: 123
 
-        1.1.3- Menu Novo Veterinário (Campos e Botões)
-          - Nome
-          - Tipo de Documento
-          - Documento
-          - CRMV
-          - Nascimento
-          - CEP
-          - Logradouro
-          - Número
-          - Bairro
-          - UF
-          - Município
-          - Complemento
-          - DDD (1)
-          - Celular (1)
-          - DDD (2)
-          - Celular (2)
-          - E-mail (1)
-          - E-mail (2)
-          - Valor
-          - Observações
-          - Botão Voltar
-          - Botão Salvar
+<p> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; O sistema conta com quatro botões de cadastro Create, Read, Update e Delete (CRUD), cada um referente a um dos Objetos do projeto: "Pets", "Tutores", "Veterinários" e "Serviços". Cada botão está vinculado ao seu respectivo banco de dados MySQL com o auxílio do JDBC.</p>
 
-        1.1.4- Menu Novo Serviço (Campos e Botões)
-          - Nome
-          - Serviço
-          - Valor
-          - Tipo de Documento
-          - Documento
-          - Nascimento
-          - CEP
-          - Logradouro
-          - Número
-          - Bairro
-          - UF
-          - Município
-          - Complemento
-          - DDD (1)
-          - Celular (1)
-          - DDD (2)
-          - Celular (2)
-          - E-mail (1)
-          - E-mail (2)
-          - Observações
-          - Botão Voltar
-          - Botão Salvar
+<p> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; O projeto também conta com uma barra de navegação utilizada para acessar os mesmos serviços citados anteriormente, mas por comandos do teclado, sem a necessidade de dependência do mouse. Ainda na barra de navegação, em opções, também pode-se contar com outras duas novas abas “Preços” e “Sobre”, responsáveis, respectivamente, por tabelar os preços dos serviços prestados pelo estabelecimento e para apresentar quem foram os criadores do projeto. </p>
+<br>
+</blockquote>
 
-# Melhorias futuras
+<br>
 
-    1- Telas e Database para:
-    - Login
-    - Register
-    - Change Password
-    - Logout
-
-    2- Upload de foto nos cadastros. A foto deve aparecer ao selecionar o cadastro e mostrar o cadastro.
-
-    3- Navbar Menu.
+<blockquote>
+<h2 align="center">4. YouTube do Projeto</h2>
+<br>
+<a href="https://youtu.be/J5mVUVe2DoQ"><p align="center"> YouTube: UPX-II-TocaDoLulu</p></a>
+<br>
+<p align="center"> Obrigado ! </p>
+<br>
+</blockquote>
+<br>
 
 ---
 
----
-
----
-
-(NetBeans IDE - Toca do Lulu - Matéria: UPX II - Segundo Semestre ADS - Professor Fabio Colombini)
-
-Última atualização: 01h26 - 20/10/2023.
-
----
-
----
+<p align="center"> Última atualização: 06:51 - 27/05/2024. </p>
 
 ---
