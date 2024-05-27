@@ -6,7 +6,7 @@ Toca do Lulu: Creche Canina</h1>
 <br>
 
 <h2 align="center">Documentação completa</h3>
-<a href="https://github.com/VictorAlexandreMuller/UPX-II-TocaDoLulu/raw/1-master/TocaDoLulu.pdf">
+<a href="https://github.com/VictorAlexandreMuller/UPX-II-TocaDoLulu/raw/main/TocaDoLulu.pdf">
 <p align="center">Clique aqui para baixar</p></a>
 
 <br>
