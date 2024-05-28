@@ -1,7 +1,7 @@
 package java1.Login;
 
 import ClassesDAO.UsuariosDAO;
-import ConectionsDAO.JPAUtil;
+import ConnectionsDAO.JPAUtil;
 import java.awt.event.ActionEvent;
 import java.awt.event.KeyEvent;
 import java1.Classes.Usuarios;

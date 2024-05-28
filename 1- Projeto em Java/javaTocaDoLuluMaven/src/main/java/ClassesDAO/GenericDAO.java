@@ -8,7 +8,7 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.sql.ResultSet;
-import ConectionsDAO.ConexaoDAOviaJDBC;
+import ConnectionsDAO.ConexaoDAOviaJDBC;
 
 /*
     1- A Classe DAO precisa comecar com o nome da Tabela

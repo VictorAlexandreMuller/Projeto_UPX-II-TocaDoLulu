@@ -1,7 +1,7 @@
 package java4.Cadastros;
 
 import ClassesDAO.TutoresDAO;
-import ConectionsDAO.JPAUtil;
+import ConnectionsDAO.JPAUtil;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;

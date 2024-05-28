@@ -254,7 +254,7 @@
             <Component class="javax.swing.JLabel" name="icon_VOLTAR">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="C:\Users\PC\Documents\##Dev\1- ADS - FACENS\UPX-II-TocaDoLulu\Java\javaTocaDoLuluMaven\src\main\java\iconsCrud\1VoltarIcon40.png"/>
+                  <Image iconType="2" name="C:\Users\PC\Documents\##Dev\1- ADS - FACENS\Projeto_UPX-II-TocaDoLulu\1- Projeto em Java\javaTocaDoLuluMaven\src\main\java\iconsCrud\1VoltarIcon40.png"/>
                 </Property>
                 <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
                   <Dimension value="[40, 40]"/>
@@ -324,7 +324,7 @@
             <Component class="javax.swing.JLabel" name="icon_NOVO">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="C:\Users\PC\Documents\##Dev\1- ADS - FACENS\UPX-II-TocaDoLulu\Java\javaTocaDoLuluMaven\src\main\java\iconsCrud\2NovoIcon40.png"/>
+                  <Image iconType="2" name="C:\Users\PC\Documents\##Dev\1- ADS - FACENS\Projeto_UPX-II-TocaDoLulu\1- Projeto em Java\javaTocaDoLuluMaven\src\main\java\iconsCrud\2NovoIcon40.png"/>
                 </Property>
               </Properties>
             </Component>
@@ -386,7 +386,7 @@
             <Component class="javax.swing.JLabel" name="icon_EDITAR">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="C:\Users\PC\Documents\##Dev\1- ADS - FACENS\UPX-II-TocaDoLulu\Java\javaTocaDoLuluMaven\src\main\java\iconsCrud\3AlterarIcon40.png"/>
+                  <Image iconType="2" name="C:\Users\PC\Documents\##Dev\1- ADS - FACENS\Projeto_UPX-II-TocaDoLulu\1- Projeto em Java\javaTocaDoLuluMaven\src\main\java\iconsCrud\3AlterarIcon40.png"/>
                 </Property>
               </Properties>
             </Component>
@@ -448,7 +448,7 @@
             <Component class="javax.swing.JLabel" name="icon_DELETAR">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="C:\Users\PC\Documents\##Dev\1- ADS - FACENS\UPX-II-TocaDoLulu\Java\javaTocaDoLuluMaven\src\main\java\iconsCrud\4DeletarIcon40.png"/>
+                  <Image iconType="2" name="C:\Users\PC\Documents\##Dev\1- ADS - FACENS\Projeto_UPX-II-TocaDoLulu\1- Projeto em Java\javaTocaDoLuluMaven\src\main\java\iconsCrud\4DeletarIcon40.png"/>
                 </Property>
               </Properties>
             </Component>
