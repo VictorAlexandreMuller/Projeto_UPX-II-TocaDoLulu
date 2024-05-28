@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.2" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_2.xsd">
+  <!-- Utiliza-se 1 persistence unit para cada banco de dados que for vinculado ao projeto. -->
+  <persistence-unit name="toca_do_lulu_upx" transaction-type="RESOURCE_LOCAL">
+    <properties>
+      <property name="javax.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>
+      <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/toca_do_lulu_upx?useSSL=true&amp;serverTimezone=UTC"/>
+      <property name="javax.persistence.jdbc.user" value="root"/>
+      <property name="javax.persistence.jdbc.password" value="root"/>
+      <property name="hibernate.dialect" value="org.hibernate.dialect.MySQL5Dialect"/>
+      <!-- Sempre que gerar um SQL no banco de dados, imprimir no console para ver o que está acontecendo no banco de dados -->
+      <property name="hibernate.show.sql" value="true"/>
+      <!-- Irá realizar o "update" desejado no banco de dados, se não existir ele cria e se já existir ele atualiza -->
+      <!-- Lembrando que este comando não deleta nada do banco de dados caso haja exclusões e drops -->
+      <property name="hibernate.hbm2ddl.auto" value="update"/>
+      <!-- A property acima possui values = create, create-drop, update, validate, etc -->
+    </properties>
+  </persistence-unit>
+</persistence>

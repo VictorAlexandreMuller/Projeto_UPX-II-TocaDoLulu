@@ -13,8 +13,9 @@ Toca do Lulu: Creche Canina</h1>
 
 <h2 align="center"> O que significa UPX? </h2>
 
-<p> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; A unidade curricular de Usina de Projetos Experimentais (UPX) é uma iniciativa da Faculdade de Engenharia de Sorocaba (FACENS) que integra todo o ecossistema do nosso centro universitário.
-Esta disciplina tem como finalidade abordar o desenvolvimento de competências técnicas e as atitudes empreendedoras de cada aluno por meio de trilhas socioemocionais e sustentáveis, buscando soluções desafiadoras para problemas reais, auxiliando também na inserção do aluno ao mercado de trabalho por meio de uma narrativa criativa e inovadoras dentro da sala de aula. </p>
+<p> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; A unidade curricular de Usina de Projetos Experimentais (UPX) é uma iniciativa da Faculdade de Engenharia de Sorocaba (FACENS) que integra todo o ecossistema do nosso centro universitário.</p>
+
+<p> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Esta disciplina tem como finalidade abordar o desenvolvimento de competências técnicas e as atitudes empreendedoras de cada aluno por meio de trilhas socioemocionais e sustentáveis, buscando soluções desafiadoras para problemas reais, auxiliando também na inserção do aluno ao mercado de trabalho por meio de uma narrativa criativa e inovadoras dentro da sala de aula. </p>
 <br>
 
 <h2 align="center">1. A Toca do Lulu</h2>
@@ -23,6 +24,8 @@ Esta disciplina tem como finalidade abordar o desenvolvimento de competências t
 <br>
 
 <h2 align="center">2. O projeto</h2>
+
+![](https://i.imgur.com/eqYpzEh.png)
 
 <p> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; A Toca do Lulu foi um projeto desenvolvido no 2º Semestre de 2023, durante os meses de Outubro e Novembro, com a orientação do Professor Fábio Colombini. </p>
 
@@ -37,7 +40,7 @@ Esta disciplina tem como finalidade abordar o desenvolvimento de competências t
 <p> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Para fins de facilidade ao acesso de cada informação dentro do projeto, optou-se pela organização e separação das classes em alguns packages, são eles: </p>
 
 - **ClassesDAO**
-- **ConectionsDAO**
+- **ConnectionsDAO**
 - **Imagens**
 - **IconsCrud**
 - **IconsInit**
@@ -59,13 +62,13 @@ Esta disciplina tem como finalidade abordar o desenvolvimento de competências t
 <br>
 
 <h2 align="center">4. YouTube do Projeto</h2>
-<a href="https://youtu.be/J5mVUVe2DoQ"><p align="center"> YouTube: UPX-II-TocaDoLulu</p></a>
+<a href="https://youtu.be/J5mVUVe2DoQ"><p align="center"> UPX II: Toca do Lulu - Creche Canina</p></a>
 <br>
 <p align="center"> Obrigado ! </p>
 <br>
 
 ---
 
-<p align="center"> Última atualização: 07:51 - 27/05/2024. </p>
+<p align="center"> Última atualização: 01:36 - 28/05/2024. </p>
 
 ---

@@ -1,6 +1,6 @@
 package ClassesDAO;
 
-import ConectionsDAO.ConexaoDAOviaJDBC;
+import ConnectionsDAO.ConexaoDAOviaJDBC;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
